@@ -47,6 +47,8 @@ background:linear-gradient(to left ,rgba(255,255,255,0),white) ;
 .cc{
     overflow: visible;
     height: auto;
+    padding-left: 15px;
+    padding-right: 15px;
     
 }
 .refbutton{
