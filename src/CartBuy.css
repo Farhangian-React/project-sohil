@@ -1,0 +1,142 @@
+
+.boximage{
+    width: 500px;
+    height: 80vh;
+   flex-wrap:nowrap;
+   overflow:auto;
+   
+  
+}
+.imagehide{
+    opacity: 0.3;
+    text-overflow: '...';
+}
+
+.slid{
+    margin:10px;
+    border: 2px solid  rgb(122, 123, 139)  ;
+    align-items:center;
+   
+}
+
+.linetinck{
+    height: 2px;
+    width: 100%;
+    background-color: #c6c7c2;
+   display: flex;
+  justify-content: center;
+
+    margin-top: 16px;
+}
+.linetin{
+    height: 4px;
+    width: 15%;
+    background:linear-gradient(to right ,#E0AA3E,#282828);
+   display: flex;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+ /* width */
+.boxscroll::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  .boxscroll::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 5px;
+  }
+   
+  /* Handle */
+  .boxscroll::-webkit-scrollbar-thumb {
+    background:linear-gradient(to right ,#E0AA3E,#282828);
+   
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  .boxscroll::-webkit-scrollbar-thumb:hover {
+    background:linear-gradient(to right ,#E0AA3E,#282828);
+  }
+ .boxcommentref{
+  display: flex;
+ overflow:hidden;
+ height: 30vh;
+white-space: wrap;
+flex-direction: column;
+background-color: white;
+padding: 25px;
+margin: 5px;
+
+border-radius:10px ;
+direction:ltr ;
+ }
+ .boxnotcomments{
+  display: flex;
+  justify-content: center;
+ }
+ .displycomment{
+  display: flex;
+  overflow:visible;
+ white-space: wrap;
+ flex-direction: column;
+ background-color: white;
+ padding: 25px;
+ margin: 5px;
+
+ border-radius:10px ;
+ direction:ltr ;
+ }
+ .vis{
+  padding: 25px;
+ margin: 5px;
+
+ border-radius:10px ;
+ direction:ltr ;
+  overflow: visible;
+ }
+ .hid{
+  display: none;
+ }
+ .disply{
+  display: flex;
+  background-color: white;
+border: none;
+padding-left: 25px;
+padding-right: 25px;
+margin-left: 5px;
+margin-right: 5px;
+padding-top: 10px;
+padding-bottom: 10px;
+}
+.offref{
+  color:#E0AA3E;
+  padding-left:15px ;
+  padding-right:15px ;
+  margin-top: 20px;
+ text-align: right;
+ font-size:24px ;
+ text-decoration-line:line-through;
+ text-decoration-color: #750d0d;
+ 
+}
+.boxoff{
+  display: none;
+}
+.allproduct{
+  background-image: linear-gradient(to bottom, rgba(233, 234, 240, 0.3),#43423f),
+  url('https://www.profibusiness.world/projects/_id/6145/photo/posco-galvanized-steel-gi-2.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+align-self: center;
+align-items: center;
+ 
+ 
+  
+
+}
+.bordershadow{
+  box-shadow:10px 10px 10px #E0AA3E;
+}

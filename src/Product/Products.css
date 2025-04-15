@@ -1,0 +1,90 @@
+
+  
+@keyframes slide {
+    from{
+transform: translateX(0);
+    }
+   to{
+    transform: translateX(-100%);
+
+   } 
+}
+
+.link{
+    text-decoration: none;
+    color:#eeeeee;
+}
+.logos:hover .logos-slide {
+animation-play-state: paused;
+}
+.logos:before,
+.logos:after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:250px ;
+    height: 100%; 
+    content:"" ;
+z-index: 2;
+}
+.logos:before{
+left: 0;
+background:linear-gradient(to left ,rgba(255,255,255,0),white) ;
+
+}
+
+.logos:after{
+    right: 0;
+    background:linear-gradient(to right ,rgba(255,255,255,0),white) ;
+}
+.logos-slide{
+    height: 50px;
+    margin:0px;
+    animation: 8s slide infinite linear;
+}
+.logos-slide img{
+margin: 0 40px;
+height: 100px;
+width: 150px;
+}
+.washimg {
+    align-self: center;
+    animation: fade;
+    animation-timeline: view();
+    animation-range-start:200px ;
+    animation-range-end: 600px;
+}
+@keyframes fade{
+    from{scale: 0.6;opacity: 0.2;}
+    to{scale: 1;opacity: 1;}
+}
+.cc{
+    overflow: visible;
+    height: auto;
+    
+}
+.refbutton{
+    display: none;
+}
+.bagbox{
+    display: flex;
+    flex-direction: column;
+    margin: 0.5em;
+    background-color: white;
+  
+}.tinybox{
+    width:100%;
+    margin: auto;
+
+}
+.closebotton{
+    display: flex;
+    border: none;
+    color: #E0AA3E;
+    font-size: 0.5em;
+    background-color: white;
+
+}
+.bordershadow{
+    box-shadow:10px 10px 10px #E0AA3E;
+}
