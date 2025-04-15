@@ -157,7 +157,7 @@ setFilteredUsers(filteredItems);
    <div dir='rtl' className="flex md:hidden justify-between w-[150px]">
    
              <NavLink to={"/"} style={{textDecoration: "none"}}>      
-             <img className='imgsohil mt-2.5' width={50} height={30} alt=''
+             <img className='imgsohil mt-3' width={50} height={30} alt=''
          src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi8sUcl-xSeJ2aDKi3dB9ylFBIxBLCo-JXLg&s'/>
    </NavLink>
     <div className='mt-1 mr-3'   >
