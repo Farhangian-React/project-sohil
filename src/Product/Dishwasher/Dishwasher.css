@@ -1,0 +1,86 @@
+.slidlg{
+    margin:10px;
+    border: 2px solid  rgb(122, 123, 139)  ;
+    align-items:center;
+   
+}
+@media only screen and (max-width: 768px){
+    .slidlg{
+    display: none;
+ }
+
+}
+.slidsm{
+    margin:10px;
+    border: 2px solid rgb(122, 123, 139) ;
+    align-items:center;
+
+}
+@media only screen and (min-width: 768px){
+    .slidsm{
+    display: none;
+ }
+
+}
+.navlinks{
+color:#E0AA3E;
+font-size: 2em;
+}
+.navlinkin{
+color:#585858;
+font-size: 1.5em;
+}
+
+ /* width */
+ .scrolling{
+  background-color: #181510;
+ }
+ .scrolling::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  .scrolling::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 5px;
+  }
+   
+  /* Handle */
+  .scrolling::-webkit-scrollbar-thumb {
+    background:linear-gradient(to right ,#E0AA3E,#282828);
+   
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  .scrolling::-webkit-scrollbar-thumb:hover {
+    background:linear-gradient(to right ,#E0AA3E,#282828);
+  }
+  .offprice{
+    color:#E0AA3E;
+    padding-left:15px ;
+    padding-right:15px ;
+    margin-top: 20px;
+   text-align: right;
+   font-size:20px ;
+   text-decoration-line:line-through;
+   text-decoration-color: #302d24;
+   
+  }
+  .offcards{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #E0AA3E;
+  }
+  .navlink{
+    color:#4c4e58;
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: all 0.2s;
+}
+
+.navlink:hover{
+    color:#E0AA3E ; 
+}
