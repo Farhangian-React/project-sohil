@@ -23,7 +23,6 @@ export const CartProvider=(props)=>{
     const [currentstep,setCurrentstep]=useState(1);
 
     
-    
     return(
         <CartContext.Provider value={[cartItems,setCartItems]}>
             <CartBuyContext.Provider value={[cartItemsBuy,setCartItemsBuy]}>
