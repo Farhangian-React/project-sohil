@@ -3,6 +3,7 @@ import '../Product/Products.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { NavLink, useNavigate } from 'react-router-dom';
+
 function ProductP() {
 
 
@@ -63,7 +64,7 @@ function ProductP() {
     <>
    
 
-    <div className='flex flex-col bg-white' >   
+    <div className='flex flex-row bg-white' >   
     <div ref={bagbox1}
 className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
    > 

@@ -17,9 +17,9 @@ import './Footer.css';
 import Divider from '@mui/material/Divider';
 export default function Footer() {
   return (
-    <Box sx={{ m:"0.5em", px:"1em",bgcolor:"#1c1c1c" ,display:'flex',flexDirection:'column'}} >
-       <Box  sx={{ m:"1em", bgcolor:"#1c1c1c" ,display:'flex',flexDirection:{xs:"column",lg:'row'}}} >
-        <Box sx={{m:{xs:"2em",lg:"auto"} , bgcolor:"#1c1c1c" ,display:'flex',alignSelf:{xs:"center",lg:"start"},justifyContent:"center",flexDirection:'row',width:{xs:"90%",lg:"65%"}}}>
+    <div className='flex flex-col bg-zinc-900 px-3' >
+       <div className='bg-zinc-900 flex flex-col md:flex-row' >
+        <div className='mx-0 mt-5 bg-zinc-900 flex  self-center justify-center flex-row w-[100%] md:w-[60%] '>
         <List
             aria-label="Products"
             variant="outlined"
@@ -30,39 +30,39 @@ export default function Footer() {
               backgroundColor:'#fff',
               height:'350px',
               alignItems:'start',
-              bgcolor:"#1c1c1c"
+              bgcolor:"oklch(0.21 0.006 285.885)"
             }}   
           >
             <ListItem >
             <ListItemDecorator>
-              <img src={Refrigeratoricon} width={50} alt='' />
+              <img src={Refrigeratoricon} className='w-[30px] md:w-[50px]' alt='' />
               </ListItemDecorator>
             </ListItem>
             <ListItem >
            
             <NavLink className='navlinkfooter'  to={'/allrefriderators'}  
-            style={{ textDecoration: "none",fontSize:"1.2em",color:"#ecd2a0" }}>  یخچال و فریزر </NavLink>
+            style={{ textDecoration: "none",fontSize:"16px",color:"oklch(0.945 0.129 101.54)" }}>  یخچال و فریزر </NavLink>
             </ListItem>
             <Divider component="li" />
             <ListItem >
             <NavLink className='navlinkwhite' to={'/shop-refrigeratorsidbysid'}
-              style={{ textDecoration: "none",fontSize:"1em",color:"#8a8a8a" }}> ساید بای ساید </NavLink>
+              style={{ textDecoration: "none",fontSize:"14px",color:"#8a8a8a" }}> ساید بای ساید </NavLink>
             </ListItem>
             <ListItem >
             <NavLink className='navlinkwhite' to={'/shop-refrideratortopfreezer'} 
-            style={{ textDecoration: "none",fontSize:"1em",color:"#8a8a8a" }}> فریزر بالا</NavLink>
+            style={{ textDecoration: "none",fontSize:"14px",color:"#8a8a8a" }}> فریزر بالا</NavLink>
             </ListItem>
             <ListItem >
                <NavLink className='navlinkwhite' to={'/shop-refrideratorbottomfreezer'}
-                style={{ textDecoration: "none",fontSize:"1em",color:"#8a8a8a" }}>فریزر پایین </NavLink>
+                style={{ textDecoration: "none",fontSize:"14px",color:"#8a8a8a" }}>فریزر پایین </NavLink>
             </ListItem>
             <ListItem >
             <NavLink className='navlinkwhite' to={'/shop-refrigeratorfrenchdoor'}
-             style={{ textDecoration: "none",fontSize:"1em",color:"#8a8a8a" }}> فریزر دو در</NavLink>
+             style={{ textDecoration: "none",fontSize:"14px",color:"#8a8a8a" }}> فریزر دو در</NavLink>
             </ListItem>
             <ListItem >
                <NavLink className='navlinkwhite' to={'/shop-refrideratorspecializedfreezer'} 
-               style={{ textDecoration: "none",fontSize:"1em",color:"#8a8a8a" }}>یخچال و فریزر تخصصی</NavLink>
+               style={{ textDecoration: "none",fontSize:"14px",color:"#8a8a8a" }}>یخچال و فریزر تخصصی</NavLink>
             </ListItem>
           </List>
     
@@ -76,34 +76,34 @@ export default function Footer() {
               backgroundColor:'#fff',
               height:'350px',
               alignItems:'start',
-              bgcolor:"#1c1c1c"
+              bgcolor:"oklch(0.21 0.006 285.885)"
             }}  
           >
             <ListItem >
             <ListItemDecorator>
-              <img src={gasicon} width={50} alt='' />
+              <img src={gasicon} className='w-[30px] md:w-[50px]' alt='' />
               </ListItemDecorator>
             </ListItem>
             <ListItem>
             <NavLink  className='navlinkfooter' to={'/allgas'}
-              style={{ textDecoration: "none",fontSize:"1.2em",color:"#ecd2a0" }}>   اجاق گاز   </NavLink>
+              style={{ textDecoration: "none",fontSize:"16px",color:"oklch(0.945 0.129 101.54)" }}>   اجاق گاز   </NavLink>
             </ListItem>
       <Divider component="li" />
             <ListItem>
             <NavLink className='navlinkwhite' to={'/shop-ranges'}
-              style={{ textDecoration: "none",fontSize:"1em",color:"#8a8a8a" }}>  اجاق گاز و فر </NavLink>
+              style={{ textDecoration: "none",fontSize:"14px",color:"#8a8a8a" }}>  اجاق گاز و فر </NavLink>
             </ListItem>
             <ListItem >
             <NavLink className='navlinkwhite' to={'/shop-cooktop'} 
-              style={{ textDecoration: "none",fontSize:"1em",color:"#8a8a8a" }}> گاز صفحه ای</NavLink>
+              style={{ textDecoration: "none",fontSize:"14px",color:"#8a8a8a" }}> گاز صفحه ای</NavLink>
             </ListItem>
             <ListItem >
                <NavLink className='navlinkwhite' to={'/shop-hood'} 
-                 style={{ textDecoration: "none",fontSize:"1em",color:"#8a8a8a" }}>هود </NavLink>
+                 style={{ textDecoration: "none",fontSize:"14px",color:"#8a8a8a" }}>هود </NavLink>
             </ListItem>
             <ListItem >
             <NavLink className='navlinkwhite' to={'/shop-microwaves'} 
-              style={{ textDecoration: "none",fontSize:"1em",color:"#8a8a8a" }}>مایکروویو</NavLink>
+              style={{ textDecoration: "none",fontSize:"14px",color:"#8a8a8a" }}>مایکروویو</NavLink>
             </ListItem>
           </List>
    
@@ -117,17 +117,17 @@ export default function Footer() {
               backgroundColor:'#fff',
               height:'350px',
               alignItems:'start',
-              bgcolor:"#1c1c1c"
+              bgcolor:"oklch(0.21 0.006 285.885)"
             }}  
           >
             <ListItem >
             <ListItemDecorator>
-              <img src={washingmachins} width={50} alt='' />
+              <img src={washingmachins} className='w-[30px] md:w-[50px]' alt='' />
               </ListItemDecorator>
             </ListItem>
             <ListItem >
             <NavLink  className='navlinkfooter' to={'/shop-washing-machine'} 
-            style={{ textDecoration: "none",fontSize:"1.2em",color:"#ecd2a0" }}  >   ماشین لباسشویی  </NavLink>
+            style={{ textDecoration: "none",fontSize:"16px",color:"oklch(0.945 0.129 101.54)" }}  >   ماشین لباسشویی  </NavLink>
             </ListItem>
             <Divider component="li" />
             
@@ -145,48 +145,48 @@ export default function Footer() {
               backgroundColor:'#fff',
               height:'350px',
               alignItems:'start',
-              bgcolor:"#1c1c1c"
+              bgcolor:"oklch(0.21 0.006 285.885)"
             }}
           >
             <ListItem >
             <ListItemDecorator>
-              <img src={dishwashericon} width={50}  alt=''/>
+              <img src={dishwashericon} className='w-[30px] md:w-[50px]'  alt=''/>
               </ListItemDecorator>
             </ListItem>
             <ListItem >
             <NavLink  className='navlinkfooter' to={'/shop-dishwasher'}
-              style={{ textDecoration: "none",fontSize:"1.2em",color:"#ecd2a0" }}>ماشین ظرفشویی </NavLink>
+              style={{ textDecoration: "none",fontSize:"16px",color:"oklch(0.945 0.129 101.54)" }}>ماشین ظرفشویی </NavLink>
             </ListItem>
           </List>
-          </Box>
-          <Box sx={{ m:"0.5em", px:"1em",bgcolor:"#1c1c1c" ,display:'flex',flexDirection:'column',py:{xs:"0.5em",lg:"3em"},width:{xs:"95%",lg:"35%"}}} >
+          </div>
+          <div className='mx-0 bg-zinc-900 flex flex-col  w-[100%] md:w-[40vw] self-center justify-start md:justify-center py-12 sm:py-5 md:mt-8 px-5 '>
           <Box  sx={{display:'flex',flexDirection:"row",alignSelf:"start"}}>
             <Typography  sx={{color:"#8a8a8a",textAlign:"justify",fontSize:"1em",mb:"3em"}}>
             در فروشگاه 
-          <NavLink style={{ textDecoration: "none",fontSize:"1em",color:"#ecd2a0" }} to={"/"} >  “سهیل” </NavLink> 
+          <NavLink style={{ textDecoration: "none",fontSize:"1em",color:"oklch(0.945 0.129 101.54)" }} to={"/"} >  “سهیل” </NavLink> 
              می توانید  لوازم خانگی خارجی اعم از  یخچال فریزر، ماشین لباسشویی، 
             ماشین ظرفشویی و لوازم پخت و پز را با سهولت کامل خریداری کنید. قیمت رقابتی، فروش اقساطی، ارسال سریع به تمام نقاط ایران، تنوع بالای محصولات، فروشگاه “سهیل” را به یکی از معتبرترین فروشگاه آنلاین در ایران تبدیل نموده است. همکاران ما در  “سهیل” همواره سعی نموده‌اند اطلاعات کامل و دقیقی را نسبت به محصولات، شیوه‌های ارسال، نحوه‌ی پرداخت، گارانتی محصولات و… در اختیار مشتریان عزیز قرار دهند و خط مشی ما، جلب رضایت مشتری در تمامی مراحل خرید آنلاین است.
             </Typography>
             </Box>
             <Box  sx={{display:'flex',flexDirection:"row",alignSelf:"start"}}>
-     <PlaceOutlinedIcon sx={{pr:0,pt:{xs:"0.5em",lg:"0.7em"},color:"#ecd2a0",fontSize:"1.5em"}}/> 
+     <PlaceOutlinedIcon sx={{pr:0,pt:0,mt:1,color:"oklch(0.945 0.129 101.54)",fontSize:"22px"}}/> 
       <Typography  sx={{pr:"1em",py:"0.5em",color:"#8a8a8a",fontSize:"1em"}}> دفتر مرکزی: تهران، سعادت آباد، میدان کتاب، بلوار کوهستان، نبش گل‌گشت، پلاک 2/1</Typography>
     </Box>
     <Box  sx={{display:'flex',flexDirection:"row",alignSelf:"start"}}>
-     <PhoneEnabledOutlinedIcon sx={{pr:0,pt:{xs:"0.5em",lg:"0.7em"},color:"#ecd2a0",fontSize:"1.5em"}}/> 
+     <PhoneEnabledOutlinedIcon sx={{pr:0,pt:0,mt:1,color:"oklch(0.945 0.129 101.54)",fontSize:"22px"}}/> 
       <Typography  sx={{pr:"1em",py:"0.5em",color:"#8a8a8a",fontSize:"1em"}}> <NavLink className={"linkacont"}> 
 09300318282</NavLink> </Typography>
     </Box>
     <Box  sx={{display:'flex',flexDirection:"row",alignSelf:"start"}}>
-     <EmailOutlinedIcon sx={{pr:0,pt:{xs:"0.5em",lg:"0.7em"},color:"#ecd2a0",fontSize:"1.5em"}}/>
+     <EmailOutlinedIcon sx={{pr:0,pt:0,mt:1,color:"oklch(0.945 0.129 101.54)",fontSize:"22px"}}/>
      <Typography  sx={{pr:"1em",py:"0.5em",color:"#8a8a8a",fontSize:"1em"}}>  <NavLink className={"linkacont"}> 
 elhamfarhangian6@gmail.com </NavLink> </Typography> 
       
      
     </Box>
-            </Box>
-            </Box>
-          <Box   >
+            </div>
+            </div>
+          <div   >
         <List
             aria-label="Products"
             variant="outlined"
@@ -194,7 +194,7 @@ elhamfarhangian6@gmail.com </NavLink> </Typography>
             sx={{
               my: 0,
               border:'none',
-              backgroundColor:'#1c1c1c',
+              backgroundColor:'oklch(0.21 0.006 285.885)',
               height:'90px',
               alignItems:'center',
               width:'100%',
@@ -219,13 +219,13 @@ elhamfarhangian6@gmail.com </NavLink> </Typography>
               </ListItem> 
             
             </List>
-          </Box>
-      <Box sx={{bgcolor:'#1c1c1c',mb:3,mt:0}}>
+          </div>
+      <Box sx={{bgcolor:'oklch(0.21 0.006 285.885)',mb:3,mt:0}}>
         <Typography sx={{textAlign:'center',fontSize:"14px",color:'#8a8a8a',mt:8}}>
            © 1384-1402 Copyright:سهیل -کلیه حقوق محفوظ است
         </Typography>
       </Box>
      
-    </Box>
+    </div>
   );
 }

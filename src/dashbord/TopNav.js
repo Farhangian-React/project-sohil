@@ -6,7 +6,7 @@ import Badge from '@mui/material/Badge';
 import {CartBuyContext} from '../Shared/Cart-Context';
 import {CartContext} from '../Shared/Cart-Context';
 import {CardData} from '../Shared/Cart-Context';
-
+import NavigationMenu from './NavigationMenu';
 import InputBase from '@mui/material/InputBase';
 import Modal from '@mui/joy/Modal';
 import ModalClose from '@mui/joy/ModalClose';
@@ -274,8 +274,8 @@ dir='rtl' className='flex flex-row justify-around self-center md:hidden w-full h
 
 </nav>
     </HideOnScroll>
-          <nav className='hidden md:flex  justify-start sticky px-1 mt-0 bg-black py-0 text-white'>
-             <NavbarMenuItem/> 
+          <nav className='hidden md:flex  justify-start sticky  top-0 px-1 mt-0 bg-black py-0 z-20 text-white'>
+             <NavigationMenu/> 
    
             </nav>
  

@@ -50,6 +50,12 @@ function NavbarMenuItem() {
   const [isMenuOpen3, setIsMenuOpen3] =useState(false);
   const [isMobileMenuOpen3, setIsMobileMenuOpen3] =useState(false);
  
+
+  const [isMenuOpen11, setIsMenuOpen11] =useState(false);
+  const [isMobileMenuOpen11, setIsMobileMenuOpen11] =useState(false);
+
+  const [isMenuOpen12, setIsMenuOpen12] =useState(false);
+  const [isMobileMenuOpen12, setIsMobileMenuOpen12] =useState(false);
   return (
     <>
  
@@ -75,6 +81,7 @@ function NavbarMenuItem() {
               className="flex items-center gap-2 py-2 mr-5 font-medium rounded-none
                text-white
                transition delay-150 duration-300 ease-in-out
+             
     "
               selected={isMenuOpen1 || isMobileMenuOpen1}
               onClick={() => setIsMobileMenuOpen1((cur) => !cur)}
@@ -95,7 +102,47 @@ function NavbarMenuItem() {
             </ListItem>
           </Typography>
         </MenuHandler>
-        <MenuList className="hidden max-w-screen-xl rounded-xl md:block w-1/7 h-auto p-3 -mt-5  bg-slate-400">
+        <MenuList className="hidden max-w-screen-xl rounded-xl md:block w-1/7 h-auto p-3 -mt-5  bg-blue-500">
+          <ul className=" flex flex-col items-end outline-none outline-0">
+          <NavLink to={"/allbag"}  >
+        <MenuItem className="flex items-center pb-2 rounded-lg">
+           
+        <Menu
+        open={isMenuOpen11}
+        handler={setIsMenuOpen11}
+        offset={{ mainAxis: 20 }}
+        placement="left"
+        allowHover={true}
+      
+      >
+        <MenuHandler>
+          <Typography as="div" variant="small" className="font-medium">
+            <ListItem
+              className="flex items-center gap-2 py-2 mr-5 font-medium rounded-none
+               text-white
+               transition delay-150 duration-300 ease-in-out
+             
+    "
+              selected={isMenuOpen11 || isMobileMenuOpen11}
+              onClick={() => setIsMobileMenuOpen11((cur) => !cur)}
+            >
+              یخچال فریزر 
+              <FaChevronDown
+                strokeWidth={2.5}
+                className={`hidden h-3 w-3 transition-transform md:block ${
+                  isMenuOpen1 ? "rotate-180" : ""
+                }`}
+              />
+              <FaChevronDown
+                strokeWidth={2.5}
+                className={`block h-3 w-3 transition-transform md:hidden ${
+                  isMobileMenuOpen1 ? "rotate-180" : ""
+                }`}
+              />
+            </ListItem>
+          </Typography>
+        </MenuHandler>
+        <MenuList className="hidden max-w-screen-xl rounded-xl md:block w-1/7 h-auto p-3 -mt-95  bg-slate-400">
           <ul className=" flex flex-col items-end outline-none outline-0">
           <NavLink to={"/allbag"}  >
         <MenuItem className="flex items-center pb-2 rounded-lg">
@@ -104,8 +151,46 @@ function NavbarMenuItem() {
               color="blue-gray"
               className="flex items-center text-sm font-bold hover:text-orange-500"
             >
-         یخچال فریزر
+         یخچال فریزر پایین
             </Typography>
+        </MenuItem>
+      </NavLink>
+      <NavLink to={"/dastib"} >
+        <MenuItem className="flex items-center py-2 rounded-lg">
+            <Typography
+              variant="h6"
+              color="blue-gray"
+              className="flex items-center text-sm font-bold hover:text-orange-500"
+            >
+             یخچال فریزر بالا
+            </Typography>
+        </MenuItem>
+      </NavLink>
+      <NavLink to={"/doshib"} >
+        <MenuItem className="flex items-center py-2 rounded-lg">
+            <Typography
+              variant="h6"
+              color="blue-gray"
+              className="flex items-center text-sm font-bold hover:text-orange-500"
+            >
+           یخچال فریزر ساید بای ساید
+            </Typography>
+        </MenuItem>
+      </NavLink>
+      <NavLink to={"/kolehb"} >
+        <MenuItem className="flex items-center py-2 rounded-lg">
+            <Typography
+              variant="h6"
+              color="blue-gray"
+              className="flex items-center text-sm font-bold hover:text-orange-500"
+            >
+           یخچال فریزر تک در
+            </Typography>
+        </MenuItem>
+      </NavLink>
+          </ul>
+        </MenuList>
+      </Menu>
         </MenuItem>
       </NavLink>
       <NavLink to={"/dastib"} >

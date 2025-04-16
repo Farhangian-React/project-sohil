@@ -129,8 +129,8 @@ console.log(dataoff);
         
         </div>
         <div className='flex flex-col' >
-        <p className='text-xs text-yellow-600 text-center line-through decoration-gray-600 ' >{item.price}</p>
-         <p   className='text-gray-600 text-left text-md' >
+        <p className='text-sm text-yellow-600 text-center line-through decoration-gray-600 ' >{item.price}</p>
+         <p   className='text-gray-600 text-left text-lg font-bold' >
        
           {addCommas(convertToPersian((convertToEnglish(item.pricenum)-(convertToEnglish(item.pricenum)*item.off / 100))+''))} تومان 
          </p>
@@ -206,8 +206,8 @@ console.log(dataoff);
         
         </div>
         <div className='flex flex-col' >
-        <p className='text-xs text-yellow-600 text-center line-through decoration-gray-600 ' >{item.price}</p>
-         <p   className='text-gray-600 text-left text-md' >
+        <p className='text-sm text-yellow-600 text-center line-through decoration-gray-600 ' >{item.price}</p>
+         <p   className='text-gray-600 text-left text-lg font-bold' >
        
           {addCommas(convertToPersian((convertToEnglish(item.pricenum)-(convertToEnglish(item.pricenum)*item.off / 100))+''))} تومان 
          </p>
@@ -281,8 +281,8 @@ console.log(dataoff);
         
         </div>
         <div className='flex flex-col' >
-        <p className='text-xs text-yellow-600 text-center line-through decoration-gray-600 ' >{item.price}</p>
-         <p   className='text-gray-600 text-left text-md' >
+        <p className='text-sm text-yellow-600 text-center line-through decoration-gray-600 ' >{item.price}</p>
+         <p   className='text-gray-600 text-left text-lg font-bold' >
        
           {addCommas(convertToPersian((convertToEnglish(item.pricenum)-(convertToEnglish(item.pricenum)*item.off / 100))+''))} تومان 
          </p>
