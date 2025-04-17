@@ -8,7 +8,7 @@ import Footer from '../../Footer/Footer';
 import TopNav from '../../dashbord/TopNav';
 import { PageTitle } from '../../Title/PageTitle';
 import ListItemButton from '@mui/material/ListItemButton';
-import SlideOffProducts from "../../Product/SlideOffProducts";
+import SlideOffProducts from "../../SlideOffProducts";
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
@@ -35,7 +35,7 @@ export default  function Refrigerators() {
 <>
 <PageTitle title=' همه ی یخچال و فریزرها  ' description='   یخجال و فریزر '/>
    <TopNav/> 
-    <div className='flex justify-end  mb-1 mt-0 mx-auto bg-zinc-100 z-10 overflow-x-visible sm:overflow-hidden ' >
+    <div className='sscrol flex justify-end  mb-1 mt-0 mx-auto bg-zinc-100 z-10  overflow-x-auto  ' >
       <List
             role="menu"
             aria-label="Products"
@@ -46,8 +46,8 @@ export default  function Refrigerators() {
               boxShadow: 'md',
               borderRadius: 'sm',
               '--List-radius': '8px',
-              '--List-padding': '2px',
-              '--ListDivider-gap': '2px',
+              '--List-padding': '0.5px',
+              '--ListDivider-gap': '0px',
               '--ListItemDecorator-size': '24px',
               width:'100%',
               backgroundColor:'transparent',

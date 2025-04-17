@@ -84,3 +84,6 @@ font-size: 1.5em;
 .navlink:hover{
     color:#E0AA3E ; 
 }
+.sscrol::-webkit-scrollbar{
+  width: 0;
+}

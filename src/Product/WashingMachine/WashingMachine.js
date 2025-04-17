@@ -7,7 +7,7 @@ import CardWashingMachine from './CardWashingMachine';
 import Footer from '../../Footer/Footer';
 import TopNav from '../../dashbord/TopNav';
 import { PageTitle } from '../../Title/PageTitle';
-import SlideOffProducts from "../../Product/SlideOffProducts";
+import SlideOffProducts from "../../SlideOffProducts";
 import "../Dishwasher/Dishwasher.css";
 export default  function WashingMachine() {
   return (

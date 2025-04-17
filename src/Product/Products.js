@@ -2,7 +2,7 @@ import React  from 'react';
 import Footer from '../Footer/Footer';
 import TopNav from '../dashbord/TopNav';
 import { PageTitle } from '../Title/PageTitle';
-import SlideOffProducts from "./SlideOffProducts";
+import SlideOffProducts from "../SlideOffProducts";
 import BannerP from '../Home/BannerP';
 import ProductP from '../Home/ProductP';
 import SlidBrand from '../Home/SlidBrand';

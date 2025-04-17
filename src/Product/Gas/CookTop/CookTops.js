@@ -7,7 +7,7 @@ import CardCookTop  from './CardCookTop';
 import Footer from '../../../Footer/Footer';
 import TopNav from '../../../dashbord/TopNav';
 import { PageTitle } from '../../../Title/PageTitle';
-import SlideOffProducts from "../../../Product/SlideOffProducts";
+import SlideOffProducts from "../../../SlideOffProducts";
 import ListItemButton from '@mui/material/ListItemButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';

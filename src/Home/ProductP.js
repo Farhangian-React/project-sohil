@@ -138,7 +138,7 @@ className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
 
 
         <div data-aos="flip-left"
-          className='washimg flex w-[95vw] md:w-[50vw] h-[400px] my-8  bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
+          className='washimg flex w-[85vw] md:w-[40vw] h-[400px] my-8  bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
           style={{
             borderRadius:"20px",
             backgroundImage:'url("https://images.webfronts.com/cache/meyeeahbfvwe.jpg?imgeng=/w_800/h_800/m_letterbox_ffffff_100")'
@@ -197,7 +197,7 @@ className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
         
 
         <div data-aos="flip-left"
-          className='washimg flex w-[95vw] md:w-[50vw] h-[400px] my-8  bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
+          className='washimg flex  w-[85vw] md:w-[40vw] h-[400px] my-8  bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
           style={{
             borderRadius:"20px",
             backgroundImage:'url("https://homeservize.com/blog1/wp-content/uploads/2021/05/washing-machine-and-laundry-storage.jpg")'
@@ -251,7 +251,7 @@ className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
         </div>
         </div>
         <div data-aos="flip-left"
-          className='washimg flex w-[95vw] md:w-[50vw] h-[400px] my-8  bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
+          className='washimg flex  w-[85vw] md:w-[40vw] h-[400px] my-8  bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
           style={{
             borderRadius:"20px",
             backgroundImage:'url("https://milancoshop.com/site/uploader/post/Gas-Hob-in-Kitchen-1774.jpg")'
@@ -304,7 +304,7 @@ className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
         </div>
           </div>
           <div data-aos="flip-left"
-          className='washimg flex w-[95vw] md:w-[50vw] h-[400px] my-8  bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
+          className='washimg flex  w-[85vw] md:w-[40vw] h-[400px] my-8  bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
           style={{
             borderRadius:"20px",
             backgroundImage:'url("https://bosch-home-germany.com/wp-content/uploads/2020/12/%D9%85%D8%A7%D8%B4%DB%8C%D9%86-%D8%B8%D8%B1%D9%81%D8%B4%D9%88%DB%8C%DB%8C-%D9%87%D8%A7%DB%8C-%D8%A8%D9%88%D8%B4-%D8%A7%D8%A8%D8%B9%D8%A7%D8%AF-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86%D8%AF%D8%A7%D8%B1%D8%AF-%D8%AF%D8%A7%D8%B1%D8%AF.jpg")'

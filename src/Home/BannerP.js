@@ -75,10 +75,10 @@ function BannerP() {
     <div className='w-full h-auto flex justify-center  bg-cover bg-center bg-no-repeat '
     style={{backgroundImage:`url(${returnPhotoURL()})`}}
      >
-         <div className=' bg-black bg-opacity-70 md:bg-opacity-90 w-[80vw] md:w-[50vw] h-[230px] md:h-[250px] mt-40 md:mt-24 mb-20 mx-5 '>
+         <div className=' bg-black bg-opacity-70 md:bg-opacity-90 w-[90vw] md:w-[60vw] h-[230px] md:h-[250px] mt-40 md:mt-24 mb-20 mx-5 '>
           <p className='flex flex-col justify-between border-r-4 border-white mt-5 mr-8 pr-2 py-6 text-white text-right' >
-             <p className='text-2xl text-white my-1.5 px-2'> {returnType1()}</p>
-            <p className='text-yellow-200 mt-1 text-lg px-2'  > {returnType2()}</p>
+             <p className='text-xl text-white my-1 px-2'> {returnType1()}</p>
+            <p className='text-yellow-200 mt-1 text-md px-2'  > {returnType2()}</p>
              <NavLink className='navbanner'  to={returnType4()}>
                <p className='text-sm text-yellow-600 mt-1.5 px-2'   >
            {returnType3()}
