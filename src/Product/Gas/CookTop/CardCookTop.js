@@ -17,47 +17,78 @@ import Rating from '@mui/material/Rating';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 function Tems({ currentItems,load }) {
-    const [cartItems,setCartItems]=useContext(CartContext);
-    const[datacomment,setDatacomment]=useState([]);
-    const convertToPersian=(str)=> {
-      let persianNumber =str
-      .replace(/0/g, '۰')
-      .replace(/1/g, '۱')
-      .replace(/2/g, '۲')
-      .replace(/3/g, '۳')
-      .replace(/4/g, '۴')
-      .replace(/5/g, '۵')
-      .replace(/6/g, '۶')
-      .replace(/7/g, '۷')
-      .replace(/8/g, '۸')
-      .replace(/9/g, '۹');
-  return(persianNumber);
+  const [cartItems,setCartItems]=useContext(CartContext);
+  const[datacomment,setDatacomment]=useState([]);
+  const convertToEnglish=(str)=> {
+   
+    let englishNumber =str
+    .replace(/۰/g, '0')
+    .replace(/۱/g, '1')
+    .replace(/۲/g, '2')
+    .replace(/۳/g, '3')
+    .replace(/۴/g, '4')
+    .replace(/۵/g, '5')
+    .replace(/۶/g, '6')
+    .replace(/۷/g, '7')
+    .replace(/۸/g, '8')
+    .replace(/۹/g, '9');
+
+ return(englishNumber);
+  }
+  const convertToPersian=(str)=> {
+    let persianNumber =str
+    .replace(/0/g, '۰')
+    .replace(/1/g, '۱')
+    .replace(/2/g, '۲')
+    .replace(/3/g, '۳')
+    .replace(/4/g, '۴')
+    .replace(/5/g, '۵')
+    .replace(/6/g, '۶')
+    .replace(/7/g, '۷')
+    .replace(/8/g, '۸')
+    .replace(/9/g, '۹');
+return(persianNumber);
+  }
+  const addCommas=(nStr)=>{
+  
+    if(nStr.length === 7){
+      return  nStr.substring(0,1) + "," + nStr.substring(1, 4) + "," + nStr.substring(4, 7);
     }
-    const getData=()=>{
-      fetch("https://serverjson-project.onrender.com/Allcomments")
-      .then((res)=>
-         res.json())
-         .then((data)=>{
-        setDatacomment(data);
-        }
-         )
-      .catch(err=>console.log(err));
+    if(nStr.length === 8){
+      return  nStr.substring(0, 2) + "," + nStr.substring(2, 5) + "," + nStr.substring(5, 8);
     }
-    useEffect(()=>{
-      getData();
-      
-    },[])
-        const sumscore=(item)=>{
-          let total=0;
-          let aver=0;
-       datacomment.map(i=>{
-        if(i.idcomment === item.id){
-          aver ++;
-          total += i.score; 
-        }
-        });
-         return total /aver;
-       }
+    if(nStr.length === 9){
+      return  nStr.substring(0, 3) + "," + nStr.substring(3, 6) + "," + nStr.substring(6, 9);
+  }
+  }
+const getData=()=>{
+  fetch("https://serverjson-project.onrender.com/Allcomments")
+  .then((res)=>
+     res.json())
+     .then((data)=>{
+    setDatacomment(data);
+      console.log(cartItems);
+    
+    }
+     )
+  .catch(err=>console.log(err));
+}
+useEffect(()=>{
+
+  getData();
+  
+},[])
+    const sumscore=(item)=>{
+      let total=0;
+      let aver=0;
+   datacomment.map(i=>{
+    if(i.idcomment === item.id){
+      aver ++;
+      total += i.score; 
+    }
+    });
+     return total /aver;
+   }
      return (
       <> 
           <div className='flex flex-col bg-zinc-100 justify-center m-auto'>

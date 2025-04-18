@@ -12,7 +12,7 @@ import Menu from '@mui/material/Menu';
 import "../Dishwasher/Dishwasher.css";
 import SlideOffProducts from "../../SlideOffProducts";
 import MenuItem from '@mui/material/MenuItem';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 export default  function Gas() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);

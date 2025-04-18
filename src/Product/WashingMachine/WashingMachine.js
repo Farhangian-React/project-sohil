@@ -25,7 +25,7 @@ export default  function WashingMachine() {
            mt: 0,
         
           
-           '--List-padding': '0.5px',
+           '--List-padding': '0.6px',
            '--ListDivider-gap': '0px',
            '--ListItemDecorator-size': '24px',
            width:'100%',
