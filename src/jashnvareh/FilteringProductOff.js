@@ -403,22 +403,24 @@ const handleChangeE1=(e)=>{
     } 
    return (
     <>
-     <Box component="div" sx={{width:"30vw",display:{xs:"none",lg:'flex'},flexDirection:'column',justifyContent:"start"}}>
-    <Box sx={{mt:"0.5em",mr:"0.5em",display:'flex',justifyContent:'start',borderRadius:"0.5em",direction:'rtl',
-     height:'auto',color:"#eeeeee",backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)"}}>
-<Typography sx={{px:2.2,py:"0.3em",fontSize:{xs:"2em"},direction:'rtl'}}>  نوع نمایش 
-</Typography>
-</Box>    
-<Accordion
-        expanded={index === 0}
-        onChange={(event, expanded) => {
-          setIndex(expanded ? 0 : null);
-        }}
-        sx={{borderBottom:'1px solid black',mr:"0.5em",borderRadius:"0.5em"}}
-      >
+      <div className='hidden md:flex flex-col justify-start w-[400px]  mt-4 '>
+        <div dir='rtl' className='flex justify-start md:rounded-sm border-b-2 border-gray-600 md:border-none mr-2 mt-0.3
+        h-[50px]
+        bg-gradient-to-r from-gray-500 via-yellow-500 to-gray-500 text-white'
+    >
+    <p dir='rtl' className='px-2.5 py-2 text-xl font-bold ' >  نوع نمایش 
+    </p>
+    </div> 
+    <Accordion
+            expanded={index === 0}
+            onChange={(event, expanded) => {
+              setIndex(expanded ? 0 : null);
+            }}
+            sx={{borderBottom:'1px solid black',mr:1}}
+          >
             <AccordionSummary  sx={{fontSize:'1.5em',direction:'rtl'}} 
          aria-controls="panel1-content"
-         expandIcon={<AddIcon sx={{fontSize:'1em',pl:"0.5em"}} />}> قیمت </AccordionSummary>
+         expandIcon={<AddIcon sx={{fontSize:'1em',ml:1}} />}> قیمت </AccordionSummary>
         <AccordionDetails >
         <FormGroup>
 <FormControlLabel control={<Checkbox checked={checked1} value={"گرانترین به ارزانترین"}  onChange={sortArrayMaxtoMin} />}  label={<Typography sx={{fontSize:"1.6em",color:"#515151"}}>گرانترین به ارزانترین</Typography>} />
@@ -436,7 +438,7 @@ const handleChangeE1=(e)=>{
       >
     <AccordionSummary  sx={{fontSize:'1.5em',direction:'rtl'}} 
          aria-controls="panel1-content"
-         expandIcon={<AddIcon sx={{fontSize:'1em',pl:"0.5em"}} />}>رنگ بدنه</AccordionSummary>
+         expandIcon={<AddIcon sx={{fontSize:'1em',ml:1}} />}>رنگ بدنه</AccordionSummary>
         <AccordionDetails>
         <FormGroup>
         <FormControlLabel  control={<Checkbox  checked={checkedC1}   onChange={handleChangeC1} value={"سفید"}  />}  label={<Typography sx={{fontSize:"1.6em",color:"#515151"}}>سفید</Typography>} />
@@ -454,7 +456,7 @@ const handleChangeE1=(e)=>{
       >
            <AccordionSummary  sx={{fontSize:'1.5em',direction:'rtl'}} 
          aria-controls="panel1-content"
-         expandIcon={<AddIcon sx={{fontSize:'1em',pl:"0.5em"}} />}>  برند</AccordionSummary>
+         expandIcon={<AddIcon sx={{fontSize:'1em',ml:1}} />}>  برند</AccordionSummary>
         <AccordionDetails>
         <FormGroup>
         <FormControlLabel control={<Checkbox  checked={checkedB1}   onChange={handleChangeB1} value={"Whirlpool"} />}label={<Typography sx={{fontSize:"1.6em",color:"#515151"}}>Whirlpool</Typography>}  />
@@ -473,7 +475,7 @@ const handleChangeE1=(e)=>{
       >
             <AccordionSummary  sx={{fontSize:'1.5em',direction:'rtl'}} 
          aria-controls="panel1-content"
-         expandIcon={<AddIcon sx={{fontSize:'1em',pl:"0.5em"}} />}> رتبه ی انرژی </AccordionSummary>
+         expandIcon={<AddIcon sx={{fontSize:'1em',ml:1}} />}> رتبه ی انرژی </AccordionSummary>
         <AccordionDetails>
    <FormGroup>
    <FormControlLabel  control={<Checkbox checked={checkedE1}   onChange={handleChangeE1} disabled={disabledE1} value={"دارد"}  />} label={<Typography sx={{fontSize:"1.6em",color:"#515151"}}>دارد</Typography>}  />
@@ -482,40 +484,36 @@ const handleChangeE1=(e)=>{
 
         </AccordionDetails>
       </Accordion>
-</Box>
-<Box component="div" sx={{width:'95vw',m:"auto",alignSelf:"center",display:{xs:"flex",lg:'none'},flexDirection:'column',justifyContent:"center"}}>     
+</div>
+<div className='flex flex-col justify-start md:hidden w-[95%] self-center'>
 <Accordion
         expanded={index1 === 0}
         onChange={(event, expanded) => {
           setIndex1(expanded ? 0 : null);
         }}
-        sx={{backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)"}}
+        className=' mr-2 mt-0 
+    bg-gradient-to-r from-gray-500 via-yellow-500 to-gray-500 text-white '
+        
       >
-        <AccordionSummary  sx={{direction:'rtl'}}  
-         expandIcon={<ArrowDropDownIcon sx={{':hover':{color:"black"},fontSize:"2.5em"}} />}>
-
-        <Grid container spacing={1} columns={16} sx={{ my:0, display:'flex' ,justifyItems:"center",flexDirection:"row",alignSelf:"center"}} >
-        <Grid item xs={8} sx={{ display:"flex",flexDirection:"row",justifyContent:"start"}}>
-            <Grid >
+        <AccordionSummary  sx={{fontSize:'16px',direction:'rtl'}} 
+         aria-controls="panel1-content"
+         expandIcon={<ArrowDropDownIcon sx={{':hover':{color:"#eeeeee"},mb:0,color:"#eeeeee",fontSize:"28px"}} />}> 
+          <div className='flex flex-row justify-start'>
+            <div  >
         <IconButton sx={{pt:0}}>
   
-      <FilterAltOutlinedIcon sx={{fontSize:'2em',color:"#eeeeee"}}/>
+      <FilterAltOutlinedIcon sx={{color:"#eeeeee",fontSize:"32px"}}/>
     </IconButton>
-    </Grid>
-        <Grid >
-      <Typography sx={{fontSize:'2em',direction:'rtl',color:"#eeeeee"}}>
+    </div>
+        <div >
+      <p className='text-xl font-bold text-white' >
    فیلتر بر اساس
-</Typography>
-</Grid>
-        </Grid>
-        <Grid item xs={8} sx={{ display:"flex",flexDirection:"row",justifyContent:"end"}}> 
-        </Grid>
-      </Grid>
-
-        </AccordionSummary>
-        <AccordionDetails >
+</p>
+</div>
+        </div>
+          </AccordionSummary>
+        <AccordionDetails className='-mt-9' >
         <FormGroup>
-      
 <Accordion
         expanded={index === 0}
         onChange={(event, expanded) => {
@@ -523,9 +521,11 @@ const handleChangeE1=(e)=>{
         }}
         sx={{borderBottom:'1px solid black',mr:1}}
       >
+
+
         <AccordionSummary  sx={{fontSize:'1.5em',direction:'rtl'}} 
          aria-controls="panel1-content"
-         expandIcon={<AddIcon sx={{fontSize:'1em',pl:"0.5em"}} />}> قیمت </AccordionSummary>
+         expandIcon={<AddIcon sx={{fontSize:'1em',ml:1}} />}> قیمت </AccordionSummary>
         <AccordionDetails >
         <FormGroup>
 <FormControlLabel  control={<Checkbox checked={checked1} value={"گرانترین به ارزانترین"}  onChange={sortArrayMaxtoMin} />}  label={<Typography sx={{fontSize:"1.6em",color:"#515151"}}>گرانترین به ارزانترین</Typography>}  />
@@ -543,7 +543,7 @@ const handleChangeE1=(e)=>{
       >
                <AccordionSummary  sx={{fontSize:'1.5em',direction:'rtl'}} 
          aria-controls="panel1-content"
-         expandIcon={<AddIcon sx={{fontSize:'1em',pl:"0.5em"}} />}>رنگ بدنه</AccordionSummary>
+         expandIcon={<AddIcon sx={{fontSize:'1em',ml:1}} />}>رنگ بدنه</AccordionSummary>
         <AccordionDetails>
         <FormGroup>
 <FormControlLabel  control={<Checkbox  checked={checkedC1}   onChange={handleChangeC1} value={"سفید"}  />}  label={<Typography sx={{fontSize:"1.6em",color:"#515151"}}>سفید</Typography>} />
@@ -561,7 +561,7 @@ const handleChangeE1=(e)=>{
       >
         <AccordionSummary  sx={{fontSize:'1.5em',direction:'rtl'}} 
          aria-controls="panel1-content"
-         expandIcon={<AddIcon sx={{fontSize:'1em',pl:"0.5em"}} />}>  برند</AccordionSummary>
+         expandIcon={<AddIcon sx={{fontSize:'1em',ml:1}} />}>  برند</AccordionSummary>
         <AccordionDetails>
         <FormGroup>
 <FormControlLabel control={<Checkbox  checked={checkedB1}   onChange={handleChangeB1} value={"Whirlpool"} />}label={<Typography sx={{fontSize:"1.6em",color:"#515151"}}>Whirlpool</Typography>}  />
@@ -580,7 +580,7 @@ const handleChangeE1=(e)=>{
       >
           <AccordionSummary  sx={{fontSize:'1.5em',direction:'rtl'}} 
          aria-controls="panel1-content"
-         expandIcon={<AddIcon sx={{fontSize:'1em',pl:"0.5em"}} />}> رتبه ی انرژی </AccordionSummary>
+         expandIcon={<AddIcon sx={{fontSize:'1em',ml:1}} />}> رتبه ی انرژی </AccordionSummary>
         <AccordionDetails>
    <FormGroup>
 <FormControlLabel  control={<Checkbox checked={checkedE1}   onChange={handleChangeE1} disabled={disabledE1} value={"دارد"}  />} label={<Typography sx={{fontSize:"1.6em",color:"#515151"}}>دارد</Typography>}  />
@@ -591,7 +591,7 @@ const handleChangeE1=(e)=>{
 </FormGroup>
 </AccordionDetails>
 </Accordion>
-</Box>
+</div>
 </>
 
    )}

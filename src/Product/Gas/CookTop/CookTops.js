@@ -29,79 +29,95 @@ export default  function CookTops() {
 <>
 <PageTitle title="پخت و پز / اجاق گاز صفحه ای" description= "پخت و پز / اجاق گاز صفحه ای" />
    <TopNav/> 
-   <Box sx={{display:"flex",justifyContent:"end",mb:{xs:1,md:1} ,mt:{xs:10,lg:0.7} ,mx:0.5 }} >
-      <List
-            role="menu"
-            aria-label="Products"
-            variant="outlined"
-            orientation="horizontal"
-            sx={{
-              mt: 1,
-              boxShadow: 'md',
-              borderRadius: 'sm',
-              '--List-radius': '8px',
-              '--List-padding': '2px',
-              '--ListDivider-gap': '2px',
-              '--ListItemDecorator-size': '24px',
-              width:'100%',
-              backgroundColor:'#E0E1E3',
-              alignItems:'center',
-              
-             
-            }}
-          >
-             <ListItem role="none">
-              
-              <ListItemButton 
-               onClick={handleClick1}
-               sx={{color:"#E0AA3E",fontSize:"24px",mx:0,px:0}}
-               >
+   <div className='sscrol flex justify-end  mb-2 mt-0 mx-auto bg-zinc-100 z-10  overflow-x-auto  h-[80px] py-0 ' >
+<List
+      role="menu"
+      aria-label="Products"
+      variant="outlined"
+      orientation="horizontal"
+      sx={{
+        mt: 0,
+     
+       
+        '--List-padding': '0.5px',
+        '--ListDivider-gap': '0px',
+        '--ListItemDecorator-size': '24px',
+        width:'100%',
+        backgroundColor:'transparent',
+        alignItems:'center',
+        border:"none"
+        
+       
+      }}
+    >
+       
+          <ListItem role="none"  sx={{mr:"0",fontSize:"18px",color:"oklch(0.681 0.162 75.834)" ,':hover':{color:"white"}}}>
+        
+        <ListItemButton 
+         onClick={handleClick1}
+         className='
+               hover:rounded-tr-md hover:rounded-bl-md hover:rounded-tl-2xl hover:rounded-br-2xl
+                my-1 mx-8 px-10 py-1 text-white text-md font-sans hover:bg-gradient-to-r hover:from-gray-500
+               hover:via-yellow-500 hover:to-gray-500 hover:text-white'
+         >
                 پخت و پز 
                
-              <KeyboardArrowDownIcon /></ListItemButton>
-              <Menu
-          sx={
-            { mt: "1px", "& .MuiMenu-paper": 
-              { backgroundColor: '#fff',width:'250px' } ,direction:'rtl'
-            }
-          }
-        id="demo-customized-menu"
-        MenuListProps={{
-          'aria-labelledby': 'demo-customized-button'
+              
+        <ArrowDropDownIcon sx={{fontSize:{xs:"2em",lg:"1.5em"},mt:"0.3em",color:"oklch(0.681 0.162 75.834)",':hover':{color:"white"} }} /></ListItemButton>
+        <Menu
+    sx={
+      { mt: "1px", "& .MuiMenu-paper": 
+        { backgroundColor: '#fff',width:'250px' } ,direction:'rtl'
+      }
+    }
+  id="demo-customized-menu"
+  MenuListProps={{
+    'aria-labelledby': 'demo-customized-button'
+ 
+  }}
+  anchorEl={anchorEl1}
+  open={opens1}
+  onClose={handleClose1}
+
+>
+  <NavLink   to={'/shop-ranges' }
+  style={{ textDecoration: "none"}}> 
+  <MenuItem onClick={handleClose1} disableRipple sx={{fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
+   اجاق گاز و فر  
+        </MenuItem></NavLink>
        
-        }}
-        anchorEl={anchorEl1}
-        open={opens1}
-        onClose={handleClose1}
+          <NavLink  to={'/shop-cooktop'}  style={{ textDecoration: "none"}}> 
+  <MenuItem onClick={handleClose1} disableRipple sx={{fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
+   گاز صفحه ای 
+   </MenuItem></NavLink>
+  <NavLink   to={'/shop-hood'} style={{ textDecoration: "none"}}> 
+  <MenuItem onClick={handleClose1} disableRipple sx={{fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
   
-      >
-        <MenuItem onClick={handleClose1} disableRipple>
-        
-        <NavLink  onClick={handleClose1}  disableRipple className='navlink' to={'/shop-ranges' }  > اجاق گاز و فر </NavLink> 
-        </MenuItem>
-        <MenuItem onClick={handleClose1} disableRipple>
-          <NavLink className='navlink' to={'/shop-cooktop'} > گاز رومیزی </NavLink>
-        </MenuItem>
-        <MenuItem onClick={handleClose1} disableRipple><NavLink className='navlink'  to={'/shop-hood'}>
         هود
-        </NavLink></MenuItem>
-        <MenuItem onClick={handleClose1} disableRipple><NavLink className='navlink' to={'/shop-microwaves'}>
+       </MenuItem> </NavLink>
+       <NavLink  to={'/shop-microwaves'} style={{ textDecoration: "none"}}> 
+  <MenuItem onClick={handleClose1} disableRipple sx={{fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
+  
       مایکروویو
-        </NavLink></MenuItem>
+      </MenuItem>  </NavLink>
       </Menu>
-            </ListItem>
-                <ListItem role="none">
-            <NavLink className='navlinkin' to={'/allrefriderators'}> یخچال و فریزر</NavLink>
-            </ListItem>
-            <ListItem role="none">
-            <NavLink className='navlinkin' to={'/shop-washing-machine'}>ماشین لباسشویی</NavLink>
-            </ListItem>
-           
-            <ListItem role="none">
-               <NavLink className='navlinkin '  to={'/shop-dishwasher'} >ماشین ظرفشویی</NavLink>    
-            </ListItem>
+</ListItem>
+     
+      <NavLink  to={'/allrefriderators'} style={{ textDecoration: "none"}}> 
+      <ListItem role="none" sx={{mr:"0",fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
+      یخچال و فریزر </ListItem>
+      </NavLink>
+      <NavLink  to={'/shop-washing-machine'} style={{  textDecoration: "none" }}> 
+      <ListItem role="none" sx={{mr:"0",fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
+     ماشین لباسشویی 
+      </ListItem></NavLink>
+
+      <NavLink to={'/shop-dishwasher'} style={{ textDecoration: "none"}} >
+      <ListItem role="none" sx={{mr:"0",fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
+      ماشین ظرفشویی   
+      </ListItem></NavLink>  
           </List>
-        </Box>
+        </div>
         
         
    <CardCookTop itemsPerPage={6}/>

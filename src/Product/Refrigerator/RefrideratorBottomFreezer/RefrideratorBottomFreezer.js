@@ -29,37 +29,41 @@ export default  function RefrideratorBottomFreezer() {
 <>
 <PageTitle title=' یخچال و فریزر / فریزر پایین ' description='   یخجال و فریزر '/>
    <TopNav/>  
-   <Box sx={{display:"flex",justifyContent:"end",mb:"0.5em" ,mt:{xs:"4.7em",lg:"0.1em"} ,mx:"0.5em" }} >
+   <div className='sscrol flex justify-end  mb-2 mt-0 mx-auto bg-zinc-100 z-10  overflow-x-auto  h-[80px] py-0 ' >
       <List
             role="menu"
             aria-label="Products"
             variant="outlined"
             orientation="horizontal"
             sx={{
-              mt: 1,
-              boxShadow: 'md',
-              borderRadius: 'sm',
-              '--List-radius': '8px',
-              '--List-padding': '2px',
-              '--ListDivider-gap': '2px',
+              mt: 0,
+           
+             
+              '--List-padding': '0.5px',
+              '--ListDivider-gap': '0px',
               '--ListItemDecorator-size': '24px',
               width:'100%',
-              backgroundColor:'#E0E1E3',
+              backgroundColor:'transparent',
               alignItems:'center',
-              
+              border:"none"
               
              
             }}
           >
-                <ListItem role="none" sx={{mr:"0.5em"}}>
+             
+                <ListItem role="none"  sx={{mr:"0",fontSize:"18px",color:"oklch(0.681 0.162 75.834)" ,':hover':{color:"white"}}}>
               
               <ListItemButton 
                onClick={handleClick1}
-               sx={{color:"#E0AA3E",fontSize:"1.3em"}}
+               className='
+                     hover:rounded-tr-md hover:rounded-bl-md hover:rounded-tl-2xl hover:rounded-br-2xl
+                      my-1 mx-8 px-10 py-1 text-white text-md font-sans hover:bg-gradient-to-r hover:from-gray-500
+                     hover:via-yellow-500 hover:to-gray-500 hover:text-white'
                >
-                یخچال و فریزر 
+               یخچال و فریزر 
+             
                
-              <ArrowDropDownIcon sx={{fontSize:"1.5em",mt:"0.3em"}} /></ListItemButton>
+              <ArrowDropDownIcon sx={{fontSize:{xs:"2em",lg:"1.5em"},mt:"0.3em",color:"oklch(0.681 0.162 75.834)",':hover':{color:"white"} }} /></ListItemButton>
               <Menu
           sx={
             { mt: "1px", "& .MuiMenu-paper": 
@@ -76,43 +80,50 @@ export default  function RefrideratorBottomFreezer() {
         onClose={handleClose1}
   
       >
-        <MenuItem onClick={handleClose1} disableRipple>
-        
-        <NavLink  onClick={handleClose1}  disableRipple  to={'/shop-refrigeratorfrenchdoor' } 
-        style={{ textDecoration: "none",fontSize:"1.2em",color:"#414141" }} > 
-         یخچال های دو در   </NavLink> 
-        </MenuItem>
-        <MenuItem onClick={handleClose1} disableRipple>
-          <NavLink className='navlink' to={'/shop-refrigeratorsidbysid'}
-          style={{ textDecoration: "none",fontSize:"1.2em",color:"#414141" }} > 
-           یخچال های ساید بای ساید </NavLink>
-        </MenuItem>
-        <MenuItem onClick={handleClose1} disableRipple><NavLink   to={'/shop-refrideratorbottomfreezer'} 
-        style={{ textDecoration: "none",fontSize:"1.2em",color:"#414141" }}>
+        <NavLink  to={'/shop-refrigeratorfrenchdoor' } 
+        style={{ textDecoration: "none"}}> 
+        <MenuItem onClick={handleClose1} disableRipple sx={{fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
+        یخچال های دو در 
+       </MenuItem> </NavLink>
+        <NavLink to={'/shop-refrigeratorsidbysid'}
+        style={{ textDecoration: "none"}}> 
+        <MenuItem onClick={handleClose1} disableRipple sx={{fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
+        یخچال های ساید بای ساید 
+       </MenuItem> </NavLink>
+        <NavLink to={'/shop-refrideratorbottomfreezer'} 
+        style={{ textDecoration: "none"}}> 
+        <MenuItem onClick={handleClose1} disableRipple sx={{fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
         یخچال و فریزر پایین 
-        </NavLink></MenuItem>
-        <MenuItem onClick={handleClose1} disableRipple><NavLink  to={'/shop-refrideratortopfreezer'}
-        style={{ textDecoration: "none",fontSize:"1.2em",color:"#414141" }}>
+       </MenuItem> </NavLink>
+        <NavLink  to={'/shop-refrideratortopfreezer'}
+        style={{ textDecoration: "none"}}> 
+        <MenuItem onClick={handleClose1} disableRipple sx={{fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
         یخچال و فریزر بالا 
-        </NavLink></MenuItem>
-        <MenuItem onClick={handleClose1} disableRipple><NavLink  to={'/shop-refrideratorspecializedfreezer'}
-        style={{ textDecoration: "none",fontSize:"1.2em",color:"#414141"}}>
+       </MenuItem> </NavLink>
+       <NavLink  to={'/shop-refrideratorspecializedfreezer'}
+        style={{ textDecoration: "none"}}> 
+        <MenuItem onClick={handleClose1} disableRipple sx={{fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
         یخچال و فریزر تخصصی 
-        </NavLink></MenuItem>
+       </MenuItem> </NavLink>
       </Menu>
             </ListItem>
-            <ListItem role="none" sx={{mr:"0.5em"}}>
-            <NavLink  to={'/shop-washing-machine'} style={{ textDecoration: "none",fontSize:"1.1em",color:"#585858" }}>ماشین لباسشویی</NavLink>
-            </ListItem>
+       
+            <NavLink  to={'/shop-washing-machine'} style={{  textDecoration: "none" }}> 
+            <ListItem role="none" sx={{mr:"0",fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
+           ماشین لباسشویی 
+            </ListItem></NavLink>
 
-            <ListItem role="none" sx={{mr:"0.5em"}}>
-            <NavLink  to={'/allgas'} style={{ textDecoration: "none",fontSize:"1.1em",color:"#585858" }}>پخت و پز  </NavLink>
-            </ListItem>
-            <ListItem role="none" sx={{mr:"0.5em"}}>
-               <NavLink to={'/shop-dishwasher'} style={{ textDecoration: "none",fontSize:"1.1em",color:"#585858" }} >ماشین ظرفشویی</NavLink>    
-            </ListItem>
+           
+            <NavLink  to={'/allgas'} style={{ textDecoration: "none"}}> 
+            <ListItem role="none" sx={{mr:"0",fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
+            پخت و پز  </ListItem>
+            </NavLink>
+            <NavLink to={'/shop-dishwasher'} style={{ textDecoration: "none"}} >
+            <ListItem role="none" sx={{mr:"0",fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
+            ماشین ظرفشویی   
+            </ListItem></NavLink>  
           </List>
-        </Box>
+        </div>
         
         
    <CardRefrideratorBottomFreezer itemsPerPage={5}/>

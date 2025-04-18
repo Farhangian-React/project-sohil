@@ -91,35 +91,25 @@ useEffect(()=>{
    }
    return (
     <> 
-    <Box sx={{display:"flex",flexDirection:"column",bgcolor:"#ececec",justifyContent:"center",m:"auto"}}>
-  <Box sx={{display:"flex",justifyContent:"center",flexDirection:"column",px:"2em",m:"1.5em"}}>
-    <Typography sx={{fontSize:"2em",fontWeight:500,textAlign:"start",color:"black",py:"0.5em"}}   >
+    <div className='flex flex-col bg-zinc-100 justify-center m-auto'>
+  <div className='flex flex-col justify-center px-8 mx-auto mt-3 mb-12 '>
+  <p className='text-black py-3 text-start font-bold text-2xl' >
           یخچال و فریزر
-         </Typography>
-      <Typography  paragraph sx={{color:"#585858",textAlign:"justify",fontSize:"1.5em"}}>
+         </p>
+         <p className='text-justify text-md text-gray-500 font-sans'>
       یخچال و فریزر دو یار همیشگی و همراه آشپزخونه‌ هستن که اگه یه روز نباشن کارها پیش نمیره حتی نمیشه آشپزی کرد.
-      </Typography>
-      <Typography   paragraph sx={{color:"#585858",textAlign:"justify",fontSize:"1.5em"}}>
+      </p>
+      <p className='text-justify text-md text-gray-500 font-sans'>
       برای پیدا کردن یخچال و فریزر دلخواهتون فقط کافیه یه سر به سرزمین سهیل بزنین و با مقایسه‌ و بررسی ویژگی‌ها، یخچال و فریزر دلخواهتون رو پیدا کنین.
-      </Typography>
-</Box>  
-    <Box sx={{display:"flex",flexDirection:{xs:"column",lg:"row"},
-    justifyContent:"start",width:"100vw",bgcolor:"#eeeeee",m:"auto"}} >
-      <Box sx={{width:{xs:"90%",lg:"30%"},display:"flex",alignSelf:{xs:"center",lg:"start"},
-height:{lg:"70vh"},
-position:{xs:"static",lg:"sticky"},
-top: "80px",
+      </p>
+</div>  
+    <div className='flex flex-col md:flex-row justify-start w-[100vw] bg-zinc-100 m-auto' >
+      <div className='flex w-[90vw] md:w-[30vw] static md:sticky md:top-[80px] self-center md:self-start md:h-[70vh] '>
+ <FilteringRefrigerators/></div>
 
-}}>
- <FilteringRefrigerators/></Box>
 
- <Box sx={{width:"100%",display:'flex',flexDirection:'column',justifyContent:'center',alignSelf:"center",m:"auto"}}>
-<Box sx={{mx:3,mt:"1em",display:'flex',justifyContent:'start',borderRadius:{xs:"none",lg:'10px'},direction:'rtl',borderBottom:{xs:"1px solid #414141",lg:"none"},
- height:'auto',color:"#282828",pb:0.8}}>
-<Typography sx={{px:3,pt:0.5,fontSize:"1.5em",direction:'rtl'}}>   یخچال و فریزر
-</Typography>
-</Box>
- <Box  sx={{ display:'flex' ,flexWrap:'wrap' ,justifyContent:'center',mx:"0.2em",pb:3,px:0}}>
+
+ <div className='flex justify-center flex-wrap mx-auto bg-zinc-100 '>
 
   {
     load ? 
@@ -133,7 +123,7 @@ top: "80px",
   currentItems &&
     currentItems.map((item) => (
       <NavLink to={'/cartbuyrefrigerator'}  className={"linkss"}> 
-<Card className='cards' sx={{width:{xs:"400px",lg:"330px"},height:"600px",marginTop:'10px',marginBottom: '10px',mx:"0.5em",my:"1em",p:"1.5em" }} key={item.id}>
+<Card className='cards' sx={{width:{xs:"250px",md:"300px"},height:"460px",mx:1,my:"1em",px:1 ,pt:3 }} key={item.id}>
 
         <CardMedia
     component="img"
@@ -142,52 +132,60 @@ top: "80px",
      }}
    image={item.img}
     alt=""
-sx={{width:"250px",m:"auto"}}
+sx={{width:"250px",m:"auto",height:"200px"}}
   />
-    <CardContent sx={{border:"none",height:'70px',direction:"rtl"}}>
-    <Typography gutterBottom  component="div" sx={{textAlign:'center',fontSize:"1.5em"}}>
+    <CardContent sx={{border:"none",height:'55px',direction:"rtl"}}>
+    <p className='text-center text-sm font-bold pb-1'>
       {item.title1}
-    </Typography>
+    </p>
   </CardContent>
-    <CardContent sx={{display:"flex",flexDirection:"column",justifyContent:"center",
+    <CardContent sx={{display:"flex",flexDirection:"row",justifyContent:"space-around",mt:1.5,
     alignSelf:"center",alignItems:"center",
-    border:"none",height:'50px',direction:"rtl",py:0.8,my:0}}>
-    <Typography  sx={{fontSize:"1em",color:"#8a8a8a",textAlign:'center'}}>
+    border:"none",height:'40px',direction:"rtl",py:0.5,my:0}}>
+    <p className='text-center text-xs text-gray-700'>
       {item.title2}
-      </Typography>
+      </p>
       <Rating
-         sx={{color:"#f5cd00",fontSize:"1em",px:5,alignItems:"center"}}
+         sx={{color:"#f5cd00",fontSize:"1em",pr:5,alignItems:"center"}}
         name="simple-controlled"
         value={sumscore(item)}
       
       />
     
   </CardContent>
-
+  
   <CardContent sx={{height:'70px',direction:"rtl",display:"flex",justifyContent:"center",flexDirection:"column",borderBottom:'1px solid #d4d4d4',borderTop:'1px solid #d4d4d4'}} >
 
-    <Box sx={{display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
-    <Box   sx={{width:"45px",height:"30px",bgcolor:"#414141",color:"#E0AA3E",borderRadius:"20%",px:0,mx:0,mt:"1em",display:"flex",justifyContent:"center",alignItems:"center"}}>
-        <Typography sx={{fontSize:"1.2em",textAlign:"center"}}>  {convertToPersian(item.off)}%</Typography>
+ { item.off !== "" ?
+      
+          <div  dir="rtl" className='flex justify-between items-baseline'>
+          <div   className='flex justify-center text-center rounded-md text-yellow-500 bg-gray-900 h-[20px] w-[35px]
+           hover:bg-yellow-500 hover:text-gray-900'>
+        <p className='text-xs text-center py-0.5' >  {convertToPersian(item.off)}%</p>
         
-        </Box> 
-         <Box sx={{display:"flex",flexDirection:"column"}}>
-          <Typography   color="#ea9e08" sx={{fontSize:"1.2em",textAlign:'center',textDecorationLine: "line-through",textDecorationColor: "#414141"}}>{item.price}</Typography>
-         <Typography   color="#414141" sx={{fontSize:"1.2em",textAlign:'center'}}>
+        </div> 
+          <div className='flex flex-col' >
+        <p className='text-sm text-yellow-500 text-center line-through decoration-gray-600 ' >{item.price}</p>
+         <p   className='text-gray-600 text-left text-lg font-bold' >
        
           {addCommas(convertToPersian((convertToEnglish(item.pricenum)-(convertToEnglish(item.pricenum)*item.off / 100))+''))} تومان 
-         </Typography></Box>
- </Box>
+         </p>
+ </div>
+ </div>
+
+:<p className='text-lg text-center text-gray-600 font-bold '>{item.price}</p>
+ }
   </CardContent>
-  <CardContent sx={{display:'flex',justifyContent:'center',height: "50px"}}>
-  <NavLink to={'/cartbuyrefrigerator'}>  <Button size="large"
-      fullWidth
-      variant="contained"
-      sx={{  borderTopRightRadius:"0.5em",borderTopLeftRadius: "1em",borderBottomRightRadius:"1em",borderBottomLeftRadius:"0.5em",':hover':{backgroundImage:"linear-gradient(to right ,#eeeeee,#282828)",color:'white'},
-       color:'#eeeeee',fontSize:"1.5em",backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)", my:"0.5em",py:0,px:"3em"}}
-      onClick={()=>{
-        setCartItems([item]);
-       }}>خرید </Button></NavLink>
+  <CardContent sx={{display:'flex',justifyContent:'center',height: "30px"}}>
+ <NavLink style={{ textDecoration: "none" }} to={"/cartbuygas" }>
+                     <button    onClick={()=>{
+               setCartItems([item]);
+              }} className='bg-gradient-to-r from-yellow-500 via-yellow-900 to-yellow-500 
+                     rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl my-1 mx-8 px-10 py-1 text-white text-md font-sans
+                      hover:bg-gradient-to-r hover:from-gray-500
+                     hover:via-yellow-500 hover:to-gray-500'
+                      > 
+                     خرید</button></NavLink>
     
   </CardContent>
 </Card>
@@ -195,10 +193,10 @@ sx={{width:"250px",m:"auto"}}
 </NavLink>
       
     ))}
-    </Box>
-    </Box>
-  </Box>
-  </Box>
+    </div>
+    </div>
+  </div>
+
     </>
   );
       }
@@ -237,7 +235,7 @@ const[isLoading,setIsLoading]=useState(true);
         breakLabel="..."
         nextLabel=" >>"
         onPageChange={handlePageClick}
-        pageRangeDisplayed={6}
+        pageRangeDisplayed={3}
         pageCount={pageCount}
         previousLabel="<<"
         renderOnZeroPageCount={null}

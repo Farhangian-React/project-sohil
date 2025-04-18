@@ -15,44 +15,50 @@ export default  function WashingMachine() {
 
 <PageTitle title='ماشین لباس شویی' description=' ماشین لباس شویی '/>
    <TopNav/> 
-   <Box sx={{display:"flex",justifyContent:"end",mb:{xs:1,md:1} ,mt:{xs:10,lg:0.7} ,mx:0.5 }} >
-      <List
-            role="menu"
-            aria-label="Products"
-            variant="outlined"
-            orientation="horizontal"
-            sx={{
-              mt: 1,
-              boxShadow: 'md',
-              borderRadius: 'sm',
-              '--List-radius': '8px',
-              '--List-padding': '2px',
-              '--ListDivider-gap': '2px',
-              '--ListItemDecorator-size': '24px',
-              width:'100%',
-              backgroundColor:'#E0E1E3',
-              alignItems:'center',
-            }}
-          >
-              <ListItem role="none">
-               <NavLink className=' navlinks'  to={'/shop-washing-machine'} >ماشین لباسشویی</NavLink>    
-            </ListItem>
-            <ListItem  role="none">
-            <NavLink className='navlinkin' to={'/shop-dishwasher'}>ماشین ظرفشویی</NavLink>
-            </ListItem>
-            <ListItem role="none">
-               <NavLink className=' navlinkin'  to={'/allrefriderators'} > یخجال و فریزر</NavLink>    
-            </ListItem>
-            <ListItem  role="none">
-            <NavLink className='navlinkin' to={'/allgas'}>پخت و پز  </NavLink>
-            </ListItem>
+   <div className='sscrol flex justify-end  mb-2 mt-0 mx-auto bg-zinc-100 z-10  overflow-x-auto  h-[80px] py-0 ' >
+   <List
+         role="menu"
+         aria-label="Products"
+         variant="outlined"
+         orientation="horizontal"
+         sx={{
+           mt: 0,
+        
+          
+           '--List-padding': '0.5px',
+           '--ListDivider-gap': '0px',
+           '--ListItemDecorator-size': '24px',
+           width:'100%',
+           backgroundColor:'transparent',
+           alignItems:'center',
+           border:"none"
+           
+          
+         }}
+       >
+   <NavLink  to={'/shop-washing-machine'} style={{  textDecoration: "none" }}> 
+         <ListItem role="none"
+          sx={{mr:"0",fontSize:"16px",color:"oklch(0.681 0.162 75.834)",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
+        ماشین لباسشویی 
+         </ListItem></NavLink>
+         <NavLink  to={'/allrefriderators'} style={{ textDecoration: "none"}}> 
+         <ListItem role="none" sx={{mr:"0",fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
+        یخچال و فریزر </ListItem>
+         </NavLink>
+        
+         <NavLink  to={'/allgas'} style={{ textDecoration: "none"}}> 
+         <ListItem role="none" sx={{mr:"0",fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
+         پخت و پز  </ListItem>
+         </NavLink>
+         <NavLink to={'/shop-dishwasher'} style={{ textDecoration: "none"}} >
+         <ListItem role="none" sx={{mr:"0",fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
+         ماشین ظرفشویی   
+         </ListItem></NavLink> 
           </List>
-        </Box>
+        </div>
           <CardWashingMachine itemsPerPage={6}/>
       <SlideOffProducts/>
           <Footer/>
    </>
    );}    
   
-
-
