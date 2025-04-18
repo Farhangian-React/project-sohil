@@ -116,7 +116,7 @@ export default function CollapsNavigationMenu() {
   return (
     <>
     
-    <div className='flex flex-row justify-start w-[150px]'
+    <div className='flex flex-row justify-start w-[150px] '
 >
    <div className='mr-2 ' >
  <IconButton
@@ -156,6 +156,7 @@ onClick={handleDrawerOpen}
    <Drawer
         sx={{
           flexShrink: 0,
+      
           '& .MuiDrawer-paper': {
             width: "300px",
             boxSizing: 'border-box',
@@ -163,13 +164,16 @@ onClick={handleDrawerOpen}
             display:"flex",
             flexDirection:"column",
             justifyContent:"start",
-            direction:"rtl"
+            direction:"rtl",
+          
+     
            
           },
         }}
         variant="persistent"
         anchor="right"
         open={open}
+       className='z-20'
       >
         <DrawerHeader sx={{display:"flex",justifyContent:"space-around",backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)"}}>
             <Grid sx={{width:"100%"}}>

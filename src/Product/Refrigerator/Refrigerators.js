@@ -115,17 +115,17 @@ export default  function Refrigerators() {
             </ListItem>
        
             <NavLink  to={'/shop-washing-machine'} style={{  textDecoration: "none" }}> 
-            <ListItem role="none" sx={{mr:"0",fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
+            <ListItem role="none" sx={{mr:"0",width:"150px",fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
            ماشین لباسشویی 
             </ListItem></NavLink>
 
            
             <NavLink  to={'/allgas'} style={{ textDecoration: "none"}}> 
-            <ListItem role="none" sx={{mr:"0",fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
+            <ListItem role="none" sx={{mr:"0",width:"90px",fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
             پخت و پز  </ListItem>
             </NavLink>
             <NavLink to={'/shop-dishwasher'} style={{ textDecoration: "none"}} >
-            <ListItem role="none" sx={{mr:"0",fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
+            <ListItem role="none" sx={{mr:"0",width:"150px",fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
             ماشین ظرفشویی   
             </ListItem></NavLink>  
           </List>

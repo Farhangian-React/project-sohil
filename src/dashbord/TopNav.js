@@ -274,7 +274,7 @@ dir='rtl' className='flex flex-row justify-around self-center md:hidden w-full h
 
 </nav>
     </HideOnScroll>
-          <nav className='hidden md:flex  justify-start sticky  top-0 px-1 mt-0 bg-black py-0 z-20 text-white'>
+          <nav className='hidden md:flex  justify-start sticky  top-0 px-1 mt-0 bg-black py-0 z-10 text-white'>
              <NavigationMenu/> 
    
             </nav>
