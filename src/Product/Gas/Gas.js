@@ -1,129 +1,142 @@
-import * as React from 'react';
-import Box from '@mui/joy/Box';
-import List from '@mui/joy/List';
-import ListItem from '@mui/joy/ListItem';
+import React,{useState} from "react";
 import {NavLink} from 'react-router-dom';
 import CardGas  from './CardGas'; 
 import Footer from '../../Footer/Footer';
 import TopNav from '../../dashbord/TopNav';
 import { PageTitle } from '../../Title/PageTitle';
-import ListItemButton from '@mui/material/ListItemButton';
-import Menu from '@mui/material/Menu';
 import "../Dishwasher/Dishwasher.css";
 import SlideOffProducts from "../../SlideOffProducts";
-import MenuItem from '@mui/material/MenuItem';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import {
+  ListItem,
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
+} from "@material-tailwind/react";
+import { FaChevronDown } from "react-icons/fa6";
 export default  function Gas() {
+  const [isMenuOpen1, setIsMenuOpen1] =useState(false);
+  const [isMobileMenuOpen1, setIsMobileMenuOpen1] =useState(false);
 
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
-    
-  const handleClick = (event) => {
-      setAnchorEl(event.currentTarget);
-    };
-    const handleClose = () => {
-      setAnchorEl(null);
-    };
   return (
 <>
 <PageTitle title='همه ی محصولات مرتبط با پخت و پز' description='  پخت و پز'/>
-   <TopNav/> 
- 
-<div className='sscrol flex justify-end  mb-2 mt-0 mx-auto bg-zinc-100 z-0  overflow-x-auto  h-[80px] py-0 ' >
-<List
-      role="menu"
-      aria-label="Products"
-      variant="outlined"
-      orientation="horizontal"
-      sx={{
-        mt: 0,
-     
-       
-        '--List-padding': '0.5px',
-        '--ListDivider-gap': '0px',
-        '--ListItemDecorator-size': '24px',
-        width:'100%',
-        backgroundColor:'transparent',
-        alignItems:'center',
-        border:"none"
-        
-       
-      }}
-    >
-       
-          <ListItem role="none"  sx={{mr:"0",fontSize:"18px",color:"oklch(0.681 0.162 75.834)" ,':hover':{color:"white"}}}>
-        
-        <ListItemButton 
-
-id="basic-button"
-aria-controls={open ? 'basic-menu' : undefined}
-aria-haspopup="true"
-aria-expanded={open ? 'true' : undefined}
-onClick={handleClick}
-
-      
-         className='
-               hover:rounded-tr-md hover:rounded-bl-md hover:rounded-tl-2xl hover:rounded-br-2xl
-                my-1 mx-8 px-10 py-1 text-white text-md font-sans hover:bg-gradient-to-r hover:from-gray-500
-               hover:via-yellow-500 hover:to-gray-500 hover:text-white'
-         >
-                پخت و پز 
-               
-              
-        <ArrowDropDownIcon sx={{fontSize:{xs:"2em",lg:"1.5em"},mt:"0.3em",color:"oklch(0.681 0.162 75.834)",':hover':{color:"white"} }} /></ListItemButton>
-        <Menu
-id="basic-menu"
-anchorEl={anchorEl}
-open={open}
-onClose={handleClose}
-MenuListProps={{
-  'aria-labelledby': 'basic-button'
-   }}
-   sx={
-    { "& .MuiMenu-paper": 
-      { backgroundColor: '#fff',width:'150px' } ,direction:'rtl'
-    }
-  }
+   <TopNav/>
+   <div className="sscrol  overflow-x-auto py-0 bg-zinc-100 mb-2">
+    <ul className=" flex uppercase font-bold mr-8">
+      <Menu
+      open={isMenuOpen1}
+      handler={setIsMenuOpen1}
+      offset={{ mainAxis: 20 }}
+      placement="bottom"
+      allowHover={true}
 >
-  <NavLink   to={'/shop-ranges' }
-  style={{ textDecoration: "none"}}> 
-  <MenuItem onClick={handleClose} disableRipple sx={{fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
-   اجاق گاز و فر  
-        </MenuItem></NavLink>
-       
-          <NavLink  to={'/shop-cooktop'}  style={{ textDecoration: "none"}}> 
-  <MenuItem onClick={handleClose} disableRipple sx={{fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
+<MenuHandler>
+<p className="font-medium">
+  <ListItem
+    className=" w-[120px] flex items-center py-2  font-medium rounded-none
+     text-gray-900
+     transition delay-150 duration-300 ease-in-out
+     hover:border-none hover:text-yellow-500"
+    selected={isMenuOpen1 || isMobileMenuOpen1}
+    onClick={() => setIsMobileMenuOpen1((cur) => !cur)}
+  >
+    پخت و پز 
+    <FaChevronDown
+      strokeWidth={2.5}
+      className={` h-3 w-3 mt-1 mr-2  transition-transform block ${
+        isMenuOpen1 ? "rotate-180" : ""
+      }`}
+    />
+    <FaChevronDown
+      strokeWidth={2.5}
+      className={` h-3 w-3 mt-1 mr-2  transition-transform hidden ${
+        isMobileMenuOpen1 ? "rotate-180" : ""
+      }`}
+    />
+  </ListItem>
+</p>
+</MenuHandler>
+<MenuList dir="ltr" className="  rounded-xl block w-[150px] mx-auto h-auto p-3 -mt-5">
+<ul className=" flex flex-col items-end outline-none outline-0">
+<NavLink to={'/shop-ranges' }>
+<MenuItem className="flex items-center pb-2 rounded-lg">
+<p className="flex text-gray-700 items-center text-sm font-bold hover:text-yellow-500" >
+ اجاق گاز و فر 
+  </p>
+</MenuItem>
+</NavLink>
+<NavLink to={'/shop-cooktop'} >
+<MenuItem className="flex items-center py-2 rounded-lg">
+<p className="flex text-gray-700 items-center text-sm font-bold hover:text-yellow-500" >
    گاز صفحه ای 
-   </MenuItem></NavLink>
-  <NavLink   to={'/shop-hood'} style={{ textDecoration: "none"}}> 
-  <MenuItem onClick={handleClose} disableRipple sx={{fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
-  
-        هود
-       </MenuItem> </NavLink>
-       <NavLink  to={'/shop-microwaves'} style={{ textDecoration: "none"}}> 
-  <MenuItem onClick={handleClose} disableRipple sx={{fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
-  
-      مایکروویو
-      </MenuItem>  </NavLink>
-      </Menu>
-</ListItem>
-     
-      <NavLink  to={'/allrefriderators'} style={{ textDecoration: "none"}}> 
-      <ListItem role="none" sx={{mr:"0",width:"120px",fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
-      یخچال و فریزر </ListItem>
-      </NavLink>
-      <NavLink  to={'/shop-washing-machine'} style={{  textDecoration: "none" }}> 
-      <ListItem role="none" sx={{mr:"0",width:"150px",fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
-     ماشین لباسشویی 
-      </ListItem></NavLink>
+  </p>
+</MenuItem>
+</NavLink>
+<NavLink to={'/shop-hood'}>
+<MenuItem className="flex items-center py-2 rounded-lg">
+<p className="flex text-gray-700 items-center text-sm font-bold hover:text-yellow-500" >
+ هود
+  </p>
+</MenuItem>
+</NavLink>
+<NavLink to={'/shop-microwaves'} >
+<MenuItem className="flex items-center py-2 rounded-lg">
+  <p className="flex text-gray-700 items-center text-sm font-bold hover:text-yellow-500" >
+مایکروویو
+  </p>
+</MenuItem>
+</NavLink>
+</ul>
+</MenuList>
+</Menu>
 
-      <NavLink to={'/shop-dishwasher'} style={{ textDecoration: "none"}} >
-      <ListItem role="none" sx={{mr:"0",width:"150px",fontSize:"16px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
-      ماشین ظرفشویی   
-      </ListItem></NavLink>  
-          </List>
-        </div>
-        
+ 
+  <NavLink
+   to={'/allrefriderators'}
+    style={({ isActive }) => ({
+      color: isActive ? "rgb(107, 33, 168)" : "#000",
+      textDecoration: "none",
+    })}
+  >
+   <li className=" w-[120px] flex text-sm items-center py-2 font-medium
+     text-gray-700
+     transition delay-150 duration-300 ease-in-out
+     hover:border-2 hover:border-transparent hover:border-b-yellow-500">
+    یخچال و فریزر
+    </li>
+  </NavLink>
+  <NavLink
+    to={'/shop-washing-machine' }
+    style={({ isActive }) => ({
+      color: isActive ? "rgb(107, 33, 168)" : "#000",
+      textDecoration: "none",
+    })}
+  >
+    <li className=" w-[120px] flex text-sm items-center py-2 font-medium
+     text-gray-700
+     transition delay-150 duration-300 ease-in-out
+     hover:border-2 hover:border-transparent hover:border-b-yellow-500">
+     ماشین لباسشویی
+    </li>
+  </NavLink>
+  <NavLink to={'/shop-dishwasher'} 
+    style={({ isActive }) => ({
+      color: isActive ? "rgb(107, 33, 168)" : "#000",
+      textDecoration: "none",
+    })}
+  >
+    <li className=" w-[120px] flex  text-sm items-center py-2  font-medium
+     text-gray-700
+     transition delay-150 duration-300 ease-in-out
+     hover:border-2 hover:border-transparent hover:border-b-yellow-500">
+     ماشین ظرفشویی
+    </li>
+  </NavLink>
+</ul>
+</div>
    <CardGas itemsPerPage={8}/>
    <SlideOffProducts/>
           <Footer/>

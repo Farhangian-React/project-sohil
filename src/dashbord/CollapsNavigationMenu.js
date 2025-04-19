@@ -165,7 +165,7 @@ onClick={handleDrawerOpen}
             flexDirection:"column",
             justifyContent:"start",
             direction:"rtl",
-          
+
      
            
           },
@@ -173,7 +173,7 @@ onClick={handleDrawerOpen}
         variant="persistent"
         anchor="right"
         open={open}
-       className='z-20'
+     
       >
         <DrawerHeader sx={{display:"flex",justifyContent:"space-around",backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)"}}>
             <Grid sx={{width:"100%"}}>
@@ -224,7 +224,7 @@ onClick={handleDrawerOpen}
               <Menu
           sx={
             { mt: "1px", "& .MuiMenu-paper": 
-              { backgroundColor: '#fff',width:'22em' } ,direction:'rtl'
+              { backgroundColor: '#fff',width:'300px' } ,direction:'rtl'
             }
           }
         id="demo-customized-menu"
@@ -236,20 +236,30 @@ onClick={handleDrawerOpen}
         open={opens1}
         onClose={handleClose1}
   
-      >
-        <MenuItem onClick={handleClose1} disableRipple>
-        
-        <NavLink  onClick={handleClose1} className='navlink' to={'/allrefriderators' } >یخچال و فریزر</NavLink> 
+      >  <NavLink  onClick={handleClose1} to={'/allrefriderators' } style={{ textDecoration: "none"}} >
+        <MenuItem onClick={handleClose1} disableRipplesx 
+        sx={{mr:"0",fontSize:"18px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
+      یخچال و فریزر
         </MenuItem>
-        <MenuItem onClick={handleClose1} disableRipple ><NavLink className='navlink' to={'/shop-washing-machine' }  >
+        </NavLink>
+         <NavLink style={{ textDecoration: "none"}} to={'/shop-washing-machine' }  >
+        <MenuItem onClick={handleClose1} disableRipple 
+           sx={{mr:"0",fontSize:"18px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
           ماشین لباسشویی
-       </NavLink> </MenuItem>
-        <MenuItem onClick={handleClose1} disableRipple><NavLink className='navlink'  to={'/shop-dishwasher'}>
+        </MenuItem>
+        </NavLink>
+        <NavLink style={{ textDecoration: "none"}}  to={'/shop-dishwasher'}>
+        <MenuItem onClick={handleClose1} disableRipple
+        sx={{mr:"0",fontSize:"18px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
           ماشین ظرفشویی
-        </NavLink></MenuItem>
-        <MenuItem onClick={handleClose1} disableRipple><NavLink className='navlink' to={'/allgas'}>
+       </MenuItem> 
+       </NavLink>
+       <NavLink style={{ textDecoration: "none"}} to={'/allgas'}>
+        <MenuItem onClick={handleClose1} disableRipple
+       sx={{mr:"0",fontSize:"18px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
            پخت و پز
-        </NavLink></MenuItem>
+       </MenuItem> 
+       </NavLink>
       
       </Menu>
             </ListItem>
@@ -271,18 +281,22 @@ onClick={handleDrawerOpen}
         onClose={handleClose2}
         sx={
           { mt: "1px", "& .MuiMenu-paper": 
-            { backgroundColor: '#fff',width:'22em' } ,direction:'rtl'
+            { backgroundColor: '#fff',width:'300px' } ,direction:'rtl'
           }
         }
       >
-        <MenuItem onClick={handleClose2} disableRipple><NavLink className='navlink' to={'/jashnehtabestane'}>
+        <NavLink to={'/jashnehtabestane'} style={{ textDecoration: "none"}} >
+        <MenuItem onClick={handleClose2} disableRipple
+       sx={{mr:"0",fontSize:"18px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
        
            جشنواره های زمستانه 1402
-        </NavLink></MenuItem>
-        <MenuItem onClick={handleClose2} disableRipple><NavLink className='navlink' to={'/karttakhfif'}>
-       
+        </MenuItem>
+        </NavLink>
+        <NavLink style={{ textDecoration: "none"}}  to={'/karttakhfif'}>
+        <MenuItem onClick={handleClose2} disableRipple 
+    sx={{mr:"0",fontSize:"18px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
            فعال سازی کارت تخفیف
-        </NavLink></MenuItem>
+        </MenuItem></NavLink>
       </Menu>
             </ListItem>
             <ListItem disablePadding sx={{width:"300px",display:"flex",justifyContent:"space-between",my:2,pl:1}}>
@@ -303,19 +317,28 @@ onClick={handleDrawerOpen}
         onClose={handleClose3}
           sx={
             { mt: "1px", "& .MuiMenu-paper": 
-              { backgroundColor: '#fff',width:'22em' } ,direction:'rtl'
+              { backgroundColor: '#fff',width:'300px' } ,direction:'rtl'
             }
           }
       >
-        <MenuItem onClick={handleClose3} disableRipple><NavLink className='navlink'  to={'/AfterSalesService'}>
+        <NavLink  to={'/AfterSalesService'} style={{ textDecoration: "none"}} >
+        <MenuItem onClick={handleClose3} disableRipple
+          sx={{mr:"0",fontSize:"18px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
              خدمات پس از فروش
-       </NavLink> </MenuItem>
-        <MenuItem onClick={handleClose3} disableRipple><NavLink className='navlink' to={'/ContactUsForm'} >
+    </MenuItem>  
+     </NavLink> 
+    <NavLink to={'/ContactUsForm'} style={{ textDecoration: "none"}} >
+        <MenuItem onClick={handleClose3} disableRipple
+          sx={{mr:"0",fontSize:"18px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
              فرم تماس با ما 
-        </NavLink></MenuItem>
-        <MenuItem onClick={handleClose3} disableRipple><NavLink className='navlink' to={'/PopularQuestions'}>
+       </MenuItem> 
+       </NavLink>
+       <NavLink  to={'/PopularQuestions'} style={{ textDecoration: "none"}} >
+        <MenuItem onClick={handleClose3} disableRipple
+          sx={{mr:"0",fontSize:"18px",color:"#414141",':hover':{color:"oklch(0.681 0.162 75.834)"}}}>
           سوالات متداول 
-  </NavLink></MenuItem>
+ </MenuItem> 
+ </NavLink>
       </Menu>
             </ListItem>
             <ListItem disablePadding sx={{width:"300px",display:"flex",justifyContent:"space-between",my:2}}>
