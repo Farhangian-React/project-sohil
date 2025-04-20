@@ -11,7 +11,7 @@ export default  function Dishwasher() {
 <>
 <PageTitle title='ماشین ظرفشویی ' description='   ماشین ظرفشویی'/>
    <TopNav/> 
-   <div className="sscrol  overflow-x-auto py-0 bg-zinc-100 mb-2">
+   <div className="  overflow-x-auto  [&::-webkit-scrollbar]:w-0 py-1 bg-zinc-100 mb-2">
     <ul className=" flex uppercase font-bold mr-8">
     <NavLink to={'/shop-dishwasher'} 
     style={({ isActive }) => ({

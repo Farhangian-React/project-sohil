@@ -17,6 +17,9 @@ import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Slide from '@mui/material/Slide';
 import SearchButton from './SearchButton';
 import { styled } from '@mui/material/styles';
+import { RiRoadMapLine } from "react-icons/ri";
+import { RiShoppingCartLine } from "react-icons/ri";
+import CollapsNavigationMenu from './CollapsNavigationMenu';
 import "./E.css";
 function HideOnScroll(props) {
   const { children, window } = props;
@@ -270,7 +273,37 @@ dir='rtl' className='flex flex-row justify-around self-center md:hidden w-full h
 
 
 </div>
-<SearchButton/>
+<div>
+  <div dir='ltr' className='mt-1 flex md:hidden justify-start '>  <CollapsNavigationMenu />   
+            </div>
+           
+          <div className='hidden md:flex justify-between mx-5 py-1 mt-0 z-20'>  
+             <div className='mt-4'   >
+            <NavLink className="signup"  to={'/signup'}>
+                         
+                         
+                   <RiRoadMapLine className='w-6 h-6 text-yellow-600'   />
+                  
+             
+               </NavLink>
+               
+               </div>
+               <div    className='mt-3 ' >
+               <p className='text-yellow-200 px-2 text-2xl '>/</p>
+              </div>
+              <div  className='mt-4' >
+            <NavLink className="signup"  to={'/signup'}>
+                         
+                         
+                   <RiShoppingCartLine className='w-6 h-6 text-yellow-600'   />
+                  
+             
+               </NavLink>
+               
+               </div>
+           
+    </div>
+  </div>
 
 </nav>
     </HideOnScroll>

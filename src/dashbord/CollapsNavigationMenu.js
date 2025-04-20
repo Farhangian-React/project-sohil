@@ -116,7 +116,7 @@ export default function CollapsNavigationMenu() {
   return (
     <>
     
-    <div className='flex flex-row justify-start w-[150px] z-30 '
+    <div className='flex flex-row justify-start w-[150px] '
 >
    <div className='mr-2 ' >
  <IconButton
@@ -165,6 +165,7 @@ onClick={handleDrawerOpen}
             flexDirection:"column",
             justifyContent:"start",
             direction:"rtl",
+           
 
      
            
@@ -211,7 +212,7 @@ onClick={handleDrawerOpen}
         </DrawerHeader>
       
         <List 
-       
+     
         >
             <ListItem disablePadding sx={{width:"300px",display:"flex",justifyContent:"space-between",my:2,pl:1}}>
              <ListItemButton  className='text-[18px] text-gray-700 font-bold '
