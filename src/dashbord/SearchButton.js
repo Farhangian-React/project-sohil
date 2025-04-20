@@ -104,7 +104,7 @@ const handleInputChange = (e) => {
 <div dir='ltr' className='mt-1 flex md:hidden justify-start'>  <CollapsNavigationMenu />   
           </div>
          
-        <div className='hidden md:flex justify-between mx-5 py-1 mt-0'>  
+        <div className='hidden md:flex justify-between mx-5 py-1 mt-0 z-20'>  
            <div className='mt-4'   >
           <NavLink className="signup"  to={'/signup'}>
                        

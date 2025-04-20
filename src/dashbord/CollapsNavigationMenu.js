@@ -116,7 +116,7 @@ export default function CollapsNavigationMenu() {
   return (
     <>
     
-    <div className='flex flex-row justify-start w-[150px] '
+    <div className='flex flex-row justify-start w-[150px] z-30 '
 >
    <div className='mr-2 ' >
  <IconButton

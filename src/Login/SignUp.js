@@ -94,37 +94,31 @@ fetch("https://serverjson-project.onrender.com/users",{
       <div>
      <ToastContainer/>  
     </div>
-   <Box 
-      sx={{
-
-        display:'flex',
-        justifyContent:'start',
-        flexDirection:{xs:"column",lg:"row"},
-       backgroundImage: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcDOnBx2I4GMh9q1Z37yKX3mF9YEdMC9i2GQ&s")`,
-       backgroundPosition: 'center',
-       backgroundSize: 'cover',
-       backgroundRepeat: 'no-repeat',
-       height:{xs:'100vh',lg:"85vh"},
-       width:'100%'
-       }} >
-      <Box maxWidth="xs"  sx={{ display:"flex",justifyContent:"center",flexDirection:"column",alignSelf:{xs:"center",lg:"start"},mx:10,mt:{xs:20,lg:2},
-      height:{xs:"650px",lg:"550px"},border:"2px solid white",backdropFilter:"blur(25px)",px:4,py:1}} >
-        <Typography   sx={{fontSize:{xs:"36px",lg:"30px"},textAlign:"center",mt:1.5,pb:2,color:"#eee"}}>
+    <div className='w-full h-auto flex justify-start flex-col md:flex-row  bg-cover bg-center bg-no-repeat '
+    style={{backgroundImage: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcDOnBx2I4GMh9q1Z37yKX3mF9YEdMC9i2GQ&s")`}}
+     >
+ 
+      <div className='container flex justify-center flex-col self-center md:self-start mx-3 mt-3 h-auto
+      border-2 border-white backdrop-blur-sm  p-3'>
+        <p className='text-lg font-bold text-white text-center mt-1  '>
        عضویت در سایت سهیل
-        </Typography>
-        <Grid sx={{mb:0,borderBottom:"1px solid white",display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
-        <Typography  sx={{fontSize:"22px",color:"#cecece",mb:0,pb:0}}>
+        </p>
+        <div className=' flex flex-row justify-between border-b-2 border-white h-[50px]' >
+        <p className='text-sm text-center text-white p-2'>
      قبلا عضو شده اید؟
-        </Typography>
-        <NavLink to={"/signin"}><Button  sx={{px:3,py:0,':hover':{backgroundImage:"linear-gradient(to right ,#eeeeee,#282828)",
-       color:'white'},fontSize:{xs:"24px",md:"20px"},color:'#cecece',mb:1,
-       backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)"}}>ورود</Button></NavLink>
-        </Grid>
+        </p>
+        <NavLink to={"/signin"}><button 
+       className='bg-gradient-to-r from-yellow-500 via-yellow-900 to-yellow-500 
+       rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl my-1 mx-2 px-4 pb-1 text-white text-md font-sans
+        hover:bg-gradient-to-r hover:from-gray-500
+       hover:via-yellow-500 hover:to-gray-500'
+        >ورود</button></NavLink>
+        </div>
         <form  noValidate onSubmit={handlesubmit}>
           <Grid container spacing={2} sx={{mt:1}}>
          
             <Grid  item xs={12} sm={6}  >
-            <FormLabel sx={{fontSize:"15px",mb:1,color:"#cecece"}}>نام</FormLabel>
+            <FormLabel sx={{fontSize:"12px",mb:1,color:"#cecece"}}>نام</FormLabel>
               <Input
             color="warning"
             placeholder='نام'
@@ -139,7 +133,7 @@ fetch("https://serverjson-project.onrender.com/users",{
                 value={fname}
                 onChange={(e)=> setFname(e.target.value)}
                className='input'
-               sx={{fontSize:"18px"}}
+               sx={{fontSize:"14px"}}
               />
               <Typography variant='body2' sx={{color:"#f54141",mt:1}}>
                
@@ -147,7 +141,7 @@ fetch("https://serverjson-project.onrender.com/users",{
               </Typography>
             </Grid>
             <Grid item xs={12} sm={6}>
-            <FormLabel sx={{fontSize:"15px",mb:1,color:"#cecece"}}>نام خانوادگی</FormLabel>
+            <FormLabel sx={{fontSize:"12px",mb:1,color:"#cecece"}}>نام خانوادگی</FormLabel>
               <Input
               color="warning"
               placeholder='نام خانوادگی'
@@ -160,7 +154,7 @@ fetch("https://serverjson-project.onrender.com/users",{
                 autoComplete="lname"
                 value={lname}
                 onChange={(e)=> setLname(e.target.value)}
-                sx={{fontSize:"18px"}}
+                sx={{fontSize:"14px"}}
               />
                <Typography variant='body2' sx={{color:"#f54141",mt:1}}>
                
@@ -168,7 +162,7 @@ fetch("https://serverjson-project.onrender.com/users",{
              </Typography>
             </Grid>
             <Grid  item xs={12} sm={6}  >
-            <FormLabel sx={{fontSize:"15px",mb:1,color:"#cecece"}}>نام کاربری</FormLabel>
+            <FormLabel sx={{fontSize:"12px",mb:1,color:"#cecece"}}>نام کاربری</FormLabel>
               <Input
             color="warning"
             placeholder='نام کاربری'
@@ -182,7 +176,7 @@ fetch("https://serverjson-project.onrender.com/users",{
                 defaultValue={""}
                 value={id}
                 onChange={(e)=> setId(e.target.value)}
-                sx={{fontSize:"18px"}}
+                sx={{fontSize:"14px"}}
               
               />
               <Typography variant='body2' sx={{color:"#f54141",mt:1}}>
@@ -191,7 +185,7 @@ fetch("https://serverjson-project.onrender.com/users",{
               </Typography>
             </Grid>
             <Grid item xs={12} sm={6}>
-            <FormLabel sx={{fontSize:"15px",mb:1,color:"#cecece"}}> رمز  </FormLabel>
+            <FormLabel sx={{fontSize:"12px",mb:1,color:"#cecece"}}> رمز  </FormLabel>
               <Input
               color="warning"
               placeholder="رمز" 
@@ -205,7 +199,7 @@ fetch("https://serverjson-project.onrender.com/users",{
                 defaultValue={""}
                 value={password}
                 type="password"
-                sx={{fontSize:"18px"}}
+                sx={{fontSize:"14px"}}
                
                
                 onChange={(e)=> setPassword(e.target.value)}
@@ -216,7 +210,7 @@ fetch("https://serverjson-project.onrender.com/users",{
              </Typography>
             </Grid>
             <Grid item xs={12}>
-            <FormLabel sx={{fontSize:"15px",mb:1,color:"#cecece"}}>آدرس ایمیل  </FormLabel>
+            <FormLabel sx={{fontSize:"12px",mb:1,color:"#cecece"}}>آدرس ایمیل  </FormLabel>
               <Input
                 color="warning"
               placeholder='آدرس ایمیل'
@@ -227,7 +221,7 @@ fetch("https://serverjson-project.onrender.com/users",{
               
                 value={email}
                 onChange={(e)=> setEmail(e.target.value)}
-                sx={{fontSize:"18px"}}
+                sx={{fontSize:"14px"}}
               />
               <Typography variant='body2' sx={{color:"#f54141",mt:1}}>
                
@@ -235,27 +229,26 @@ fetch("https://serverjson-project.onrender.com/users",{
              </Typography>
             </Grid>
            
-            <Grid item xs={12}>
+            <Grid item xs={12} >
               <FormControlLabel
              
-                control={<Checkbox color="info" value="allowExtraEmails" sx={{fontSize:"22px",color:"#E0AA3E"}} />}
+                control={<Checkbox color="info" value="allowExtraEmails" sx={{fontSize:"10px",color:"#E0AA3E"}} />}
                 label="ثبت نام و استفاده از سهیل به معنی پذیرش قوانین و مقررات آن است."
-                sx={{color:"#eee"}}
+                sx={{color:"#eee",fontSize:"10px",px:1}}
               />
             </Grid>
           </Grid>
-          <Button
-           sx={{':hover':{backgroundImage:"linear-gradient(to right ,#eeeeee,#282828)",
-           color:'white'},fontSize:{xs:"24px",md:"20px"},color:'#eeeeee',mt:{xs:1.5,lg:0.3},py:0.3,
-           backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)"}}
-            type="submit"
-            fullWidth
+          <button  type='submit'
+          className=' bg-gradient-to-r from-yellow-500 via-yellow-900 to-yellow-500 
+          rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl my-1 mx-40 self-center px-4 pb-1 text-white text-md font-sans
+           hover:bg-gradient-to-r hover:from-gray-500
+          hover:via-yellow-500 hover:to-gray-500'
           >
            عضویت
-          </Button>
+          </button>
         </form>
      
-    </Box>
+    </div>
     <Box sx={{width:"100%",display:"flex",justifyContent:"center",alignSelf:"start",mx:1,mt:1}}> 
    <Box sx={{alignSelf:"center",
        display:"flex",
@@ -271,7 +264,7 @@ fetch("https://serverjson-project.onrender.com/users",{
       }}>
         </Box>
     </Box>
-    </Box>
+    </div>
     <Footer/>
     </>
   );

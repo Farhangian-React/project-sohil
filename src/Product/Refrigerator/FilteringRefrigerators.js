@@ -1496,7 +1496,7 @@ const handleChangeE1=(e)=>{
       </Accordion>
 </div>
      
-<div className='flex flex-col justify-start md:hidden w-[95%] self-center ' >
+<div className='flex flex-col justify-start md:hidden w-[95%] self-center z-0' >
 <Accordion
         expanded={index1 === 0}
         onChange={(event, expanded) => {
