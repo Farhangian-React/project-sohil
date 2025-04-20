@@ -25,7 +25,7 @@ export default  function Refrigerators() {
 <>
 <PageTitle title=' همه ی یخچال و فریزرها  ' description='   یخجال و فریزر '/>
    <TopNav/> 
-   <div className=" overflow-x-auto  [&::-webkit-scrollbar]:w-0  py-1 md:bg-zinc-100 bg-orange-200  mb-2">
+   <div className=" overflow-x-auto  [&::-webkit-scrollbar]:w-0  py-2 md:bg-zinc-100 bg-blue-200  mb-2">
     <ul className=" flex uppercase font-bold mr-8">
       <Menu
       open={isMenuOpen1}
