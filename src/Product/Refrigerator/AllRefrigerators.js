@@ -104,8 +104,9 @@ useEffect(()=>{
       </p>
 </div>  
     <div className='flex flex-col md:flex-row justify-start w-[100vw] bg-zinc-100 m-auto' >
-      <div className='flex w-[90vw] md:w-[30vw] static md:sticky md:top-[80px] self-center md:self-start md:h-[70vh] z-10 '>
- <FilteringRefrigerators/></div>
+      <div className=' flex w-[90vw] md:w-[30vw] static md:sticky md:top-[80px] self-center md:self-start md:h-[70vh]   '>
+        <FilteringRefrigerators/>
+ </div>
 
 
 

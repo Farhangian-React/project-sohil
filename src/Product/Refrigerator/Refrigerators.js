@@ -25,7 +25,7 @@ export default  function Refrigerators() {
 <>
 <PageTitle title=' همه ی یخچال و فریزرها  ' description='   یخجال و فریزر '/>
    <TopNav/> 
-   <div className=" overflow-x-auto  [&::-webkit-scrollbar]:w-0  py-2 md:bg-zinc-100 bg-blue-200  mb-2">
+   <div className=" overflow-x-auto  [&::-webkit-scrollbar]:w-0  py-1 bg-zinc-100  mb-2">
     <ul className=" flex uppercase font-bold mr-8">
       <Menu
       open={isMenuOpen1}
@@ -110,7 +110,7 @@ export default  function Refrigerators() {
       textDecoration: "none",
     })}
   >
-    <li className=" w-[120px] flex text-sm items-center py-2 font-medium
+    <li className=" w-[120px] flex text-sm items-center py-2 font-medium  mx-1 sm:mx-0
      text-gray-700
      transition delay-150 duration-300 ease-in-out
      hover:border-2 hover:border-transparent hover:border-b-yellow-500">
@@ -123,8 +123,7 @@ export default  function Refrigerators() {
       textDecoration: "none",
     })}
   >
-    <li className=" w-[120px] flex  text-sm items-center py-2  font-medium
-     text-gray-700
+    <li className=" w-[120px] flex  text-sm items-center py-2  font-medium mx-1 sm:mx-0
      transition delay-150 duration-300 ease-in-out
      hover:border-2 hover:border-transparent hover:border-b-yellow-500">
      ماشین ظرفشویی
@@ -137,7 +136,7 @@ export default  function Refrigerators() {
       textDecoration: "none",
     })}
   >
-   <li className=" w-[120px] flex text-sm items-center py-2 font-medium
+   <li className=" w-[120px] flex text-sm items-center py-2 font-medium  mx-1 sm:mx-0
      text-gray-700
      transition delay-150 duration-300 ease-in-out
      hover:border-2 hover:border-transparent hover:border-b-yellow-500">

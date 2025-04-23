@@ -1496,14 +1496,15 @@ const handleChangeE1=(e)=>{
       </Accordion>
 </div>
      
-<div className='flex flex-col justify-start md:hidden w-[95%] self-center z-0' >
+<div className=' flex flex-col justify-start md:hidden w-[95%] self-center' >
 <Accordion
+
         expanded={index1 === 0}
         onChange={(event, expanded) => {
           setIndex1(expanded ? 0 : null);
         }}
-        className=' mr-2 mt-0
-    bg-gradient-to-r from-gray-500 via-yellow-500 to-gray-500 text-white '
+        className='mr-2 mt-0 
+    bg-gradient-to-r from-gray-500 via-yellow-500 to-gray-500 text-white    '
         
       >
         <AccordionSummary  sx={{fontSize:'16px',direction:'rtl'}} 
@@ -1524,7 +1525,7 @@ const handleChangeE1=(e)=>{
         </div>
           </AccordionSummary>
         <AccordionDetails className='-mt-9' >
-        <FormGroup>
+        <FormGroup className='mt-2'>
 <Accordion
         expanded={index === 0}
         onChange={(event, expanded) => {

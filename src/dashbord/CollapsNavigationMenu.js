@@ -155,8 +155,9 @@ onClick={handleDrawerOpen}
 
    <Drawer
         sx={{
+       
           flexShrink: 0,
-      
+   
           '& .MuiDrawer-paper': {
             width: "300px",
             boxSizing: 'border-box',
@@ -165,18 +166,17 @@ onClick={handleDrawerOpen}
             flexDirection:"column",
             justifyContent:"start",
             direction:"rtl",
-           
-
-     
+    
            
           },
         }}
         variant="persistent"
         anchor="right"
         open={open}
-     
+     className='z-50'
       >
-        <DrawerHeader sx={{display:"flex",justifyContent:"space-around",backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)"}}>
+        <DrawerHeader  className='bg-gradient-to-r from-gray-500 via-yellow-500 to-gray-500 text-white  '
+         sx={{display:"flex",justifyContent:"space-around"}}>
             <Grid sx={{width:"100%"}}>
            <Typography
     
@@ -206,7 +206,7 @@ onClick={handleDrawerOpen}
             <IconButton 
              title='Title'
             onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <ChevronLeftIcon sx={{fontSize:"34px"}} /> : <ChevronRightIcon sx={{fontSize:"34px"}}/>}
+            {theme.direction === 'ltr' ? <ChevronLeftIcon sx={{fontSize:"34px",color:"white"}} /> : <ChevronRightIcon sx={{fontSize:"34px",color:"white"}}/>}
           </IconButton>
             
         </DrawerHeader>
@@ -373,9 +373,10 @@ onClick={handleDrawerOpen}
             </ListItem>
         </List>
         <NavLink className="signup"  to={"/signin"}>
-        <Box sx={{display:"flex",flexDirection:"row",justifyContent:"center",mx:1,px:2,backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)",pb:1,borderRadius:1}}>
-           <Typography  sx={{mt:2,color:"#eeeeee",fontSize:"18px"}}>ورود یا عضویت </Typography>
-           <PermIdentityOutlinedIcon  sx={{mt:1.5,mr:2,fontSize:'28px',color:'white'}} />
+        <Box className='bg-gradient-to-r from-gray-500 via-yellow-500 to-gray-500 text-white  '
+         sx={{display:"flex",flexDirection:"row",justifyContent:"center",mx:1,px:2,pb:1,borderRadius:1}}>
+           <p className='text-sm text-white font-bold mt-3'>ورود یا عضویت </p>
+           <RiRoadMapLine className='h-5 w-5 text-white font-bold mt-3 mr-3' />
        </Box>
        </NavLink>
       </Drawer>

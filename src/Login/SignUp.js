@@ -98,7 +98,7 @@ fetch("https://serverjson-project.onrender.com/users",{
     style={{backgroundImage: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcDOnBx2I4GMh9q1Z37yKX3mF9YEdMC9i2GQ&s")`}}
      >
  
-      <div className='container flex justify-center flex-col self-center md:self-start mx-3 mt-3 h-auto
+      <div className='w-[85%] mx-auto md:w-[95%] md:mx-3 flex justify-center flex-col self-center md:self-start  mt-5 h-auto
       border-2 border-white backdrop-blur-sm  p-3'>
         <p className='text-lg font-bold text-white text-center mt-1  '>
        عضویت در سایت سهیل
