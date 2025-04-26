@@ -1,0 +1,85 @@
+.banner{
+height: 50vh;
+    background-image:url('https://media.licdn.com/dms/image/D5612AQHVuQxCMAMmkA/article-cover_image-shrink_600_2000/0/1709023232761?e=2147483647&v=beta&t=DXeQ-HgpoBvjJwYGToBFkf7YcWS_sjRqfezpvrmSuxo');
+  
+    background-size: cover;
+}
+.button:hover{
+    color: black;
+    background-color: #FFC412;
+}
+
+.sheetus1{
+   
+    background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtJG0SBMxBY8WuJuSw0Ez2bNkOG7MvwqdIn6RWvspRLusWG_wy7XI5ciyNCekTaF_4-Hg&usqp=CAU');
+    background-size: cover;
+}
+
+.boxmain{
+  position: relative;  
+}
+.boxheader{
+    position: absolute;
+    top:50%;
+    right: 43%;
+    background-color: #E0AA3E;
+    width: 15%;
+    height: 40px;
+}
+@media only screen and (max-width: 768px){
+    .boxheader{
+        position: absolute;
+        top:5px;
+        right:6px ;
+        background-color: #E0AA3E;
+        width: 15%;
+        height: 30px;
+    }
+}
+
+button {
+    /* Variables */
+    --button_radius: 0.75em;
+    --button_color: #151313;
+    --button_outline_color: #E0AA3E;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--button_radius);
+    background: var(--button_outline_color);
+   
+  }
+  
+  .formbutton {
+    display: block;
+    box-sizing:border-box;
+    border: 2px solid var(--button_outline_color);
+    border-radius: var(--button_radius);
+    padding: 0.75em 1.5em;
+    background: var(--button_color);
+    color: var(--button_outline_color);
+    transform: translateY(-0.2em);
+    transition: transform 0.1s ease;
+  font-size: small;
+   
+  }
+  
+  button:hover .formbutton {
+    /* Pull the button upwards when hovered */
+    transform: translateY(-0.33em);
+  }
+  
+  button:active .formbutton {
+    /* Push the button downwards when pressed */
+    transform: translateY(0);
+  }
+  .cc{
+    overflow: visible;
+    height: auto;
+    padding: 20px 50px;
+    
+}
+.refbutton{
+    display: none;
+}
