@@ -98,7 +98,7 @@ fetch("https://serverjson-project.onrender.com/users",{
     style={{backgroundImage: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcDOnBx2I4GMh9q1Z37yKX3mF9YEdMC9i2GQ&s")`}}
      >
  
-      <div className='w-[85%] mx-auto md:w-[95%] md:mx-3 flex justify-center flex-col self-center md:self-start  mt-5 h-auto
+      <div className='w-[85%] mx-auto md:mx-5 flex justify-center flex-col self-center md:self-start  mt-5  h-auto md:h-[450px] mb-5
       border-2 border-white backdrop-blur-sm  p-3'>
         <p className='text-lg font-bold text-white text-center mt-1  '>
        عضویت در سایت سهیل
@@ -238,32 +238,37 @@ fetch("https://serverjson-project.onrender.com/users",{
               />
             </Grid>
           </Grid>
+          <div className='flex justify-center h-[35px] bg-transparent self-center '>
           <button  type='submit'
           className=' bg-gradient-to-r from-yellow-500 via-yellow-900 to-yellow-500 
-          rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl my-1 mx-40 self-center px-4 pb-1 text-white text-md font-sans
+          rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl my-2 self-center px-4 pb-1 text-white text-md font-sans
            hover:bg-gradient-to-r hover:from-gray-500
           hover:via-yellow-500 hover:to-gray-500'
           >
            عضویت
-          </button>
+          </button></div>
         </form>
      
     </div>
-    <Box sx={{width:"100%",display:"flex",justifyContent:"center",alignSelf:"start",mx:1,mt:1}}> 
-   <Box sx={{alignSelf:"center",
+    <div className='w-[90%] flex justify-center self-center mx-auto -mt-10 bg-transparent h-[400px] ' 
+   > 
+   <Box 
+   
+   sx={{alignSelf:"start",
+    justifyContent:"start",
        display:"flex",
        borderRadius:1,
-       backgroundImage:{xs:`url(${logimage})`,lg:`url(${logimage1})`},
-       backgroundPosition: 'center',
+       backgroundImage:{xs:`url(${logimage1})`,md:`url(${logimage1})`},
+       backgroundPosition: "center",
        backgroundSize:"contained",
        backgroundRepeat: 'no-repeat',
-       width:"100%",
-       height:{xs:"600px",lg:"600px"},
-       mt:{xs:10,md:1},
+       width:"90%",
+       height:'90%',
+       mt:2,
      
       }}>
         </Box>
-    </Box>
+    </div>
     </div>
     <Footer/>
     </>

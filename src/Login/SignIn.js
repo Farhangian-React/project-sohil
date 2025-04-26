@@ -15,7 +15,7 @@ import Grid from "@mui/material/Grid";
 import TopNav from '../dashbord/TopNav';
 import Footer from '../Footer/Footer';
 import { PageTitle } from '../Title/PageTitle';
-import logimage from "../img/loge1.png";
+import logimage from "../img/loge2.png";
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 const SignIn = () => {
@@ -94,23 +94,15 @@ navigate("/")
       <div>
      <ToastContainer/>  
     </div>
-   <Box 
-      sx={{
-        display:'flex',
-        justifyContent:'start',
-        flexDirection:{xs:"column",lg:"row"},
-       backgroundImage: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcDOnBx2I4GMh9q1Z37yKX3mF9YEdMC9i2GQ&s")`,
-       backgroundPosition: 'center',
-       backgroundSize: 'cover',
-       backgroundRepeat: 'no-repeat',
-       height:{xs:'100vh',lg:"85vh"},
-       width:'100%'
-       }} >
-      <Box minWidth="xs"  sx={{display:"flex",justifyContent:"center",flexDirection:"column",alignSelf:{xs:"center",lg:"start"},mx:10,mt:{xs:20,lg:3},
-      height:{xs:"600px",lg:"450px"},border:"2px solid white",backdropFilter:"blur(25px)",px:4,py:2}} >
-        <Typography  sx={{fontSize:{xs:"36px",lg:"30px"},textAlign:"center",mt:{xs:1,lg:1},color:"#fff"}}>
+    <div className='w-full h-auto flex justify-start flex-col md:flex-row  bg-cover bg-center bg-no-repeat '
+    style={{backgroundImage: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcDOnBx2I4GMh9q1Z37yKX3mF9YEdMC9i2GQ&s")`}}
+     >
+ 
+      <div className='w-[85%] md:w-[70%] mx-auto md:mx-5 flex justify-center flex-col self-center md:self-start  mt-5  h-auto md:h-[450px] mb-5
+      border-2 border-white backdrop-blur-sm  p-3'>
+  <p className='text-lg font-bold text-white text-center mt-1  '>
        ورود به حساب کاربری
-        </Typography>
+        </p>
        
         <form  noValidate onSubmit={handlesubmit}>
           <Grid container spacing={2} sx={{mt:1}}>
@@ -174,51 +166,57 @@ navigate("/")
  
 
           
-         
-          <Button 
+  <div className='flex justify-around flex-row h-[35px] bg-transparent self-center mx-auto my-5 '>
+          <button 
     onClick={loading}
-           sx={{':hover':{backgroundImage:"linear-gradient(to right ,#eeeeee,#282828)",
-           color:'white'},fontSize:{xs:"24px",lg:"20px"},color:'#eeeeee',my:{xs:5,lg:2},px:1,py:0.3,
-           backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)"}}
-            type="submit"
+           className='bg-gradient-to-r from-yellow-500 via-yellow-900 to-yellow-500 
+       rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl my-1 mx-2 px-10 pb-1 text-white text-md font-sans
+        hover:bg-gradient-to-r hover:from-gray-500
+       hover:via-yellow-500 hover:to-gray-500'
            fullWidth
           >
            ورود
-          </Button>
+          </button>
 
           <NavLink to={"/signup"}>
-          <Button
-           sx={{':hover':{backgroundImage:"linear-gradient(to right ,#eeeeee,#282828)",
-           color:'white'},fontSize:{xs:"24px",lg:"20px"},color:'#eeeeee',my:0,px:1,py:0.3,
-           backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)"}}
+          <button
+    className='bg-gradient-to-r from-yellow-500 via-yellow-900 to-yellow-500 
+    rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl my-1 mx-2 px-10 pb-1 text-white text-md font-sans
+     hover:bg-gradient-to-r hover:from-gray-500
+    hover:via-yellow-500 hover:to-gray-500'
            
           fullWidth
           >
            عضویت
-          </Button></NavLink>
+          </button></NavLink>
+          </div>
           
         
          </form>
-      </Box>
+      </div>
    
 
-
-    <Box sx={{width:"100%",display:"flex",justifyContent:"center",alignSelf:"start",mx:1,mt:1}}> 
-   <Box sx={{alignSelf:"center",
+      <div className='w-[90%] flex justify-center self-center mx-auto -mt-3 bg-transparent h-[400px] ' 
+   > 
+   <Box 
+   
+   sx={{alignSelf:"start",
+    justifyContent:"start",
        display:"flex",
        borderRadius:1,
-       backgroundImage:{xs:`url(${logimage})`,lg:`url(${logimage})`},
-       backgroundPosition: 'center',
+       backgroundImage:{xs:`url(${logimage})`,md:`url(${logimage})`},
+       backgroundPosition: "center",
        backgroundSize:"contained",
        backgroundRepeat: 'no-repeat',
-       width:"100%",
-       height:{xs:"300px",md:"600px"},
-       mt:{xs:10,md:1},
+       width:"90%",
+       height:'90%',
+       mt:2,
      
       }}>
         </Box>
-    </Box>
-   </Box>
+    </div>
+
+   </div>
     <Footer/>
     </>
   );

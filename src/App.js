@@ -40,6 +40,8 @@ import ContactUsForm from './Service/ContactUsForm';
 import ProductOff from "./jashnvareh/ProductOff";
 import ProductJashnvareh from "./jashnvareh/ProductJashnvareh";
 import CartBuyJashnvareh from "./jashnvareh/CartBuyJashnvareh";
+import AboutSnova from './About Us/AboutSvova';
+import LifeStyle from "./LifeStyle/LifeStyle"
 import Stores from './Stores/Stores';
 
 function App() {
@@ -69,7 +71,6 @@ function App() {
              <Route path="/shop-refrideratorspecializedfreezer"  element={<RefrideratorSpecializedFreezer/>} />
              <Route path='/shop-washing-machine'  element={<WashingMachine/>} />
              <Route path='/shop-dishwasher'  element={ <Dishwasher/>} />
-     
              <Route path='/karttakhfif'  element={<CodeTakhfif/>} />
              <Route path='/jashnehtabestane'  element={<TabestaneJashnvareh/>} />
              <Route path='/water-temperature'  element={<WaterTemperature/>} />
@@ -85,7 +86,9 @@ function App() {
              <Route path='/ProductOff'  element={<ProductOff/>} />
              <Route path='/ProductJashnvareh'  element={<ProductJashnvareh/>} />
              <Route path='/CartBuyJashnvareh'  element={<CartBuyJashnvareh/>} />
-            
+             <Route path='/Stores'  element={<Stores/>} />
+             <Route path='/about-snova'  element={<AboutSnova/>} />
+             <Route path='/life-style'  element={<LifeStyle/>} />
              <Route path="*" element={<PageNotFount/>} />
         </Routes>
         </div>

@@ -103,7 +103,7 @@ const Refrigerators  = React.forwardRef(({ focusNext, focusPrevious, ...props },
   return (
     <ClickAwayListener onClickAway={() => setAnchorEl(null)}>
       <Box onMouseLeave={() => setAnchorEl(null)}>
-      <NavLink className='navlinkactiv' to={"/allrefriderators" } >
+      <NavLink  to={"/allrefriderators" } >
         <button
           aria-expanded={open ? 'true' : 'false'}
           ref={ref}
@@ -125,10 +125,9 @@ const Refrigerators  = React.forwardRef(({ focusNext, focusPrevious, ...props },
             props.onMouseEnter?.(event);
             setAnchorEl(event.currentTarget);
           }}
-         className='
-       rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl my-0  px-1.5 py-2 text-gray-800 text-md font-sans 
-       hover:bg-gradient-to-r hover:from-yellow-500
-       hover:via-yellow-900 hover:to-yellow-500 hover:text-white'
+          className='
+         my-0  px-1.5 py-2 text-gray-800 text-md font-sans  hover:text-yellow-500 bg-transparent
+    '
          
         >
          
@@ -167,30 +166,30 @@ const Refrigerators  = React.forwardRef(({ focusNext, focusPrevious, ...props },
             
           >
             <ListItem  > 
-              <NavLink to={'/shop-washing-machine'} {...getTargetProps(0)}><button className='text-gray-800 text-[16px] hover:text-yellow-500'>
+              <NavLink to={'/shop-washing-machine'} {...getTargetProps(0)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                     یخچال های دو درب</button>
                  </NavLink> 
             </ListItem>
             <ListItem >
-            <NavLink to={'/shop-washing-machine'} {...getTargetProps(1)}><button className='text-gray-800 text-[16px] hover:text-yellow-500'>
+            <NavLink to={'/shop-washing-machine'} {...getTargetProps(1)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                     یخچال های ساید بای ساید</button>
                  </NavLink> 
             </ListItem>
             <ListItem >
-            <NavLink to={'/shop-washing-machine'} {...getTargetProps(2)}><button className='text-gray-800 text-[16px] hover:text-yellow-500'>
+            <NavLink to={'/shop-washing-machine'} {...getTargetProps(2)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                    یخچال و فریزر پایین</button>
                  </NavLink> 
             </ListItem>
             <ListItem >
          
              
-            <NavLink to={'/shop-washing-machine'} {...getTargetProps(3)}><button className='text-gray-800 text-[16px] hover:text-yellow-500'>
+            <NavLink to={'/shop-washing-machine'} {...getTargetProps(3)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                    یخچال و فریزر بالا </button>
                  </NavLink> 
             </ListItem>
             <ListItem  >
              
-            <NavLink to={'/shop-washing-machine'} {...getTargetProps(4)}><button className='text-gray-800 text-[16px] hover:text-yellow-500'>
+            <NavLink to={'/shop-washing-machine'} {...getTargetProps(4)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                    یخچال و فریزر تخصصی</button>
                  </NavLink> 
             </ListItem>
@@ -261,9 +260,9 @@ const Cooking  = React.forwardRef(({ focusNext, focusPrevious, ...props }, ref) 
             setAnchorEl(event.currentTarget);
           }}
           className='
-          rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl my-0  px-1.5 py-2 text-gray-800 text-md font-sans 
-          hover:bg-gradient-to-r hover:from-yellow-500
-          hover:via-yellow-900 hover:to-yellow-500 hover:text-white'
+          my-0  px-1.5 py-2 text-gray-800 text-md font-sans  hover:text-yellow-500 bg-transparent
+     '
+          
             
         >
            پخت و پز  
@@ -302,26 +301,26 @@ const Cooking  = React.forwardRef(({ focusNext, focusPrevious, ...props }, ref) 
           >
             <ListItem >
                
-            <NavLink to={'/shop-washing-machine'} {...getTargetProps(0)}><button className='text-gray-800 text-[16px] hover:text-yellow-500'>
+            <NavLink to={'/shop-washing-machine'} {...getTargetProps(0)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                    اجاق گاز و فر </button>
                  </NavLink> 
             </ListItem>
             <ListItem>
             
-            <NavLink to={'/shop-washing-machine'} {...getTargetProps(1)}><button className='text-gray-800 text-[16px] hover:text-yellow-500'>
+            <NavLink to={'/shop-washing-machine'} {...getTargetProps(1)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                    گاز صفحه ای</button>
                  </NavLink> 
             </ListItem>
             <ListItem  >
             
-            <NavLink to={'/shop-washing-machine'} {...getTargetProps(2)}><button className='text-gray-800 text-[16px] hover:text-yellow-500'>
+            <NavLink to={'/shop-washing-machine'} {...getTargetProps(2)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                    هود </button>
                  </NavLink> 
             </ListItem>
             <ListItem  >
          
            
-            <NavLink to={'/shop-washing-machine'} {...getTargetProps(3)}><button className='text-gray-800 text-[16px] hover:text-yellow-500'>
+            <NavLink to={'/shop-washing-machine'} {...getTargetProps(3)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                    مایکروویو </button>
                  </NavLink> 
             </ListItem>
@@ -439,7 +438,7 @@ const Products = React.forwardRef(({ focusNext, focusPrevious, ...props }, ref) 
               <img src={washingmachins} width={20} alt='img2' />
               </ListItemDecorator>
               
-                <NavLink to={'/shop-washing-machine'} {...getTargetProps(1)}><button className='text-gray-800 text-[16px] hover:text-yellow-500'>
+                <NavLink to={'/shop-washing-machine'} {...getTargetProps(1)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                    ماشین لباسشویی</button>
                  </NavLink> 
              
@@ -457,7 +456,7 @@ const Products = React.forwardRef(({ focusNext, focusPrevious, ...props }, ref) 
               <img src={dishwashericon} width={20} alt='img4' />
               </ListItemDecorator>
               
-              <NavLink to={'/shop-washing-machine'} {...getTargetProps(1)}><button className='text-gray-800 text-[16px] hover:text-yellow-500'>
+              <NavLink to={'/shop-dishwasher'} {...getTargetProps(1)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                    ماشین ظرفشویی</button>
                  </NavLink> 
               
@@ -549,13 +548,13 @@ const Shows = React.forwardRef(({ focusNext, focusPrevious, ...props }, ref) => 
            
             <ListItem>
                
-            <NavLink to={'/shop-washing-machine'} {...getTargetProps(0)}><button className='text-gray-800 text-[16px] hover:text-yellow-500'>
+            <NavLink to={'/jashnehtabestane'} {...getTargetProps(0)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                    جشنواره زمستانه</button>
                  </NavLink>  
             </ListItem>
             <ListItem>
               
-            <NavLink to={'/shop-washing-machine'} {...getTargetProps(1)}><button className='text-gray-800 text-[16px] hover:text-yellow-500'>
+            <NavLink to={'/karttakhfif'} {...getTargetProps(1)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                    فعال سازی کارت تخفیف</button>
                  </NavLink> 
             </ListItem>
@@ -648,19 +647,19 @@ const Servis = React.forwardRef(({ focusNext, focusPrevious, ...props }, ref) =>
        
             <ListItem >
                
-            <NavLink to={'/shop-washing-machine'} {...getTargetProps(0)}><button className='text-gray-800 text-[16px] hover:text-yellow-500'>
+            <NavLink to={'/AfterSalesService'} {...getTargetProps(0)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                    خدمات پس از فروش </button>
                  </NavLink> 
             </ListItem>
             <ListItem >
                
-            <NavLink to={'/shop-washing-machine'} {...getTargetProps(1)}><button className='text-gray-800 text-[16px] hover:text-yellow-500'>
+            <NavLink to={'/ContactUsForm'} {...getTargetProps(1)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                    فرم تماس با ما </button>
                  </NavLink> 
             </ListItem>
             <ListItem >
                
-            <NavLink to={'/shop-washing-machine'} {...getTargetProps(2)}><button className='text-gray-800 text-[16px] hover:text-yellow-500'>
+            <NavLink to={'/PopularQuestions'} {...getTargetProps(2)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                    سوالات متداول</button>
                  </NavLink>
             </ListItem>

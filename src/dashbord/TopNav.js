@@ -1,6 +1,5 @@
 import React,{useContext,useState,useEffect} from 'react';
 import "react-toastify/dist/ReactToastify.css";
-import NavbarMenuItem from './NavbarMenuItem';
 import { NavLink } from "react-router-dom";
 import Badge from '@mui/material/Badge';
 import {CartBuyContext} from '../Shared/Cart-Context';

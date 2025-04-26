@@ -13,7 +13,7 @@ function AfterSalesService() {
   useEffect(()=>{
 let username=sessionStorage.getItem("id");
 if(username===""|| username===null){
-navigate("/signin");
+
 }
   },[]);
 

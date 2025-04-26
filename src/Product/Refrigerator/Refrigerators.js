@@ -43,6 +43,8 @@ export default  function Refrigerators() {
      hover:border-none text-yellow-500"
     selected={isMenuOpen1 || isMobileMenuOpen1}
     onClick={() => setIsMobileMenuOpen1((cur) => !cur)}
+
+    
   >
    یخچال و فریزر
     <FaChevronDown
