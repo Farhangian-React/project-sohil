@@ -8,7 +8,7 @@ export default  function  BushBrands() {
 <>
 <PageTitle title="محصولات بوش" description='همه ی محصولات با برند بوش'/>
    <TopNav/> 
-          <CardBush  itemsPerPage={25}/>
+          <CardBush  itemsPerPage={12}/>
           <Footer/>
    </>
    );}    

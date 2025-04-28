@@ -68,10 +68,11 @@ e.preventDefault();
   if(isvalidate()){
 //console.log(result);
 fetch("https://serverjson-project.onrender.com/users",{
-    method:"POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+  method:"POST",
     body:JSON.stringify({id:id,fname:fname,lname:lname,email:email,password:password})
 
 

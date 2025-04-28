@@ -13,7 +13,9 @@
    
   }
   
-  
+  .boxcontact{
+    box-shadow: 0px 8px 15px #fff inset; 
+  }
   .formbutton {
     display: block;
     box-sizing:border-box;

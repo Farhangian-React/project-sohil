@@ -25,6 +25,22 @@ const [datashow,setDatashow]=useContext(CardDataShow);
   const [cartItems,setCartItems]=useContext(CartContext);
   const[datacomment,setDatacomment]=useState([]);
   
+  const convertToEnglish=(str)=> {
+     
+    let englishNumber =str
+    .replace(/۰/g, '0')
+    .replace(/۱/g, '1')
+    .replace(/۲/g, '2')
+    .replace(/۳/g, '3')
+    .replace(/۴/g, '4')
+    .replace(/۵/g, '5')
+    .replace(/۶/g, '6')
+    .replace(/۷/g, '7')
+    .replace(/۸/g, '8')
+    .replace(/۹/g, '9');
+
+ return(englishNumber);
+  }
   const convertToPersian=(str)=> {
     let persianNumber =str
     .replace(/0/g, '۰')
@@ -38,6 +54,18 @@ const [datashow,setDatashow]=useContext(CardDataShow);
     .replace(/8/g, '۸')
     .replace(/9/g, '۹');
 return(persianNumber);
+  }
+  const addCommas=(nStr)=>{
+  
+    if(nStr.length === 7){
+      return  nStr.substring(0,1) + "," + nStr.substring(1, 4) + "," + nStr.substring(4, 7);
+    }
+    if(nStr.length === 8){
+      return  nStr.substring(0, 2) + "," + nStr.substring(2, 5) + "," + nStr.substring(5, 8);
+    }
+    if(nStr.length === 9){
+      return  nStr.substring(0, 3) + "," + nStr.substring(3, 6) + "," + nStr.substring(6, 9);
+  }
   }
   const getData=()=>{
     fetch("https://serverjson-project.onrender.com/Allcomments")
@@ -89,147 +117,141 @@ return(persianNumber);
  return (
   <> 
 
-<Box sx={{display:"flex",flexDirection:"column",bgcolor:"#ececec"}}>
-<Box sx={{display:"flex",justifyContent:"end",mb:3 ,mt:{xs:10,lg:0.7} ,mx:1 }} >
-      <List
-            role="menu"
-            aria-label="Products"
-            variant="outlined"
-            orientation="horizontal"
-            sx={{
-              mt: 1,
-              boxShadow: 'md',
-              borderRadius: 'sm',
-              '--List-radius': '8px',
-              '--List-padding': '2px',
-              '--ListDivider-gap': '2px',
-              '--ListItemDecorator-size': '24px',
-              width:'100%',
-              backgroundColor:'#E0E1E3',
-              alignItems:'center',
-              
-             
-            }}
+
+<div className='flex flex-col bg-zinc-100 justify-center m-auto'>
+ <div className="flex justify-start  overflow-x-auto  [&::-webkit-scrollbar]:w-0 py-1 bg-white mb-2" >
+      <ul
+           className=" flex uppercase font-bold mr-8"
           >
-              <ListItem role="none" sx={{ml:0}}>
-                <Button onClick={FilteringDish} sx={{':hover':{backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)",
-                 borderTopRightRadius:"20px",borderTopLeftRadius: "30px",borderBottomRightRadius:"30px",borderBottomLeftRadius:"10px",
-       color:'white'}, fontSize:{xs:"14px",md:"17px"},color:'#282828',ml:0}}> ماشین ظرفشویی</Button>   
-            </ListItem>
-            <ListItem  role="none" sx={{mx:0}}>
-            <Button onClick={FilteringWash}  sx={{':hover':{backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)",
-       borderTopRightRadius:"20px",borderTopLeftRadius: "30px",borderBottomRightRadius:"30px",borderBottomLeftRadius:"10px",
-      color:'white'}, fontSize:{xs:"14px",md:"17px"},color:'#282828',mx:0}}> ماشین لباسشویی</Button>
-            </ListItem>
-            <ListItem role="none" sx={{mx:0}}>
-            <Button onClick={FilteringRef} sx={{':hover':{backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)",
-       borderTopRightRadius:"20px",borderTopLeftRadius: "30px",borderBottomRightRadius:"30px",borderBottomLeftRadius:"10px",
-      color:'white'}, fontSize:{xs:"14px",md:"17px"},color:'#282828',mx:0}}>   یخچال و فریزر </Button>   
-            </ListItem>
-            <ListItem  role="none" sx={{mr:0}}>
-            <Button onClick={FilteringGas}  sx={{':hover':{backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)",
-       borderTopRightRadius:"20px",borderTopLeftRadius: "30px",borderBottomRightRadius:"30px",borderBottomLeftRadius:"10px",
-      color:'white'}, fontSize:{xs:"14px",md:"17px"},color:'#282828',mr:0}}>  پخت و پز</Button>
-            </ListItem>
-          </List>
-        </Box>
-        <Box sx={{display:"flex",flexDirection:{xs:"column",lg:"row"},
-    justifyContent:"start",width:"100vw",p:4,bgcolor:"#eeeeee"}} >
-      <Box sx={{width:{xs:"90%",lg:"30%"},display:"flex",alignSelf:{xs:"center",lg:"start"},
-height:{lg:"65vh"},
-position:{xs:"static",lg:"sticky"},
-top: "80px",
+              <li>
+                <button onClick={FilteringDish}  className="bg-transparent w-[120px] flex  text-sm items-center py-2  font-medium
+     text-gray-700
+     transition delay-150 duration-300 ease-in-out
+    hover:text-yellow-500"> ماشین ظرفشویی</button>   
+            </li>
+            <li >
+            <button onClick={FilteringWash} 
+             className="bg-transparent w-[120px] flex  text-sm items-center py-2  font-medium
+     text-gray-700
+     transition delay-150 duration-300 ease-in-out
+     hover:text-yellow-500"> ماشین لباسشویی</button>
+            </li>
+            <li>
+            <button onClick={FilteringRef}
+            className="bg-transparent w-[120px] flex  text-sm items-center py-2  font-medium
+            text-gray-700
+            transition delay-150 duration-300 ease-in-out
+         hover:text-yellow-500"
+            >   یخچال و فریزر </button>   
+            </li>
+            <li  >
+            <button onClick={FilteringGas}  className="bg-transparent w-[120px] flex  text-sm items-center py-2  font-medium
+     text-gray-700
+     transition delay-150 duration-300 ease-in-out
+    hover:text-yellow-500">  پخت و پز</button>
+            </li>
+          </ul>
+        </div>
+          
+        <div className='bordershadow flex flex-col justify-center items-center mx-auto my-5 '  >
+        <p  className='text-lg text-center text-[#371303] px-5 pb-3 font-bold  '>محصولات LG </p>
+    </div>
+    <div className='flex flex-col md:flex-row justify-start w-[100vw] bg-zinc-100 m-auto' >
+      <div className='flex w-[90vw] md:w-[30vw] static md:sticky md:top-[80px] self-center md:self-start md:h-[70vh] '>
 
-}}>
-<FilterBrands/></Box>
-<Box sx={{width:{xs:"90%",lg:"75%"},display:'flex',flexDirection:'column',justifyContent:'center',alignSelf:"center",mx:0,mt:{xs:3,lg:0}}}>
-<Box sx={{mx:3,display:'flex',justifyContent:'start',borderRadius:{xs:"none",lg:'10px'},direction:'rtl',borderBottom:{xs:"1px solid #414141",lg:"none"},
- height:'auto',color:{xs:"#282828",lg:"#585858"},bgcolor:{lg:"white"},pb:0.8}}>
-<Typography sx={{px:3,pt:0.5,fontSize:{xs:"22px"},direction:'rtl'}}> 
- محصولات LG 
-</Typography>
-</Box>
-<Box  sx={{bgcolor:"#ececec", display:'flex' ,flexWrap:'wrap' ,justifyContent:'center',mx:1.5,pb:3,px:0}}>
+ <FilterBrands/></div>
+ <div className='flex justify-center flex-wrap mx-auto bg-zinc-100 '>
 
-  {
-   load ? 
-   <Backdrop
-   sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
-   open
- >
- <CircularProgress color="inherit" />
- </Backdrop>
- :
-  currentItems &&
-    currentItems.map((item) => (
-    
-      <NavLink to={'/cartsearch'}  className={"linkss"}> 
-     
-   
-     <Card className='cards' sx={{width:{xs:"270px",sm:'270px',md:"250px",lg:'250px'},
-height:{xs:"400px",sm:'400px',md:"450px",lg:'450px'},marginTop:'10px',marginBottom: '10px',mx:{xs:3,lg:1.5},mt:3, px:1.5,pb:1,pt:2 }} key={item.id}>
-<Box sx={{width:"35px",height:"20px",bgcolor:"#f5cd00",color:"#414141",borderRadius:"20%",px:0,py:0,mt:0.2,display:"flex",justifyContent:"center",alignItems:"center"}}>
-    <Typography sx={{fontSize:"12px",textAlign:"center"}}>  {convertToPersian(item.off)}%</Typography>
-    </Box>
+ {
+  load ? 
+  <Backdrop
+  sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
+  open
+>
+<CircularProgress color="inherit" />
+</Backdrop>
+:
+currentItems && 
+  currentItems.map((item) => (
+    <NavLink to={'/cartbuywashingmachine'}  className={"linkss"}>    
+<Card className='cards' sx={{width:{xs:"250px",md:"300px"},height:"460px",mx:1,my:"1em",px:1 ,pt:3 }} key={item.id}>
+
 <CardMedia
-    component="img"
-    onClick={()=>{
-      setCartItems([item]);
-     }}
-   image={item.img}
-    alt=""
-sx={{width:{xs:"150px",sm:"150px",md:"200px",lg:"200px"},m:"auto"}}
-  />
-    <CardContent sx={{border:"none",height:'30px',direction:"rtl"}}>
-    <Typography gutterBottom variant="body2" component="div" sx={{textAlign:'center'}}>
-      {item.title1}
-    </Typography>
-    </CardContent>
-    <CardContent sx={{display:"flex",flexDirection:"column",justifyContent:"center",
-    alignSelf:"center",alignItems:"center",
-    border:"none",height:'25px',direction:"rtl",py:0.8,my:0}}>
-    <Typography  sx={{fontSize:{xs:"12px",lg:"14px"},color:"#8a8a8a",textAlign:'center'}}>
-      {item.title2}
-      </Typography>
-      <Rating
-         sx={{color:"#f5cd00",fontSize:"12px",px:5,alignItems:"center"}}
-        name="simple-controlled"
-        value={sumscore(item)}
-      
-      />
-    
-  </CardContent>
+component="img"
+onClick={()=>{
+setCartItems([item]);
+}}
+image={item.img}
+alt=""
+sx={{width:"250px",m:"auto",height:"200px"}}
+/>
+<CardContent sx={{border:"none",height:'55px',direction:"rtl"}}>
+<p className='text-center text-sm font-bold pb-1'>
+{item.title1}
+</p>
+</CardContent>
+<CardContent sx={{display:"flex",flexDirection:"row",justifyContent:"space-around",mt:1.5,
+alignSelf:"center",alignItems:"center",
+border:"none",height:'40px',direction:"rtl",py:0.5,my:0}}>
+<p className='text-center text-xs text-gray-700'>
+{item.title2}
+</p>
+<Rating
+ sx={{color:"#f5cd00",fontSize:"1em",pr:5,alignItems:"center"}}
+name="simple-controlled"
+value={sumscore(item)}
 
-  <CardContent sx={{height:'20px',direction:"rtl",display:"flex",justifyContent:"center",flexDirection:"column",borderBottom:'1px solid #d4d4d4',borderTop:'1px solid #d4d4d4'}} >
-  <Box sx={{display:'flex',justifyContent:'space-between',alignItems:'baseline',direction:'rtl',px:0.7,py:0.3}}>
-     <Typography  variant="body2" color="black" sx={{textAlign:'center'}}>خرید نقدی</Typography>
-     <Typography  variant="h6" color="#926f34" sx={{textAlign:'center'}}>{item.price}</Typography>
-    </Box>
-   
-  </CardContent>
-  <CardActions sx={{display:'flex',justifyContent:'center'}}>
-  <NavLink to={'/cartsearch'}>  <Button size="large"
-      fullWidth
-      variant="contained"
-      sx={{':hover':{backgroundImage:"linear-gradient(to right ,#eeeeee,#282828)",color:'white'}, color:'#eeeeee',fontSize:{xs:"16px",lg:"18px"},
-      backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)", mt:2,mb:{xs:0,md:2},py:0,px:{xs:5,lg:8},
-      borderTopRightRadius:"20px",borderTopLeftRadius: "30px",borderBottomRightRadius:"30px",borderBottomLeftRadius:"10px"}}
-      onClick={()=>{
-        setCartItems([item]);
-       }}>خرید </Button></NavLink>
-    
-  </CardActions>
+/>
+
+</CardContent>
+
+<CardContent sx={{height:'70px',
+  direction:"rtl",display:"flex",justifyContent:"center",flexDirection:"column",borderBottom:'1px solid #d4d4d4',borderTop:'1px solid #d4d4d4'}} >
+
+{ item.off !== "" ?
+
+  <div  dir="rtl" className='flex justify-between items-baseline'>
+  <div   className='flex justify-center text-center rounded-md text-yellow-500 bg-gray-900 h-[20px] w-[35px]
+   hover:bg-yellow-500 hover:text-gray-900'>
+<p className='text-xs text-center py-0.5' >  {convertToPersian(item.off)}%</p>
+
+</div> 
+  <div className='flex flex-col' >
+<p className='text-sm text-yellow-500 text-center line-through decoration-gray-600 ' >{item.price}</p>
+ <p   className='text-gray-600 text-left text-lg font-bold' >
+
+  {addCommas(convertToPersian((convertToEnglish(item.pricenum)-(convertToEnglish(item.pricenum)*item.off / 100))+''))} تومان 
+ </p>
+</div>
+</div>
+
+:<p className='text-lg text-center text-gray-600 font-bold '>{item.price}</p>
+}
+</CardContent>
+<CardContent sx={{display:'flex',justifyContent:'center',height: "30px"}}>
+<NavLink style={{ textDecoration: "none" }} to={"/cartbuygas" }>
+             <button    onClick={()=>{
+       setCartItems([item]);
+      }} className='bg-gradient-to-r from-yellow-500 via-yellow-900 to-yellow-500 
+             rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl my-1 mx-8 px-10 py-1 text-white text-md font-sans
+              hover:bg-gradient-to-r hover:from-gray-500
+             hover:via-yellow-500 hover:to-gray-500'
+              > 
+             خرید</button></NavLink>
+
+</CardContent>
 </Card>
+
 </NavLink>
-      
-    ))}
-    </Box>
-  </Box>
-</Box>
-</Box>
+  ))}
+  </div>
+  </div>
+</div>
+
   </>
 );
     }
+
 
 
 export default function CardLg({ itemsPerPage }) {

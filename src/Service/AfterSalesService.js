@@ -89,188 +89,103 @@ const scrollToElement8 = () => {
       sx={{
         display:'flex',
         justifyContent:'center',
+       
        backgroundImage: `url(${returnPhotoURL()})`,
        backgroundPosition: 'center',
        backgroundSize:'cover',
        backgroundRepeat: 'no-repeat',
        width:'100%',
-       height:{xs:"50vh",lg:"90vh"}
+       height:"90vh",
+     alignItems:"end",
+     alignSelf:"end"
        }} >
     
-         <Box  sx={{ display:"flex",flexDirection:"row",mx:5,width:{xs:"100%",lg:"80%"},alignSelf:"end",justifyContent:"space-between",
-         height:'170px',bgcolor:"#fff",mb:5,px:0,py:0}}>
-        <Button onClick={scrollToElement1} sx={{width:"10%",mr:0.5,ml:0.2,display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
-          <Box
-             sx={{
-              display:'flex',
-              justifyContent:'center',
-             backgroundImage: 'url("https://snowa.ir/wp-content/uploads/2023/03/1-sla.svg")',
-             backgroundPosition: 'center',
-             backgroundSize:'cover',
-             backgroundRepeat: 'no-repeat',
-             width:'90px',
-             height:"90px"
-             }}
-          >
-
-         </Box>
-          <Typography variant='body2' sx={{px:{xs:0.2,lg:2},textAlign:"center",color:"#585858"}}>
+    <div className="flex justify-center overflow-x-auto [&::-webkit-scrollbar]:w-0 py-1 bg-zinc-100 w-[100%] mx-auto  h-[160px] ">
+    <ul className=" flex uppercase font-bold mr-1">
+       <li>
+        <button onClick={scrollToElement1} className='bg-inherit w-[100px] mx-5 flex flex-col justify-center items-center  '>
+        <img  className='hover:scale-125'  width={80} height={80} alt='' src='https://snowa.ir/wp-content/uploads/2023/03/1-sla.svg'/>
+        <p className='text-sm text-center text-gray-700 px-1 hover:text-[#64b3f4] mt-2 '>
              ۳۰ روز ضمانت تعویض
-          </Typography>
-         </Button>
-         <Button onClick={scrollToElement2} sx={{width:"10%",m:0.2,display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
-          <Box
-             sx={{
-              display:'flex',
-              justifyContent:'center',
-             backgroundImage: 'url("https://snowa.ir/wp-content/uploads/2023/03/2-sla.svg")',
-             backgroundPosition: 'center',
-             backgroundSize:'cover',
-             backgroundRepeat: 'no-repeat',
-             width:'90px',
-             height:"90px"
-             }}
-          >
-
-         </Box>
-          <Typography variant='body2' sx={{px:{xs:0.2,lg:2},textAlign:"center",color:"#585858"}}>
-           سه ماه تعویض راﯾﮕﺎن
-          </Typography>
-         </Button>
-         <Button onClick={scrollToElement3} sx={{width:"10%",m:0.2,display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
-          <Box
-             sx={{
-              display:'flex',
-              justifyContent:'center',
-             backgroundImage: 'url("https://snowa.ir/wp-content/uploads/2023/03/3-sla.svg")',
-             backgroundPosition: 'center',
-             backgroundSize:'cover',
-             backgroundRepeat: 'no-repeat',
-             width:'90px',
-             height:"90px"
-             }}
-          >
-
-         </Box>
-          <Typography variant='body2' sx={{px:{xs:0.2,lg:2},textAlign:"center",color:"#585858"}}>
-            ضمانت کمپرسور
-          </Typography>
-         </Button>
-         <Button onClick={scrollToElement4} sx={{width:"10%",m:0.2,display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
-          <Box
-             sx={{
-              display:'flex',
-              justifyContent:'center',
-             backgroundImage: 'url("https://snowa.ir/wp-content/uploads/2023/03/4-sla.svg")',
-             backgroundPosition: 'center',
-             backgroundSize:'cover',
-             backgroundRepeat: 'no-repeat',
-             width:'90px',
-             height:"90px"
-             }}
-          >
-
-         </Box>
-          <Typography variant='body2' sx={{px:{xs:0.2,lg:2},textAlign:"center",color:"#585858"}}>
-           تعویض مادام العمر
-          </Typography>
-         </Button>
-         <Button onClick={scrollToElement5}sx={{width:"10%",m:0.2,display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
-          <Box
-             sx={{
-              display:'flex',
-              justifyContent:'center',
-             backgroundImage: 'url("https://snowa.ir/wp-content/uploads/2023/03/5-sla.svg")',
-             backgroundPosition: 'center',
-             backgroundSize:'cover',
-             backgroundRepeat: 'no-repeat',
-             width:'90px',
-             height:"90px"
-             }}
-          >
-
-         </Box>
-          <Typography variant='body2' sx={{px:{xs:0.2,lg:2},textAlign:"center",color:"#585858"}}>
-            خدمات ۷ روز هفته
-          </Typography>
-         </Button>
-         <Button onClick={scrollToElement6} sx={{width:"10%",m:0.2,display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
-          <Box
-             sx={{
-              display:'flex',
-              justifyContent:'center',
-             backgroundImage: 'url("https://snowa.ir/wp-content/uploads/2023/03/6-sla.svg")',
-             backgroundPosition: 'center',
-             backgroundSize:'cover',
-             backgroundRepeat: 'no-repeat',
-             width:'90px',
-             height:"90px"
-             }}
-          >
-
-         </Box>
-          <Typography variant='body2' sx={{px:{xs:0.2,lg:2},textAlign:"center",color:"#585858"}}>
-           تضمین ارائه خدمات
-          </Typography>
-         </Button>
-         <Button onClick={scrollToElement7} sx={{width:"10%",m:0.2,display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
-          <Box
-             sx={{
-              display:'flex',
-              justifyContent:'center',
-             backgroundImage: 'url("https://snowa.ir/wp-content/uploads/2023/03/7-sla.svg")',
-             backgroundPosition: 'center',
-             backgroundSize:'cover',
-             backgroundRepeat: 'no-repeat',
-             width:'90px',
-             height:"90px"
-             }}
-          >
-
-         </Box>
-          <Typography variant='body2' sx={{px:{xs:0.2,lg:2},textAlign:"center",color:"#585858"}}>
-            ۶ ماه ضمانت تعمیر
-          </Typography>
-         </Button>
-     
-         <Button onClick={scrollToElement8} sx={{width:"10%",mr:0.2,ml:0.5,display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
-          <Box
-             sx={{
-              display:'flex',
-              justifyContent:'center',
-             backgroundImage: 'url("https://snowa.ir/wp-content/uploads/2023/03/8-sla.svg")',
-             backgroundPosition: 'center',
-             backgroundSize:'cover',
-             backgroundRepeat: 'no-repeat',
-             width:'90px',
-             height:"90px"
-             }}
-          >
-         </Box>
-          <Typography variant='body2' sx={{px:{xs:0.2,lg:2},textAlign:"center",color:"#585858"}}>
-             تحویل محصول جایگزین هنگام تعمیر
-          </Typography>
-         </Button> 
-          
-         </Box>
+          </p>
+         </button>
+         </li>
+         <li>
+        <button onClick={scrollToElement2} className='bg-inherit w-[100px] mx-5 flex flex-col justify-center items-center  '>
+        <img className='hover:scale-125'  width={80} height={80} alt='' src='https://snowa.ir/wp-content/uploads/2023/03/2-sla.svg'/>
+        <p className='text-sm text-center text-gray-700 px-1 hover:text-[#64b3f4] mt-2 '>
+        سه ماه تعویض راﯾﮕﺎن
+          </p>
+         </button>
+         </li>
+         <li>
+        <button onClick={scrollToElement3} className='bg-inherit w-[100px] mx-5 flex flex-col justify-center items-center  '>
+        <img className='hover:scale-125'  width={80} height={80} alt='' src='https://snowa.ir/wp-content/uploads/2023/03/3-sla.svg'/>
+        <p className='text-sm text-center text-gray-700 px-1 hover:text-[#64b3f4] mt-2 '>
+        ضمانت کمپرسور
+          </p>
+         </button>
+         </li>
+         <li>
+        <button onClick={scrollToElement4} className='bg-inherit w-[100px] mx-5 flex flex-col justify-center items-center  '>
+        <img className='hover:scale-125'  width={80} height={80} alt='' src=' https://snowa.ir/wp-content/uploads/2023/03/4-sla.svg'/>
+        <p className='text-sm text-center text-gray-700 px-1 hover:text-[#64b3f4] mt-2 '>
+        تعویض مادام العمر
+          </p>
+         </button>
+         </li> 
+         <li>
+        <button onClick={scrollToElement5} className='bg-inherit w-[100px] mx-5 flex flex-col justify-center items-center  '>
+        <img className='hover:scale-125'  width={80} height={80} alt='' src="https://snowa.ir/wp-content/uploads/2023/03/5-sla.svg"/>
+        <p className='text-sm text-center text-gray-700 px-1 hover:text-[#64b3f4] mt-2 '>
+        خدمات ۷ روز هفته
+          </p>
+         </button>
+         </li>
+         <li>
+        <button onClick={scrollToElement6} className='bg-inherit w-[100px] mx-5 flex flex-col justify-center items-center  '>
+        <img className='hover:scale-125'  width={80} height={80} alt='' src="https://snowa.ir/wp-content/uploads/2023/03/6-sla.svg "/>
+        <p className='text-sm text-center text-gray-700 px-1 hover:text-[#64b3f4] mt-2 '>
+        تضمین ارائه خدمات
+          </p>
+         </button>
+         </li>
+         <li>
+        <button onClick={scrollToElement7} className='bg-inherit w-[100px] mx-5 flex flex-col justify-center items-center  '>
+        <img className='hover:scale-125'  width={80} height={80} alt='' src=" https://snowa.ir/wp-content/uploads/2023/03/7-sla.svg"/>
+        <p className='text-sm text-center text-gray-700 px-1 hover:text-[#64b3f4] mt-2 '>
+        ۶ ماه ضمانت تعمیر
+          </p>
+         </button>
+         </li>
+         <li>
+        <button onClick={scrollToElement8} className='bg-inherit w-[100px] mx-5 flex flex-col justify-center items-center  '>
+        <img className='hover:scale-125'  width={80} height={80} alt='' src=" https://snowa.ir/wp-content/uploads/2023/03/8-sla.svg"/>
+        <p className='text-sm text-center text-gray-700 px-1 hover:text-[#64b3f4] mt-2 '>
+        تحویل محصول جایگزین  
+          </p>
+         </button>
+         </li>
+          </ul>
+         </div>
       </Box>      
-    <Box ref={sheet1} sx={{my:2 ,mx:5,px:5,py:1,bgcolor:"white",borderRadius:'10px',display:"flex",flexDirection:{xs:"column",lg:"row"}}}> 
+    <Box ref={sheet1} sx={{my:2 ,mx:"auto",px:5,py:1,bgcolor:"white",borderRadius:'10px',display:"flex",flexDirection:{xs:"column",lg:"row"}}}> 
        <Box  sx={{display:"flex",justifyContent:"start",flexDirection:"column",my:{xs:2,lg:10},width:{xs:"100%",lg:"100%"}}}>
        <Box  sx={{mx:{xs:2,lg:5},height:"auto"}} >
-         <Box sx={{ my:3,borderTopRightRadius:"20px",borderTopLeftRadius: "30px",borderBottomRightRadius:"30px",borderBottomLeftRadius:"10px",
-       backgroundImage:"linear-gradient(to left ,#c2e59c, #64b3f4)",color:"#282828",width:"auto"}}>
-          <Typography variant="h5" sx={{py:1,textAlign:"justify",px:3}}  >
+         <div className='flex justify-center  bg-gradient-to-r from-[#c2e59c]  via-[#64b3f4] to-[#c2e59c] my-3 text-black w-auto pr-2 
+         rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
+          <p className='text-black py-3 text-start font-bold text-2xl' >
           ضمانت تعویض ۳۰ روز
-         </Typography>
-         </Box>
-         <Typography variant="h5" sx={{py:1}}  >
+         </p>
+         </div>
+         <p className='text-gray-700 py-3 text-start font-bold text-xl'  >
          یک ماه تعویض محصول یا بازگشت وجه بدون قید و شرط
-         </Typography>
-         <Typography  paragraph sx={{color:"#828282",textAlign:"justify"}}>ضمانت ۳۰ روز تعویض یا بازگشت وجه دستگاه از زمان فروش، به مصرف کنندگان عزیز این امکان را می دهد تا هر زمان از این دوره، احساس کنند که محصول انتظارات ایشان را برآورده نمی کند حق عودت وجه یا تعویض آن با محصول دیگر محفوظ می گردد.
-         </Typography>
-         <Typography variant="h5" sx={{py:1,textAlign:"justify"}}  >
+         </p>
+         <p  className='text-justify text-md text-gray-500 font-sans' >ضمانت ۳۰ روز تعویض یا بازگشت وجه دستگاه از زمان فروش، به مصرف کنندگان عزیز این امکان را می دهد تا هر زمان از این دوره، احساس کنند که محصول انتظارات ایشان را برآورده نمی کند حق عودت وجه یا تعویض آن با محصول دیگر محفوظ می گردد.
+         </p>
+         <p className='text-gray-700 py-3 text-start font-bold text-xl' >
          نکات قابل توجه:
-        </Typography>
+        </p>
         <List
 sx = {{
     px:3,
@@ -295,10 +210,11 @@ sx = {{
         </Box>   
         </Box>
         <Box
-          ref={sheet2}
+        className='washimg'
           sx={{
            
             display:"flex",
+            justifyContent:"center",
             borderRadius:1,
             backgroundImage:'url("https://snowa.ir/wp-content/uploads/2023/03/Group12015.svg")',
             backgroundPosition: 'center',
@@ -306,18 +222,21 @@ sx = {{
             backgroundRepeat: 'no-repeat',
             height:{xs:"460px",lg:"500px"},
             width:{xs:"80%",lg:"80%"},
-           my:{xs:2},
+          mt:{xs:0,md:25},
+            mx:"auto"
           
        
             }}
         >
         </Box>
         </Box>
-        <Box ref={sheet2} sx={{ backgroundImage:{xs:"linear-gradient(to top ,#E0AA3E,#282828)",lg:"linear-gradient(to left ,#E0AA3E,#282828)"},my:2 ,mx:5,px:5,py:1,bgcolor:"white",borderRadius:'10px',display:"flex",flexDirection:{xs:"column-reverse",lg:"row"}}}> 
+        <div ref={sheet2}  className='my-2 mx-auto px-5 py-1 flex flex-col-reverse md:flex-row
+          bg-gradient-to-r from-gray-300
+             via-yellow-300 to-gray-300'> 
         <Box
-         
+            className='washimg'
           sx={{
-           
+        
             display:"flex",
             borderRadius:1,
             backgroundImage:'url("https://snowa.ir/wp-content/uploads/2023/03/Asset1.svg")',
@@ -327,64 +246,64 @@ sx = {{
             height:{xs:"460px",lg:"500px"},
             width:{xs:"80%",lg:"80%"},
            my:{xs:2},
-          
+          mx:"auto"
        
             }}
         >
         </Box>
        <Box  sx={{display:"flex",justifyContent:"start",flexDirection:"column",my:{xs:2,lg:10},width:{xs:"100%",lg:"100%"}}}>
        <Box  sx={{mx:{xs:2,lg:5},height:"auto"}} >
-         <Box sx={{ my:3,borderTopRightRadius:"20px",borderTopLeftRadius: "30px",borderBottomRightRadius:"30px",borderBottomLeftRadius:"10px",
-       backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)",color:"#cecece",width:"auto"}}>
-          <Typography variant="h5" sx={{py:1,textAlign:"justify",px:3}}  >
+       <div className='flex justify-center  bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 my-3 text-black w-auto pr-2 
+         rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
+          <p className='text-black py-3 text-start font-bold text-2xl'  >
           ﺳﻪ ﻣﺎه ﺗﻌﻮﯾﺾ راﯾﮕﺎن ﻣﺤﺼﻮل
-         </Typography>
-         </Box>
-         <Typography variant="h5" sx={{py:1}}  >
+         </p>
+         </div>
+         <p className='text-gray-700 py-3 text-start font-bold text-xl'  >
          در ﺻﻮرت ﺑﺮوز ﺧﺮاﺑﯽ از زﻣﺎن ﻧﺼﺐ
-         </Typography>
-         <Typography  paragraph sx={{color:"#ececec",textAlign:"justify"}}>
+         </p>
+         <p  className='text-justify text-md text-gray-700 font-sans'>
 در صورتیکه محصول نصب شده طی دوره سه ماهه اول دچار خرابی ذاتی شود حق تعویض یا عودت وجه برای مصرف کننده محفوظ است. خرابی ذاتی به عیوبی اطلاق می گردد که خود یا پتانسیل آن عیب، ناشی از فرآیند تولید یا عملیات لجستیک باشد
-            </Typography>
-         <Typography variant="h5" sx={{py:1,textAlign:"justify"}}  >
+            </p>
+         <p className='text-gray-700 py-3 text-start font-bold text-xl'  >
          نکات قابل توجه:
-        </Typography>
-        <Typography  paragraph sx={{color:"#ececec",textAlign:"justify"}}>
+        </p>
+        <p  className='text-justify text-md text-gray-700 font-sans'>
         بازه ۳ ماهه از تاریخ نصب محصول محاسبه می گردد
 دستگاه نباید بدلیل استفاده نادرست مصرف کننده دچار آسیب شده باشد
 بازکردن بسته بندی ، نصب و راه اندازی دستگاه باید توسط سرویسکار مجاز شرکت
 کلیه هزینه های نقل و انتقال دستگاه در صورت تایید خرابی ذاتی به عهده شرکت انتخاب سرویس است
-            </Typography>
+            </p>
         </Box>   
         </Box>
       
-        </Box>
+        </div>
 
 
         <Box ref={sheet3} sx={{my:2 ,mx:5,px:5,py:1,bgcolor:"white",borderRadius:'10px',display:"flex",flexDirection:{xs:"column",lg:"row"}}}> 
        <Box  sx={{display:"flex",justifyContent:"start",flexDirection:"column",my:{xs:2,lg:10},width:{xs:"100%",lg:"100%"}}}>
        <Box  sx={{mx:{xs:2,lg:5},height:"auto"}} >
-         <Box sx={{ my:3,borderTopRightRadius:"20px",borderTopLeftRadius: "30px",borderBottomRightRadius:"30px",borderBottomLeftRadius:"10px",
-       backgroundImage:"linear-gradient(to left ,#c2e59c, #64b3f4)",color:"#282828",width:"auto"}}>
-          <Typography variant="h5" sx={{py:1,textAlign:"justify",px:3}}  >
+       <div className='flex justify-center  bg-gradient-to-r from-[#c2e59c]  via-[#64b3f4] to-[#c2e59c] my-3 text-black w-auto pr-2 
+         rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
+          <p  className='text-black py-3 text-start font-bold text-2xl'  >
           ۱۲۰ ماه ضمانت کمپرسور
-         </Typography>
-         </Box>
-         <Typography variant="h5" sx={{py:1}}  >
+         </p>
+         </div>
+         <p  className='text-gray-700 py-3 text-start font-bold text-xl' >
          ﻣﺤﺼﻮﻻت ﺑﺮودﺗﯽ و ﻣﻮﺗﻮرﻫﺎی داﯾﺮﮐﺖ دراﯾﻮ
-         </Typography>
-         <Typography  paragraph sx={{color:"#828282",textAlign:"justify"}}>
+         </p>
+         <p className='text-justify text-md text-gray-500 font-sans'>
          در صورتیکه محصول نصب شده طی دوره سه ماهه اول دچار خرابی ذاتی شود حق تعویض یا عودت وجه برای مصرف کننده محفوظ است. خرابی ذاتی به عیوبی اطلاق می گردد که خود یا پتانسیل آن عیب، ناشی از فرآیند تولید یا عملیات لجستیک باشد
-            </Typography>
-         <Typography variant="h5" sx={{py:1,textAlign:"justify"}}  >
+            </p>
+         <p className='text-gray-700 py-3 text-start font-bold text-xl'>
          نکات قابل توجه:
-        </Typography>
-        <Typography  paragraph sx={{color:"#828282",textAlign:"justify"}}>
+        </p>
+        <p  className='text-justify text-md text-gray-500 font-sans'>
         بازه ۳ ماهه از تاریخ نصب محصول محاسبه می گردد
 دستگاه نباید بدلیل استفاده نادرست مصرف کننده دچار آسیب شده باشد
 بازکردن بسته بندی ، نصب و راه اندازی دستگاه باید توسط سرویسکار مجاز شرکت انتخاب سرویس انجام شده باشد
 کلیه هزینه های نقل و انتقال دستگاه در صورت تایید خرابی ذاتی به عهده شرکت انتخاب سرویس است
-            </Typography>
+            </p>
         </Box>   
         </Box>
         <Box
@@ -406,9 +325,10 @@ sx = {{
         >
         </Box>
         </Box>
-
-        <Box ref={sheet4} sx={{ backgroundImage:{xs:"linear-gradient(to top ,#E0AA3E,#282828)",lg:"linear-gradient(to left ,#E0AA3E,#282828)"},my:2 ,mx:5,px:5,py:1,bgcolor:"white",borderRadius:'10px',display:"flex",flexDirection:{xs:"column-reverse",lg:"row"}}}> 
-        <Box
+        <div ref={sheet4}  className='my-2 mx-auto px-5 py-1 flex flex-col-reverse md:flex-row
+          bg-gradient-to-r from-gray-300
+             via-yellow-300 to-gray-300'> 
+       <Box
           className='washimg'
           sx={{
            
@@ -428,54 +348,54 @@ sx = {{
         </Box>
        <Box  sx={{display:"flex",justifyContent:"start",flexDirection:"column",my:{xs:2,lg:10},width:{xs:"100%",lg:"100%"}}}>
        <Box  sx={{mx:{xs:2,lg:5},height:"auto"}} >
-         <Box sx={{ my:3,borderTopRightRadius:"20px",borderTopLeftRadius: "30px",borderBottomRightRadius:"30px",borderBottomLeftRadius:"10px",
-       backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)",color:"#cecece",width:"auto"}}>
-          <Typography variant="h5" sx={{py:1,textAlign:"justify",px:3}}  >
+       <div className='flex justify-center  bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 my-3 text-black w-auto pr-2 
+         rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
+          <p  className='text-black py-3 text-start font-bold text-2xl'  >
           اراﺋﻪ ﭘﺸﺘﯿﺒﺎﻧﯽ
-         </Typography>
-         </Box>
-         <Typography variant="h5" sx={{py:1}}  >
+         </p>
+         </div>
+         <p  className='text-gray-700 py-3 text-start font-bold text-xl' >
          ﯾﺎ ﺗﺴﻬﯿﻼت ﺗﻌﻮﯾﺾ ﻣﺎدام اﻟﻌﻤﺮ ﻣﺤﺼﻮﻻت
-         </Typography>
-         <Typography  paragraph sx={{color:"#ececec",textAlign:"justify"}}>
+         </p>
+         <p  className='text-justify text-md text-gray-700 font-sans'>
          عهد مادام العمر تامین قطعات محصولات گروه انتخاب به مصرف کنندگان این فرصت را می دهد تا زمانی که امکان تعمیر برای محصول وجود داشته باشد از دستگاه استفاده نمایند . در صورت عدم تامین قطعه یا عدم تعمیر محصول فرصت تعویض دستگاه با دستگاه های موجود، بهمراه تسهیلات خرید برای مصرف کننده محفوظ می گردد
-            </Typography>  
-         <Typography variant="h5" sx={{py:1,textAlign:"justify"}}  >
+            </p>  
+         <p  className='text-gray-700 py-3 text-start font-bold text-xl'  >
          نکات قابل توجه:
-        </Typography>
-        <Typography  paragraph sx={{color:"#ececec",textAlign:"justify"}}>  
+        </p>
+        <p className='text-justify text-md text-gray-700 font-sans'>  
 افت قیمت محصول در دوره گارانتی محاسبه نمی گردد
 در دوره خارج از گارانتی ، به ازای هر ماه کارکرد محصول از زمان نصب ، ۱% از قیمت روز دستگاه کسر می گردد
 تسهیلات ارائه شده بر اساس طرحهای فروش روز به مصرف کننده ارائه می گردد
-        </Typography>
+        </p>
         </Box>   
         </Box>
-        </Box>
+        </div>
    
    
         <Box ref={sheet5} sx={{my:2 ,mx:5,px:5,py:1,bgcolor:"white",borderRadius:'10px',display:"flex",flexDirection:{xs:"column",lg:"row"}}}> 
        <Box  sx={{display:"flex",justifyContent:"start",flexDirection:"column",my:{xs:2,lg:10},width:{xs:"100%",lg:"100%"}}}>
        <Box  sx={{mx:{xs:2,lg:5},height:"auto"}} >
-         <Box sx={{ my:3,borderTopRightRadius:"20px",borderTopLeftRadius: "30px",borderBottomRightRadius:"30px",borderBottomLeftRadius:"10px",
-       backgroundImage:"linear-gradient(to left ,#c2e59c, #64b3f4)",color:"#282828",width:"auto"}}>
-          <Typography variant="h5" sx={{py:1,textAlign:"justify",px:3}}  >
+       <div className='flex justify-center  bg-gradient-to-r from-[#c2e59c]  via-[#64b3f4] to-[#c2e59c] my-3 text-black w-auto pr-2 
+         rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
+          <p className='text-black py-3 text-start font-bold text-2xl' >
           ارائه خدمات در ۷ روز هفته
-         </Typography>
-         </Box>
-         <Typography variant="h5" sx={{py:1}}  >
+         </p>
+         </div>
+         <p className='text-gray-700 py-3 text-start font-bold text-xl' >
          و ۲۴ ساعت شبانه روز
-         </Typography>
-         <Typography  paragraph sx={{color:"#828282",textAlign:"justify"}}>
+         </p>
+         <p  className='text-justify text-md text-gray-500 font-sans'>
          پاسخگویی ۲۴ ساعته و مراجعه در ۷ روز هفته حتی روزهای تعطیل، تعهدی است که شرکت انتخاب سرویس را در قبال اعتماد مصرف کنندگان به انتخاب الکترونیک ، برای خود ایجاد کرده است .
-            </Typography>
-         <Typography variant="h5" sx={{py:1,textAlign:"justify"}}  >
+            </p>
+         <p className='text-gray-700 py-3 text-start font-bold text-xl' >
          نکات قابل توجه:
-        </Typography>
-        <Typography  paragraph sx={{color:"#828282",textAlign:"justify"}}>
+        </p>
+        <p className='text-justify text-md text-gray-500 font-sans'>
         شماره ۴ رقمی رایگان ۱۶۹۹ با امکان پاسخگویی به تماس هم زمان مشتریان ، از سراسر ایران آماده پاسخگویی به نیاز مشتریان است
 هماهنگی و قرار ملاقات طی همان روز توسط نزدیکترین تکنسین با مصرف کننده انجام می شود
 خدمات گارانتی در همه ساعات شبانه روز ، هیچ هزینه اضافی به مصرف کننده تحمیل نمی کند
-              </Typography>
+              </p>
         </Box>   
         </Box>
         <Box
@@ -499,8 +419,10 @@ sx = {{
         </Box>
 
 
-        <Box ref={sheet6} sx={{ backgroundImage:{xs:"linear-gradient(to top ,#E0AA3E,#282828)",lg:"linear-gradient(to left ,#E0AA3E,#282828)"},my:2 ,mx:5,px:5,py:1,bgcolor:"white",borderRadius:'10px',display:"flex",flexDirection:{xs:"column-reverse",lg:"row"}}}> 
-        <Box
+        <div ref={sheet6}  className='my-2 mx-auto px-5 py-1 flex flex-col-reverse md:flex-row
+          bg-gradient-to-r from-gray-300
+             via-yellow-300 to-gray-300'> 
+       <Box
           className='washimg'
           sx={{
            
@@ -520,58 +442,58 @@ sx = {{
         </Box>
        <Box  sx={{display:"flex",justifyContent:"start",flexDirection:"column",my:{xs:2,lg:10},width:{xs:"100%",lg:"100%"}}}>
        <Box  sx={{mx:{xs:2,lg:5},height:"auto"}} >
-         <Box sx={{ my:3,borderTopRightRadius:"20px",borderTopLeftRadius: "30px",borderBottomRightRadius:"30px",borderBottomLeftRadius:"10px",
-       backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)",color:"#cecece",width:"auto"}}>
-          <Typography variant="h5" sx={{py:1,textAlign:"justify",px:3}}  >
+       <div className='flex justify-center  bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 my-3 text-black w-auto pr-2 
+         rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
+           <p className='text-black py-3 text-start font-bold text-2xl' >
           تضمین ارائه خدمات به هنگام
-         </Typography>
-         </Box>
-         <Typography variant="h5" sx={{py:1}}  >
+         </p>
+         </div>
+         <p className='text-gray-700 py-3 text-start font-bold text-xl'  >p
          یک ماه گارانتی رایگان به ازای هر روز تأخیر
-         </Typography>
-         <Typography  paragraph sx={{color:"#ececec",textAlign:"justify"}}>
+         </p>
+         <p className='text-justify text-md text-gray-700 font-sans'>
          زمان قرار ملاقات جهت انجام خدمت در اولین ساعات روز توسط سرویسکار انجام می شود . سرویسکار به جهت اثبات خوشقولی، زمانها خالی را به مصرف کننده پیشنهاد داده و ایشان بهترین انتخاب را انجام می دهد
 
-            </Typography>
-         <Typography variant="h5" sx={{py:1,textAlign:"justify"}}  >
+            </p>
+         <p className='text-gray-700 py-3 text-start font-bold text-xl' >
          نکات قابل توجه:
-        </Typography>
-        <Typography  paragraph sx={{color:"#ececec",textAlign:"justify"}}>  
+        </p>
+        <p  className='text-justify text-md text-gray-700 font-sans'>  
 
         انتخاب خدمت در ۳ شیفت ( صبح ، عصر یا شب ) امکان پذیر است .
 جبران خسارت تاخیر در مراجعه هماهنگ شده ، ۱ ماه گارانتی اضافه به ازای هر روز تاخیر است
 ملاک محاسبه انحراف، از روز مقرر (در توافق با مصرف کننده) تا پایان روز مراجعه محاسبه می گردد و به ازای هر روز تأخیر، ۱ ماه گارانتی به مدت زمان دوره گارانتی اضافه می گردد
 در صورتیکه درفرآیند تعمیر، مصرف کننده نتواند از محصول خود یا محصول جایگزین استفاده نماید با تخصیص گارانتی اضافه به محصول جبران خسارت می گردد
 به ازای هر روز خرابی محصول از روز ششم به بعد،( عدم استفاده مطلوب ) ۱ ماه گارانتی به ازای هر روز تأخیر در رفع مشکل به مدت زمان گارانتی محصول اضافه می شود
-        </Typography>
+        </p>
         </Box>   
         </Box>
-        </Box>
+        </div>
    
    
         <Box ref={sheet7} sx={{my:2 ,mx:5,px:5,py:1,bgcolor:"white",borderRadius:'10px',display:"flex",flexDirection:{xs:"column",lg:"row"}}}> 
        <Box  sx={{display:"flex",justifyContent:"start",flexDirection:"column",my:{xs:2,lg:10},width:{xs:"100%",lg:"100%"}}}>
        <Box  sx={{mx:{xs:2,lg:5},height:"auto"}} >
-         <Box sx={{ my:3,borderTopRightRadius:"20px",borderTopLeftRadius: "30px",borderBottomRightRadius:"30px",borderBottomLeftRadius:"10px",
-       backgroundImage:"linear-gradient(to left ,#c2e59c, #64b3f4)",color:"#282828",width:"auto"}}>
-          <Typography variant="h5" sx={{py:1,textAlign:"justify",px:3}}  >
+       <div className='flex justify-center  bg-gradient-to-r from-[#c2e59c]  via-[#64b3f4] to-[#c2e59c] my-3 text-black w-auto pr-2 
+         rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
+          <p className='text-black py-3 text-start font-bold text-2xl'  >
           شش ماه ضمانت تعمیر
-         </Typography>
-         </Box>
-         <Typography variant="h5" sx={{py:1}}  >
+         </p>
+         </div>
+         <p className='text-gray-700 py-3 text-start font-bold text-xl'  >
          غیر گارانتی
-         </Typography>
-         <Typography  paragraph sx={{color:"#828282",textAlign:"justify"}}>
+         </p>
+         <p  className='text-justify text-md text-gray-500 font-sans'>
          پاسخگویی ۲۴ ساعته و مراجعه در ۷ روز هفته حتی روزهای تعطیل، تعهدی است که شرکت انتخاب الکترونیک را در قبال اعتماد مصرف کنندگان به انتخاب الکترونیک ، برای خود ایجاد کرده است .
-            </Typography>
-         <Typography variant="h5" sx={{py:1,textAlign:"justify"}}  >
+            </p>
+         <p className='text-gray-700 py-3 text-start font-bold text-xl'  >
          نکات قابل توجه:
-        </Typography>
-        <Typography  paragraph sx={{color:"#828282",textAlign:"justify"}}>
+        </p>
+        <p  className='text-justify text-md text-gray-500 font-sans'>
         شماره ۴ رقمی رایگان ۱۶۹۹ با امکان پاسخگویی به تماس هم زمان مشتریان ، از سراسر ایران آماده پاسخگویی به نیاز مشتریان است
 هماهنگی و قرار ملاقات طی همان روز توسط نزدیکترین تکنسین با مصرف کننده انجام می شود
 خدمات گارانتی در همه ساعات شبانه روز ، هیچ هزینه اضافی به مصرف کننده تحمیل نمی کند
-            </Typography>
+            </p>
         </Box>   
         </Box>
         <Box
@@ -593,9 +515,10 @@ sx = {{
         >
         </Box>
         </Box>
-
-        <Box ref={sheet8} sx={{ backgroundImage:{xs:"linear-gradient(to top ,#E0AA3E,#282828)",lg:"linear-gradient(to left ,#E0AA3E,#282828)"},my:2 ,mx:5,px:5,py:1,bgcolor:"white",borderRadius:'10px',display:"flex",flexDirection:{xs:"column-reverse",lg:"row"}}}> 
-        <Box
+        <div ref={sheet8}  className='my-2 mx-auto px-5 py-1 flex flex-col-reverse md:flex-row
+          bg-gradient-to-r from-gray-300
+             via-yellow-300 to-gray-300'> 
+<Box
           className='washimg'
           sx={{
            
@@ -615,32 +538,30 @@ sx = {{
         </Box>
        <Box  sx={{display:"flex",justifyContent:"start",flexDirection:"column",my:{xs:2,lg:10},width:{xs:"100%",lg:"100%"}}}>
        <Box  sx={{mx:{xs:2,lg:5},height:"auto"}} >
-         <Box sx={{ my:3,borderTopRightRadius:"20px",borderTopLeftRadius: "30px",borderBottomRightRadius:"30px",borderBottomLeftRadius:"10px",
-       backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)",color:"#cecece",width:"auto"}}>
-          <Typography variant="h5" sx={{py:1,textAlign:"justify",px:3}}  >
+       <div className='flex justify-center  bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 my-3 text-black w-auto pr-2 
+         rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
+          <p className='text-black py-3 text-start font-bold text-2xl'  >
           ﺗﺤﻮﯾﻞ ﻣﺤﺼﻮل ﺟﺎﯾﮕﺰﯾﻦ
-         </Typography>
-         </Box>
-           <Typography variant="h5" sx={{py:1}}  >
+         </p>
+         </div>
+           <p className='text-gray-700 py-3 text-start font-bold text-xl' >
         ﺗﺤﻮﯾﻞ ﻣﺤﺼﻮل ﺟﺎﯾﮕﺰﯾﻦ ﻫﻨﮕﺎم ﺗﻌﻤﯿﺮ و ﺗﻌﻮﯾﺾ ﻣﺤﺼﻮﻻت
-         </Typography>
-         <Typography variant="h5" sx={{py:1}}  >
+         </p>
        
-         </Typography>
-         <Typography  paragraph sx={{color:"#ececec",textAlign:"justify"}}>
+         <p className='text-justify text-md text-gray-700 font-sans'>
          هدف از اجرای این طرح،‌ افزایش رضایت مشتریانی است که خرابی محصول مانع استفاده مطلوب از لوازم خانگی ایشان شده و تحویل محصول امانی میتواند نیاز مصرف کننده را طی دوره تعمیرات یا مدت زمان تحویل محصول جایگزین فراهم نماید
-            </Typography>
-         <Typography variant="h5" sx={{py:1,textAlign:"justify"}}  >
+            </p>
+         <p className='text-gray-700 py-3 text-start font-bold text-xl'  >
          نکات قابل توجه:
-        </Typography>
-        <Typography  paragraph sx={{color:"#ececec",textAlign:"justify"}}>  
+        </p>
+        <p className='text-justify text-md text-gray-700 font-sans'>  
         پیشنهاد محصول جایگزین به مصرف کنندگانی که طی دوره کوتاه مدت ۱ روز به بالا به علت تعمیر یا عدم کارایی محصول امکان استفاده مطلوب از محصول خود را ندارند، داده می شود
 محصول امانی جایگزین محصولی است که حداقل نیازهای مشتری را پاسخگو باشد
 نصب و راه اندازی و جابجایی محصول جایگزین به صورت رایگان توسط شرکت انتخاب سرویس داده می شود
-</Typography>
+</p>
         </Box>   
         </Box>
-        </Box>
+        </div>
 </Box>
     <Box sx={{width:'100%' }}>
       <Footer/>

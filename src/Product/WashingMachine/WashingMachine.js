@@ -9,6 +9,7 @@ import SlideOffProducts from "../../SlideOffProducts";
 export default  function WashingMachine() {
   return (
 <>
+
 <PageTitle title='ماشین لباسشویی ' description='   ماشین لباسشویی'/>
    <TopNav/> 
    <div className="overflow-x-auto  [&::-webkit-scrollbar]:w-0 py-1 bg-zinc-100 mb-2">

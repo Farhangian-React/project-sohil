@@ -16,7 +16,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Input from '@mui/joy/Input';
 import FormLabel from '@mui/joy/FormLabel';
 import './service.css';
-import  contactimg1 from "../img/contact2.png";
+import  contactimg1 from "../img/contact.png";
 
 function ContactUsForm() {
     const [name,setName]=useState("");
@@ -63,8 +63,11 @@ function ContactUsForm() {
          
       let result={name,email,callnum,massage,comment}
       fetch("https://serverjson-project.onrender.com/Allpopularquestions",{
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
         method:"POST",
-        headers:{"content-type":"aplication/jopes"},
         body:JSON.stringify(result)
     }).then((res)=>{
     toast.success("ثبت درخواست با موفقیت صورت گرفت") ; 
@@ -84,24 +87,12 @@ function ContactUsForm() {
      <ToastContainer />  
     </div>
 
-    <Box 
-      sx={{
-        display:'flex',
-        justifyContent:{xs:"start",lg:'center'},
-       backgroundColor:"black",
-       width:'100vw',
-       height:"auto",
-       flexDirection:{xs:"column",lg:"row"},
-       alignItems:"center",
-       alignSelf:"center",
-       boxShadow:"0px 8px 15px #fff inset",
-       mt:{xs:9,lg:0},
-     pt:3
-   
-       }} >
+    <div
+    className='boxcontact flex justify-center bg-black w-full h-auto flex-col md:flex-row items-center self-center ' 
+ >
 
-    <Box sx={{width:{xs:"100vw",lg:"50vw"},display:"flex",justifyContent:"center",flexDirection:"column",alignSelf:"start",mx:2}}> 
-    <Box sx={{borderBottom:"1px solid white",display:"flex",justifyContent:"center",alignSelf:"center",width:"95%",height:"100px",flexDirection:"column"}}>  
+    <Box sx={{width:{xs:"100vw",md:"50vw"},display:"flex",justifyContent:"center",flexDirection:"column",alignSelf:"start",mx:2,mt:3}}> 
+    <Box sx={{borderBottom:"1px solid white",display:"flex",justifyContent:"center",alignSelf:"center",width:"90%",mx:"auto",height:"100px",flexDirection:"column"}}>  
 <Box sx={{display:"flex",flexDirection:"row",justifyContent:"center"}}>
 <Typography variant='h4' sx={{textAlign:"center",color:"white",mt:1,mb:0}}>
 فرم تماس با ما
@@ -110,7 +101,7 @@ function ContactUsForm() {
 جهت ارسال نظرات و پیشنهادات و انتقادات خود می توانید از طریق فرم زیر اقدام نمایید   
 </Typography>
 </Box> 
-<Box sx={{mx:{xs:15,lg:5},mt:5}}>
+<Box sx={{mx:{xs:15,md:5},mt:5}}>
 <form  noValidate onSubmit={handlesubmit}>
 <Grid container spacing={2} sx={{mt:1}}>
           <Grid  item xs={4}   >
@@ -218,22 +209,10 @@ function ContactUsForm() {
 </Box>
 
    </Box> 
- <Box sx={{width:{xs:"100vw",lg:"50vw"},display:"flex",justifyContent:"center",flexDirection:"column-reverse",alignSelf:"start",mx:1}}> 
-   <Box sx={{alignSelf:"center",
-       display:"flex",
-       borderRadius:1,
-       backgroundImage:`url(${contactimg1})`,
-       backgroundPosition: 'center',
-       backgroundSize:"contained",
-       backgroundRepeat: 'no-repeat',
-       width:{xs:"100vw",lg:"50vw"},
-       height:"400px",
-       mt:1,
+   <Box sx={{width:{xs:"100vw",md:"50vw"},display:"flex",justifyContent:"center",flexDirection:"column",alignSelf:"start",mx:2,mt:3}}> 
+ 
      
-      }}>
-        </Box>
-        <Box sx={{width:{xs:"100vw",lg:"50vw"},display:"flex",justifyContent:"center",flexDirection:"column",alignSelf:"start",mx:2,mt:{xs:5,lg:0}}}> 
-   <Box sx={{borderBottom:"1px solid white",display:"flex",justifyContent:"center",alignSelf:"start",width:"95%",height:"100px",flexDirection:"column"}}>  
+   <Box sx={{borderBottom:"1px solid white",display:"flex",justifyContent:"center",alignSelf:"start",width:"90%",mx:"auto",height:"100px",flexDirection:"column"}}>  
 <Box sx={{display:"flex",flexDirection:"row",justifyContent:"center"}}>
 <Typography variant='h4' sx={{textAlign:"center",color:"white",mt:1,mb:0}}>
  تماس با ما
@@ -256,9 +235,22 @@ function ContactUsForm() {
       <Typography  sx={{px:2,py:1,color:"#8a8a8a",fontSize:"16px"}}> info@sohil.com</Typography>
     </Box>
 </Box>
+ 
+   <Box sx={{alignSelf:"center",
+       display:"flex",
+       borderRadius:1,
+       backgroundImage:`url(${contactimg1})`,
+       backgroundPosition: 'center',
+       backgroundSize:"contained",
+       backgroundRepeat: 'no-repeat',
+       width:{xs:"98vw",md:"50vw"},
+       height:"400px",
+       mt:1,
+     
+      }}>
+        </Box>
    </Box>
-   </Box>
-     </Box>
+     </div>
     <Box sx={{width:'100%' }}>
       <Footer/>
     </Box>
