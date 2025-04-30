@@ -1,5 +1,5 @@
 .banner{
-height: 50vh;
+
     background-image:url('https://media.licdn.com/dms/image/D5612AQHVuQxCMAMmkA/article-cover_image-shrink_600_2000/0/1709023232761?e=2147483647&v=beta&t=DXeQ-HgpoBvjJwYGToBFkf7YcWS_sjRqfezpvrmSuxo');
   
     background-size: cover;
@@ -32,8 +32,9 @@ height: 50vh;
         top:5px;
         right:6px ;
         background-color: #E0AA3E;
-        width: 15%;
-        height: 30px;
+        width: 25%;
+        height: 35px;
+       padding-bottom: 8px;
     }
 }
 
@@ -82,4 +83,28 @@ button {
 }
 .refbutton{
     display: none;
+}
+.blurstyle{
+  animation: scalee 6s alternate infinite linear;
+}
+@keyframes scalee{
+  0%{
+transform: scale(1);
+  }
+  25%{
+    transform: scale(0.5);
+  }
+  75%{
+    transform: scale(1.1);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+.textblurb{
+  font-weight: 700;
+  text-shadow: 0px 0px 10px #f6a709,
+  0px 0px 20px #f6a709,
+  0px 0px 40px #f6a709,
+  0px 0px 80px #f6a709;
 }

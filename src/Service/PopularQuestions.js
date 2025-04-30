@@ -25,59 +25,38 @@ function PopularQuestions() {
 
 
 
-    <Box 
-      sx={{
-        display:'flex',
-        justifyContent:'center',
-       backgroundImage:"linear-gradient(to left ,#E0AA3E,#282828)",
-       width:'100%',
-       height:{xs:"25vh",lg:"35vh"},
-       flexDirection:"row",
-       alignItems:"center",
-       alignSelf:"center",
-   mt:{xs:9,lg:0}
-       }} >
-    <Box sx={{width:"100%",display:"flex",justifyContent:"center",flexDirection:"column",alignSelf:"center"}}>    
-<Typography variant='h4' sx={{textAlign:"center",color:"white",mt:2,mb:0.6}}>
+    <div 
+    className='flex justify-center flex-col md:flex-row  bg-gradient-to-r from-yellow-300 via-gray-500 to-yellow-300 w-full h-auto md:h-[300px]
+    items-center self-center mt-0' >
+    <div className='flex justify-center flex-col self-center w-[95%] md:w-[50%] mr-0 pr-3'>    
+<p  className='text-gray-700 py-3 text-center font-bold text-2xl' >
 سئوالات متداول
-</Typography>
-<Typography variant='body1' sx={{textAlign:"center",color:"white"}}>
+</p>
+<p className='text-center text-[14px] md:text-md text-gray-800 font-sans'>
 پاسخ به مهم‌ترین سوالات و دغدغه‌های شما
-</Typography>
-<Box sx={{my:3,width:"40%",display:'flex',justifyContent:"center",bgcolor:"white",direction:"ltr",alignSelf:"center"}}>
-   <IconButton type="button" sx={{ p: '10px' }} aria-label="search" >
+</p>
+<div dir='rtl' className='border-2 border-gray-700 flex justify-center self-center my-3'>
+   <IconButton type="button" sx={{ p: '10px',color:"#282828" }} aria-label="search" >
         <SearchIcon />
       </IconButton> 
       <InputBase
-        sx={{direction:"rtl", mr: 3, flex: 1 }}
+        sx={{direction:"rtl", mr: 3, flex: 1,color:"white" }}
         type="text"
         placeholder="در اینجا جستجو کنید"
         inputProps={{ 'aria-label': 'جستجوی محصولات سهیل' }}
       
       />
-   </Box>
-   </Box> 
-   
-       <Box sx={{
-      display:"flex",
-      borderRadius:1,
-      alignSelf:"center",
-      backgroundImage:`url(${img2})`,
-      backgroundPosition: 'center',
-      backgroundSize:"contained",
-      backgroundRepeat: 'no-repeat',
-      width:"90%",
-      height:{xs:"20vh",lg:"30vh"},
-     my:{xs:2},
-     
-      }}>
-       </Box></Box>
-       <Box sx={{display:"flex",flexDirection:"column",bgcolor:"#ececec"}}>
-      <Box sx={{   boxShadow:" 5px 5px 40px #E0AA3E ",height:"100px",width:"30%",alignSelf:"center",mt:8}}>
-       <Typography variant='h4' sx={{color:" #282828",fontWeight:"500",textAlign:"center",mt:3}}>  متداول ترین سوالات </Typography>
-</Box>
-      <Box  sx={{display:'flex',flexDirection:'column',justifyContent:"start",mx:8,my:3}}
-       >
+   </div>
+   </div> 
+   <img className='imgsohil' width={300} height={200} alt=''
+         src={img2}/>
+
+       </div>
+       <div className='flex flex-col bg-inherit w-[90%] mx-auto' >
+       <div className='bordershadow flex flex-col justify-center items-center mx-auto mt-10 mb-6 w-[250px]  '  >
+       <p  className='text-lg text-center text-[#371303] px-5 pb-3 font-bold  '>  متداول ترین سوالات </p>
+</div>
+      <div className='flex flex-col justify-start m-5'>
        
       <Accordion sx={{mr:2,ml:6,mt:2}}
         expanded={index === 0}
@@ -224,48 +203,31 @@ function PopularQuestions() {
        <Typography variant='body1' sx={{color:"#414141"}}>منظور همان کد تخفیفی است که از طریق پیامک به شماره پذیرش مصرف کننده اختصاص داده می‌شود. این کد حاوی یک کد شش حرفی به نام کد تخفیف می‌باشد. </Typography>
         </AccordionDetails>
       </Accordion>
-        </Box>
-</Box>
-<Box 
-      sx={{
-        display:'flex',
-        justifyContent:'center',
-       backgroundColor:"white",
-       width:'100%',
-       height:{xs:"20vh",lg:"30vh"},
-       flexDirection:"row-reverse",
-       alignItems:"center",
-       alignSelf:"center"
-       }} >
-        
-        <Box sx={{alignSelf:"center",
-       display:"flex",
-       borderRadius:1,
-       backgroundImage:`url(${mass})`,
-       backgroundPosition: 'center',
-       backgroundSize:"contained",
-       backgroundRepeat: 'no-repeat',
-       width:"90%",
-       height:{xs:"20vh",lg:"30vh"},
-      my:{xs:2}
-      }}>
-        </Box>
-          <Box sx={{width:"100%",display:"flex",justifyContent:"center",flexDirection:"column",alignSelf:"center",my:1}}>    
-<Typography variant='h4' sx={{textAlign:"center",color:"#414141",mt:1,mb:0.6}}>
+        </div>
+</div>
+<div 
+ className='flex justify-center flex-col-reverse md:flex-row-reverse  bg-gradient-to-r  from-yellow-300 via-gray-500 to-yellow-300 w-full h-auto md:h-[300px]
+    items-center self-center mt-0'
+     >
+         <img className='imgsohil' width={300} height={200} alt=''
+         src={mass}/>  
+      
+          <div  className='flex justify-center flex-col self-center w-[95%] md:w-[50%] mr-5 pr-3'>    
+<p  className='text-gray-700 py-3 text-center font-bold text-2xl'>
 پاسخ سوال خود را پیدا نکردید؟
-</Typography>
-<Typography variant='body1' sx={{textAlign:"center",color:"#414141"}}>
+</p>
+<p className='text-center text-[14px] md:text-md text-gray-800 font-sans'>
 شما می‌توانید با پر کردن فرم تماس و پرسیدن سوال خود با ما در تماس باشید
-</Typography>
-<Box sx={{width:"30%",display:"flex",justifyContent:"center",alignSelf:"center",my:3}}>
+</p>
+<div dir='rtl' className=' flex justify-center self-center my-3'>
   <NavLink to={'/ContactUsForm'}>
 <button className='button1'  >  <span className='formbutton'>  تماس با ما</span>   </button></NavLink>
-</Box>
-   </Box> 
-        </Box>
-    <Box sx={{width:'100%' }}>
+</div>
+   </div> 
+        </div>
+    
       <Footer/>
-    </Box>
+    
       </>
   );
 }

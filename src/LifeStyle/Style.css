@@ -1,10 +1,10 @@
 .fullgrid{
    text-decoration: none;
 }
-.grid{
+.imags1{
    text-decoration: none;
 }
- .grid:hover{
+ .imags1:hover{
     text-decoration: none;
     opacity:0.8;
     scale: 1.05;
@@ -105,11 +105,13 @@
    padding: 10px;
    margin:8px ;
    font-size: medium;
-   border-top-left-radius: 30px;
-   border-top-right-radius:15px ;
-
+   border-top-left-radius: 40px;
+   border-top-right-radius:20px ;
+   border-bottom-right-radius:60px ;
+   border-bottom-left-radius:20px ;
+    
 }
 .home:hover{
-   background-image:linear-gradient(to bottom ,#f9f0de,#565452) ;
+   background-image:linear-gradient(to right ,#d4d4d8,#fde047) ;
    transform: translateY(-4px);
 }

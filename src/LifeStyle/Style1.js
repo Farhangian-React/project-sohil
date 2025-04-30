@@ -50,170 +50,104 @@ const [cartshow,setCartshow]=useState([]);
   };
   return (
     <>
-    <Box  sx={{ backgroundImage:"linear-gradient(to bottom ,#f9f0de,#565452)",
-   borderTopLeftRadius: "150px",borderTopRightRadius: "30px",height:'120px',my:{xs:10,lg:3},mx:3,display:"flex",justifyContent:"start",alignSelf:"end",
-}}>
-   <Typography variant='h5' sx={{px:4,my:0,pt:2,color:'#4f3b02',textAlign:'right'}} >
+    <div className='flex justify-center self-end my-2 mx-auto px-3 w-[93%] 
+    bg-gradient-to-r from-gray-300 via-yellow-300 to-gray-300  rounded-tr-[20px] rounded-tl-[40px] rounded-br-[60px] rounded-bl-[20px]  h-[90px]'>
+   <p className='text-gray-700 py-3 text-center font-bold text-xl md:text-2xl' >
   به سبک خودت زندگی کن 
-  <Typography  sx={{fontSize:{xs:"14px",lg:"18px"},pt:2.5,pb:0,my:0,color:'#282828',lineHeight:'0'}} > مطالب به روز و خواندنی در مورد هر آنچه که با آن زندگی می کنید
-    </Typography>
-   </Typography>
-</Box>
-<Grid container  sx={{display:'flex',flexDirection:'row',justifyContent:'center'}}>
-  <Grid xs={5} lg={4} className='grid' 
-   component="a"
-   href="/water-temperature"
-   sx={{
-    position:"relative",
-     display:'flex',
-     justifyContent:'center',
-    backgroundImage: 'url("https://snowa.ir/wp-content/uploads/2024/04/1-600x338.jpg")',
-    backgroundPosition: 'center',
-    backgroundSize:'cover',
-    backgroundRepeat: 'no-repeat',
-    height:'300px',
-    overflow:"hidden",
-    borderRadius:"10px",
-    m:2
-   
-  }}
-    >
-<Box className="gerdalia"><NavLink className='linka'  to={'/ProductOff'} > اهمیت دمای آب لباسشویی برای شستشوی لباس های مختلف
-        </NavLink></Box>
+  <p 
+  className='text-center text-[9px] md:text-md text-gray-600 font-sans'>
+     مطالب به روز و خواندنی در مورد هر آنچه که با آن زندگی می کنید
+    </p>
+   </p>
+</div>
+
+
+<div className='flex flex-row flex-wrap justify-center w-[95%] mx-auto mt-8'>
+<div className='m-2 imags1 w-[350px] h-[270px] flex justify-center rounded-lg  bg-cover bg-center bg-no-repeat items-end '
+    style={{backgroundImage:`url(https://snowa.ir/wp-content/uploads/2024/04/1-600x338.jpg)`}}
+     > 
+     <NavLink className='linka'  to={'/ProductOff'} >
+      <div className='w-[340px] type1 flex justify-center self-end my-2 mx-1 p-1.5  bg-gradient-to-r from-gray-300 via-yellow-300 to-gray-300  rounded-tr-[20px] rounded-tl-[40px] rounded-br-[60px] rounded-bl-[20px]  h-[30px]' >
+  اهمیت دمای آب لباسشویی برای شستشوی لباس های مختلف
+       </div> </NavLink>
 
    <Box className='type2' >
   <Typography  fontWeight={400} sx={{color:'white',fontSize:{xs:'20px',sm:"22px",md:'24px',lg:"26px"}}}>
    بیشتر بخوانید...
   </Typography></Box>
-  </Grid>
-  <Grid xs={5} lg={3} 
-  className='grid' 
-  component="a"
-  href="allrefriderators"
-  sx={{
-    position:"relative",
-     display:'flex',
-     justifyContent:'center',
-    backgroundImage: 'url("https://snowa.ir/wp-content/uploads/2024/03/3-1-600x338.jpg")',
-    backgroundPosition: 'center',
-    backgroundSize:'cover',
-    backgroundRepeat: 'no-repeat',
-    height:'300px',
-    overflow:"hidden",
-    borderRadius:"10px",
-   m:2
-  }}
-  >
- <Box className="gerdalia"><NavLink className='linka' to={'/ProductOff'} > ویژگی های لوازم خانگی دوست دار محیط زیست
-        </NavLink></Box>
-
-        <Box className='type2' >
-  <Typography  fontWeight={400} sx={{color:'black',fontSize:{xs:'20px',sm:"22px",md:'24px',lg:"26px"}}}>
-   بیشتر بخوانید...
-  </Typography></Box>
-</Grid>
-  <Grid xs={5} lg={3} 
-  className='grid' 
-  component="a"
-  href="allrefriderators"
-  sx={{
-    position:"relative",
-     display:'flex',
-     justifyContent:'center',
-    backgroundImage: 'url("https://snowa.ir/wp-content/uploads/2024/02/s6-600x338.jpg")',
-    backgroundPosition: 'center',
-    backgroundSize:'cover',
-    backgroundRepeat: 'no-repeat',
-    height:'300px',
-    overflow:"hidden",
-    borderRadius:"10px",
-   m:2}}>
-  <Box className="gerdalia"><NavLink className='linka' to={'/ProductOff'} > نور آبی نمایشگرهای دیجیتالی و اثرات مخرب آن  
-        </NavLink></Box>
+      </div>
+      <div className='m-2 imags1 w-[350px] h-[270px] flex justify-center rounded-lg  bg-cover bg-center bg-no-repeat items-end '
+    style={{backgroundImage:`url(https://snowa.ir/wp-content/uploads/2024/03/3-1-600x338.jpg)`}}
+     > 
+     <NavLink className='linka'  to={'/ProductOff'} >
+      <div className='w-[330px] type1 flex justify-center self-end my-2 mx-1 p-1.5  bg-gradient-to-r from-gray-300 via-yellow-300 to-gray-300  rounded-tr-[20px] rounded-tl-[40px] rounded-br-[60px] rounded-bl-[20px]  h-[30px]' >
+      ویژگی های لوازم خانگی دوست دار محیط زیست
+       </div> </NavLink>
 
    <Box className='type2' >
   <Typography  fontWeight={400} sx={{color:'white',fontSize:{xs:'20px',sm:"22px",md:'24px',lg:"26px"}}}>
    بیشتر بخوانید...
   </Typography></Box>
-  </Grid>
-  <Grid xs={5} lg={3} 
-  className='grid' 
-  component="a"
-  href="allrefriderators"
-  sx={{
-    position:"relative",
-     display:'flex',
-     justifyContent:'center',
-    backgroundImage: 'url("https://snowa.ir/wp-content/uploads/2023/12/%D8%B4%D8%A7%D8%AE%D8%B5-3-600x338.jpg")',
-    backgroundPosition: 'center',
-    backgroundSize:'cover',
-    backgroundRepeat: 'no-repeat',
-    height:'300px',
-    overflow:"hidden",
-    borderRadius:"10px",
-   m:2}}>
-   <Box className="gerdalia"><NavLink className='linka' to={'/ProductOff'} > طرز تهیه آجیل بو داده برای شب یلدا  
-        </NavLink></Box>
+      </div>
+      <div className='m-2 imags1 w-[350px] h-[270px] flex justify-center rounded-lg  bg-cover bg-center bg-no-repeat items-end '
+    style={{backgroundImage:`url(https://snowa.ir/wp-content/uploads/2024/02/s6-600x338.jpg )`}}
+     > 
+     <NavLink className='linka'  to={'/ProductOff'} >
+      <div className='w-[330px]type1 flex justify-center self-end my-2 mx-1 p-1.5  bg-gradient-to-r from-gray-300 via-yellow-300 to-gray-300  rounded-tr-[20px] rounded-tl-[40px] rounded-br-[60px] rounded-bl-[20px]  h-[30px]' >
+      نور آبی نمایشگرهای دیجیتالی و اثرات مخرب آن 
+       </div> </NavLink>
 
    <Box className='type2' >
   <Typography  fontWeight={400} sx={{color:'white',fontSize:{xs:'20px',sm:"22px",md:'24px',lg:"26px"}}}>
    بیشتر بخوانید...
   </Typography></Box>
-</Grid>
-<Grid 
-className='grid' 
-component="a"
-href="allrefriderators"
-xs={5} lg={4}
-sx={{
-  position:"relative",
-   display:'flex',
-   justifyContent:'center',
-  backgroundImage: 'url("https://snowa.ir/wp-content/uploads/2023/10/6.jpg")',
-  backgroundPosition: 'center',
-  backgroundSize:'cover',
-  backgroundRepeat: 'no-repeat',
-  height:'300px',
-  overflow:"hidden",
-  borderRadius:"10px",
- m:2}}>
-  <Box className="gerdalia"><NavLink className='linka' to={'/ProductOff'} > محافظت از لوازم برقی در هنگام رعد و برق  
-        </NavLink></Box>
+      </div>
+      <div className='m-2 imags1 w-[350px] h-[270px] flex justify-center rounded-lg  bg-cover bg-center bg-no-repeat items-end '
+    style={{backgroundImage:`url(https://snowa.ir/wp-content/uploads/2023/12/%D8%B4%D8%A7%D8%AE%D8%B5-3-600x338.jpg)`}}
+     > 
+     <NavLink className='linka'  to={'/ProductOff'} >
+      <div className='w-[330px] type1 flex justify-center self-end my-2 mx-1 p-1.5  bg-gradient-to-r from-gray-300 via-yellow-300 to-gray-300  rounded-tr-[20px] rounded-tl-[40px] rounded-br-[60px] rounded-bl-[20px]  h-[30px]' >
+      طرز تهیه آجیل بو داده برای شب یلدا  
+       </div> </NavLink>
 
    <Box className='type2' >
   <Typography  fontWeight={400} sx={{color:'white',fontSize:{xs:'20px',sm:"22px",md:'24px',lg:"26px"}}}>
    بیشتر بخوانید...
   </Typography></Box>
-</Grid>
-<Grid xs={5} lg={3} className='grid' 
-   component="a"
-   href="allrefriderators"
-   sx={{
-    position:"relative",
-     display:'flex',
-     justifyContent:'center',
-    backgroundImage: 'url("https://snowa.ir/wp-content/uploads/2023/12/%D8%B4%D8%A7%D8%AE%D8%B5-600x338.jpg")',
-    backgroundPosition: 'center',
-    backgroundSize:'cover',
-    backgroundRepeat: 'no-repeat',
-    height:'300px',
-    overflow:"hidden",
-    borderRadius:"10px",
-   m:2}}>
- <Box className="gerdalia"><NavLink className='linka' to={'/ProductOff'} > ساده‌ترین راه‌ها برای داشتن منزلی با دکوراسیون پاییزی 
-        </NavLink></Box>
+      </div>
+      <div className='m-2 imags1 w-[350px] h-[270px] flex justify-center rounded-lg  bg-cover bg-center bg-no-repeat items-end '
+    style={{backgroundImage:`url(https://snowa.ir/wp-content/uploads/2023/10/6.jpg )`}}
+     > 
+     <NavLink className='linka'  to={'/ProductOff'} >
+      <div className='w-[330px] type1 flex justify-center self-end my-2 mx-1 p-1.5  bg-gradient-to-r from-gray-300 via-yellow-300 to-gray-300  rounded-tr-[20px] rounded-tl-[40px] rounded-br-[60px] rounded-bl-[20px]  h-[30px]' >
+      محافظت از لوازم برقی در هنگام رعد و برق 
+       </div> </NavLink>
 
    <Box className='type2' >
-  <Typography  fontWeight={400} sx={{color:'black',fontSize:{xs:'20px',sm:"22px",md:'24px',lg:"26px"}}}>
+  <Typography  fontWeight={400} sx={{color:'white',fontSize:{xs:'20px',sm:"22px",md:'24px',lg:"26px"}}}>
    بیشتر بخوانید...
   </Typography></Box>
-</Grid>
-  </Grid>
-  <Grid xs={10} md={8} sx={{mx:{xs:7,md:12},my:8}}>
+      </div>
+      <div className='m-2 imags1 w-[350px] h-[270px] flex justify-center rounded-lg  bg-cover bg-center bg-no-repeat items-end '
+    style={{backgroundImage:`url( https://snowa.ir/wp-content/uploads/2023/12/%D8%B4%D8%A7%D8%AE%D8%B5-600x338.jpg)`}}
+     > 
+     <NavLink className='linka'  to={'/ProductOff'} >
+      <div className='w-[330px] type1 flex justify-center self-end my-2 mx-1 p-1.5  bg-gradient-to-r from-gray-300 via-yellow-300 to-gray-300  rounded-tr-[20px] rounded-tl-[40px] rounded-br-[60px] rounded-bl-[20px]  h-[30px]' >
+      ساده‌ترین راه‌ها برای داشتن منزلی با دکوراسیون پاییزی 
+       </div> </NavLink>
+
+   <Box className='type2' >
+  <Typography  fontWeight={400} sx={{color:'white',fontSize:{xs:'20px',sm:"22px",md:'24px',lg:"26px"}}}>
+   بیشتر بخوانید...
+  </Typography></Box>
+      </div>         
+</div>
+
+  <div className='flex flex-row justify-center mx-auto my-10'>
     <button onClick={handelclick1} className='home' >ترفند های خانگی</button>
     <button onClick={handelclick2} className='home' > آشپزی خانگی </button>
     <button onClick={handelclick3} className='home' >دکوراسیون خانگی</button>
-  </Grid>
+  </div>
   <Grid container sx={{display:'flex',justifyContent:'center',mx:3}}>
     {cartshow.map((item) => (
       
@@ -227,8 +161,9 @@ sx={{
   >
 
 
-<Card  sx={{height:"370px",bgcolor:"#f9f9f2",marginTop:'10px',marginBottom: '10px',mx:1,mt:3, p:1 }} key={item.id}>
+<Card className='imags1' sx={{height:"370px",bgcolor:"#f9f9f2",marginTop:'10px',marginBottom: '10px',mx:1,mt:3, p:1 }} key={item.id}>
 <CardMedia
+
 sx={{height:"300px"}}
     component="img"
    
@@ -236,12 +171,12 @@ sx={{height:"300px"}}
     alt=""
   />
       
-    <Typography className='type1'  fontWeight={400} sx={{color:'#353535',mt:2,mr:2,fontSize:{xs:'14px',md:'16px'}}}>
+    <p className='type1 text-sm text-gray-800 font-bold mx-auto mt-3 pr-2'>
    {item.text}
-  </Typography>
-  <Typography className='type2'  fontWeight={400} sx={{mr:{xs:8,sm:12,md:10,lg:14},color:'#353535',fontSize:{xs:'20px',sm:"22px",md:'24px',lg:"26px"}}}>
+  </p>
+  <p className='type2 text-lg text-gray-700 font-bold text-right mt-3'>
    بیشتر بخوانید...
-  </Typography>
+  </p>
 
 
 
