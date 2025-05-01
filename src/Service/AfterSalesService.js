@@ -100,11 +100,11 @@ const scrollToElement8 = () => {
      alignSelf:"end"
        }} >
     
-    <div className="flex justify-center overflow-x-auto [&::-webkit-scrollbar]:w-0 py-1 bg-zinc-100 w-[100%] mx-auto  h-[160px] ">
+    <div className="flex justify-center overflow-x-auto [&::-webkit-scrollbar]:w-0 py-1 bg-zinc-100 w-[100%] mx-3  h-[160px] ">
     <ul className=" flex uppercase font-bold mr-1">
        <li>
         <button onClick={scrollToElement1} className='bg-inherit w-[100px] mx-5 flex flex-col justify-center items-center  '>
-        <img  className='hover:scale-125'  width={80} height={80} alt='' src='https://snowa.ir/wp-content/uploads/2023/03/1-sla.svg'/>
+        <img  className='hover:scale-125 w-[50px] h-[50px] md:w-[70px] md:h-[70px]'  alt='' src='https://snowa.ir/wp-content/uploads/2023/03/1-sla.svg'/>
         <p className='text-sm text-center text-gray-700 px-1 hover:text-[#64b3f4] mt-2 '>
              ۳۰ روز ضمانت تعویض
           </p>
@@ -112,7 +112,7 @@ const scrollToElement8 = () => {
          </li>
          <li>
         <button onClick={scrollToElement2} className='bg-inherit w-[100px] mx-5 flex flex-col justify-center items-center  '>
-        <img className='hover:scale-125'  width={80} height={80} alt='' src='https://snowa.ir/wp-content/uploads/2023/03/2-sla.svg'/>
+        <img className='hover:scale-125 w-[50px] h-[50px] md:w-[70px] md:h-[70px]'  alt='' src='https://snowa.ir/wp-content/uploads/2023/03/2-sla.svg'/>
         <p className='text-sm text-center text-gray-700 px-1 hover:text-[#64b3f4] mt-2 '>
         سه ماه تعویض راﯾﮕﺎن
           </p>
@@ -120,7 +120,7 @@ const scrollToElement8 = () => {
          </li>
          <li>
         <button onClick={scrollToElement3} className='bg-inherit w-[100px] mx-5 flex flex-col justify-center items-center  '>
-        <img className='hover:scale-125'  width={80} height={80} alt='' src='https://snowa.ir/wp-content/uploads/2023/03/3-sla.svg'/>
+        <img className='hover:scale-125 w-[50px] h-[50px] md:w-[70px] md:h-[70px]' alt='' src='https://snowa.ir/wp-content/uploads/2023/03/3-sla.svg'/>
         <p className='text-sm text-center text-gray-700 px-1 hover:text-[#64b3f4] mt-2 '>
         ضمانت کمپرسور
           </p>
@@ -128,7 +128,7 @@ const scrollToElement8 = () => {
          </li>
          <li>
         <button onClick={scrollToElement4} className='bg-inherit w-[100px] mx-5 flex flex-col justify-center items-center  '>
-        <img className='hover:scale-125'  width={80} height={80} alt='' src=' https://snowa.ir/wp-content/uploads/2023/03/4-sla.svg'/>
+        <img className='hover:scale-125 w-[50px] h-[50px] md:w-[70px] md:h-[70px]'   alt='' src=' https://snowa.ir/wp-content/uploads/2023/03/4-sla.svg'/>
         <p className='text-sm text-center text-gray-700 px-1 hover:text-[#64b3f4] mt-2 '>
         تعویض مادام العمر
           </p>
@@ -136,7 +136,7 @@ const scrollToElement8 = () => {
          </li> 
          <li>
         <button onClick={scrollToElement5} className='bg-inherit w-[100px] mx-5 flex flex-col justify-center items-center  '>
-        <img className='hover:scale-125'  width={80} height={80} alt='' src="https://snowa.ir/wp-content/uploads/2023/03/5-sla.svg"/>
+        <img className='hover:scale-125 w-[50px] h-[50px] md:w-[70px] md:h-[70px]'   alt='' src="https://snowa.ir/wp-content/uploads/2023/03/5-sla.svg"/>
         <p className='text-sm text-center text-gray-700 px-1 hover:text-[#64b3f4] mt-2 '>
         خدمات ۷ روز هفته
           </p>
@@ -144,7 +144,7 @@ const scrollToElement8 = () => {
          </li>
          <li>
         <button onClick={scrollToElement6} className='bg-inherit w-[100px] mx-5 flex flex-col justify-center items-center  '>
-        <img className='hover:scale-125'  width={80} height={80} alt='' src="https://snowa.ir/wp-content/uploads/2023/03/6-sla.svg "/>
+        <img className='hover:scale-125 w-[50px] h-[50px] md:w-[70px] md:h-[70px]'  alt='' src="https://snowa.ir/wp-content/uploads/2023/03/6-sla.svg "/>
         <p className='text-sm text-center text-gray-700 px-1 hover:text-[#64b3f4] mt-2 '>
         تضمین ارائه خدمات
           </p>
@@ -152,7 +152,7 @@ const scrollToElement8 = () => {
          </li>
          <li>
         <button onClick={scrollToElement7} className='bg-inherit w-[100px] mx-5 flex flex-col justify-center items-center  '>
-        <img className='hover:scale-125'  width={80} height={80} alt='' src=" https://snowa.ir/wp-content/uploads/2023/03/7-sla.svg"/>
+        <img className='hover:scale-125 w-[50px] h-[50px] md:w-[70px] md:h-[70px]'   alt='' src=" https://snowa.ir/wp-content/uploads/2023/03/7-sla.svg"/>
         <p className='text-sm text-center text-gray-700 px-1 hover:text-[#64b3f4] mt-2 '>
         ۶ ماه ضمانت تعمیر
           </p>
@@ -160,7 +160,7 @@ const scrollToElement8 = () => {
          </li>
          <li>
         <button onClick={scrollToElement8} className='bg-inherit w-[100px] mx-5 flex flex-col justify-center items-center  '>
-        <img className='hover:scale-125'  width={80} height={80} alt='' src=" https://snowa.ir/wp-content/uploads/2023/03/8-sla.svg"/>
+        <img className='hover:scale-125 w-[50px] h-[50px] md:w-[70px] md:h-[70px]' alt='' src=" https://snowa.ir/wp-content/uploads/2023/03/8-sla.svg"/>
         <p className='text-sm text-center text-gray-700 px-1 hover:text-[#64b3f4] mt-2 '>
         تحویل محصول جایگزین  
           </p>
@@ -170,7 +170,7 @@ const scrollToElement8 = () => {
          </div>
       </Box>      
     <div ref={sheet1} className='flex flex-col md:flex-row bg-white px-1 md:px-3 mx-auto my-2'>
-       <div className='flex justify-start flex-col my-2 w-full' >
+       <div className='flex justify-start md:justify-center flex-col my-2  px-2 w-full' >
          <div className='flex justify-center  bg-gradient-to-r from-[#c2e59c]  via-[#64b3f4] to-[#c2e59c] my-3 text-black w-auto pr-2 
          rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
           <p className='text-black py-3 text-start font-bold text-xl md:text-2xl' >
@@ -250,7 +250,7 @@ sx = {{
             }}
         >
         </Box>
-        <div className='flex justify-start flex-col my-2 w-full' >
+        <div className='flex justify-start md:justify-center flex-col my-2  px-2 w-full' >
        <div className='flex justify-center  bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 my-3 text-black w-auto pr-2 
          rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
           <p className='text-black py-3 text-start font-bold text-xl md:text-2xl'  >
@@ -279,7 +279,7 @@ sx = {{
 
 
         <div ref={sheet3} className='flex flex-col md:flex-row bg-white px-1 md:px-3 mx-auto my-2'> 
-        <div className='flex justify-start flex-col my-2 w-full' >
+        <div className='flex justify-start md:justify-center flex-col my-2  px-2 w-full' >
        <div className='flex justify-center  bg-gradient-to-r from-[#c2e59c]  via-[#64b3f4] to-[#c2e59c] my-3 text-black w-auto pr-2 
          rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
           <p  className='text-black py-3 text-start font-bold text-xl md:text-2xl'  >
@@ -344,7 +344,7 @@ sx = {{
             }}
         >
         </Box>
-        <div className='flex justify-start flex-col my-2 w-full' >
+        <div className='flex justify-start md:justify-center flex-col my-2  px-2 w-full' >
        <div className='flex justify-center  bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 my-3 text-black w-auto pr-2 
          rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
           <p  className='text-black py-3 text-start font-bold text-xl md:text-2xl'  >
@@ -370,7 +370,7 @@ sx = {{
    
    
         <div ref={sheet5} className='flex flex-col md:flex-row bg-white px-1 md:px-3 mx-auto my-2'> 
-        <div className='flex justify-start flex-col my-2 w-full' >
+        <div className='flex justify-start md:justify-center flex-col my-2  px-2 w-full' >
        <div className='flex justify-center  bg-gradient-to-r from-[#c2e59c]  via-[#64b3f4] to-[#c2e59c] my-3 text-black w-auto pr-2 
          rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
           <p className='text-black py-3 text-start font-bold text-xl md:text-2xl' >
@@ -434,7 +434,7 @@ sx = {{
             }}
         >
         </Box>
-        <div className='flex justify-start flex-col my-2 w-full' >
+        <div className='flex justify-start md:justify-center flex-col my-2  px-2 w-full' >
        <div className='flex justify-center  bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 my-3 text-black w-auto pr-2 
          rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
            <p className='text-black py-3 text-start font-bold text-2xl' >
@@ -464,7 +464,7 @@ sx = {{
    
    
         <div ref={sheet7} className='flex flex-col md:flex-row bg-white px-1 md:px-3 mx-auto my-2'> 
-        <div className='flex justify-start flex-col my-2 w-full' >
+        <div className='flex justify-start md:justify-center flex-col my-2  px-2 w-full' >
        <div className='flex justify-center  bg-gradient-to-r from-[#c2e59c]  via-[#64b3f4] to-[#c2e59c] my-3 text-black w-auto pr-2 
          rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
           <p className='text-black py-3 text-start font-bold text-xl md:text-2xl'  >
@@ -526,7 +526,7 @@ sx = {{
             }}
         >
         </Box>
-        <div className='flex justify-start flex-col my-2 w-full' >
+        <div className='flex justify-start md:justify-center flex-col my-2 w-full px-2' >
        <div className='flex justify-center  bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 my-3 text-black w-auto pr-2 
          rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
           <p className='text-black py-3 text-start font-bold text-xl md:text-2xl'  >
