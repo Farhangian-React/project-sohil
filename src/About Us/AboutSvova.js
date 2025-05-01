@@ -12,13 +12,13 @@ function AboutSnova() {
     <>
     <PageTitle title='سهیل / چرا سهیل   ' description=' سهیل '/>
     <TopNav />
-    <Box sx={{width:'100%' ,height:'100 vh', bgcolor:"white"}}>
+    <Box >
       <Bannerus/> 
     </Box>
       <Box  >
 <Sheetus1/>
     </Box>
-    <Box  className='sheetus2' sx={{width:'100%', bgcolor:'#f9f9f2',height:'auto'}}>
+    <Box  className='sheetus2' sx={{width:'100%',height:'auto'}}>
         <Sheetus2/>
             </Box>
     <Box sx={{width:'100%' }}>

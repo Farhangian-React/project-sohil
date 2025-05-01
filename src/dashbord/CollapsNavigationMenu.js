@@ -154,6 +154,7 @@ onClick={handleDrawerOpen}
 
 
    <Drawer
+ 
         sx={{
        
           flexShrink: 0,
@@ -166,6 +167,8 @@ onClick={handleDrawerOpen}
             flexDirection:"column",
             justifyContent:"start",
             direction:"rtl",
+         
+     
     
            
           },
@@ -173,7 +176,7 @@ onClick={handleDrawerOpen}
         variant="persistent"
         anchor="right"
         open={open}
-     className='z-50'
+    
       >
         <DrawerHeader  className='bg-gradient-to-r from-gray-500 via-yellow-500 to-gray-500 text-white  '
          sx={{display:"flex",justifyContent:"space-around"}}>

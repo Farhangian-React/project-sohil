@@ -50,12 +50,12 @@ const [cartshow,setCartshow]=useState([]);
   };
   return (
     <>
-    <div className='flex justify-center self-end my-2 mx-auto px-3 w-[93%] 
-    bg-gradient-to-r from-gray-300 via-yellow-300 to-gray-300  rounded-tr-[20px] rounded-tl-[40px] rounded-br-[60px] rounded-bl-[20px]  h-[90px]'>
+    <div className='flex justify-center self-end my-1 mx-auto px-3 w-[93%] 
+    bg-gradient-to-r from-gray-300 via-yellow-500 to-gray-300  rounded-tr-[20px] rounded-tl-[40px] rounded-br-[60px] rounded-bl-[20px]  h-[90px]'>
    <p className='text-gray-700 py-3 text-center font-bold text-xl md:text-2xl' >
   به سبک خودت زندگی کن 
   <p 
-  className='text-center text-[9px] md:text-md text-gray-600 font-sans'>
+  className='text-center text-[10px] sm:text-[14px] md:text-md text-gray-600 font-sans'>
      مطالب به روز و خواندنی در مورد هر آنچه که با آن زندگی می کنید
     </p>
    </p>
@@ -67,7 +67,8 @@ const [cartshow,setCartshow]=useState([]);
     style={{backgroundImage:`url(https://snowa.ir/wp-content/uploads/2024/04/1-600x338.jpg)`}}
      > 
      <NavLink className='linka'  to={'/ProductOff'} >
-      <div className='w-[340px] type1 flex justify-center self-end my-2 mx-1 p-1.5  bg-gradient-to-r from-gray-300 via-yellow-300 to-gray-300  rounded-tr-[20px] rounded-tl-[40px] rounded-br-[60px] rounded-bl-[20px]  h-[30px]' >
+      <div className='w-[340px] type1 flex justify-center self-end my-2 mx-1 p-1.5 
+       bg-gradient-to-r from-gray-300 via-yellow-500 to-gray-300  rounded-tr-[20px] rounded-tl-[40px] rounded-br-[60px] rounded-bl-[20px]  h-[30px]' >
   اهمیت دمای آب لباسشویی برای شستشوی لباس های مختلف
        </div> </NavLink>
 
@@ -80,7 +81,7 @@ const [cartshow,setCartshow]=useState([]);
     style={{backgroundImage:`url(https://snowa.ir/wp-content/uploads/2024/03/3-1-600x338.jpg)`}}
      > 
      <NavLink className='linka'  to={'/ProductOff'} >
-      <div className='w-[330px] type1 flex justify-center self-end my-2 mx-1 p-1.5  bg-gradient-to-r from-gray-300 via-yellow-300 to-gray-300  rounded-tr-[20px] rounded-tl-[40px] rounded-br-[60px] rounded-bl-[20px]  h-[30px]' >
+      <div className='w-[330px] type1 flex justify-center self-end my-2 mx-1 p-1.5  bg-gradient-to-r from-gray-300 via-yellow-500 to-gray-300  rounded-tr-[20px] rounded-tl-[40px] rounded-br-[60px] rounded-bl-[20px]  h-[30px]' >
       ویژگی های لوازم خانگی دوست دار محیط زیست
        </div> </NavLink>
 
@@ -93,7 +94,7 @@ const [cartshow,setCartshow]=useState([]);
     style={{backgroundImage:`url(https://snowa.ir/wp-content/uploads/2024/02/s6-600x338.jpg )`}}
      > 
      <NavLink className='linka'  to={'/ProductOff'} >
-      <div className='w-[330px]type1 flex justify-center self-end my-2 mx-1 p-1.5  bg-gradient-to-r from-gray-300 via-yellow-300 to-gray-300  rounded-tr-[20px] rounded-tl-[40px] rounded-br-[60px] rounded-bl-[20px]  h-[30px]' >
+      <div className='w-[330px]type1 flex justify-center self-end my-2 mx-1 p-1.5  bg-gradient-to-r from-gray-300 via-yellow-500 to-gray-300  rounded-tr-[20px] rounded-tl-[40px] rounded-br-[60px] rounded-bl-[20px]  h-[30px]' >
       نور آبی نمایشگرهای دیجیتالی و اثرات مخرب آن 
        </div> </NavLink>
 
@@ -106,7 +107,7 @@ const [cartshow,setCartshow]=useState([]);
     style={{backgroundImage:`url(https://snowa.ir/wp-content/uploads/2023/12/%D8%B4%D8%A7%D8%AE%D8%B5-3-600x338.jpg)`}}
      > 
      <NavLink className='linka'  to={'/ProductOff'} >
-      <div className='w-[330px] type1 flex justify-center self-end my-2 mx-1 p-1.5  bg-gradient-to-r from-gray-300 via-yellow-300 to-gray-300  rounded-tr-[20px] rounded-tl-[40px] rounded-br-[60px] rounded-bl-[20px]  h-[30px]' >
+      <div className='w-[330px] type1 flex justify-center self-end my-2 mx-1 p-1.5  bg-gradient-to-r from-gray-300 via-yellow-500 to-gray-300  rounded-tr-[20px] rounded-tl-[40px] rounded-br-[60px] rounded-bl-[20px]  h-[30px]' >
       طرز تهیه آجیل بو داده برای شب یلدا  
        </div> </NavLink>
 
@@ -119,7 +120,7 @@ const [cartshow,setCartshow]=useState([]);
     style={{backgroundImage:`url(https://snowa.ir/wp-content/uploads/2023/10/6.jpg )`}}
      > 
      <NavLink className='linka'  to={'/ProductOff'} >
-      <div className='w-[330px] type1 flex justify-center self-end my-2 mx-1 p-1.5  bg-gradient-to-r from-gray-300 via-yellow-300 to-gray-300  rounded-tr-[20px] rounded-tl-[40px] rounded-br-[60px] rounded-bl-[20px]  h-[30px]' >
+      <div className='w-[330px] type1 flex justify-center self-end my-2 mx-1 p-1.5  bg-gradient-to-r from-gray-300 via-yellow-500 to-gray-300  rounded-tr-[20px] rounded-tl-[40px] rounded-br-[60px] rounded-bl-[20px]  h-[30px]' >
       محافظت از لوازم برقی در هنگام رعد و برق 
        </div> </NavLink>
 
@@ -132,7 +133,7 @@ const [cartshow,setCartshow]=useState([]);
     style={{backgroundImage:`url( https://snowa.ir/wp-content/uploads/2023/12/%D8%B4%D8%A7%D8%AE%D8%B5-600x338.jpg)`}}
      > 
      <NavLink className='linka'  to={'/ProductOff'} >
-      <div className='w-[330px] type1 flex justify-center self-end my-2 mx-1 p-1.5  bg-gradient-to-r from-gray-300 via-yellow-300 to-gray-300  rounded-tr-[20px] rounded-tl-[40px] rounded-br-[60px] rounded-bl-[20px]  h-[30px]' >
+      <div className='w-[330px] type1 flex justify-center self-end my-2 mx-1 p-1.5  bg-gradient-to-r from-gray-300 via-yellow-500 to-gray-300  rounded-tr-[20px] rounded-tl-[40px] rounded-br-[60px] rounded-bl-[20px]  h-[30px]' >
       ساده‌ترین راه‌ها برای داشتن منزلی با دکوراسیون پاییزی 
        </div> </NavLink>
 
@@ -148,30 +149,25 @@ const [cartshow,setCartshow]=useState([]);
     <button onClick={handelclick2} className='home' > آشپزی خانگی </button>
     <button onClick={handelclick3} className='home' >دکوراسیون خانگی</button>
   </div>
-  <Grid container sx={{display:'flex',justifyContent:'center',mx:3}}>
+  <div className='flex justify-center flex-wrap mx-auto bg-zinc-100 '>
     {cartshow.map((item) => (
       
 
 
-  <Grid xs={6} sm={4} md={3} className='grid'
-    
-   component="a"
-   href={item.href}
-   
-  >
 
 
-<Card className='imags1' sx={{height:"370px",bgcolor:"#f9f9f2",marginTop:'10px',marginBottom: '10px',mx:1,mt:3, p:1 }} key={item.id}>
+
+<Card className='imags1' sx={{width:{xs:"350px",md:"auto"},height:"320px",bgcolor:"#f9f9f2",marginTop:'10px',marginBottom: '10px',mx:1,mt:3, p:1 }} key={item.id}>
 <CardMedia
 
-sx={{height:"300px"}}
+sx={{height:"250px"}}
     component="img"
    
    image={item.img}
     alt=""
   />
       
-    <p className='type1 text-sm text-gray-800 font-bold mx-auto mt-3 pr-2'>
+    <p className='type1 text-[14px] md:text-[16px] text-gray-800 font-bold mx-auto mt-3 pr-2'>
    {item.text}
   </p>
   <p className='type2 text-lg text-gray-700 font-bold text-right mt-3'>
@@ -183,10 +179,10 @@ sx={{height:"300px"}}
  
 </Card>
    
-  </Grid>
+
 
     ))}
-  </Grid>
+  </div>
   <ReactPaginate
       breakLabel="..."
       nextLabel=" >>"

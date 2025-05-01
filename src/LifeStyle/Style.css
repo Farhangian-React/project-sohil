@@ -96,7 +96,7 @@
 .linka{
    text-decoration: none;
    font-size: small;
-   color: #4d4d4d;
+   color: #282828;
 }
 .home{
    background-color:white;
@@ -112,6 +112,6 @@
     
 }
 .home:hover{
-   background-image:linear-gradient(to right ,#d4d4d8,#fde047) ;
+   background-image:linear-gradient(to right ,#d4d4d8,#eab308) ;
    transform: translateY(-4px);
 }

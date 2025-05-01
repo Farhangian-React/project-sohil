@@ -169,12 +169,11 @@ const scrollToElement8 = () => {
           </ul>
          </div>
       </Box>      
-    <Box ref={sheet1} sx={{my:2 ,mx:"auto",px:5,py:1,bgcolor:"white",borderRadius:'10px',display:"flex",flexDirection:{xs:"column",lg:"row"}}}> 
-       <Box  sx={{display:"flex",justifyContent:"start",flexDirection:"column",my:{xs:2,lg:10},width:{xs:"100%",lg:"100%"}}}>
-       <Box  sx={{mx:{xs:2,lg:5},height:"auto"}} >
+    <div ref={sheet1} className='flex flex-col md:flex-row bg-white px-1 md:px-3 mx-auto my-2'>
+       <div className='flex justify-start flex-col my-2 w-full' >
          <div className='flex justify-center  bg-gradient-to-r from-[#c2e59c]  via-[#64b3f4] to-[#c2e59c] my-3 text-black w-auto pr-2 
          rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
-          <p className='text-black py-3 text-start font-bold text-2xl' >
+          <p className='text-black py-3 text-start font-bold text-xl md:text-2xl' >
           ضمانت تعویض ۳۰ روز
          </p>
          </div>
@@ -207,8 +206,8 @@ sx = {{
       <ListItem>عودت وجه بر اساس قیمت فاکتورفروش مصرف کننده می باشد و ارائه اصل فاکتور فروش، الزامی است </ListItem>
       <ListItem> مبلغ جشنواره ( پرداخت شده ) از مبلغ فاکتور فروش کسر می گردد</ListItem>
     </List>
-        </Box>   
-        </Box>
+   
+        </div>
         <Box
         className='washimg'
           sx={{
@@ -229,8 +228,8 @@ sx = {{
             }}
         >
         </Box>
-        </Box>
-        <div ref={sheet2}  className='my-2 mx-auto px-5 py-1 flex flex-col-reverse md:flex-row
+        </div>
+        <div ref={sheet2}  className='my-2 mx-auto px-1 md:px-3 py-1 flex flex-col-reverse md:flex-row
           bg-gradient-to-r from-gray-300
              via-yellow-300 to-gray-300'> 
         <Box
@@ -251,11 +250,10 @@ sx = {{
             }}
         >
         </Box>
-       <Box  sx={{display:"flex",justifyContent:"start",flexDirection:"column",my:{xs:2,lg:10},width:{xs:"100%",lg:"100%"}}}>
-       <Box  sx={{mx:{xs:2,lg:5},height:"auto"}} >
+        <div className='flex justify-start flex-col my-2 w-full' >
        <div className='flex justify-center  bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 my-3 text-black w-auto pr-2 
          rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
-          <p className='text-black py-3 text-start font-bold text-2xl'  >
+          <p className='text-black py-3 text-start font-bold text-xl md:text-2xl'  >
           ﺳﻪ ﻣﺎه ﺗﻌﻮﯾﺾ راﯾﮕﺎن ﻣﺤﺼﻮل
          </p>
          </div>
@@ -274,18 +272,17 @@ sx = {{
 بازکردن بسته بندی ، نصب و راه اندازی دستگاه باید توسط سرویسکار مجاز شرکت
 کلیه هزینه های نقل و انتقال دستگاه در صورت تایید خرابی ذاتی به عهده شرکت انتخاب سرویس است
             </p>
-        </Box>   
-        </Box>
+         
+        </div>
       
         </div>
 
 
-        <Box ref={sheet3} sx={{my:2 ,mx:5,px:5,py:1,bgcolor:"white",borderRadius:'10px',display:"flex",flexDirection:{xs:"column",lg:"row"}}}> 
-       <Box  sx={{display:"flex",justifyContent:"start",flexDirection:"column",my:{xs:2,lg:10},width:{xs:"100%",lg:"100%"}}}>
-       <Box  sx={{mx:{xs:2,lg:5},height:"auto"}} >
+        <div ref={sheet3} className='flex flex-col md:flex-row bg-white px-1 md:px-3 mx-auto my-2'> 
+        <div className='flex justify-start flex-col my-2 w-full' >
        <div className='flex justify-center  bg-gradient-to-r from-[#c2e59c]  via-[#64b3f4] to-[#c2e59c] my-3 text-black w-auto pr-2 
          rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
-          <p  className='text-black py-3 text-start font-bold text-2xl'  >
+          <p  className='text-black py-3 text-start font-bold text-xl md:text-2xl'  >
           ۱۲۰ ماه ضمانت کمپرسور
          </p>
          </div>
@@ -304,8 +301,8 @@ sx = {{
 بازکردن بسته بندی ، نصب و راه اندازی دستگاه باید توسط سرویسکار مجاز شرکت انتخاب سرویس انجام شده باشد
 کلیه هزینه های نقل و انتقال دستگاه در صورت تایید خرابی ذاتی به عهده شرکت انتخاب سرویس است
             </p>
-        </Box>   
-        </Box>
+      
+        </div>
         <Box
           className='washimg'
           sx={{
@@ -319,13 +316,14 @@ sx = {{
             height:{xs:"460px",lg:"500px"},
             width:{xs:"80%",lg:"80%"},
            my:{xs:2},
+          mx:"auto"
           
        
             }}
         >
         </Box>
-        </Box>
-        <div ref={sheet4}  className='my-2 mx-auto px-5 py-1 flex flex-col-reverse md:flex-row
+        </div>
+        <div ref={sheet4}  className='my-2 mx-auto px-1 md:px-3 py-1 flex flex-col-reverse md:flex-row
           bg-gradient-to-r from-gray-300
              via-yellow-300 to-gray-300'> 
        <Box
@@ -346,11 +344,10 @@ sx = {{
             }}
         >
         </Box>
-       <Box  sx={{display:"flex",justifyContent:"start",flexDirection:"column",my:{xs:2,lg:10},width:{xs:"100%",lg:"100%"}}}>
-       <Box  sx={{mx:{xs:2,lg:5},height:"auto"}} >
+        <div className='flex justify-start flex-col my-2 w-full' >
        <div className='flex justify-center  bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 my-3 text-black w-auto pr-2 
          rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
-          <p  className='text-black py-3 text-start font-bold text-2xl'  >
+          <p  className='text-black py-3 text-start font-bold text-xl md:text-2xl'  >
           اراﺋﻪ ﭘﺸﺘﯿﺒﺎﻧﯽ
          </p>
          </div>
@@ -368,17 +365,15 @@ sx = {{
 در دوره خارج از گارانتی ، به ازای هر ماه کارکرد محصول از زمان نصب ، ۱% از قیمت روز دستگاه کسر می گردد
 تسهیلات ارائه شده بر اساس طرحهای فروش روز به مصرف کننده ارائه می گردد
         </p>
-        </Box>   
-        </Box>
+        </div>
         </div>
    
    
-        <Box ref={sheet5} sx={{my:2 ,mx:5,px:5,py:1,bgcolor:"white",borderRadius:'10px',display:"flex",flexDirection:{xs:"column",lg:"row"}}}> 
-       <Box  sx={{display:"flex",justifyContent:"start",flexDirection:"column",my:{xs:2,lg:10},width:{xs:"100%",lg:"100%"}}}>
-       <Box  sx={{mx:{xs:2,lg:5},height:"auto"}} >
+        <div ref={sheet5} className='flex flex-col md:flex-row bg-white px-1 md:px-3 mx-auto my-2'> 
+        <div className='flex justify-start flex-col my-2 w-full' >
        <div className='flex justify-center  bg-gradient-to-r from-[#c2e59c]  via-[#64b3f4] to-[#c2e59c] my-3 text-black w-auto pr-2 
          rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
-          <p className='text-black py-3 text-start font-bold text-2xl' >
+          <p className='text-black py-3 text-start font-bold text-xl md:text-2xl' >
           ارائه خدمات در ۷ روز هفته
          </p>
          </div>
@@ -396,8 +391,7 @@ sx = {{
 هماهنگی و قرار ملاقات طی همان روز توسط نزدیکترین تکنسین با مصرف کننده انجام می شود
 خدمات گارانتی در همه ساعات شبانه روز ، هیچ هزینه اضافی به مصرف کننده تحمیل نمی کند
               </p>
-        </Box>   
-        </Box>
+        </div>
         <Box
           className='washimg'
           sx={{
@@ -416,10 +410,10 @@ sx = {{
             }}
         >
         </Box>
-        </Box>
+        </div>
 
 
-        <div ref={sheet6}  className='my-2 mx-auto px-5 py-1 flex flex-col-reverse md:flex-row
+        <div ref={sheet6}  className='my-2 mx-auto px-1 md:px-3 py-1 flex flex-col-reverse md:flex-row
           bg-gradient-to-r from-gray-300
              via-yellow-300 to-gray-300'> 
        <Box
@@ -435,13 +429,12 @@ sx = {{
             height:{xs:"460px",lg:"500px"},
             width:{xs:"80%",lg:"80%"},
            my:{xs:2},
-          
+          mx:"auto"
        
             }}
         >
         </Box>
-       <Box  sx={{display:"flex",justifyContent:"start",flexDirection:"column",my:{xs:2,lg:10},width:{xs:"100%",lg:"100%"}}}>
-       <Box  sx={{mx:{xs:2,lg:5},height:"auto"}} >
+        <div className='flex justify-start flex-col my-2 w-full' >
        <div className='flex justify-center  bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 my-3 text-black w-auto pr-2 
          rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
            <p className='text-black py-3 text-start font-bold text-2xl' >
@@ -466,17 +459,15 @@ sx = {{
 در صورتیکه درفرآیند تعمیر، مصرف کننده نتواند از محصول خود یا محصول جایگزین استفاده نماید با تخصیص گارانتی اضافه به محصول جبران خسارت می گردد
 به ازای هر روز خرابی محصول از روز ششم به بعد،( عدم استفاده مطلوب ) ۱ ماه گارانتی به ازای هر روز تأخیر در رفع مشکل به مدت زمان گارانتی محصول اضافه می شود
         </p>
-        </Box>   
-        </Box>
+      </div>
         </div>
    
    
-        <Box ref={sheet7} sx={{my:2 ,mx:5,px:5,py:1,bgcolor:"white",borderRadius:'10px',display:"flex",flexDirection:{xs:"column",lg:"row"}}}> 
-       <Box  sx={{display:"flex",justifyContent:"start",flexDirection:"column",my:{xs:2,lg:10},width:{xs:"100%",lg:"100%"}}}>
-       <Box  sx={{mx:{xs:2,lg:5},height:"auto"}} >
+        <div ref={sheet7} className='flex flex-col md:flex-row bg-white px-1 md:px-3 mx-auto my-2'> 
+        <div className='flex justify-start flex-col my-2 w-full' >
        <div className='flex justify-center  bg-gradient-to-r from-[#c2e59c]  via-[#64b3f4] to-[#c2e59c] my-3 text-black w-auto pr-2 
          rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
-          <p className='text-black py-3 text-start font-bold text-2xl'  >
+          <p className='text-black py-3 text-start font-bold text-xl md:text-2xl'  >
           شش ماه ضمانت تعمیر
          </p>
          </div>
@@ -494,8 +485,7 @@ sx = {{
 هماهنگی و قرار ملاقات طی همان روز توسط نزدیکترین تکنسین با مصرف کننده انجام می شود
 خدمات گارانتی در همه ساعات شبانه روز ، هیچ هزینه اضافی به مصرف کننده تحمیل نمی کند
             </p>
-        </Box>   
-        </Box>
+       </div>
         <Box
           className='washimg'
           sx={{
@@ -514,8 +504,8 @@ sx = {{
             }}
         >
         </Box>
-        </Box>
-        <div ref={sheet8}  className='my-2 mx-auto px-5 py-1 flex flex-col-reverse md:flex-row
+        </div>
+        <div ref={sheet8}  className='my-2 mx-auto px-1 md:px-3 py-1 flex flex-col-reverse md:flex-row
           bg-gradient-to-r from-gray-300
              via-yellow-300 to-gray-300'> 
 <Box
@@ -536,11 +526,10 @@ sx = {{
             }}
         >
         </Box>
-       <Box  sx={{display:"flex",justifyContent:"start",flexDirection:"column",my:{xs:2,lg:10},width:{xs:"100%",lg:"100%"}}}>
-       <Box  sx={{mx:{xs:2,lg:5},height:"auto"}} >
+        <div className='flex justify-start flex-col my-2 w-full' >
        <div className='flex justify-center  bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 my-3 text-black w-auto pr-2 
          rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
-          <p className='text-black py-3 text-start font-bold text-2xl'  >
+          <p className='text-black py-3 text-start font-bold text-xl md:text-2xl'  >
           ﺗﺤﻮﯾﻞ ﻣﺤﺼﻮل ﺟﺎﯾﮕﺰﯾﻦ
          </p>
          </div>
@@ -559,8 +548,7 @@ sx = {{
 محصول امانی جایگزین محصولی است که حداقل نیازهای مشتری را پاسخگو باشد
 نصب و راه اندازی و جابجایی محصول جایگزین به صورت رایگان توسط شرکت انتخاب سرویس داده می شود
 </p>
-        </Box>   
-        </Box>
+      </div>
         </div>
 </Box>
     <Box sx={{width:'100%' }}>

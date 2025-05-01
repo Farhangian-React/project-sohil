@@ -33,7 +33,7 @@ background-image: linear-gradient(to left ,#eeeeee,#282828);
  .previousStyle:hover{
   scale: 1.1;
   color:#282828;
-  background-image:linear-gradient(to right ,#d4d4d8,#fde047) ;
+  background-image:linear-gradient(to right ,#d4d4d8,#eab308) ;
  }
  .nextStyle{
   font-size: medium;
@@ -47,7 +47,7 @@ background-image: linear-gradient(to left ,#eeeeee,#282828);
  .nextStyle:hover{
   scale: 1.1;
   color:#282828;
-  background-image:linear-gradient(to right ,#d4d4d8,#fde047) 
+  background-image:linear-gradient(to right ,#d4d4d8,#eab308) 
  }
 .headers{
   list-style-type: none;
