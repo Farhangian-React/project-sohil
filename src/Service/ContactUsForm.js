@@ -88,11 +88,11 @@ function ContactUsForm() {
     </div>
 
     <div
-    className='boxcontact flex justify-center bg-black w-full h-auto flex-col md:flex-row items-center self-center ' 
+    className='boxcontact flex justify-center bg-black w-full h-auto flex-col md:flex-row items-center self-center mx-auto ' 
  >
 
-    <Box sx={{width:{xs:"100vw",md:"50vw"},display:"flex",justifyContent:"center",flexDirection:"column",alignSelf:"start",mx:2,mt:3}}> 
-    <Box sx={{borderBottom:"1px solid white",display:"flex",justifyContent:"center",alignSelf:"center",width:"90%",mx:"auto",height:"100px",flexDirection:"column"}}>  
+    <Box sx={{width:{xs:"100vw",md:"50vw"},display:"flex",justifyContent:"center",flexDirection:"column",alignSelf:"start",mx:"auto",mt:3}}> 
+    <Box sx={{borderBottom:"1px solid white",display:"flex",justifyContent:"center",alignSelf:"center",width:"100%",mx:"auto",height:"90px",flexDirection:"column"}}>  
 <Box sx={{display:"flex",flexDirection:"row",justifyContent:"center"}}>
 <Typography variant='h4' sx={{textAlign:"center",color:"white",mt:1,mb:0}}>
 فرم تماس با ما
@@ -101,7 +101,7 @@ function ContactUsForm() {
 جهت ارسال نظرات و پیشنهادات و انتقادات خود می توانید از طریق فرم زیر اقدام نمایید   
 </Typography>
 </Box> 
-<Box sx={{mx:{xs:1,md:5},mt:5}}>
+<Box sx={{mx:"auto",px:3,mt:3,}}>
 <form  noValidate onSubmit={handlesubmit}>
 <Grid container spacing={2} sx={{mt:1}}>
           <Grid  item xs={4}   >
