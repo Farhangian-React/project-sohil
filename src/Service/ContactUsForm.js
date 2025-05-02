@@ -101,7 +101,7 @@ function ContactUsForm() {
 جهت ارسال نظرات و پیشنهادات و انتقادات خود می توانید از طریق فرم زیر اقدام نمایید   
 </Typography>
 </Box> 
-<Box sx={{mx:{xs:15,md:5},mt:5}}>
+<Box sx={{mx:{xs:1,md:5},mt:5}}>
 <form  noValidate onSubmit={handlesubmit}>
 <Grid container spacing={2} sx={{mt:1}}>
           <Grid  item xs={4}   >

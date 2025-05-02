@@ -3,16 +3,16 @@ import './Bannerus.css';
 export default function Sheetus1() {
   return (
     <>
-    <div className='sheetus1 h-[80%] w-full flex justify-center flex-col mt-5'>
+    <div className='sheetus1 h-[80%] w-full flex justify-center flex-col mt-5 '>
     <div className='mt-0' >
-    <svg className='blurstyle' width='100%' height='100%' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f2d7a2" fill-opacity="1" d="M0,64L1440,288L1440,0L0,0Z">
-      </path> <text className='textblurb' font-size="32" font-family="tahoma"  x="1400" y="50" fill='#282828' >  انچه ما ارایه میدهیم </text>
-      <text font-size="24" font-family="tahoma" text-decoration="underline" className='text' x="1412" y="65" fill='#000000' >________________________</text>
-      <text className='text' font-size="26" font-family="tahoma"  x="1400" y="100" fill='#000000' >_  ارسال بدون دردسر</text>
-      <text className='text' font-size="26" font-family="tahoma"  x="1400" y="130" fill='#000000' > _  لوازم خانگی متمایز  </text>
-      <text className='text' font-size="26" font-family="tahoma"  x="1400" y="160" fill='#000000' > _  نصب کننده های تایید شده </text>
-      <text className='text' font-size="26" font-family="tahoma"  x="1400" y="190" fill='#000000' > _  محصولات دارای رتبه ستاره انرژی</text>
-      <text className='text' font-size="26" font-family="tahoma"  x="1400" y="220" fill='#000000' > _  ارسال به سراسر کشور</text>
+    <svg className='blurstyle' width='100%' height='100%' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 600"><path fill="#f2d7a2" fill-opacity="1" d="M0,124L1440,560L1440,0L0,0Z">
+      </path> <text className='textblurb ' font-size="42" font-family="tahoma"  x="1400" y="60" fill='#282828' >  انچه ما ارایه میدهیم </text>
+     
+      <text className='text' font-size="32" font-family="tahoma"  x="1400" y="130" fill='#000000' >_  ارسال بدون دردسر</text>
+      <text className='text' font-size="32" font-family="tahoma"  x="1400" y="200" fill='#000000' > _  لوازم خانگی متمایز  </text>
+      <text className='text' font-size="32" font-family="tahoma"  x="1400" y="270" fill='#000000' > _  نصب کننده های تایید شده </text>
+      <text className='text' font-size="32" font-family="tahoma"  x="1400" y="340" fill='#000000' > _  محصولات دارای رتبه ستاره انرژی</text>
+      <text className='text' font-size="32" font-family="tahoma"  x="1400" y="410" fill='#000000' > _  ارسال به سراسر کشور</text>
       </svg>
 </div>
 <div dir='rtl' className="w-[80%] md:w-[50%] h-auto bg-black bg-opacity-60 flex flex-col justify-start self-end  m-3"

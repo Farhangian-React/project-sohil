@@ -11,10 +11,10 @@ export default function Bannerus() {
   return (
     <>
     <div className='banner h-[70%] md:h-[80vh] mt-0 ' >
-    <svg className='blurstyle' width='100%' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#f2d7a2" fill-opacity="0.8" d="M0,0L720,256L1440,96L1440,0L720,0L0,0Z"></path>
-        <text className='textblurb' font-size="32"   x="1050" y="100" fill='#282828' > تفاوت خرید را در دستگاه های سهیل تجربه کنید</text>
-        <text font-size="24" font-family="tahoma" text-decoration="underline" className='text' x="1002" y="140" fill='#282828' >________________________________________</text>
+    <svg className='blurstyle' width='100%' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 420">
+        <path fill="#f2d7a2" fill-opacity="0.8" d="M0,0L420,226L1440,126L1440,0L720,0L0,0Z"></path>
+        <text className='textblurb' font-size="42"   x="1150" y="100" fill='#282828' > تفاوت خرید را در دستگاه های سهیل تجربه کنید</text>
+
       </svg>  
     </div>
 <div  ref={refbox} className='flex justify-start flex-col self-center h-[200px] overflow-hidden mt-5 pt-1 px-5'>

@@ -15,28 +15,12 @@
     background-size: cover;
 }
 
-.boxmain{
-  position: relative;  
-}
+
 .boxheader{
-    position: absolute;
-    top:50%;
-    right: 43%;
-    background-color: #E0AA3E;
-    width: 15%;
-    height: 40px;
+
+    box-shadow:10px 10px 10px #E0AA3E;
 }
-@media only screen and (max-width: 768px){
-    .boxheader{
-        position: absolute;
-        top:5px;
-        right:6px ;
-        background-color: #E0AA3E;
-        width: 25%;
-        height: 35px;
-       padding-bottom: 8px;
-    }
-}
+
 
 button {
     /* Variables */
@@ -95,7 +79,7 @@ transform: scale(1);
     transform: scale(0.5);
   }
   75%{
-    transform: scale(1.1);
+    transform: scale(1);
   }
   100%{
     transform: scale(1);

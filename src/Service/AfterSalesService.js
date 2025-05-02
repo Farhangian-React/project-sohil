@@ -83,7 +83,7 @@ const scrollToElement8 = () => {
     <PageTitle title='سهیل / خدمات / خدمات پس از فروش   ' description=' سهیل '/>
     <TopNav />
 
-    <Box sx={{display:"flex",flexDirection:"column",bgcolor:"#ececec"}}>
+    <Box sx={{display:"flex",flexDirection:"column",bgcolor:"white"}}>
 
     <Box 
       sx={{
@@ -100,7 +100,7 @@ const scrollToElement8 = () => {
      alignSelf:"end"
        }} >
     
-    <div className="flex justify-center overflow-x-auto [&::-webkit-scrollbar]:w-0 py-1 bg-zinc-100
+    <div className="inline-block overflow-x-auto [&::-webkit-scrollbar]:w-0 py-1 bg-zinc-100
      w-[100%] mx-3 px-3  h-[120px] md:h-[160px] ">
     <ul className=" flex uppercase font-bold mr-1">
        <li>
@@ -312,7 +312,7 @@ sx = {{
             borderRadius:1,
             backgroundImage:'url("https://snowa.ir/wp-content/uploads/2023/03/Group12017.svg")',
             backgroundPosition: 'center',
-            backgroundSize:{xs:"contained",lg:"contained"},
+            backgroundSize:"cover",
             backgroundRepeat: 'no-repeat',
             height:{xs:"460px",lg:"500px"},
             width:{xs:"80%",lg:"80%"},
@@ -425,10 +425,10 @@ sx = {{
             borderRadius:1,
             backgroundImage:'url("https://snowa.ir/wp-content/uploads/2023/03/Group12012.svg")',
             backgroundPosition: 'center',
-            backgroundSize:{xs:"contained",lg:"contained"},
+            backgroundSize:"contain",
             backgroundRepeat: 'no-repeat',
             height:{xs:"460px",lg:"500px"},
-            width:{xs:"80%",lg:"80%"},
+            width:"80%",
            my:{xs:2},
           mx:"auto"
        

@@ -362,7 +362,7 @@ onClick={handleDrawerOpen}
             </NavLink>
            </ListItem>
            <ListItem disablePadding sx={{width:"300px",display:"flex",justifyContent:"space-between",my:2}}>
-            <NavLink className='navlinkcoll' to={"/about-snova"}>
+            <NavLink className='navlinkcoll' to={"/life-style"}>
             <ListItemButton className='text-[18px] text-gray-900 font-bold' >
            سبک زندگی
             </ListItemButton>
