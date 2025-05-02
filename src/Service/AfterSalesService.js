@@ -100,7 +100,8 @@ const scrollToElement8 = () => {
      alignSelf:"end"
        }} >
     
-    <div className="flex justify-center overflow-x-auto [&::-webkit-scrollbar]:w-0 py-1 bg-zinc-100 w-[100%] mx-3  h-[160px] ">
+    <div className="flex justify-center overflow-x-auto [&::-webkit-scrollbar]:w-0 py-1 bg-zinc-100
+     w-[100%] mx-3 px-3  h-[120px] md:h-[160px] ">
     <ul className=" flex uppercase font-bold mr-1">
        <li>
         <button onClick={scrollToElement1} className='bg-inherit w-[100px] mx-5 flex flex-col justify-center items-center  '>
@@ -170,7 +171,7 @@ const scrollToElement8 = () => {
          </div>
       </Box>      
     <div ref={sheet1} className='flex flex-col md:flex-row bg-white px-1 md:px-3 mx-auto my-2'>
-       <div className='flex justify-start md:justify-center flex-col my-2  px-2 w-full' >
+       <div className='flex justify-start md:justify-center flex-col my-2  px-5 w-full' >
          <div className='flex justify-center  bg-gradient-to-r from-[#c2e59c]  via-[#64b3f4] to-[#c2e59c] my-3 text-black w-auto pr-2 
          rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
           <p className='text-black py-3 text-start font-bold text-xl md:text-2xl' >
@@ -250,7 +251,7 @@ sx = {{
             }}
         >
         </Box>
-        <div className='flex justify-start md:justify-center flex-col my-2  px-2 w-full' >
+        <div className='flex justify-start md:justify-center flex-col my-2  px-5 w-full' >
        <div className='flex justify-center  bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 my-3 text-black w-auto pr-2 
          rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
           <p className='text-black py-3 text-start font-bold text-xl md:text-2xl'  >
@@ -279,7 +280,7 @@ sx = {{
 
 
         <div ref={sheet3} className='flex flex-col md:flex-row bg-white px-1 md:px-3 mx-auto my-2'> 
-        <div className='flex justify-start md:justify-center flex-col my-2  px-2 w-full' >
+        <div className='flex justify-start md:justify-center flex-col my-2  px-5 w-full' >
        <div className='flex justify-center  bg-gradient-to-r from-[#c2e59c]  via-[#64b3f4] to-[#c2e59c] my-3 text-black w-auto pr-2 
          rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
           <p  className='text-black py-3 text-start font-bold text-xl md:text-2xl'  >
@@ -339,12 +340,12 @@ sx = {{
             height:{xs:"460px",lg:"500px"},
             width:{xs:"80%",lg:"80%"},
            my:{xs:2},
-          
+               mx:"auto"
        
             }}
         >
         </Box>
-        <div className='flex justify-start md:justify-center flex-col my-2  px-2 w-full' >
+        <div className='flex justify-start md:justify-center flex-col my-2  px-5 w-full' >
        <div className='flex justify-center  bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 my-3 text-black w-auto pr-2 
          rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
           <p  className='text-black py-3 text-start font-bold text-xl md:text-2xl'  >
@@ -370,7 +371,7 @@ sx = {{
    
    
         <div ref={sheet5} className='flex flex-col md:flex-row bg-white px-1 md:px-3 mx-auto my-2'> 
-        <div className='flex justify-start md:justify-center flex-col my-2  px-2 w-full' >
+        <div className='flex justify-start md:justify-center flex-col my-2  px-5 w-full' >
        <div className='flex justify-center  bg-gradient-to-r from-[#c2e59c]  via-[#64b3f4] to-[#c2e59c] my-3 text-black w-auto pr-2 
          rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
           <p className='text-black py-3 text-start font-bold text-xl md:text-2xl' >
@@ -405,7 +406,7 @@ sx = {{
             height:{xs:"460px",lg:"500px"},
             width:{xs:"80%",lg:"80%"},
            my:{xs:2},
-          
+               mx:"auto"
        
             }}
         >
@@ -434,7 +435,7 @@ sx = {{
             }}
         >
         </Box>
-        <div className='flex justify-start md:justify-center flex-col my-2  px-2 w-full' >
+        <div className='flex justify-start md:justify-center flex-col my-2  px-5 w-full' >
        <div className='flex justify-center  bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 my-3 text-black w-auto pr-2 
          rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
            <p className='text-black py-3 text-start font-bold text-2xl' >
@@ -464,7 +465,7 @@ sx = {{
    
    
         <div ref={sheet7} className='flex flex-col md:flex-row bg-white px-1 md:px-3 mx-auto my-2'> 
-        <div className='flex justify-start md:justify-center flex-col my-2  px-2 w-full' >
+        <div className='flex justify-start md:justify-center flex-col my-2  px-5 w-full' >
        <div className='flex justify-center  bg-gradient-to-r from-[#c2e59c]  via-[#64b3f4] to-[#c2e59c] my-3 text-black w-auto pr-2 
          rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
           <p className='text-black py-3 text-start font-bold text-xl md:text-2xl'  >
@@ -499,7 +500,7 @@ sx = {{
             height:{xs:"460px",lg:"500px"},
             width:{xs:"80%",lg:"80%"},
            my:{xs:2},
-          
+          mx:"auto"
        
             }}
         >
@@ -521,12 +522,12 @@ sx = {{
             height:{xs:"460px",lg:"500px"},
             width:{xs:"80%",lg:"80%"},
            my:{xs:2},
-          
+               mx:"auto"
        
             }}
         >
         </Box>
-        <div className='flex justify-start md:justify-center flex-col my-2 w-full px-2' >
+        <div className='flex justify-start md:justify-center flex-col my-2 w-full px-5' >
        <div className='flex justify-center  bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 my-3 text-black w-auto pr-2 
          rounded-tr-md rounded-tl-3xl rounded-br-3xl rounded-bl-md '>
           <p className='text-black py-3 text-start font-bold text-xl md:text-2xl'  >
