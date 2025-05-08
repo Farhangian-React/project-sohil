@@ -120,14 +120,14 @@ setDatamapshow([t]);
          src={storeimage}/>
          <p className='text-sm text-gray-800 my-1'>جهت مشاهده فهرست فروشگاه‌ها، ابتدا استان و شهر مورد نظر خود را انتخاب کنید</p>
       {address.map((a)=>
-      <div className='flex flex-row justify-start w-full border-b-2 border-[#64b3f4]  mt-5 bg-white '>
-    <PlaceOutlinedIcon  sx={{pr:0,pt:3,pl:2,color:"#64b3f4",fontSize:"36px"}}/> 
-  <Typography  variant='h6' sx={{py:0.5,color:"blue"}}>{a.storename} 
+      <div className='flex flex-row justify-start w-full border-b-2 border-gray-500  mt-5 bg-white '>
+    <PlaceOutlinedIcon className='h-4 w-4 text-blue-500 mt-2 ml-3' /> 
+  <p className='py-1.5 text-md text-blue-500 ' >{a.storename} 
   <Typography variant='body2' sx={{py:0.5,color:"black"}}> {a.address} 
-  </Typography> <Typography variant='body2' sx={{py:0.5,color:"black"}}> {a.callnum}
-   </Typography>  
+  </Typography> <p className='text-gray-500 text-[12px] py-0.5'> {a.callnum}
+   </p>  
  
- </Typography>
+ </p>
 
 
 
