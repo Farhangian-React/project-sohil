@@ -28,14 +28,16 @@ export const Stores = () => {
 
 </div>
  </div>
-<Box sx={{display:"flex",flexDirection:{xs:"column",md:"row"},justifyContent:"center",bgcolor:"white",my:1,mx:{xs:"auto",md:1},px:2,borderRadius:"10px"}} >
-<Box sx={{display:"flex",flexDirection:"row",justifyContent:"center",width:"100%",height:"500px",borderRadius:"10px",p:1,zIndex:1}}>
+<div className='w-full flex flex-col md:flex-row justify-between bg-white my-1 md:my-5 mx-auto px-2 rounded-xl '>
+<div className='flex flex-row justify-center w-[96%] h-[500px] z-10 p-1 rounded-xl mx-auto'>
 <MapPage/>
-</Box>
-
+</div>
+<div className='flex flex-row justify-center w-[96%] h-auto z-10 p-1 rounded-xl mx-auto '>
 <Selector/>
+</div>
 
-</Box>
+
+</div>
 </div>
 <Footer/>
  </>

@@ -68,53 +68,59 @@ setDatamapshow([t]);
   };
   return (
     <>
-    <Box sx={{my:2,mx:"auto",px:0,py:1,borderRadius:'10px',display:"flex",flexDirection:"column",justifyContent:"start"}}>
-  <Box  sx={{py:2,px:5,mx:1,borderRadius:'10px',display:"flex",flexDirection:"row",justifyContent:"center",backgroundImage:"linear-gradient(to right ,#c2e59c, #64b3f4)"}}>
-    <FormControl variant="standard" sx={{ my:1,mx:3, minWidth: 120, }}>
-        <InputLabel id="demo-simple-select-standard-label"> انتخاب استان</InputLabel>
+
+     <div className='flex flex-col justify-center w-full my-2 py-1 mx-0 md:mx-2 px-0 md:px-2 h-[500px]'>
+  <div dir="rtl" className='  bg-gradient-to-r from-[#c2e59c] via-[#64b3f4] to-[#c2e59c]
+   flex flex-row justify-center rounded-xl  border-2 border-gray-200
+   py-0 md:py-2 px-3 sm:px-3 md:px-5 mx-0 md:mx-1 '
+  >
+    <div className='flex flex-col justify-start py-2 px-3 '>
+      <p className='text-xs text-black mx-1 md:mx-8 '> انتخاب استان</p>
+    <FormControl dir="rtl" variant="standard" sx={{ my:1,mx:{xs:1,md:5},width:{xs:"100px",sm:"200px"}}}>
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
         value={fromostan.name}
         onChange={handleFromostan}
           label="انتخاب استان"
-          className='selectclass'
+           className='selectclass  w-[130px] md:w-[200px]'
         > 
          {dataselactor.map((country, key) => (
           <MenuItem  value={country.name} key={key} sx={{direction:"rtl"}}>  {country.name}</MenuItem>
         ))}
         </Select>
       </FormControl>
-      <FormControl variant='standard' sx={{ direction:"ltr", my:1,mx:3, minWidth: 120 }}>
-        <InputLabel id="demo-simple-select-standard-label" > انتخاب شهر</InputLabel>
+      </div>
+      <div className='flex flex-col justify-start py-2 px-3'>
+      <p className='text-xs text-black mx-1 md:mx-8 '> انتخاب شهر</p>
+      <FormControl  variant='standard' sx={{my:1,mx:{xs:1,md:5},width:{xs:"100px",sm:"200px"} }}>
         <Select
           value={fromCities.city}
           onChange={handleFromcities}
          label="انتخاب شهر"
-      className='selectclass'
+     className='selectclass  w-[130px] md:w-[200px]'
         >
             {fromCities.map((city, key) => (
           <MenuItem key={key}  value={city.city} sx={{direction:"rtl"}}>  {city.city}</MenuItem>
         ))} 
         </Select>
       </FormControl>
-    </Box>
-    <Box  sx={{p:2,mx:1,borderRadius:'10px',display:"flex",flexDirection:"column",justifyContent:"start",height:"400px",overflow:"hidden"}}>
-    <Box  ref={refbox}  sx={{   display:'flex',
-             justifyContent:'start',
-             backgroundImage:`url(${storeimage})`,
-             backgroundPosition: 'start',
-             backgroundSize:'cover',
-             backgroundRepeat: 'no-repeat',
-             width:'300px',
-             height:"300px",
-             my:0.5,
-             mx:"auto"
-             }}>
-              <Typography variant='' sx={{textAlign:"center",color:"#727272",my:0.6}}>جهت مشاهده فهرست فروشگاه‌ها، ابتدا استان و شهر مورد نظر خود را انتخاب کنید</Typography>
-             </Box>
+      </div>
+
+
+
+
+
+
+
+
+    </div>
+    <div  className='flex flex-col justify-start h-[320px] p-2 mx-auto  overflow-y-auto [&::-webkit-scrollbar]:h-0 mt-3'>
+    <img ref={refbox} className='mx-auto' width={300} height={400} alt=''
+         src={storeimage}/>
+         <p className='text-sm text-gray-800 my-1'>جهت مشاهده فهرست فروشگاه‌ها، ابتدا استان و شهر مورد نظر خود را انتخاب کنید</p>
       {address.map((a)=>
-      <Box sx={{display:'flex',width:"100%",flexDirection:"row",alignSelf:"start",borderBottom:"1px solid #64b3f4 ",bgcolor:"white"}}>
+      <div className='flex flex-row justify-start w-full border-b-2 border-[#64b3f4]  mt-5 bg-white '>
     <PlaceOutlinedIcon  sx={{pr:0,pt:3,pl:2,color:"#64b3f4",fontSize:"36px"}}/> 
   <Typography  variant='h6' sx={{py:0.5,color:"blue"}}>{a.storename} 
   <Typography variant='body2' sx={{py:0.5,color:"black"}}> {a.address} 
@@ -125,10 +131,10 @@ setDatamapshow([t]);
 
 
 
-  </Box>
+  </div>
       )}
-    </Box>
-    </Box>
+    </div>
+    </div>
     </>
   );
 }
