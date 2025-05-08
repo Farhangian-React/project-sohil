@@ -68,7 +68,7 @@ setDatamapshow([t]);
   };
   return (
     <>
-    <Box sx={{my:2,mx:2,px:2,py:1,borderRadius:'10px',display:"flex",flexDirection:"column",justifyContent:"start"}}>
+    <Box sx={{my:2,mx:"auto",px:0,py:1,borderRadius:'10px',display:"flex",flexDirection:"column",justifyContent:"start"}}>
   <Box  sx={{py:2,px:5,mx:1,borderRadius:'10px',display:"flex",flexDirection:"row",justifyContent:"center",backgroundImage:"linear-gradient(to right ,#c2e59c, #64b3f4)"}}>
     <FormControl variant="standard" sx={{ my:1,mx:3, minWidth: 120, }}>
         <InputLabel id="demo-simple-select-standard-label"> انتخاب استان</InputLabel>

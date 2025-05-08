@@ -15,34 +15,28 @@ export const Stores = () => {
  <>
     <PageTitle title=' فروشگاه های سهیل '   description=' سهیل '/>
  <TopNav/>
- <Box sx={{display:"flex",flexDirection:"column",width:"100%",bgcolor:"#ececec"}}>
- <Box sx={{display:"flex",flexDirection:"row",justifyContent:"space-between",mx:"auto",mt:{xs:11,lg:1},width:"96%",borderBottomLeftRadius:"20px",borderBottomRightRadius:"20px",height:"150px",backgroundImage:"linear-gradient(to right ,#c2e59c, #64b3f4)"}}>
- <Box sx={{display:"flex",flexDirection:"column",justifyContent:"center",mx:8}}>
-  <Typography variant='h4' sx={{textAlign:"start",color:"blue",px:5,pb:1}}>فروشگاه‌های سهیل </Typography>
-  <Typography variant='h6'sx={{textAlign:"start",color:"black",px:5}}>مکان‌نمای فروشگاه‌ها در سراسر ایران </Typography>
-</Box>
-<Box sx={{   display:'flex',
-             justifyContent:'end',
-             backgroundImage:`url(${mapimag})`,
-             backgroundPosition: 'center',
-             backgroundSize:'cover',
-             backgroundRepeat: 'no-repeat',
-             width:'110px',
-             height:"110px",
-             mt:3,
-             mx:8
-             }}>
+ <div className='flex flex-col w-full bg-zinc-100'>
+ <div className='flex flex-row mx-auto mt-1 w-[98%] rounded-b-3xl h-auto 
+  bg-gradient-to-r from-[#c2e59c] via-[#64b3f4] to-[#c2e59c] '>
+ <div className='flex flex-col justify-start mx-auto  w-[70%] pr-5'>
+  <p className='text-blue-800 py-3 text-start font-bold text-xl md:text-2xl'>فروشگاه‌های سهیل </p>
+  <p className='text-start text-[12px] md:text-md text-gray-800 font-sans my-0.5 md:my-1'>مکان‌نمای فروشگاه‌ها در سراسر ایران </p>
+</div>
+<div className=' w-[30%] flex justify-end pl-5'>
+ <img className='w-[80px] h-[80px] md:w-[110px] md:h-[110px]'  alt=''
+ src={mapimag}/>
 
-</Box>
- </Box>
-<Box sx={{display:"flex",flexDirection:{xs:"column",lg:"row"},justifyContent:"center",bgcolor:"white",my:1,mx:5,px:5,py:1,borderRadius:"10px"}} >
-<Box sx={{display:"flex",flexDirection:"row",justifyContent:"center",width:"100%",height:"500px",borderRadius:"10px"}}>
+</div>
+ </div>
+<Box sx={{display:"flex",flexDirection:{xs:"column",md:"row"},justifyContent:"center",bgcolor:"white",my:1,mx:{xs:"auto",md:1},px:2,borderRadius:"10px"}} >
+<Box sx={{display:"flex",flexDirection:"row",justifyContent:"center",width:"100%",height:"500px",borderRadius:"10px",p:1,zIndex:1}}>
 <MapPage/>
 </Box>
 
 <Selector/>
 
-</Box></Box>
+</Box>
+</div>
 <Footer/>
  </>
   );

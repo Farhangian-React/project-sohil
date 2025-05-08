@@ -7,7 +7,7 @@ export const MapPage = () => {
   const position = [ 35.68815448090159 , 51.37771054133819
     ];
   return (
-  <MapContainer center={position} zoom={5} scrollWheelZoom={true}>
+  <MapContainer center={position} zoom={8} scrollWheelZoom={true} >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

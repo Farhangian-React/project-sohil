@@ -92,15 +92,16 @@ function ContactUsForm() {
  >
 
     <Box sx={{width:{xs:"100vw",md:"50vw"},display:"flex",justifyContent:"center",flexDirection:"column",alignSelf:"start",mx:"auto",mt:3}}> 
-    <Box sx={{borderBottom:"1px solid white",display:"flex",justifyContent:"center",alignSelf:"center",width:"100%",mx:"auto",height:"90px",flexDirection:"column"}}>  
+    <div className='flex flex-col justify-center self-center w-[90%] mx-auto h-[90px] border-b-2 border-white  '
+    >  
 <Box sx={{display:"flex",flexDirection:"row",justifyContent:"center"}}>
 <Typography variant='h4' sx={{textAlign:"center",color:"white",mt:1,mb:0}}>
 فرم تماس با ما
 </Typography></Box>
-<Typography variant='body2' sx={{textAlign:"center",color:"white",mt:1,mb:1.5}}>
+<Typography variant='body2' sx={{textAlign:"center",color:"white",mt:1,mb:1.5 ,pb:1}}>
 جهت ارسال نظرات و پیشنهادات و انتقادات خود می توانید از طریق فرم زیر اقدام نمایید   
 </Typography>
-</Box> 
+</div> 
 <Box sx={{mx:"auto",px:3,mt:3,}}>
 <form  noValidate onSubmit={handlesubmit}>
 <Grid container spacing={2} sx={{mt:1}}>
@@ -209,18 +210,18 @@ function ContactUsForm() {
 </Box>
 
    </Box> 
-   <Box sx={{width:{xs:"100vw",md:"50vw"},display:"flex",justifyContent:"center",flexDirection:"column",alignSelf:"start",mx:2,mt:3}}> 
+   <Box sx={{width:{xs:"100vw",md:"50vw"},display:"flex",justifyContent:"center",flexDirection:"column",alignSelf:"start",mx:"auto",mt:3}}> 
  
-     
-   <Box sx={{borderBottom:"1px solid white",display:"flex",justifyContent:"center",alignSelf:"start",width:"90%",mx:"auto",height:"100px",flexDirection:"column"}}>  
-<Box sx={{display:"flex",flexDirection:"row",justifyContent:"center"}}>
+   <div className='flex flex-col justify-center self-center w-[90%] mx-auto h-[90px] border-b-2 border-white  '
+    >     
+ <Box sx={{display:"flex",flexDirection:"row",justifyContent:"center"}}>
 <Typography variant='h4' sx={{textAlign:"center",color:"white",mt:1,mb:0}}>
  تماس با ما
 </Typography></Box>
-<Typography variant='body2' sx={{textAlign:"center",color:"white",mt:1,mb:1.5}}>
+<Typography variant='body2' sx={{textAlign:"center",color:"white",mt:1,mb:1.5,pb:1}}>
 راه های برقراری ارتباط با شرکت سهیل
 </Typography>
-</Box> 
+</div> 
 <Box sx={{display:"flex",flexDirection:"column",justifyContent:"start",mx:5,mt:5}}>
 <Box  sx={{display:'flex',flexDirection:"row",alignSelf:"start"}}>
      <PlaceOutlinedIcon sx={{pr:0,pt:{xs:2,lg:1},color:"#E0AA3E",fontSize:"35px"}}/> 
