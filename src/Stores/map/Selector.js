@@ -115,10 +115,11 @@ setDatamapshow([t]);
 
 
     </div>
-    <div  className='flex flex-col justify-start h-[320px] p-2 mx-auto  overflow-y-auto [&::-webkit-scrollbar]:h-0 mt-3'>
+    <div  className='flex flex-col justify-start h-[320px] p-2 mx-auto  overflow-y-auto [&::-webkit-scrollbar]:h-0 mt-3'>  
+       <p className='text-sm text-gray-800 my-1'>جهت مشاهده فهرست فروشگاه‌ها، ابتدا استان و شهر مورد نظر خود را انتخاب کنید</p>
     <img ref={refbox} className='mx-auto' width={300} height={400} alt=''
          src={storeimage}/>
-         <p className='text-sm text-gray-800 my-1'>جهت مشاهده فهرست فروشگاه‌ها، ابتدا استان و شهر مورد نظر خود را انتخاب کنید</p>
+      
       {address.map((a)=>
       <div className='flex flex-row justify-start w-full border-b-2 border-gray-500  mt-5 bg-white '>
     <PlaceOutlinedIcon className='h-4 w-4 text-blue-500 mt-2 ml-3' /> 

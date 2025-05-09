@@ -10,7 +10,7 @@
      right: -3px;
      bottom: 0;
      width: 180px;
-     height: 100px;
+     height: 35px;
      background: linear-gradient(to top ,#5d5443,#282828);
      border-top-left-radius: 50%;
 }
@@ -35,6 +35,11 @@
      background: transparent;
      box-shadow: 5px 5px 0 5px #E0AA3E;
      border-bottom-right-radius: 20px;
+}
+.gerdali:hover{
+     scale: 1.2;
+     background: linear-gradient(to top ,#999794,#282828);
+
 }
 .linkj{
      text-decoration: none;
@@ -81,4 +86,18 @@
      color: rgb(210, 149, 17);
    
  }
- 
+ .jashnnav{
+     background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjANFHB5m1dN649xDPWyaDexJn4GdozfK8aQ&s") ;
+background-position: center;
+background-size:cover ;
+background-repeat: no-repeat; 
+}
+.jashnnav1{
+     background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNbGRnc8-rwroUctgT4wigrWhJ9it5xcGDtA&s") ;
+background-position: center;
+background-size:cover ;
+background-repeat: no-repeat; 
+}
+.shadowjashnvareh{
+     box-shadow:10px 10px 10px #E0AA3E
+}
