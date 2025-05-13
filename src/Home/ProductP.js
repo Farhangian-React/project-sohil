@@ -68,7 +68,8 @@ function ProductP() {
     <div ref={bagbox1}
 className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
    > 
-       <div ref={tinybox1} className='flex justify-center flex-col my-5 w-[100vw] md:w-[50vw] mx-auto px-0'>
+       <div   data-aos="fade-up"
+     data-aos-anchor-placement="top-center" ref={tinybox1} className='flex justify-center flex-col my-5 w-[100vw] md:w-[50vw] mx-auto px-0'>
        <div ref={refbox1} className='h-[290px] mx-auto px-5 overflow-hidden' >
           <p className='text-black py-3 text-start font-bold text-2xl' >
           یخچال و فریزر، ضروری در هر آشپزخانه
@@ -138,7 +139,7 @@ className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
 
 
         <div data-aos="flip-left"
-          className='washimg flex w-[85vw] md:w-[40vw] h-[400px] my-8  bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
+          className='imagestylej flex w-[85vw] md:w-[40vw] h-[400px] my-8  bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
           style={{
             borderRadius:"20px",
             backgroundImage:'url("https://images.webfronts.com/cache/meyeeahbfvwe.jpg?imgeng=/w_800/h_800/m_letterbox_ffffff_100")'
@@ -161,7 +162,8 @@ className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
         <div ref={bagbox2}
 className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
    > 
-       <div ref={tinybox2} className='flex justify-center flex-col my-5 w-[100vw] md:w-[50vw] mx-auto px-0'>
+       <div  data-aos="fade-up"
+     data-aos-anchor-placement="top-center" ref={tinybox2} className='flex justify-center flex-col my-5 w-[100vw] md:w-[50vw] mx-auto px-0'>
        <div ref={refbox2} className='h-[290px] mx-auto px-5 overflow-hidden' >
           <p className='text-black py-3 text-start font-bold text-2xl'>
        ماشین لباسشویی
@@ -196,8 +198,8 @@ className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
         </div>
         
 
-        <div data-aos="flip-left"
-          className='washimg flex  w-[85vw] md:w-[40vw] h-[400px] my-8  bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
+        <div 
+          className='imagestylej flex  w-[85vw] md:w-[40vw] h-[400px] my-8  bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
           style={{
             borderRadius:"20px",
             backgroundImage:'url("https://homeservize.com/blog1/wp-content/uploads/2021/05/washing-machine-and-laundry-storage.jpg")'
@@ -210,7 +212,8 @@ className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
         <div ref={bagbox3}
 className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
    > 
-       <div ref={tinybox3} className='flex justify-center flex-col my-5 w-[100vw] md:w-[50vw] mx-auto px-0'>
+       <div  data-aos="fade-up"
+     data-aos-anchor-placement="top-center" ref={tinybox3} className='flex justify-center flex-col my-5 w-[100vw] md:w-[50vw] mx-auto px-0'>
        <div ref={refbox3} className='h-[290px] mx-auto px-5 overflow-hidden' >
           <p className='text-black py-3 text-start font-bold text-2xl' >
          اجاق گاز
@@ -251,7 +254,7 @@ className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
         </div>
         </div>
         <div data-aos="flip-left"
-          className='washimg flex  w-[85vw] md:w-[40vw] h-[400px] my-8  bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
+          className='imagestylej flex  w-[85vw] md:w-[40vw] h-[400px] my-8  bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
           style={{
             borderRadius:"20px",
             backgroundImage:'url("https://milancoshop.com/site/uploader/post/Gas-Hob-in-Kitchen-1774.jpg")'
@@ -264,7 +267,8 @@ className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
         <div ref={bagbox4}
 className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
    > 
-       <div ref={tinybox4}className='flex justify-center flex-col my-5 w-[100vw] md:w-[50vw] mx-auto px-0'>
+       <div   data-aos="fade-up"
+     data-aos-anchor-placement="top-center" ref={tinybox4}className='flex justify-center flex-col my-5 w-[100vw] md:w-[50vw] mx-auto px-0'>
        <div ref={refbox4} className='h-[290px] mx-auto px-5 overflow-hidden' >
           <p className='text-black py-3 text-start font-bold text-2xl' >
        ماشین ظرفشویی برای آسایش بیشتر
@@ -304,7 +308,7 @@ className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
         </div>
           </div>
           <div data-aos="flip-left"
-          className='washimg flex  w-[85vw] md:w-[40vw] h-[400px] my-8  bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
+          className='imagestylej flex  w-[85vw] md:w-[40vw] h-[400px] my-8  bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
           style={{
             borderRadius:"20px",
             backgroundImage:'url("https://bosch-home-germany.com/wp-content/uploads/2020/12/%D9%85%D8%A7%D8%B4%DB%8C%D9%86-%D8%B8%D8%B1%D9%81%D8%B4%D9%88%DB%8C%DB%8C-%D9%87%D8%A7%DB%8C-%D8%A8%D9%88%D8%B4-%D8%A7%D8%A8%D8%B9%D8%A7%D8%AF-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86%D8%AF%D8%A7%D8%B1%D8%AF-%D8%AF%D8%A7%D8%B1%D8%AF.jpg")'

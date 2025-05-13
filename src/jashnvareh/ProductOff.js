@@ -4,14 +4,10 @@ import {CardData} from '../Shared/Cart-Context';
 import {CardDataShow} from '../Shared/Cart-Context';
 import { NavLink } from 'react-router-dom';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import FilteringProductOff from "../jashnvareh/FilteringProductOff";
-import Divider from '@mui/material/Divider';
-import Box from '@mui/material/Box';
+import Rating from '@mui/material/Rating';
 import TopNav from '../dashbord/TopNav';
 import Footer from '../Footer/Footer';
 import './jashnvareh.css';
@@ -102,27 +98,36 @@ useEffect(()=>{
   getData();
   getData1(); 
 },[])
-
+const sumscore=(item)=>{
+  let total=0;
+  let aver=0;
+datacomment.map(i=>{
+if(i.idcomment === item.id){
+  aver ++;
+  total += i.score; 
+}
+});
+ return total /aver;
+}
     return(
 <>
 
 
 <PageTitle title='کالاهای تخفیف دار' description='  جشنواره'/>
    <TopNav/> 
-   <Box sx={{width:"100%",display:"flex",alignSelf:"center",justifyContent:"start",py:1,mx:"auto",mt:{xs:"5.5em",lg:"1em"},mb:"0.5em",boxShadow:"10px 10px 10px #585858 "}}>
+  
+   <div className='flex flex-col bg-zinc-100 justify-center m-auto'>
+   <div className='blurstylej w-full flex justify-center self-center my-10 bg-zinc-100 '
+   >
 
-    <Typography  sx={{fontSize:"2em",fontWeight:600,color:"#585858",textAlign:"start",px:"2em"}}>کالاهای تخفیف دار </Typography>
-   </Box>
-    <Box  sx={{display:"flex",flexDirection:{xs:"column",lg:"row"},
-    justifyContent:"start",width:"100vw",p:"0.2em",bgcolor:"#eeeeee"}} >  
-<Box sx={{display:"flex",alignSelf:{xs:"center",lg:"start"},mx:"auto",width:{xs:"95%",lg:"30%"},
-height:{lg:"60vh"},
-position:{xs:"static",lg:"sticky"},
-mt:3,
-top: "80px"}} >
+    <p className='textblurbj text-3xl text-gray-700 text-center'>کالاهای تخفیف دار </p>
+   </div>
+   <div className='flex flex-col md:flex-row justify-start w-[100vw] bg-zinc-100 m-auto' >
+   <div className=' flex w-[90vw] md:w-[30vw] static md:sticky md:top-[80px] self-center md:self-start md:h-[70vh]   '>
 <FilteringProductOff/>   
-</Box>
-<Box  sx={{bgcolor:"#ececec", display:'flex' ,flexWrap:'wrap' ,justifyContent:'center',alignItems:"start",mx:"0.5em",pb:"2em",px:0}}>
+</div>
+
+<div className='flex justify-center flex-wrap mx-auto bg-zinc-100 '>
 {
     isLoading ? 
     <Backdrop
@@ -132,55 +137,81 @@ top: "80px"}} >
   <CircularProgress color="inherit" />
   </Backdrop>
   :
-    datashow.map((item) => (      
-      <NavLink to={'/cartbuygas'}  className={"linkss"}>
-<Card className='cards' sx={{width:"400px",height:"620px",marginTop:'10px',marginBottom: '10px',mx:"0.5em",my:"1em",p:"1.5em" }} key={item.id}>
+    datashow.map((item) => (   
+<NavLink to={'/CartBuyJashnvareh'}  className={"linkss"}> 
+<Card className='cards' sx={{width:{xs:"250px",md:"300px"},height:"460px",mx:1,my:"1em",px:1 ,pt:3 }} key={item.id}>
 
-<CardMedia
+        <CardMedia
     component="img"
     onClick={()=>{
       setCartItems([item]);
      }}
    image={item.img}
     alt=""
-sx={{width:"250px",m:"auto"}}
+sx={{width:"250px",m:"auto",height:"200px"}}
   />
-    <CardContent sx={{border:"none",height:'120px',direction:"rtl"}}>
-    <Typography gutterBottom  component="div" sx={{textAlign:'center',fontSize:"1.5em"}}>
+    <CardContent sx={{border:"none",height:'55px',direction:"rtl"}}>
+    <p className='text-center text-sm font-bold pb-1'>
       {item.title1}
-    </Typography>
+    </p>
   </CardContent>
-  <Divider/>
-  <Box sx={{display:'flex',justifyContent:'space-between',alignItems:'baseline',direction:'rtl',p:2,borderBottom:'1px solid gray'}}>
+    <CardContent sx={{display:"flex",flexDirection:"row",justifyContent:"space-around",mt:1.5,
+    alignSelf:"center",alignItems:"center",
+    border:"none",height:'40px',direction:"rtl",py:0.5,my:0}}>
+    <p className='text-center text-xs text-gray-700'>
+      {item.title2}
+      </p>
+      <Rating
+         sx={{color:"#f5cd00",fontSize:"1em",pr:5,alignItems:"center"}}
+        name="simple-controlled"
+        value={sumscore(item)}
+      
+      />
+    
+  </CardContent>
+  
+  <CardContent sx={{height:'70px',direction:"rtl",display:"flex",justifyContent:"center",flexDirection:"column",borderBottom:'1px solid #d4d4d4',borderTop:'1px solid #d4d4d4'}} >
 
-      <Box   sx={{width:"45px",height:"30px",bgcolor:"#414141",color:"#E0AA3E",borderRadius:"20%",p:0,m:0,display:"flex",justifyContent:"center",alignItems:"center"}}>
-        <Typography sx={{fontSize:"1.2em",textAlign:"center"}}>  {convertToPersian(item.off)}%</Typography>
+ { item.off !== "" ?
+      
+          <div  dir="rtl" className='flex justify-between items-baseline'>
+          <div   className='flex justify-center text-center rounded-md text-yellow-500 bg-gray-900 h-[20px] w-[35px]
+           hover:bg-yellow-500 hover:text-gray-900'>
+        <p className='text-xs text-center py-0.5' >  {convertToPersian(item.off)}%</p>
         
-        </Box> 
-        <Box sx={{display:"flex",flexDirection:"column"}}>
-        <Typography   color="#ea9e08" sx={{fontSize:"1.5em",textAlign:'center',textDecorationLine: "line-through",textDecorationColor: "#414141"}}>{item.price}</Typography>
-         <Typography   color="#414141" sx={{fontSize:"1.5em",textAlign:'center'}}>
+        </div> 
+          <div className='flex flex-col' >
+        <p className='text-sm text-yellow-500 text-center line-through decoration-gray-600 ' >{item.price}</p>
+         <p   className='text-gray-600 text-left text-lg font-bold' >
        
           {addCommas(convertToPersian((convertToEnglish(item.pricenum)-(convertToEnglish(item.pricenum)*item.off / 100))+''))} تومان 
-         </Typography>
- </Box> </Box>
- 
-  <CardActions sx={{display:'flex',justifyContent:'center'}}>
-  <NavLink to={'/cartbuygas'}>  <Button size="large"
-      fullWidth
-      variant="contained"
-      sx={{  borderTopRightRadius:"0.5em",borderTopLeftRadius: "1em",borderBottomRightRadius:"1em",borderBottomLeftRadius:"0.5em",':hover':{backgroundImage:"linear-gradient(to right ,#eeeeee,#282828)",color:'white'},
-       color:'#eeeeee',fontSize:"1.5em",backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)", my:"0.5em",my:"1.5em",py:0,px:"3em"}}
-      onClick={()=>{
-        setCartItems([item]);
-       }}>خرید </Button></NavLink>
-  </CardActions>
-  
+         </p>
+ </div>
+ </div>
+
+:<p className='text-lg text-center text-gray-600 font-bold '>{item.price}</p>
+ }
+  </CardContent>
+  <CardContent sx={{display:'flex',justifyContent:'center',height: "30px"}}>
+ <NavLink style={{ textDecoration: "none" }} to={"/cartbuygas" }>
+                     <button    onClick={()=>{
+               setCartItems([item]);
+              }} className='bg-gradient-to-r from-yellow-500 via-yellow-900 to-yellow-500 
+                     rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl my-1 mx-8 px-10 py-1 text-white text-md font-sans
+                      hover:bg-gradient-to-r hover:from-gray-500
+                     hover:via-yellow-500 hover:to-gray-500'
+                      > 
+                     خرید</button></NavLink>
+    
+  </CardContent>
 </Card>
+
 </NavLink>
+      
     ))}
-</Box>
-</Box> 
+</div>
+</div> 
+</div>
  <Footer/>
 </>
    );

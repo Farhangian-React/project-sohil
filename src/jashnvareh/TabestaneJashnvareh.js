@@ -1,4 +1,4 @@
-import * as React from 'react';
+import  React,{useEffect} from 'react';
 import { NavLink } from 'react-router-dom';
 import { Typography } from '@mui/material';
 import BuildOutlinedIcon from '@mui/icons-material/BuildOutlined';
@@ -10,7 +10,16 @@ import { PageTitle } from '../Title/PageTitle';
 import InsertLinkIcon from '@mui/icons-material/InsertLink';
 import MarkAsUnreadIcon from '@mui/icons-material/MarkAsUnread';
 import './jashnvareh.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 export default function TabestaneJashnvareh() {
+   useEffect(()=> {
+      AOS.init({
+        disable: "phone",
+        duration: 700,
+        easing: "ease-out-cubic",
+      })
+  },[]);
   return (
     <>
     <PageTitle  title=' جشنواره زمستانه  '  description=' جشنواره / جشنواره زمستانه  '/>
@@ -30,22 +39,24 @@ export default function TabestaneJashnvareh() {
        height:"60vh",
        
        }} >
-           <div className=' flex flex-row justify-center items-center mx-auto w-[70%] self-end h-[250px] 
+           <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" className=' flex flex-row justify-center items-center mx-auto w-[95%] md:w-[70%] self-end h-[250px] 
             bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 mb-5'>
           
           <div 
-           className='jashnnav relative flex justify-center w-[200px] md:w-[250px] h-[175px] overflow-hidden rounded-xl p-10 m-2'
+           className='jashnnav relative flex justify-center w-[200px] md:w-[250px] h-[155px] md:h-[175px] overflow-hidden rounded-xl p-10 m-2'
      >
-               <div className="gerdali"><NavLink className="linkj" to={'/ProductOff'} > 
-               <p className='text-md font-bold text-center text-[#E0AA3E] py-2 '
+               <div className="gerdali w-[95%] md:w-[180px]  md:h-[40px]"><NavLink className="linkj" to={'/ProductOff'} > 
+               <p className='text-[12px] md:text-md font-bold text-center text-[#E0AA3E] py-2 '
              >  کالاهای تخفیف دار </p>
         </NavLink></div>
           </div>
           <div 
-           className='jashnnav1 relative flex justify-center w-[200px] md:w-[250px] h-[175px] overflow-hidden rounded-xl p-10 m-2'
+           className='jashnnav1 relative flex justify-center w-[200px] md:w-[250px] h-[155px] md:h-[175px]  overflow-hidden rounded-xl p-10 m-2'
      >
-               <div className="gerdali"><NavLink className="linkj" to={'/ProductOff'} > 
-               <p className='text-md font-bold text-center text-[#E0AA3E] py-2 '
+               <div className="gerdali  w-[95%] md:w-[180px] h-[40px]"><NavLink className="linkj" to={'/ProductJashnvareh'} > 
+               <p className='text-[12px] md:text-md font-bold text-center text-[#E0AA3E] py-2 '
              >
          محصولات جشنواره</p>
         </NavLink></div></div>
@@ -56,7 +67,8 @@ export default function TabestaneJashnvareh() {
 
 
          <div className='flex flex-col bg-white py-5  px-5 md:px-10  my-0 ' >
-      <div className='shadowjashnvareh flex flex-col justify-start w-auto self-start my-8'>
+      <div data-aos="fade-up"
+     data-aos-anchor-placement="top-center" className='shadowjashnvareh flex flex-col justify-start w-auto self-start my-8'>
         <p className='text-xl text-black text-center font-medium p-2'>
         جشنواره زمستانه ی سهیل
         </p>
@@ -78,7 +90,8 @@ export default function TabestaneJashnvareh() {
             </p>
 
            
-      <div className='shadowjashnvareh flex flex-col justify-start w-auto self-start my-8'>
+      <div data-aos="fade-up"
+     data-aos-anchor-placement="top-center" className='shadowjashnvareh flex flex-col justify-start w-auto self-start my-8'>
         <p className='text-xl text-black text-center font-medium p-2'>
         نحوه شرکت در جشنواره سهیل
         </p>
@@ -109,7 +122,8 @@ export default function TabestaneJashnvareh() {
             </p>
         
 
-      <div className='shadowjashnvareh flex flex-col justify-start w-auto self-start my-8'>
+      <div data-aos="fade-up"
+     data-aos-anchor-placement="top-center" className='shadowjashnvareh flex flex-col justify-start w-auto self-start my-8'>
         <p className='text-xl text-black text-center font-medium p-2'>
         نکات مهم:
           </p>
@@ -126,7 +140,8 @@ export default function TabestaneJashnvareh() {
         
         
        
-      <div className='shadowjashnvareh flex flex-col justify-start w-auto self-start my-8'>
+      <div data-aos="fade-up"
+     data-aos-anchor-placement="top-center" className='shadowjashnvareh flex flex-col justify-start w-auto self-start my-8'>
         <p className='text-xl text-black text-center font-medium p-2'>
         نصب محصول
           </p>
@@ -135,7 +150,8 @@ export default function TabestaneJashnvareh() {
           به منظور بهره مندی از شرایط جشنواره خرید زمستانه سهیل با مرکز تماس مشتریان گروه انتخاب از طریق شماره ۱۶۹۹ (بدون پیش شماره از سراسر کشور) تماس حاصل کنید و درخواست نصب محصول خریداری شده خود را اعلام نمایید. در این مرحله یک کد پذیرش نصب برای شما پیامک می‌شود. شایان ذکرست، فعالسازی این جشنواره تنها برای شماره تلفن همراهی خواهد بود که به این مرکز اعلام می‌کنید.
         </p> 
 
-        <div className='shadowjashnvareh flex flex-col justify-start w-auto self-start my-8'>
+        <div data-aos="fade-up"
+     data-aos-anchor-placement="top-center" className='shadowjashnvareh flex flex-col justify-start w-auto self-start my-8'>
         <p className='text-xl text-black text-center font-medium p-2'>
         دریافت کد تخفیف جشنواره
           </p>
@@ -144,7 +160,8 @@ export default function TabestaneJashnvareh() {
           نحوه دریافت کد تخفیف جشنواره و مراحل آن
             </p>
             <div className='flex flex-col md:flex-row justify-center mx-auto mt-10'>
-            <div className='flex flex-col justify-center py-2'> 
+            <div data-aos="fade-up"
+     data-aos-anchor-placement="top-center" className='flex flex-col justify-center py-2'> 
             <p className='text-xl text-center font-medium '>
                  <BuildOutlinedIcon sx={{color:"#E0AA3E",fontSize:{xs:"80px",lg:"60px"}}}/>
             </p>
@@ -152,9 +169,10 @@ export default function TabestaneJashnvareh() {
             <p  className='text-justify text-md text-[#585858] font-sans  px-5 py-2'>
               پس از درخواست نصب محصول و مشاهده فاکتور خرید، تاریخ خرید توسط نماینده مجاز خدمات پس از خرید ثبت می گردد.</p>
             </div>
-         <div className='bg-[#E0AA3E] w-[8px] h-[200px] my-auto  hidden md:flex'></div>
+         <div  className='bg-[#E0AA3E] w-[8px] h-[200px] my-auto  hidden md:flex'></div>
          <div className='bg-[#585858] h-[3px] w-[90%] mx-auto  flex md:hidden'></div>
-            <div className='flex flex-col justify-center py-2'> 
+            <div data-aos="fade-up"
+     data-aos-anchor-placement="top-center" className='flex flex-col justify-center py-2'> 
             <p className='text-xl text-center font-medium '>
                  <MarkAsUnreadIcon  sx={{color:"#E0AA3E",fontSize:{xs:"80px",lg:"60px"}}}/>
             </p>
@@ -164,7 +182,8 @@ export default function TabestaneJashnvareh() {
             </div>
             <div className='bg-[#E0AA3E] w-[8px] h-[200px] my-auto hidden md:flex'></div>
             <div className='bg-[#585858] h-[3px] w-[90%] mx-auto  flex md:hidden'></div>
-            <div className='flex flex-col justify-center py-2'> 
+            <div data-aos="fade-up"
+     data-aos-anchor-placement="top-center" className='flex flex-col justify-center py-2'> 
             <p className='text-xl  text-center font-medium '>
                  <InsertLinkIcon  sx={{color:"#E0AA3E",fontSize:{xs:"80px",lg:"60px"}}}/>
             </p>

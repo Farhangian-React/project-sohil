@@ -9,8 +9,7 @@
      position: absolute;
      right: -3px;
      bottom: 0;
-     width: 180px;
-     height: 35px;
+ 
      background: linear-gradient(to top ,#5d5443,#282828);
      border-top-left-radius: 50%;
 }
@@ -101,3 +100,34 @@ background-repeat: no-repeat;
 .shadowjashnvareh{
      box-shadow:10px 10px 10px #E0AA3E
 }
+.textblurbj{
+     font-weight: 700;
+     text-shadow: 0px 0px 10px #f6a709,
+     0px 0px 20px #f6a709,
+     0px 0px 40px #f6a709,
+     0px 0px 80px #f6a709;
+   }
+   .textblurbjj{
+         font-weight: 700;
+     text-shadow: 0px 0px 10px #64b3f4,
+     0px 0px 20px #64b3f4,
+     0px 0px 40px #64b3f4,
+     0px 0px 80px #64b3f4;
+   }
+   .blurstylej{
+     animation: scalee 6s alternate infinite linear;
+   }
+   @keyframes scalee{
+     0%{
+   transform: scale(1);
+     }
+     25%{
+       transform: scale(0.5);
+     }
+     75%{
+       transform: scale(1);
+     }
+     100%{
+       transform: scale(1);
+     }
+   }

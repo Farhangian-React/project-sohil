@@ -50,8 +50,11 @@ let result={id,code,numcall};
 if(isvalidate()){
 //console.log(result);
 fetch("https://serverjson-project.onrender.com/users",{
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
   method:"POST",
-  headers:{"content-type":"aplication/jopes"},
   body:JSON.stringify(result)
 
 }).then((res)=>{
@@ -74,26 +77,16 @@ fetch("https://serverjson-project.onrender.com/users",{
       <div>
      <ToastContainer/>  
     </div>
-         <Box 
-      sx={{
-        display:'flex',
-        justifyContent:'start',
-        flexDirection:"row",
-       position: "absolute",
-       backgroundImage: `url("https://static.vecteezy.com/system/resources/previews/014/724/816/non_2x/abstract-black-triangular-background-with-gold-lines-free-vector.jpg")`,
-       backgroundPosition: 'center',
-       backgroundSize: 'cover',
-       backgroundRepeat: 'no-repeat',
-       height:'100vh',
-       width:'100%'
-       }} >
-       <Box  sx={{width:"100%",mx:1,display:{xs:"none",md:"flex"},justifyContent:"center",mt:"3em",mr:"5em"}}>
-       <Box sx={{display:"flex",justifyContent:"center",alignItems:"center",borderRadius:"50%",bgcolor:'#282828' , ml:"12em",mt:"6em",width:"200px",
-         height:'200px',opacity:{xs:0.9,lg:0.8},position:'relative'}}>
+    <div className='w-full h-[100vh] flex justify-start flex-row  bg-cover bg-center bg-no-repeat '
+    style={{backgroundImage: `url("https://static.vecteezy.com/system/resources/previews/014/724/816/non_2x/abstract-black-triangular-background-with-gold-lines-free-vector.jpg")`}}
+     >
+        <div className='hidden md:flex justify-center w-full mt-20 mr-55 '>
+       <Box sx={{display:"flex",justifyContent:"center",alignItems:"center",borderRadius:"50%",bgcolor:'#282828' , ml:"11em",mt:"6em",width:"170px",
+         height:'170px',opacity:0.8,position:'relative'}}>
         <Typography  level='h2' sx={{textAlign:'center',color:'white' ,my:"3em"}}>فروش  </Typography>
       </Box>
-      <Box sx={{display:"flex",justifyContent:"center",alignItems:"center",borderRadius:"50%",bgcolor:'#E0AA3E' ,mt:"12em" ,mr:"3em",width:"220px",
-         height:'220px',opacity:{xs:0.9,lg:0.8},position:'absolute'}}>
+      <Box sx={{display:"flex",justifyContent:"center",alignItems:"center",borderRadius:"50%",bgcolor:'#E0AA3E' ,mt:"12em" ,mr:"3em",width:"180px",
+         height:'180px',opacity:0.6,position:'absolute'}}>
         <Typography  level='h2' sx={{textAlign:'center',color:'white' ,my:"3em"}}>جشنواره </Typography>
       </Box>
       <Box sx={{display:"flex",justifyContent:"center",alignItems:"center",borderRadius:"50%",bgcolor:'#E0AA3E' ,mt:"3em" ,mr:"7em",width:"220px",
@@ -102,13 +95,12 @@ fetch("https://serverjson-project.onrender.com/users",{
       </Box>
       
  
-       </Box>
+       </div>
 
-       <Box  maxWidth="sm" sx={{ display:"flex",justifyContent:"center",flexDirection:"column",alignSelf:"start",mr:10,ml:{xs:10,md:35},mt:{xs:20,md:10},
-      height:{xs:"300px",md:"600px"},border:"2px solid white",backdropFilter:"blur(25px)",px:4,py:2}} >
-        <Typography  variant="h5" sx={{textAlign:"center",my:1,color:"#fff"}}>
+       <div className='md:mt-20 md:ml-10 md:w-full w-[85%] flex justify-center flex-col self-center md:self-start mt-3 h-auto border-2 border-white mx-auto p-8  backdrop-blur-md'>
+        <p className='textblurbj text-white my-1 text-center text-md px-5 font-bold'>
         مشتری گرامی ضمن تشکر از خرید شما جهت فعال سازی جشنواره سهیل اطلاعات زیر را با دقت تکمیل نمایید
-        </Typography>
+        </p>
        
         <form  noValidate onSubmit={handlesubmit}>
           <Grid container spacing={2} sx={{mt:1}}>
@@ -190,7 +182,7 @@ fetch("https://serverjson-project.onrender.com/users",{
           >
             مرحله ی بعد 
           </Button>
-          <NavLink to={"/signup"}>
+          <NavLink to={"/"}>
           <Button
            sx={{':hover':{backgroundImage:"linear-gradient(to right ,#eeeeee,#282828)",
            color:'white'},fontSize:{xs:"14px",md:"18px"},color:'#eeeeee',my:0,px:1,py:0.3,
@@ -202,9 +194,9 @@ fetch("https://serverjson-project.onrender.com/users",{
           </Button></NavLink>        
          </form>
   
-          </Box>
+          </div>
 
-      </Box>
+      </div>
      
     
 
