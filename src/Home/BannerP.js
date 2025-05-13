@@ -1,6 +1,8 @@
 import React, { useState,useEffect } from 'react';
 import '../Product/Products.css';
 import { NavLink, useNavigate } from 'react-router-dom';
+import AOS from "aos";
+import "aos/dist/aos.css";
 function BannerP() {
   const [photo,setPhoto]=useState(1);
   const [type,setType]=useState(1);
@@ -70,12 +72,21 @@ function BannerP() {
           }
        
         };
+           useEffect(()=> {
+              AOS.init({
+                disable: "phone",
+                duration: 700,
+                easing: "ease-out-cubic",
+              })
+          },[]);
   return (
     <>
     <div className='w-full h-auto flex justify-center  bg-cover bg-center bg-no-repeat '
     style={{backgroundImage:`url(${returnPhotoURL()})`}}
      >
-         <div className=' bg-black bg-opacity-70 md:bg-opacity-90 w-[90vw] md:w-[60vw] h-[230px] md:h-[250px] mt-40 md:mt-24 mb-20 mx-5 '>
+         <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000"  className=' bg-black bg-opacity-70 md:bg-opacity-90 w-[90vw] md:w-[60vw] h-[230px] md:h-[250px] mt-40 md:mt-24 mb-20 mx-5 '>
           <p className='flex flex-col justify-between border-r-4 border-white mt-5 mr-8 pr-2 py-6 text-white text-right' >
              <p className='text-xl text-white my-1 px-2'> {returnType1()}</p>
             <p className='text-yellow-200 mt-1 text-md px-2'  > {returnType2()}</p>
