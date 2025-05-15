@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import { NavLink } from 'react-router-dom';
 import "react-toastify/dist/ReactToastify.css";
-import './CartBuy.css';
+import './Product/CartBuy.css';
 import { useEffect } from 'react';
 import {CardDataoff} from './Shared/Cart-Context';
 import { Slide } from 'react-slideshow-image';
