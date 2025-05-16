@@ -263,9 +263,9 @@ return console.log(cartItems);
     <div className='flex flex-col bg-zinc-100 '>
     {cartItems.map(i=>
     <div dir='rtl' className='flex flex-row bg-white rounded-t-3xl w-[95%] mx-auto my-4'>
-    <p className='text-[14px] md:text-[16px] text-gray-600 p-2'> محصولات / یخچال و فریزر /
+    <p className='text-[14px] md:text-[16px] text-gray-600 py-2 pr-2'> محصولات / یخچال و فریزر /
       </p>
-      <p className='text-[12px] md:text-[14px] text-[#2b31d5] font-bold p-2'>{i.title1} </p>
+      <p className='text-[12px] md:text-[14px] text-[#2b31d5] font-bold py-2'>{i.title1} </p>
     </div>
     
     )}
@@ -368,9 +368,9 @@ direction:"rtl"
         <CartModal/>
         </Drawer>
          <div className='flex justify-center mx-auto pb-3'>
-         <InfoIcon sx={{mt:0,mr:1.5,fontSize:'18px',color:'#4b4f4f'}}/>
-         <Typography variant='body1' sx={{direction:'rtl',pl:5,pr:1,color:'#333637'}}> درخواست مرجوع کردن کالا در گروه یخچال و فریزر با دلیل "انصراف از خرید" تنها در صورتی قابل تایید است که کالا در شرایط اولیه باشد 
-          (در صورت پلمپ بودن، کالا نباید باز شده باشد).</Typography>
+         <InfoIcon sx={{mt:1,mr:1.5,fontSize:'18px',color:'#4b4f4f'}}/>
+         <p className='text-[12px] text-justify pr-1 pl-5 text-gray-700 '> درخواست مرجوع کردن کالا در گروه یخچال و فریزر با دلیل "انصراف از خرید" تنها در صورتی قابل تایید است که کالا در شرایط اولیه باشد 
+          (در صورت پلمپ بودن، کالا نباید باز شده باشد).</p>
           </div>
           <Box sx={{m:2, display:'flex',justifyContent:'center'}}>
         <Tooltip color='warning'  title="اضافه به علاقمندی">
@@ -808,7 +808,7 @@ direction:"rtl"
     >   
     {cartItems.map(i=>
     <Box container sx={{mx:3,py:3,display:'flex',flexDirection:"column",bgcolor:'white',direction:'rtl'}}>
-      <p className='text-[18px] font-bold text-gray-700  py-1'> اولین نفری باشید که دیدگاهی را ارسال می کنید برای : 
+      <p className='text-[16px] font-bold text-gray-700 py-1'> اولین نفری باشید که دیدگاهی را ارسال می کنید برای : 
        </p>
       <p className='text-[14px] text-[#2b31d5] font-bold pt-1' > {i.title1} </p>
        <Box className='linetinck'></Box>
@@ -894,7 +894,7 @@ direction:"rtl"
 
           <button
           className='bg-gradient-to-r from-gray-200 via-gray-500 to-gray-200 
-                                   rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl mx-auto   px-8 py-1 mt-10 mb-5 text-gray-800 text-md font-sans
+                                   rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl mx-auto   px-8 py-1 mt-10 mb-5 text-white text-md font-sans
                                     hover:bg-gradient-to-r hover:from-gray-500
                                    hover:via-yellow-800 hover:to-gray-500 hover:text-white'
             type="submit"
