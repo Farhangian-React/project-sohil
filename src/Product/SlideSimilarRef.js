@@ -40,9 +40,8 @@ export default function SlideSimilarRef()  {
 
     return(
         <>
-
-<Box sx={{bgcolor:"white",display:{xs:'none',lg:'flex' },mx:5,mt:0,mb:5,flexDirection:"column",mt:{xs:3,md:1},borderRadius:'10px',direction:'rtl'}}>
-        <Typography sx={{mt:2,pr:10,color:'#585858',fontSize:'22px'}}> محصولات مشابه
+   <div dir='rtl' className=' hidden md:flex md:flex-col bg-white rounded-t-3xl w-[95%] mx-5 my-6'>
+  <Typography sx={{mt:2,pr:10,color:'#585858',fontSize:'22px'}}> محصولات مشابه
         
         </Typography><Box className='linetin' sx={{mx:5,mb:2}}></Box>
         <Slide slidesToScroll={1} slidesToShow={4} indicators={false}  sx={{ flexDirection:"row"}}  >
@@ -87,8 +86,8 @@ sx={{width:"90px",height:"120px",m:"auto"}}
     ))}
    
         </Slide>
-        </Box>
-        <Box sx={{bgcolor:"white",display:{xs:'flex',lg:"none"},mx:5,mt:0,mb:5,flexDirection:"column",mt:{xs:3,md:1},borderRadius:'10px',direction:'rtl'}}>
+        </div>
+       <div dir='rtl' className=' flex flex-col md:hidden bg-white rounded-t-3xl w-[95%] mx-5 my-6'>
         <Typography sx={{mt:2,pr:6,color:'#585858',fontSize:'22px'}}> محصولات مشابه
         
         </Typography><Box className='linetin' sx={{mx:5,mb:2}}></Box>
@@ -134,7 +133,7 @@ sx={{width:"90px",height:"120px",m:"auto"}}
     ))}
    
         </Slide>
-        </Box>
+        </div>
         </>
     )
 }

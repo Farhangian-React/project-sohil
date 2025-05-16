@@ -262,21 +262,14 @@ return console.log(cartItems);
     </div>
     <div className='flex flex-col bg-zinc-100 '>
     {cartItems.map(i=>
-    <div dir='rtl' className='hidden sm:flex flex-row bg-white rounded-t-3xl w-[95%] mx-auto my-6'>
-    <p className='text-[16px] text-gray-600 p-2'> محصولات / یخچال و فریزر /
+    <div dir='rtl' className='flex flex-row bg-white rounded-t-3xl w-[95%] mx-auto my-4'>
+    <p className='text-[14px] md:text-[16px] text-gray-600 p-2'> محصولات / یخچال و فریزر /
       </p>
-      <p className='text-[16px] text-yellow-600 p-2'>{i.title1} </p>
+      <p className='text-[12px] md:text-[14px] text-[#2b31d5] font-bold p-2'>{i.title1} </p>
     </div>
     
     )}
-    {cartItems.map(i=>
-    <div dir='rtl' className='flex flex-col sm:hidden bg-white rounded-t-3xl w-[95%] mx-auto my-6'>
-    <p className='text-[14px] text-gray-600 p-2'> محصولات / یخچال و فریزر /
-      </p>
-      <p className='text-[16px] text-yellow-600 px-2 pt-0.5 pb-2'>{i.title1} </p>
-    </div>
-    
-    )}
+   
     <div dir='rtl' className='flex flex-col md:flex-row bg-white rounded-t-3xl w-[95%] h-auto mx-auto '>
  
          {cartItems.map(i=> 
@@ -286,11 +279,11 @@ return console.log(cartItems);
           <p className='text-lg font-bold text-gray-800 py-2 text-right pr-8' >
        {i.title1}
         </p>
-        <p className='text-md font-bold text-gray-500 mt-5 text-right pr-8'  >
+        <p className='text-[14px] font-bold text-gray-500 mt-3 text-right pr-8'  >
       {i.title2}
         </p>
         <Rating
-             sx={{fontSize:"20px",pr:4,mb:3}}
+             sx={{fontSize:"16px",pr:4,mb:3}}
        name="simple-controlled"
        value={sumscore()}
      />
@@ -300,14 +293,14 @@ return console.log(cartItems);
         <div className='flex flex-row justify-start'>
           <p className='text-gray-800 text-right text-xl pr-8 mt-0.5'>قیمت :</p>
           <p ref={offref} 
-         className='text-gray-500 text-right text-xl pr-8 mt-0.5' >
+         className='text-gray-800 text-right text-2xl pr-8 mt-0.5' >
          {  i.price}
           </p>
           
           </div>
           <div ref={boxoff} className='flex flex-row justify-start my-1'>
-         <p className='text-red-600 font-bold text-right text-sm sm:text-xl  px-8 mt-0.5'>قیمت با  {convertToPersian(i.off)}%   تخفیف :</p>
-          <p className='text-red-600 font-bold text-right text-sm sm:text-xl  pr-1 mt-0.5' >
+         <p className='text-red-600 font-bold text-right text-md sm:text-2xl  px-8 mt-0.5'>قیمت با  {convertToPersian(i.off)}%   تخفیف :</p>
+          <p className='text-red-600 font-bold text-right text-md sm:text-2xl  pr-1 mt-0.5' >
        
           {addCommas(convertToPersian((convertToEnglish(i.pricenum)-(convertToEnglish(i.pricenum)*i.off / 100))+''))} تومان 
          </p>
@@ -374,41 +367,41 @@ direction:"rtl"
         <Divider />
         <CartModal/>
         </Drawer>
-         <Box sx={{display:'flex',justifyContent:'center',pb:{xs:5,lg:1},mx:2}}>
-         <InfoIcon sx={{mt:0,pr:1.5,fontSize:'18px',color:'#4b4f4f'}}/>
-         <Typography variant='body2' sx={{direction:'rtl',pl:5,pr:1,color:'#333637'}}> درخواست مرجوع کردن کالا در گروه یخچال و فریزر با دلیل "انصراف از خرید" تنها در صورتی قابل تایید است که کالا در شرایط اولیه باشد 
+         <div className='flex justify-center mx-auto pb-3'>
+         <InfoIcon sx={{mt:0,mr:1.5,fontSize:'18px',color:'#4b4f4f'}}/>
+         <Typography variant='body1' sx={{direction:'rtl',pl:5,pr:1,color:'#333637'}}> درخواست مرجوع کردن کالا در گروه یخچال و فریزر با دلیل "انصراف از خرید" تنها در صورتی قابل تایید است که کالا در شرایط اولیه باشد 
           (در صورت پلمپ بودن، کالا نباید باز شده باشد).</Typography>
-          </Box>
+          </div>
           <Box sx={{m:2, display:'flex',justifyContent:'center'}}>
         <Tooltip color='warning'  title="اضافه به علاقمندی">
       <IconButton sx={{pl:2,color:'black' }}>
-        <FavoriteBorderIcon sx={{fontSize:"32px"}} />
+        <FavoriteBorderIcon sx={{fontSize:"22px"}} />
       </IconButton>
     </Tooltip>
     <Tooltip title=" به اشتراک گذاری کالا ">
       <IconButton  sx={{pl:2,color:'black' }}>
-         <ShareIcon  sx={{fontSize:"32px"}}/>
+         <ShareIcon  sx={{fontSize:"22px"}}/>
          </IconButton>
     </Tooltip>
     <Tooltip title=" اطلاع رسانی شگفت انگیز ">
       <IconButton  sx={{pl:2,color:'black' }}>
-         <NotificationsActiveOutlinedIcon  sx={{fontSize:"32px"}}/>
+         <NotificationsActiveOutlinedIcon  sx={{fontSize:"22px"}}/>
          </IconButton>
     </Tooltip>
     <Tooltip title=" نمودار قیمت">
       <IconButton  sx={{pl:2,color:'black' }}>
-         <TimelineOutlinedIcon  sx={{fontSize:"32px"}}/>
+         <TimelineOutlinedIcon  sx={{fontSize:"22px"}}/>
          </IconButton>
     </Tooltip>
         
     <Tooltip title=" مقایسه کالا ">
       <IconButton  sx={{pl:2,color:'black' }}>
-        <AutoAwesomeMotionOutlinedIcon  sx={{fontSize:"32px"}}/>
+        <AutoAwesomeMotionOutlinedIcon  sx={{fontSize:"22px"}}/>
          </IconButton>
     </Tooltip>
     <Tooltip title=" افزودن به لیست ">
       <IconButton  sx={{pl:2,color:'black' }}>
-   <TocOutlinedIcon  sx={{fontSize:"32px"}}/>
+   <TocOutlinedIcon  sx={{fontSize:"22px"}}/>
          </IconButton>
     </Tooltip>
          
@@ -420,13 +413,10 @@ direction:"rtl"
              
      <div dir='rtl' className='flex flex-col md:flex-row justify-start self-center md:self-start mx-auto mt-6 w-full md:w-[50%]'  >
          <div 
-          className=' flex w-[85%] md:w-[85%] h-[600px] my-8  bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
+          className=' flex justify-center self-center w-[85%]  h-[500px] my-8  bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
           style={{
             borderRadius:"20px",
-            backgroundImage:`url(${image})`,
-          }} 
-       
-        >
+            backgroundImage:`url(${image})`}}>
         </div>
          {cartItems.map(i=>
          <div  className="inline-block md:hidden overflow-x-auto [&::-webkit-scrollbar]:w-0 py-1 bg-white
@@ -758,13 +748,13 @@ direction:"rtl"
     <div dir='rtl' className='flex flex-col md:flex-row bg-white rounded-t-3xl w-[95%] mx-auto my-6'>
 <Box  sx={{width:"100%",display:"flex",justifyContent:"start",flexDirection:"column",mt:{xs:3,lg:1},pb:{lg:3}}}>
 {cartItems.map(i=>
-    <Box container sx={{whiteSpace:"wrap",width:"90%",display:'flex',flexDirection:"row",alignSelf:"center",bgcolor:'white',px:3,py:0,mx:{xs:1,md:5},mb:2,mt:{xs:2,md:2},borderRadius:'10px',direction:'rtl'}}>
+    <Box container sx={{whiteSpace:"wrap",width:"90%",display:'flex',flexDirection:"row",alignSelf:"center",bgcolor:'white',px:3,py:0,mx:{xs:1,md:5},my:1,borderRadius:'10px',direction:'rtl'}}>
      <MdMessage className='w-10 h-10 text-[#E0AA3E] pt-3' /> 
-      <p className='text-[18px] font-bold text-gray-700 px-2 py-1'> نظرات کاربران 
-        <p className='text-[14px] text-yellow-600 pt-1' > {i.title1} </p>
+      <p className='text-[18px] font-bold text-gray-700 px-2 pt-2'> نظرات کاربران 
+      
        </p>
     </Box>)}
-    <Box  sx={{whiteSpace:"wrap",display:'flex',flexDirection:"column",bgcolor:'white',p:3,mx:{xs:1,md:5},mb:2,mt:{xs:2,md:2},border:"1px dashed #d0d0d0",borderRadius:'10px',direction:'rtl'}}>
+    <Box  sx={{whiteSpace:"wrap",display:'flex',flexDirection:"column",bgcolor:'white',p:3,mx:{xs:1,md:5},my:1,border:"1px dashed #d0d0d0",borderRadius:'10px',direction:'rtl'}}>
       <Typography  sx={{my:1,fontSize:"18px",fontWeight: 'bold'}}>
       دیگران را با نوشتن نظرات خود، برای انتخاب این کالا راهنمایی کنید.
       </Typography>
@@ -788,7 +778,8 @@ direction:"rtl"
                                    hover:via-yellow-800 hover:to-gray-500'
                                     >  مشاهده ی دیدگاه کاربران </button>
 
-       <Box  ref={boxnotcomments} sx={{display:"none"}}> <Typography variant='h6' sx={{color:"#585858",textAlign:"center",mx:5}}> دیدگاهی برای این محصول ثبت نشده است</Typography> 
+       <Box  ref={boxnotcomments} sx={{display:"none"}}>
+         <p className='text-sm md:text-xl text-gray-700 mx-auto'> دیدگاهی برای این محصول ثبت نشده است</p> 
        </Box>
      <div ref={boxcommentref} className='hidden'>
       <Typography variant='h5' sx={{direction:"rtl",color:"#282828",my:0,py:0}}>دید گاه ها...
@@ -819,7 +810,7 @@ direction:"rtl"
     <Box container sx={{mx:3,py:3,display:'flex',flexDirection:"column",bgcolor:'white',direction:'rtl'}}>
       <p className='text-[18px] font-bold text-gray-700  py-1'> اولین نفری باشید که دیدگاهی را ارسال می کنید برای : 
        </p>
-      <p className='text-[14px] text-yellow-600 font-bold pt-1' > {i.title1} </p>
+      <p className='text-[14px] text-[#2b31d5] font-bold pt-1' > {i.title1} </p>
        <Box className='linetinck'></Box>
     </Box>
     )}
