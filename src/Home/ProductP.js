@@ -68,9 +68,80 @@ function ProductP() {
     <div ref={bagbox1}
 className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
    > 
-       <div   data-aos="fade-up"
+   <div   data-aos="fade-up"
+     data-aos-anchor-placement="top-center" ref={tinybox1} >
+     
+<div className='container md:pr-5'>
+  <div className='card'>
+    <div ref={refbox1} className='w-[90%] md:w-[50vw] h-[400px] p-1 border-[0.5rem] rounded-lg border-[#353839] overflow-hidden '>
+       <div  className='h-full mx-auto px-5 overflow-hidden' >
+          <p className='text-black py-3 text-start font-bold text-2xl' >
+          یخچال و فریزر، ضروری در هر آشپزخانه
+         </p>
+         <p className='text-justify text-md text-gray-500 font-sans'>
+         امروزه یکی از کالاهای اساسی که در آشپزخانه‌ها مشاهده می‌شود و هم‌چنین دغدغه‌ی تازه‌عروس‌ها برای جهیزیه‌شان هم نیز است، انتخاب یخچال و فریزر با دوام و با قیمت مناسب است. ما شما را در این مطلب با انواع یخچال و فریزر و مزیت‌های هر کدام آشنا می‌کنیم.
+         </p>
+         <p  className='text-black py-3 text-start font-bold text-2xl'>
+         یخچال فریزر تک درب 
+         </p>
+          <p  className='text-justify text-md text-gray-500 font-sans' >
+          این یخچال‌ها به دلیل کوچک بودنشان، فضای کمی را می‌گیرند و به طبع، قیمت کمتری نیز دارند. این نوع از یخچال و فریزر مناسب برای ادارات، هتل‌ها و میهمان‌خانه‌ها و فروشگاه‌ها است.
+         </p>
+         <p  className='text-justify text-md text-gray-500 font-sans'>
+         یخچال فریزر مدل فریزر بالا یا فریزر پایین
+         </p>
+         <p className='text-justify text-md text-gray-500 font-sans'>
+         در این نوع از یخچال و فریزر از آن جایی که از اسمشان پیداست، بدنه به دو قسمت تقسیم شده و یا یخچال بالا قرار دارد و یا پایین. این نوع از یخچال فریزر جای کمتری می‌گیرند و اغلب یا قسمت یخچال بزرگ‌تر است و یا یخچال و فریزر به یک اندازه‌اند. خانواده‌ها بر حسب نیازشان، این نوع از یخچال فریزر را انتخاب می‌کنند.
+          </p>
+         <p  className='text-justify text-md text-gray-500 font-sans'>
+         یخچال فریزر دو قلو
+         </p>
+         <p  className='text-justify text-md text-gray-500 font-sans'>
+         این نوع از یخچال فریزر هنوز هم طرفداران خاص خودش را دارد. در این نوع، یخچال و فریزر از یکدیگر جدایند ولی کنار هم قرار گرفته و مکمل هم می‌شوند، پس یخچال و فریزر دقیقا اندازه و قرینه‌ی هم‌اند؛ هر چند که می‌توان آن‌ها را در دو جای مختلف و جدا از هم نیز قرار داد. این نوع از یخچال و فریزر، برای خانواده‌های با جمعیت بالا توصیه می‌شود، زیرا در کنار هم حجم زیادی دارند، ولی یکی از مزیت‌های آن امکان جدا کردن و جابجایی آسانشان به ویژه در آپارتمان‌ها است.
+          </p>
+         <p  className='text-black py-3 text-start font-bold text-2xl' >
+         یخچال فریزر ساید بای ساید 
+         </p>
+         <p  className='text-justify text-md text-gray-500 font-sans'>
+         یخچال فریزر ساید بای ساید یا به اختصار ساید را برخی در زمره‌ی یخچال فریزرهای دوقلو می‌دانند؛ ولی ساید یک تفاوت اساسی با نوع دوقلو دارد، آن هم این که نمی‌توان یخچال و فریزر را از هم جدا کرد و این دو قسمت بهم چسبیده‌اند، پس مکان بیشتری را اشغال می‌کنند. این نوع از یخچال و فریزر، پرطرفدارترین نوع‌اند، هم به خاطر زیبایی و هم به خاطر جا دار بودن و امکاناتی مثل یخ‌ساز و آب‌سردکن‌هایی که بر روی در آن‌ها قرار می‌گیرد. بهترین سایز برای یخچال فریزر ساید را می‌توان 25 تا 27 فوت دانست، زیرا برای آپارتمان‌هایی با فضای متوسط و حتی بزرگ‌تر بسیار مناسب است. 
+          </p>
+         <p   className='text-black py-3 text-start font-bold text-2xl' >
+         یخچال فریزر در فرانسوی
+         </p>
+         <p  className='text-justify text-md text-gray-500 font-sans'>
+          
+این نوع از یخچال‌فریزرها بسیار مورد اقبال قرار گرفته‌اند. مهم‌ترین دلایل آن هم جاداری بسیار و هم‌چنین شکیل یا لاکچری بودن آن است. در این نوع از یخچال و فریزر، یخچال و فریزر یک تکه بوده ولی از یکدیگر با درب‌هایی جدا می‌شوند. برخی از مدل‌های آن دارای فریزر کشویی در قسمت پایین است و برخی دیگر نیز دو در بالا برای یخچال و دو در پایین برای فریزر دارند. این نوع از یخچال و فریزر را بیشتر به خانواده‌هایی که جمعیت بالا و هم‌چنین فضای نسبتا بزرگی در آشپزخانه دارند، توصیه می‌شود. 
+
+یخچال فریزرها بر حسب ساده بودن یا امکانات متعدد داشتن، فوت و اندازه‌ی یخچال، برند و کارخانه‌ی تولیدی و ایرانی و خارجی بودنشان، دارای قیمت‌های متفاوت‌اند. برخی از یخچال‌فریزرها ساده‌اند، یعنی امکانات متعددی ندارند و فقط همان کاربرد اصلی یخچال و فریزر یعنی سرمایش مواد خوراکی را بر عهده‌دارند که مسلما قیمت ارزان‌تری نسبت به انواع لاکچری و پرکاربردشان دارند. اندازه و سایز هم در خرید قسطی یخچال فریزر مناسب برای خانواده‌ها حایز اهمیت است. اندازه‌ی آن‌ها از 12 فوت گرفته تا 36 فوت‌اند که خانواده ها متناسب با فضای خانه‌ی‌شان، جمعیتشان و از همه مهم‌تر توانایی مالی‌شان می‌توانند هر کدام را که تمایل دارند، خریداری کنند. 
+
+در کشور ما کارخانه‌های تولید یخچال و فریزر وجود دارند که کالاهای با کیفیتی می‌سازند و به نسبت مدل خارجی‌شان به صرفه ترند. مشهورترین برندهای ایرانی شامل یخچال و فریزر اسنوا، امرسان، پارس، الکترواستیل، هیمالیا اند. معروف‌ترین برندهای خارجی یخچال که در ایران هم نمایندگی دارند، شامل: جنرال آمریکایی، ال جی، سامسونگ، هاینس و... اند. گران‌ترین  برند، یخچال و فریزر سامسونگ است که قیمت این برند معمولا بیشتر از سایر یخچال‌ها و فریزرها است. 
+          </p>
+          <p  className='text-black py-3 text-start font-bold text-2xl'>
+      خرید آنلاین انواع یخچال و فریزر از سهیل 
+          </p>
+          <p  className='text-justify text-md text-gray-500 font-sans'>
+          شما می‌توانید انواع برند یخچال فریزر های معتبر و معروف خارجی مانند 
+            یخچال دوقلوی سامسونگ 
+          و حتی فریزر تک LG و فریزر تک امرسان و یا جدید ترین مدل یخچال ساید و انواع دیگر یخچال را 
+          از سایت  سهیل خریداری کنید و نهایت رضایت و اطمینان را از خرید خود داشته باشید. 
+          </p>
+
+        </div>
+    </div>
+    <div ref={refbutton1} onClick={addstyle1} className='tag'> <p className='text-lg text-yellow-500 font-bold text-center pb-2'>  ادامه ی مطالب...</p></div>
+    <div className='cor1'></div>
+     <div className='cor2'></div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+    {/*   <div   data-aos="fade-up"
      data-aos-anchor-placement="top-center" ref={tinybox1} className='flex justify-center flex-col my-5 w-[100vw] md:w-[50vw] mx-auto px-0'>
-       <div ref={refbox1} className='h-[290px] mx-auto px-5 overflow-hidden' >
+       <div ref={refbox1} className='h-full mx-auto px-5 overflow-hidden' >
           <p className='text-black py-3 text-start font-bold text-2xl' >
           یخچال و فریزر، ضروری در هر آشپزخانه
          </p>
@@ -136,12 +207,12 @@ className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
         </div>
         </div>
 
-
+*/}
 
         <div data-aos="flip-left"
-          className='imagestylej flex w-[85vw] md:w-[40vw] h-[400px] my-8  bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
+          className='imagestylej relative flex w-[85vw] md:w-[40vw] h-[400px]  bg-cover bg-center bg-no-repeat mx-auto border-[0.5rem] border-[#585858]'
           style={{
-            borderRadius:"20px",
+            borderRadius:"10px",
             backgroundImage:'url("https://images.webfronts.com/cache/meyeeahbfvwe.jpg?imgeng=/w_800/h_800/m_letterbox_ffffff_100")'
           }} 
        
@@ -151,7 +222,12 @@ className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
 
           
         >
-
+<div  className='tag1 rounded-tl-lg '>
+                    <NavLink style={{ textDecoration: "none" }} to={"/allrefriderators" }>
+       <p className=' text-yellow-500 text-md font-bold '
+        > 
+        مشاهده همه ی یخچال و فریزرها </p></NavLink>
+        </div>
         </div>
         </div>
 
@@ -160,7 +236,7 @@ className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
 
 
         <div ref={bagbox2}
-className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
+className='flex flex-col-reverse md:flex-row-reverse w-[100vw] py-5 px-1 my-12 mx-auto '
    > 
        <div  data-aos="fade-up"
      data-aos-anchor-placement="top-center" ref={tinybox2} className='flex justify-center flex-col my-5 w-[100vw] md:w-[50vw] mx-auto px-0'>
@@ -212,8 +288,53 @@ className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
         <div ref={bagbox3}
 className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
    > 
+   <div   data-aos="fade-up"
+     data-aos-anchor-placement="top-center" ref={tinybox3} >
+     
+<div className='container md:pr-5'>
+  <div className='card'>
+    <div ref={refbox1} className='w-[90%] md:w-[50vw] h-[400px] p-1 border-[0.5rem] rounded-lg border-[#353839] overflow-hidden '>
+       <div  className='h-full mx-auto px-5 overflow-hidden' >
+         <p className='text-black py-3 text-start font-bold text-2xl' >
+         اجاق گاز
+         </p>
+          <p  className='text-justify text-md text-gray-500 font-sans' >
+          اجاق گاز از اساسی ترین اجزای آشپزخانه محسوب می‌ شود. با شنیدن اسم اجاق گاز ذهن اکثر ما به 
+          سراغ یک اجاق گاز فردار کلاسیک می‌ رود که قدیم در همه آشپزخانه ‌ها بود. شما مجبور نیستید که یک اجاق گاز فردار بخرید اما خرید اجاق گاز دارای فر مزایای خودش را دارد. اجاق گاز فردار ارزان ‌تر و به صرفه تر از خرید یک اجاق‌ گاز رومیزی بدون فر و در کنار آن، یک فر توکار جداگانه است. البته که خرید اجاق گاز فردار یا بدون فر سلیقه ای است و هر کسی با توجه به فضای آشپزخانه خود انتخاب می‌ کند. اما با آگاهی از مدل‌ های مختلف اجاق گاز و انتخاب‌ هایی که می ‌توانید داشته باشید، قطعا راحت ‌تر و سریع ‌تر خرید اجاق گاز را به ثمر خواهید رساند. فروشگاه اینترتی دیجی ‌کالا علاوه بر فروش انواع اجاق گاز و دیگر لوازم آشپزخانه، بهترین مرجع راهنمای خرید لوازم خانگی برقی و غیر برقی محسوب می‌ شود. شما می ‌‌توانید با مطالعه جدول مشخصات و نقد و بررسی مدل‌ های مختلف،
+           اجاق گاز مناسب با بودجه و فضای آشپزخانه خود را بیابید. اما قبل از آن در اینجا با انواع اجاق گاز آشنا شوید.
+</p>
+<p className='text-black py-3 text-start font-bold text-2xl' >
+انواع اجاق گاز
+         </p>
+<p className='text-justify text-md text-gray-500 font-sans' >
+اجاق ‌گاز آشپزخانه بر اساس دو عامل تقسیم می‌ شوند: نوع مصرف و شکل ظاهری. اجاق ‌ها در بازار از نظر نوع مصرف به 2 دسته برقی و گازی تقسیم می ‌شوند.
+
+اجاق گازی: خیلی از آشپزان تازه ‌کار و سرآشپزان معروف برای آشپزی اجاق های گازی را ترجیح می ‌دهند؛ چرا که امکان تنظیم حرارت اجاق گازهایی که با گاز کار می‌ کنند، خیلی دقیق ‌تر از اجاق‌ های برقی است. شما می‌ توانید حرارت را بین درجه های مختلف تنظیم کنید و چون می ‌توانید شعله را با چشم خود ببینید، رسیدن به میزان دمای مورد نظر راحت‌ تر است. میزان مصرف انرژی در اجاق‌ های گازی نیز کمتر است.
+
+اجاق برقی: اجاق‌ های برقی جدید بین خانم های خانه بسیار پرطرفدار است چرا که بسیار زیبا هستند و تمیز کردن آن‌ها راحت‌ تر است. اجاق‌ های برقی مانند اجاق‌ های گازی دارای انواع مختلف دو شعله، سه شعله، چهار شعله، پنج شعله و حتی بیشتر است و شما می ‌توانید با توجه به نیازتان مدل مورد نظر خود را سفارش دهید.
+</p>
+<p  className='text-black py-3 text-start font-bold text-2xl'  >
+راهنمای خرید اجاق گاز
+         </p>
+<p  className='text-justify text-md text-gray-500 font-sans' >
+اگر محدودیت بودجه دارید و خانواده پر جمعیتی هم نیستید، می ‌توانید اجاق گاز رومیزی یا اجاق گاز بدون فر بخرید. قیمت اجاق گاز رومیزی ارزان ‌تر از اجاق گاز معمولی است و غالبا مدل های یک شعله تا چهار شعله آن‌ ها در بازار وجود دارد. اجاق گاز بدون فر نیز ظاهری شبیه اجاق‌ گاز فر دار دارد، با این تفاوت که به جای فر غالبا کشو یا محفظه ای کابینت مانند دارند. اجاق گاز بدون فر ارزان ‌تر از مدل‌ های فردار است و از نظر ظاهری جلوه جذاب ‌تری نسبت به اجاق گاز رومیزی در آشپزخانه دارد و می ‌توان از فضای پایین گاز آن‌ ها نیز مثل کابینت برای قرار دادن ظروف استفاده کرد.
+اما اگر بودجه بیشتری برای خرید اجاق گاز دارید، اجاق فردار برقی می ‌تواند جلوه‌ خاصی به آشپزخانه شما بدهد. همچنین می ‌توانید نگاهی به اجاق‌ گازهای 6 شعله استیل بیاندازید. قیمت اجاق گاز برقی و گازی بزرگ در مارک ‌های ایرانی تفاوت زیادی با هم ندارند. اجاق‌ گازهای استیل ظاهر بسیار جذابی دارند و وجودشان دکوراسیون آشپزخانه های مدرن را تکمیل می ‌کند. فر ‌در سبک آشپزی امروزی نقش پر رنگی دارد و آشپزی را برای خیلی از افراد راحت‌ کرده‌ است.
+</p>
+            </div>
+    </div>
+    <div ref={refbutton3} onClick={addstyle3} className='tag'> <p className='text-lg text-yellow-500 font-bold text-center pb-2'>  ادامه ی مطالب...</p></div>
+    <div className='cor1'></div>
+     <div className='cor2'></div>
+  </div>
+</div>
+
+
+</div>
+     
+    {/* 
        <div  data-aos="fade-up"
      data-aos-anchor-placement="top-center" ref={tinybox3} className='flex justify-center flex-col my-5 w-[100vw] md:w-[50vw] mx-auto px-0'>
+      
        <div ref={refbox3} className='h-[290px] mx-auto px-5 overflow-hidden' >
           <p className='text-black py-3 text-start font-bold text-2xl' >
          اجاق گاز
@@ -253,19 +374,27 @@ className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
         مشاهده همه ی اجاق‌ گازها </button></NavLink>
         </div>
         </div>
+        */}
+
         <div data-aos="flip-left"
-          className='imagestylej flex  w-[85vw] md:w-[40vw] h-[400px] my-8  bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
+          className='imagestylej relative flex w-[85vw] md:w-[40vw] h-[400px]  bg-cover bg-center bg-no-repeat mx-auto border-[0.5rem] border-[#585858]'
           style={{
-            borderRadius:"20px",
+            borderRadius:"10px",
             backgroundImage:'url("https://milancoshop.com/site/uploader/post/Gas-Hob-in-Kitchen-1774.jpg")'
           }} 
        
-        >
+               >
+<div  className='tag1 rounded-tl-lg '>
+                    <NavLink style={{ textDecoration: "none" }} to={"/allrefriderators" }>
+       <p className=' text-yellow-500 text-md font-bold '
+        > 
+        مشاهده همه ی اجاق و گازها  </p></NavLink>
         </div>
-       
-        </div>  
+        </div>
+        </div>
+
         <div ref={bagbox4}
-className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
+className='flex flex-col-reverse md:flex-row-reverse w-[100vw] py-5 px-1 my-12 mx-auto '
    > 
        <div   data-aos="fade-up"
      data-aos-anchor-placement="top-center" ref={tinybox4}className='flex justify-center flex-col my-5 w-[100vw] md:w-[50vw] mx-auto px-0'>

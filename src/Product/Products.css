@@ -110,3 +110,93 @@ width: 150px;
      
      }
    }
+   .pathh{
+    clip-path: path("M 0,10 L 10,0 L 540,0 L 550,10 L 550,340 L 540,350 L 450,350 L 440,360 L 440,390 L 430,400 L 10,400 L 0,390 L 0,10 Z");
+   }
+   .container{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-wrap: wrap;
+ 
+    gap: 0.625rem;
+   
+   }
+   .card{
+    position: relative;
+   }
+  
+
+   .tag{
+    width: 12.5rem;
+    height: 3.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: #353839;
+    border-top: 0.5rem solid #353839;
+    border-left: 0.5rem solid #353839;
+    border-radius: 1rem;
+    
+    padding: 0.3rem;
+   }
+   .tag ::after , .tag::before{
+    width: 1.125rem;
+    height: 1.125rem;
+    content: "";
+    position: absolute;
+   }
+   .tag::after{
+    background-color: red;
+    top: -1.125rem;
+    right: 1rem;
+    border-bottom-right-radius: 0.8rem;
+    box-shadow: 0.375rem 0.375rem white;
+   }
+    .tag::before{
+    background-color: transparent;
+    top: -1.66rem;
+    right: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    box-shadow: 0.375rem 0.375rem #353839;
+   }
+   
+   .tag1{
+    width: 15.5rem;
+    height: 3.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: #585858;
+    border-top: 0.5rem solid #585858;
+    border-left: 0.5rem solid #585858;
+ 
+    
+    padding: 0.3rem;
+   }
+   .tag1 ::after , .tag::before{
+    width: 4.125rem;
+    height: 1.125rem;
+    content: "";
+    position: absolute;
+   }
+   .tag1::after{
+    background-color: blue;
+    top: -1.125rem;
+    right: 1rem;
+    border-bottom-right-radius: 0.8rem;
+    box-shadow: 0.375rem 0.375rem transparent;
+   }
+    .tag1::before{
+    background-color: brown;
+    top: -1.66rem;
+    right: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    box-shadow: 0.375rem 0.375rem #585858;
+   }
