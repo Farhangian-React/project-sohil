@@ -12,7 +12,7 @@ export default  function WashingMachine() {
 
 <PageTitle title='ماشین لباسشویی ' description='   ماشین لباسشویی'/>
    <TopNav/> 
-   <div className="overflow-x-auto  [&::-webkit-scrollbar]:w-0 py-1 bg-zinc-100 mb-2">
+   <div className="overflow-x-auto [&::-webkit-scrollbar]:w-0  [&::-webkit-scrollbar]:h-0  py-1 bg-zinc-100 mb-2">
     <ul className=" flex uppercase font-bold mr-8">
     <NavLink
     to={'/shop-washing-machine'}

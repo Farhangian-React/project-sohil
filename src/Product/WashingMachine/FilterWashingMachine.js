@@ -12,7 +12,7 @@ import AddIcon from '@mui/icons-material/Add';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
-import IconButton from '@mui/material/IconButton';
+import IconButton from '@mui/material/IconButton' ;
 import { Grid } from '@mui/material';
 
 export default  function FilterWashingMachine() {
@@ -655,7 +655,7 @@ const handleChangeE1=(e)=>{
         }
    return (
     <>
-    <div className='hidden md:flex flex-col justify-start w-[400px]  mt-4 '>
+       <div dir='rtl' className='hidden md:flex flex-col justify-start w-[400px]  mt-4 h-[400px]  overflow-y-auto '>
     <div dir='rtl' className='flex justify-start md:rounded-sm border-b-2 border-gray-600 md:border-none mr-2 mt-0.3
     h-[50px]
     bg-gradient-to-r from-gray-500 via-yellow-500 to-gray-500 text-white'
@@ -848,21 +848,21 @@ const handleChangeE1=(e)=>{
         <AccordionSummary  sx={{fontSize:'16px',direction:'rtl'}} 
          aria-controls="panel1-content"
          expandIcon={<ArrowDropDownIcon sx={{':hover':{color:"#eeeeee"},mb:0,color:"#eeeeee",fontSize:"28px"}} />}> 
-          <div className='flex flex-row justify-start'>
-            <div  >
-        <IconButton sx={{pt:0}}>
-  
-      <FilterAltOutlinedIcon sx={{color:"#eeeeee",fontSize:"32px"}}/>
-    </IconButton>
-    </div>
-        <div >
-      <p className='text-xl font-bold text-white' >
-   فیلتر بر اساس
-</p>
-</div>
-        </div>
+       <div className='flex flex-row justify-start'>
+                 <div  >
+             <IconButton sx={{pt:0}}>
+       
+           <FilterAltOutlinedIcon sx={{color:"#eeeeee",fontSize:"20px",mt:0.5}}/>
+         </IconButton>
+         </div>
+      
+           <p className='text-md font-bold text-white' >
+        فیلتر بر اساس
+     </p>
+     
+             </div>
           </AccordionSummary>
-        <AccordionDetails className='-mt-9' >
+           <AccordionDetails className='mt-0 h-[300px]  overflow-y-auto mb-6' >
         <FormGroup>
 <Accordion
         expanded={index === 0}

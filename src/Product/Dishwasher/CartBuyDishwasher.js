@@ -4,7 +4,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import {CartBuyContext, CartContext} from '../../Shared/Cart-Context';
-import { Grid,Typography,Button, IconButton } from '@mui/material';
+import { Grid,Typography, IconButton } from '@mui/material';
 import Box from '@mui/material/Box';
 import Tooltip from '@mui/joy/Tooltip';
 import TopNav from '../../dashbord/TopNav';
@@ -21,9 +21,7 @@ import NotificationsActiveOutlinedIcon from '@mui/icons-material/NotificationsAc
 import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import AutoAwesomeMotionOutlinedIcon from '@mui/icons-material/AutoAwesomeMotionOutlined';
 import TocOutlinedIcon from '@mui/icons-material/TocOutlined';
-import Modal from '@mui/joy/Modal';
-import ModalClose from '@mui/joy/ModalClose';
-import ModalDialog from '@mui/joy/ModalDialog';
+import { MdMessage } from "react-icons/md";
 import { styled, useTheme } from '@mui/material/styles';
 import Drawer from '@mui/material/Drawer';
 import CloseIcon from '@mui/icons-material/Close';
@@ -31,8 +29,6 @@ import Divider from '@mui/material/Divider';
 import CartModal from "../../Carts-Shoping/CartModal";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
-import MessageOutlinedIcon from '@mui/icons-material/MessageOutlined';
-import HiveIcon from '@mui/icons-material/Hive';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 import Rating from '@mui/material/Rating';
 import { ToastContainer, toast } from "react-toastify";
@@ -53,7 +49,8 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'flex-end',
 }));
 
-export default function CartBuyDishwasher() {
+export default function CartBuyRefrigerator() { 
+  
   const [layout, setLayout] = React.useState(undefined);
   const [cartItems,setCartItems]=useContext(CartContext);
   const [cartItemsBuy,setCartItemsBuy]=useContext(CartBuyContext); 
@@ -63,8 +60,6 @@ export default function CartBuyDishwasher() {
   const [open, setOpen] = React.useState(false);
   const [name,setName]=useState("");
   const [email,setEmail]=useState("");
-  const [advantage,setAdvantage]=useState("");
-  const [disadvantages,setDisadvantages]=useState("");
   const [comment,setComment]=useState("");
   const [score,setScore]=useState("");
   const [error,setError]=useState({});
@@ -75,17 +70,7 @@ export default function CartBuyDishwasher() {
   const displycomments=useRef();
   const offref=useRef();
   const boxoff=useRef();
-  const offrefprice=()=>{
-    {cartItems.map(i=>{
-      if(i.off !== ""){
-offref.current.className="offref";
-      }
-      else{
-boxoff.current.className="boxoff";
-      }
-    }
-    )}
-  }
+
   const convertToEnglish=(str)=> {
     let englishNumber =str
     .replace(/۰/g, '0')
@@ -138,10 +123,9 @@ return(persianNumber);
       }
       else{
   boxcommentref.current.className="boxcommentref";
-  displycomments.current.className="disply";
+
       }
     } 
-
   const isvalidate = ()=>{
     let isvalid =true;
     let errmesage={};
@@ -153,14 +137,7 @@ errmesage.name="لطفا نام را وارد کنید";
       isvalid = false;
 errmesage.email="لطفا آدرس ایمیل را وارد کنید";
     }
-    if( advantage === null || advantage === ""){
-      isvalid = false;
-errmesage.advantage="لطفا نقاط قوت را وارد کنید";
-    }
-    if(disadvantages === null || disadvantages === ""){
-      isvalid = false;
-errmesage.disadvantages="لطفا نقاط ضعف را وارد کنید";
-    }
+
     if(comment === null || comment === ""){ 
       isvalid = false;
 errmesage.comment="لطفا دیدگاه خود را وارد کنید";
@@ -178,57 +155,66 @@ errmesage.score="لطفا  امتیاز خود را وارد کنید";
   const sumscore=()=>{
      let total=0;
   commenuser.map(i=>{
-     total += i.score
+   return  total += i.score;
    });
     return total / commenuser.length;
   }
 useEffect(()=>{
-  {cartItems.map(i=>{ 
-    fetch("http://localhost:3000/Allcomments")
+  cartItems.map(i=>{ 
+    fetch("https://serverjson-project.onrender.com/Allcomments")
     .then((res)=>
        res.json())
        .then((data)=>{
-      {data.map(j=>{
+    data.map(j=>{
       if(j.idcomment === i.id){
         setCommenuser([...data.filter(j=>j.idcomment === i.id )])
       } 
+      return cartItems;
     }
-      )}
-      }
+      )
+
+    }
        )
     .catch(err=>toast.error(err))
-  })};
+    return console.log(cartItems);
+  });
+  cartItems.map(i=>{
+    setImage(i.img);
+    return console.log(cartItems);
+  })  
+  },[cartItems])
+  
 
-  {cartItems.map(i=>{
-  setImage(i.img);})}  
-},[cartItems])
-useEffect(()=>{ 
-  offrefprice();
-},[])
   const handlesubmit=(e)=>{
     e.preventDefault();
     if(isvalidate()){
       //console.log(result);
-      {cartItems.map(i=>{ 
-        let idcomment=i.id;
-  let result={idcomment,name,email,advantage,disadvantages,
-  score,comment}
-  fetch("http://localhost:3000/Allcomments",{
+      cartItems.map(i=>{ 
+       
+  fetch("https://serverjson-project.onrender.com/Allcomments",{
     method:"POST",
-    headers:{"content-type":"aplication/jopes"},
-    body:JSON.stringify(result)
+    headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+    body:JSON.stringify({idcomment:i.id,name:name,email:email,
+      score:score,comment:comment})
 }).then((res)=>{
 toast.success("ثبت دیدگاه با موفقیت صورت گرفت") ; 
+
 }).catch((err)=>{
     toast.error("");
 })
-      })}
+return console.log(cartItems);
+      })
           }
       }
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  const addToCart=(p)=>{   
+
+  const addToCart=(p)=>{ 
+    setCartItems([p]);  
    if(cartItemsBuy.includes(p)){
     setCartItemsBuy((currState)=>{
    return [...currState]});  
@@ -238,72 +224,84 @@ toast.success("ثبت دیدگاه با موفقیت صورت گرفت") ;
       return [...currState,p]});
    }
    setOpen(true);
-    }
-  return (
+    } 
+
+  return(
     <>
- {cartItems.map(i=>
+     {cartItems.map(i=>
       <Helmet>
         <link  rel="icon"  href='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi8sUcl-xSeJ2aDKi3dB9ylFBIxBLCo-JXLg&s' />
         <title>
-           سهیل / ماشین ظرفشویی / 
-        { i.title1}
-           </title>
+          سهیل / ماشین ظرفشویی   </title>
     </Helmet>
      )}
-   <TopNav/>
-   <div>
+    <TopNav/>
+    <div>
      <ToastContainer/>  
     </div>
-    <Box sx={{display:"flex",flexDirection:"column",bgcolor:"#ececec"}}>
+    <div className='flex flex-col bg-zinc-100 '>
     {cartItems.map(i=>
-    <Box container sx={{display:'flex',flexDirection:"row",bgcolor:'white',mx:5,mb:2,mt:{xs:12,lg:2},borderRadius:'10px',direction:'rtl'}}>
-      <Typography  sx={{px:2,py:1,color:"gray",fontSize:"16px"}}> محصولات / ماشین ظرفشویی  /
-       </Typography><Typography  sx={{pt:1.2,color:"#674e06",fontSize:"14px"}}>{i.title1} </Typography>
-    </Box>
+    <div dir='rtl' className='flex flex-row bg-white rounded-t-3xl w-[95%] mx-auto my-4'>
+    <p className='text-[14px] md:text-[16px] text-gray-600 py-2 pr-2'> محصولات /  ماشین ظرفشویی /
+      </p>
+      <p className='text-[12px] md:text-[14px] text-[#2b31d5] font-bold pr-1 py-2'>{i.title1} </p>
+    </div>
+    
     )}
-   <Box container sx={{height:"auto",display:'flex',flexDirection:{xs:'column',lg:"row"},bgcolor:'white',mx:5,mt:0,mb:5,borderRadius:'10px',direction:'rtl'}}>
-        <Box >
+   
+    <div dir='rtl' className='flex flex-col md:flex-row bg-white rounded-t-3xl w-[95%] h-auto mx-auto '>
+ 
          {cartItems.map(i=> 
-         <Box   sx={{mt:{xs:1,md:1},display:'flex', flexDirection:'column',justifyContent:'center'}}> 
-         <Box sx={{px:5,mt:1,mb:{xs:12,lg:12},width:'15%',height:'20px'}}>
-         <img src={i.berand} width={'90%'}/>
-         </Box>
-          <Typography variant='h5' sx={{px:5,mb:3,mt:0,textAlign:'right'}}  >
+         <div className='flex flex-col justify-center mt-6 w-full md:w-[50%]'> 
+           <img  className='hover:scale-125 w-[100px] h-[70px] mr-8'  alt='' src={i.berand}/>
+        
+          <p className='text-lg font-bold text-gray-800 py-2 text-right pr-8' >
        {i.title1}
-        </Typography>
-        <Typography variant='h6' sx={{px:5,mb:1,color:'gray',textAlign:'right'}}  >
+        </p>
+        <p className='text-[14px] font-bold text-gray-500 mt-3 text-right pr-8'  >
       {i.title2}
-        </Typography>
+        </p>
         <Rating
-        sx={{fontSize:"22px",px:5,mb:3}}
+             sx={{fontSize:"16px",pr:4,mb:3}}
        name="simple-controlled"
        value={sumscore()}
      />
-        <Typography  sx={{px:5,my:1,color:'#585858',textAlign:'right',fontSize:"15px",textAlign:"justify"}}>
+          <p className='text-[14px] text-justify text-gray-500 pr-8 py-2 ' >
     {i.title3}
-        </Typography>
-        <Box sx={{display:'flex',flexDirection:'row',justifyContent:'start'}}>
-         <Typography variant='h5' sx={{px:5,mt:2.6,textAlign:'right'}}>قیمت :</Typography>
-          <Typography ref={offref} variant="h4" sx={{color:'#b77d08',px:5,mt:2,textAlign:'right'}}  >
-         {  i.price}
-          </Typography>
+        </p>
+        
+        
+           { i.off !== "" ?
+          <div  className='flex flex-col justify-start my-1'>
+             <p className='text-lg text-gray-500 line-through decoration-yellow-800 pr-8 my-1'>{i.price}</p>
+            <div  className='flex flex-row justify-start'>
+         <p className='text-yellow-800 font-bold text-right text-md sm:text-2xl  px-8 mt-0.5'>قیمت با  {convertToPersian(i.off)}%   تخفیف :
           
-          </Box>
-          <Box ref={boxoff} sx={{display:'flex',flexDirection:'row',justifyContent:'start',my:1.5}}>
-         <Typography variant='h5' sx={{color:"red",px:5,mt:0.5,textAlign:'right'}}>قیمت با  {convertToPersian(i.off)}%   تخفیف :</Typography>
-          <Typography variant="h5" sx={{color:'red',px:1,mt:0.5,textAlign:'right'}}  >
+         </p>
+          <p className='text-yellow-800 font-bold text-right text-md sm:text-2xl  pr-1 mt-0.5' >
        
           {addCommas(convertToPersian((convertToEnglish(i.pricenum)-(convertToEnglish(i.pricenum)*i.off / 100))+''))} تومان 
-         </Typography>
-          </Box>
-        <Button size='large'  color='secondary'  onClick={()=>
-         addToCart(i)
-       }
-       sx={{':hover':{backgroundImage:"linear-gradient(to right ,#eeeeee,#282828)",color:'white'}, color:'#eeeeee',fontSize:"22px",
-       borderTopRightRadius:"20px",borderTopLeftRadius: "30px",borderBottomRightRadius:"30px",borderBottomLeftRadius:"10px",
-       backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)",mx:30, my:3,py:0.5,px:0}}
-       > 
-        افزودن به سبد خرید  </Button>
+         </p>
+         </div>
+          </div>
+          
+          :
+          <div  className='flex flex-row justify-start'>
+          <p className='text-yellow-800 font-bold text-right text-xl pr-8 mt-0.5'>قیمت :</p>
+          <p 
+         className='text-yellow-800 font-bold text-right text-xl pr-8 mt-0.5' >
+         {  i.price}
+          </p>
+           
+          </div>
+}
+             
+                                   <button    onClick={()=> addToCart(i)} className='bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 
+                                   rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl mx-10  md:mx-16 px-10 md:px-2 py-1 mt-10 mb-5 text-white text-md font-sans
+                                    hover:bg-gradient-to-r hover:from-gray-500
+                                   hover:via-yellow-800 hover:to-gray-500'
+                                    >    
+        افزودن به سبد خرید  </button>
         <Drawer
        sx={{
          position:"absolute",
@@ -312,7 +310,7 @@ toast.success("ثبت دیدگاه با موفقیت صورت گرفت") ;
          flexShrink: 0,
          '& .MuiDrawer-paper': {
            width: drawerWidth,
-           height:"60vh",
+           height:"95vh",
            boxSizing: 'border-box', 
          },
        }}
@@ -358,201 +356,212 @@ direction:"rtl"
         <Divider />
         <CartModal/>
         </Drawer>
-         <Box sx={{display:'flex',justifyContent:'center',pb:{xs:5,lg:1},mx:2}}>
-         <InfoIcon sx={{mt:0,pr:1.5,fontSize:'18px',color:'#4b4f4f'}}/>
-         <Typography variant='body1' sx={{direction:'rtl',pl:5,pr:1,color:'#333637'}}> درخواست مرجوع کردن کالا در گروه یخچال و فریزر با دلیل "انصراف از خرید" تنها در صورتی قابل تایید است که کالا در شرایط اولیه باشد 
-          (در صورت پلمپ بودن، کالا نباید باز شده باشد).</Typography>
-          </Box>
-          
-        <Box sx={{m:2, display:'flex',justifyContent:'center'}}>
+         <div className='flex justify-center mx-auto pb-3'>
+         <InfoIcon sx={{mt:1,mr:1.5,fontSize:'18px',color:'#4b4f4f'}}/>
+         <p className='text-[12px] text-justify pr-1 pl-5 text-gray-700 '> درخواست مرجوع کردن کالا در گروه یخچال و فریزر با دلیل "انصراف از خرید" تنها در صورتی قابل تایید است که کالا در شرایط اولیه باشد 
+          (در صورت پلمپ بودن، کالا نباید باز شده باشد).</p>
+          </div>
+          <Box sx={{m:2, display:'flex',justifyContent:'center'}}>
         <Tooltip color='warning'  title="اضافه به علاقمندی">
       <IconButton sx={{pl:2,color:'black' }}>
-        <FavoriteBorderIcon sx={{fontSize:"32px"}} />
+        <FavoriteBorderIcon sx={{fontSize:"22px"}} />
       </IconButton>
     </Tooltip>
     <Tooltip title=" به اشتراک گذاری کالا ">
       <IconButton  sx={{pl:2,color:'black' }}>
-         <ShareIcon  sx={{fontSize:"32px"}}/>
+         <ShareIcon  sx={{fontSize:"22px"}}/>
          </IconButton>
     </Tooltip>
     <Tooltip title=" اطلاع رسانی شگفت انگیز ">
       <IconButton  sx={{pl:2,color:'black' }}>
-         <NotificationsActiveOutlinedIcon  sx={{fontSize:"32px"}}/>
+         <NotificationsActiveOutlinedIcon  sx={{fontSize:"22px"}}/>
          </IconButton>
     </Tooltip>
     <Tooltip title=" نمودار قیمت">
       <IconButton  sx={{pl:2,color:'black' }}>
-         <TimelineOutlinedIcon  sx={{fontSize:"32px"}}/>
+         <TimelineOutlinedIcon  sx={{fontSize:"22px"}}/>
          </IconButton>
     </Tooltip>
         
     <Tooltip title=" مقایسه کالا ">
       <IconButton  sx={{pl:2,color:'black' }}>
-        <AutoAwesomeMotionOutlinedIcon  sx={{fontSize:"32px"}}/>
+        <AutoAwesomeMotionOutlinedIcon  sx={{fontSize:"22px"}}/>
          </IconButton>
     </Tooltip>
     <Tooltip title=" افزودن به لیست ">
       <IconButton  sx={{pl:2,color:'black' }}>
-   <TocOutlinedIcon  sx={{fontSize:"32px"}}/>
+   <TocOutlinedIcon  sx={{fontSize:"22px"}}/>
          </IconButton>
     </Tooltip>
          
           </Box>
-           </Box>
+           </div>
          )}
-     </Box>
-       
-
 
        
-       <Box   sx={{mt:{xs:5,lg:1}, mx:{xs:1,lg:3},display:'flex',flexDirection:{xs:"column",lg:"row"},justifyContent:'start',alignSelf:{xs:"center",lg:"start"},direction:'rtl'}} >
-       <Box  sx={{mx:{xs:0,lg:2},mt:{xs:2,lg:4},pt:{lg:1},display:'flex',alignItems:'center',justifyContent:'center'}} >
-
-          <Box 
-           sx={{
-            display:"flex",
-            borderRadius:5,
-            backgroundImage:`url(${image})`,
-            backgroundPosition: 'center',
-            backgroundSize:'cover',
-            backgroundRepeat: 'no-repeat',
-            height:{xs:"600px",lg:"400px"},
-            width:{xs:"650px",lg:"350px"},
-           my:{xs:0},
-    
-            }}
-          >
-            </Box>  
-
+             
+     <div dir='rtl' className='flex flex-col md:flex-row justify-start self-center md:self-start mx-auto mt-6 w-full md:w-[50%]'  >
+         <div 
+          className=' flex justify-center self-center w-[85%]  h-[500px] my-8  bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
+          style={{
+            borderRadius:"20px",
+            backgroundImage:`url(${image})`}}>
+        </div>
+         {cartItems.map(i=>
+         <div  className="inline-block md:hidden overflow-x-auto [&::-webkit-scrollbar]:w-0 py-1 bg-white
+     w-[80%] mx-auto px-3  h-[120px] ">
+    <ul className=" flex uppercase font-bold mr-1">
+       <li>
+         <Link onClick={()=>setImage(i.img)}>
+         <div 
+          className=' flex w-[100px]  h-[100px] my-1  bg-cover bg-center bg-no-repeat rounded-sm mx-2'
+          style={{
+            borderRadius:"20px",
+            backgroundImage:`url(${i.img})`,
+          }} 
+       
+        >
+        </div>
       
-        </Box>
-      {cartItems.map(i=>
-       < Box   sx={{pt:{lg:5},mx:0,display:'flex',flexDirection:{xs:"row",lg:"column"},justifyContent:'center'}} >
-       <Link onClick={()=>setImage(i.img)}>
-        <Box  
-       sx={{
-        display:"flex",
-        borderRadius:5,
-        backgroundImage:`url(${i.img})`,
-        backgroundPosition: 'center',
-        backgroundSize:'cover',
-        backgroundRepeat: 'no-repeat',
-        height:{xs:"110px",lg:"90px"},
-        width:{xs:"110px",lg:"90px"},
-       my:{xs:2,lg:1},p:0
-       ,display:'flex',alignItems:'center',justifyContent:'center',mx:1}}> 
-        </Box>
         </Link>
-        <Link onClick={()=>setImage(i.imga1)}>
-        <Box  
-       sx={{
-        display:"flex",
-        borderRadius:5,
-        backgroundImage:`url(${i.imga1})`,
-        backgroundPosition: 'center',
-        backgroundSize:'cover',
-        backgroundRepeat: 'no-repeat',
-        height:{xs:"110px",lg:"90px"},
-        width:{xs:"110px",lg:"90px"},
-       my:{xs:2,lg:1},p:0
-       ,display:'flex',alignItems:'center',justifyContent:'center',mx:1}}> 
-        </Box>
-        </Link>
-        <Link onClick={()=>setImage(i.imga2)}>
-        <Box  
-       sx={{
-        display:"flex",
-        borderRadius:5,
-        backgroundImage:`url(${i.imga2})`,
-        backgroundPosition: 'center',
-        backgroundSize:'cover',
-        backgroundRepeat: 'no-repeat',
-        height:{xs:"110px",lg:"90px"},
-        width:{xs:"110px",lg:"90px"},
-       my:{xs:2,lg:1},p:0
-       ,display:'flex',alignItems:'center',justifyContent:'center',mx:1}}> 
-        </Box>
-        </Link>
-        <Box className="allproduct"
-      sx={{ height:{xs:"110px",lg:"90px"},
-      width:{xs:"110px",lg:"90px"}, display:"flex",
-      borderRadius:5, my:{xs:2,lg:1},p:0,mx:1    
-    }}>
-         <Button  onClick={() => {
-            setLayout('center');
-          }} sx={{color:'black',fontSize:"30px"}}>...</Button>
-<Modal   open={!!layout} onClose={() => setLayout(undefined)}>
-        <ModalDialog layout={layout} sx={{display:"flex",flexWrap:"wrap",overflow:"auto"}}>
-          <ModalClose  sx={{color:"red"}} />
-          {cartItems.map(i=><Typography variant='body1' sx={{mt:4,direction:'rtl'}}>{i.title1} </Typography>
-          
-          )}
-        {cartItems.map(i=><Typography variant='h5' sx={{color:'black',mt:2,mb:4,direction:'rtl'}}>مدل: {i.title2} </Typography>)}
-          <Box  sx={{width:'100%',height:'100 vh',direction:{xs:'rtl',md:'ltr'}, display:'flex',flexDirection:{xs:"column",lg:"row"},justifyContent:'center',bgcolor:'#fff'}}>
-        <Grid sx={{mx:{xs:2,md:2},mt:{xs:2,lg:1},display:'flex',justifyContent:'center'}} >
-             {cartItems.map(i=> 
-        <img  src={image} width={'100%'}   /> 
-        )}
-        </Grid>
-     
-       < Grid
-        container
-        spacing={0}
+        </li>
+        <li>
+           <Link onClick={()=>setImage(i.imga1)}>
+         <div 
+          className=' flex w-[100px]  h-[100px] my-1   bg-cover bg-center bg-no-repeat rounded-sm mx-2'
+          style={{
+            borderRadius:"20px",
+            backgroundImage:`url(${i.imga1})`,
+          }} 
        
-    
-      >
-       <Grid  xs={4} md={4} sx={{alignItems:'center',display:'flex',justifyContent:'center',m:0}}>{cartItems.map(i=><Link onClick={()=>setImage(i.img)}><img  src={i.img} width={'100%'} height={'100 vh'}/></Link>)} </Grid>
-       <Grid xs={4} md={4} sx={{alignItems:'center',p:0,display:'flex',justifyContent:'center',m:0}}> {cartItems.map(i=><Link onClick={()=>setImage(i.imga1)}><img src={i.imga1} width={'100%'} height={'100 vh'}/></Link>)} </Grid> 
-      <Grid xs={4} md={4} sx={{alignItems:'center',p:0,display:'flex',justifyContent:'center',m:0}}>{cartItems.map(i=><Link onClick={()=>setImage(i.imga2)}><img src={i.imga2}  width={'100%'} height={'100 vh'}/></Link>)} </ Grid> 
-       <Grid xs={4} md={4}  sx={{alignItems:'center',p:0,display:'flex',justifyContent:'center',m:0}}>{cartItems.map(i=><Link onClick={()=>setImage(i.imga3)}><img src={i.imga3}  width={'100%'}  height={'100 vh'}/></Link>)}</Grid> 
-       <Grid  xs={4} md={4} sx={{alignItems:'center',p:0,display:'flex',justifyContent:'center',m:0}}>{cartItems.map(i=><Link onClick={()=>setImage(i.img)}><img  src={i.img} width={'100%'}  height={'100 vh'}/></Link>)} </Grid>
-       <Grid xs={4} md={4} sx={{alignItems:'center',p:0,display:'flex',justifyContent:'center',m:0}}> {cartItems.map(i=><Link onClick={()=>setImage(i.imga1)}><img src={i.imga1} width={'100%'} height={'100 vh'}/></Link>)} </Grid> 
-      <Grid xs={4} md={4} sx={{alignItems:'center',p:0,display:'flex',justifyContent:'center',m:0}}>{cartItems.map(i=><Link onClick={()=>setImage(i.imga2)}><img src={i.imga2}  width={'100%'}  height={'100 vh'}/></Link>)} </ Grid> 
-      <Grid  xs={4} md={4} sx={{alignItems:'center',p:0,display:'flex',justifyContent:'center',m:0}}>{cartItems.map(i=><Link onClick={()=>setImage(i.img)}><img  src={i.img} width={'100%'}  height={'100 vh'}/></Link>)} </Grid>
-       <Grid xs={4} md={4} sx={{alignItems:'center',p:0,display:'flex',justifyContent:'center',m:0}}> {cartItems.map(i=><Link onClick={()=>setImage(i.imga1)}><img src={i.imga1} width={'100%'} height={'100 vh'}/></Link>)} </Grid> 
-      <Grid xs={4} md={4} sx={{alignItems:'center',p:0,display:'flex',justifyContent:'center',m:0}}>{cartItems.map(i=><Link onClick={()=>setImage(i.imga2)}><img src={i.imga2}  width={'100%'}  height={'100 vh'}/></Link>)} </ Grid> 
-       <Grid xs={4} md={4}  sx={{alignItems:'center',p:0,display:'flex',justifyContent:'center',m:0}}>{cartItems.map(i=><Link onClick={()=>setImage(i.imga3)}><img src={i.imga3}  width={'100%'} height={'100 vh'}/></Link>)}</Grid> 
-       <Grid xs={4} md={4}  sx={{alignItems:'center',p:0,display:'flex',justifyContent:'center',m:0}}>{cartItems.map(i=><Link onClick={()=>setImage(i.imga3)}><img src={i.imga3}  width={'100%'} height={'100 vh'}/></Link>)}</Grid> 
-       </Grid>
-        </Box>
-        
-         
-        </ModalDialog>
-      </Modal>
-
-      </Box>
+        >
+        </div>
       
+        </Link>
+        </li>
+        <li>
+           <Link onClick={()=>setImage(i.imga2)}>
+         <div 
+          className=' flex w-[100px]  h-[100px] my-1  bg-cover bg-center bg-no-repeat rounded-sm mx-2'
+          style={{
+            borderRadius:"20px",
+            backgroundImage:`url(${i.imga2})`,
+          }} 
        
-        </Box>
+        >
+        </div>
+      
+        </Link>
+        </li>
+         <Link onClick={()=>setImage(i.imga3)}>
+         <div 
+          className=' flex w-[100px]  h-[100px] my-1   bg-cover bg-center bg-no-repeat rounded-sm mx-2'
+          style={{
+            borderRadius:"20px",
+            backgroundImage:`url(${i.imga3})`,
+          }} 
        
-      )}
-        </Box> 
+        >
+        </div>
+      
+        </Link>
+         <Link onClick={()=>setImage(i.imga4)}>
+         <div 
+          className=' flex w-[100px]  h-[100px] my-1   bg-cover bg-center bg-no-repeat rounded-sm mx-2'
+          style={{
+            borderRadius:"20px",
+            backgroundImage:`url(${i.imga4})`,
+          }} 
        
+        >
+        </div>
+      
+        </Link>
+        </ul>
+        </div>
+         )}
+           
+ {cartItems.map(i=>
+         <div  className="hidden md:flex md:flex-col md:justify-center overflow-y-auto [&::-webkit-scrollbar]:h-0 py-1 bg-white
+     w-[100%] mx-auto px-3  h-[600px] my-8 ">
+    <ul className=" flex flex-col uppercase font-bold mr-1">
+       <li>
+         <Link onClick={()=>setImage(i.img)}>
+         <div 
+          className=' flex w-[100px]  h-[100px] my-1   bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
+          style={{
+            borderRadius:"20px",
+            backgroundImage:`url(${i.img})`,
+          }} 
        
-     
-</Box>
-
-  
-<Box container sx={{display:'flex',flexDirection:'column',bgcolor:'white',mx:5,mt:0,mb:5,borderRadius:'10px',direction:'rtl'}}>
-<Grid container
-           justifyContent={'start'}
-        
-       rowSpacing={0} columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-       margin={0}
-       sx={{display:'flex',flexDirection:'column'}}
-       >
+        >
+        </div>
+      
+        </Link>
+        </li>
+        <li>
+           <Link onClick={()=>setImage(i.imga1)}>
+         <div 
+          className=' flex w-[100px]  h-[100px] my-1 bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
+          style={{
+            borderRadius:"20px",
+            backgroundImage:`url(${i.imga1})`,
+          }} 
+        >
+        </div>
+      
+        </Link>
+        </li>
+        <li>
+           <Link onClick={()=>setImage(i.imga2)}>
+         <div 
+          className=' flex w-[100px]  h-[100px] my-1  bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
+          style={{
+            borderRadius:"20px",
+            backgroundImage:`url(${i.imga2})`,
+          }} 
+        >
+        </div>
+        </Link>
+        </li>
+         <Link onClick={()=>setImage(i.imga3)}>
+         <div 
+          className=' flex w-[100px]  h-[100px] my-1   bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
+          style={{
+            borderRadius:"20px",
+            backgroundImage:`url(${i.imga3})`,
+          }} 
        
-       <Accordion sx={{mr:2,ml:6,mt:2}}
+        >
+        </div>
+      
+        </Link>
+         <Link onClick={()=>setImage(i.imga4)}>
+         <div 
+          className=' flex w-[100px]  h-[100px] my-1   bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
+          style={{
+            borderRadius:"20px",
+            backgroundImage:`url(${i.imga4})`,
+          }} 
+        >
+        </div>
+        </Link>
+        </ul>
+        </div>
+         )}
+        </div> 
+</div>
+<div dir='rtl' className='flex flex-col justify-center bg-white  rounded-t-3xl w-[95%] mx-auto my-6'>
+       <Accordion sx={{mx:"auto",width:"95%",mt:5}}
         expanded={index === 0}
         onChange={(event, expanded) => {
           setIndex(expanded ? 0 : null);
           
         }}
       >
-        <AccordionSummary   sx={{color:"#585858",fontSize:{xs:"18px",md:'20px'}}}   expandIcon={<AddIcon sx={{fontSize:{xs:"18px",md:"20px"}}} />}> مشخصات اصلی</AccordionSummary>
-        <AccordionDetails sx={{ml:{xs:5}}}>
+         <AccordionSummary   sx={{color:"#585858",fontSize:{xs:"18px",md:'20px'}}}   expandIcon={<AddIcon sx={{fontSize:{xs:"18px",md:"20px"}}} />}> مشخصات اصلی</AccordionSummary>
+        <AccordionDetails sx={{mx:"auto",width:"95%"}}>
           <Box  sx={{display:'flex'}}>
-          <Grid xs={12} md={4} >
              {cartItems.map(i=> 
         <List
             aria-label="Products"
@@ -586,8 +595,6 @@ direction:"rtl"
             </ListItem>
           </List>
             )}
-        </Grid>
-        <Grid xs={12} md={4} >
         {cartItems.map(i=> 
         <List
             aria-label="Products"
@@ -620,9 +627,6 @@ direction:"rtl"
           </ListItem>
           </List>
             )}
-        </Grid>
-        <Grid xs={12} md={4} >
-    
         {cartItems.map(i=> 
         <List
             aria-label="Products"
@@ -655,18 +659,18 @@ direction:"rtl"
             </ListItem>
           </List>
             )}
-        </Grid>
-          </Box>
+    </Box>
         </AccordionDetails>
       </Accordion>
-      <Accordion sx={{mr:2,ml:6}}
+      <Accordion sx={{mx:"auto",width:"95%"}}
         expanded={index === 1}
         onChange={(event, expanded) => {
           setIndex(expanded ? 1 : null);
         }}
       >
-        <AccordionSummary   sx={{color:"#585858",fontSize:{xs:"18px",md:'20px'}}}   expandIcon={<AddIcon sx={{fontSize:{xs:"18px",md:"20px"}}}/>}>ویژگی ها و امکانات</AccordionSummary>
-        <AccordionDetails sx={{ml:{xs:5}}}> {cartItems.map(i=>
+         <AccordionSummary   sx={{color:"#585858",fontSize:{xs:"18px",md:'20px'}}}   expandIcon={<AddIcon sx={{fontSize:{xs:"18px",md:"20px"}}} />}>ویژگی ها و امکانات</AccordionSummary>
+        <AccordionDetails sx={{mx:"auto"}}> 
+        {cartItems.map(i=>
         <Box  sx={{ml:{xs:3},display:'flex',flexWrap:'wrap',justifyContent:'center'}}>  
        {i.Prop.map(j=>
           <Grid xs={6} md={3} sx={{display:"flex",justifyContent:"center",alignSelf:"center",px:1}}>  
@@ -702,34 +706,33 @@ direction:"rtl"
         </Grid>
        )}
           </Box>  )}
+
         </AccordionDetails>
       </Accordion>
-      <Accordion  sx={{mr:2,ml:6,mb:2}}
+       <Accordion sx={{mx:"auto",width:"95%",mb:5}}
         expanded={index === 2}
         onChange={(event, expanded) => {
           setIndex(expanded ? 2 : null);
         }}
       >
-        <AccordionSummary   sx={{color:"#585858",fontSize:{xs:"18px",md:'20px'}}}   expandIcon={<AddIcon sx={{fontSize:{xs:"18px",md:"20px"}}}/>}> مشخصات بیشتر</AccordionSummary>
-        <AccordionSummary  sx={{color:"#585858",fontSize:{xs:"14px",md:'16px'}}}   expandIcon={<AddIcon sx={{fontSize:{xs:"14px",md:"18px"}}}/>}> مشخصات بیشتر</AccordionSummary>
+          <AccordionSummary   sx={{color:"#585858",fontSize:{xs:"18px",md:'20px'}}}   
+           expandIcon={<AddIcon sx={{fontSize:{xs:"18px",md:"20px"}}} />}> مشخصات بیشتر</AccordionSummary>
         <AccordionDetails>
-        <Grid  >
-        
-        </Grid>
+      
         </AccordionDetails>
       </Accordion>
    
-        </Grid>
-</Box>
-<Box sx={{display:'flex',bgcolor:'white',mx:5,mt:0,mb:5,flexDirection:{xs:"column",lg:"row"},mt:{xs:3,lg:1},borderRadius:'10px',direction:'rtl'}}>
+    </div>
+    <div dir='rtl' className='flex flex-col md:flex-row bg-white rounded-t-3xl w-[95%] mx-auto my-6'>
 <Box  sx={{width:"100%",display:"flex",justifyContent:"start",flexDirection:"column",mt:{xs:3,lg:1},pb:{lg:3}}}>
 {cartItems.map(i=>
-    <Box container sx={{whiteSpace:"wrap",width:"90%",display:'flex',flexDirection:"row",alignSelf:"center",bgcolor:'white',px:3,py:0,mx:{xs:1,md:5},mb:2,mt:{xs:2,md:2},borderRadius:'10px',direction:'rtl'}}>
-     <MessageOutlinedIcon sx={{pr:2,pt:3,color:"#E0AA3E",fontSize:"34px"}}/> 
-      <Typography  sx={{px:2,py:1,color:"#3d3d3d",fontSize:"18px",fontWeight:'bold'}}> نظرات کاربران<Typography variant='body2' sx={{pt:0.4,color:"#674e06"}}> {i.title1} </Typography>
-       </Typography>
+    <Box container sx={{whiteSpace:"wrap",width:"90%",display:'flex',flexDirection:"row",alignSelf:"center",bgcolor:'white',px:3,py:0,mx:{xs:1,md:5},my:1,borderRadius:'10px',direction:'rtl'}}>
+     <MdMessage className='w-10 h-10 text-[#E0AA3E] pt-3' /> 
+      <p className='text-[18px] font-bold text-gray-700 px-2 pt-2'> نظرات کاربران 
+      
+       </p>
     </Box>)}
-    <Box  sx={{whiteSpace:"wrap",display:'flex',flexDirection:"column",bgcolor:'white',p:3,mx:{xs:1,md:5},mb:2,mt:{xs:2,md:2},border:"1px dashed #d0d0d0",borderRadius:'10px',direction:'rtl'}}>
+    <Box  sx={{whiteSpace:"wrap",display:'flex',flexDirection:"column",bgcolor:'white',p:3,mx:{xs:1,md:5},my:1,border:"1px dashed #d0d0d0",borderRadius:'10px',direction:'rtl'}}>
       <Typography  sx={{my:1,fontSize:"18px",fontWeight: 'bold'}}>
       دیگران را با نوشتن نظرات خود، برای انتخاب این کالا راهنمایی کنید.
       </Typography>
@@ -747,12 +750,16 @@ direction:"rtl"
       </Typography>
   
     </Box>
-    <Button ref={buttoncommentref} onClick={addcomments}  sx={{':hover':{backgroundImage:"linear-gradient(to right ,#eeeeee,#282828)",color:'white'}, color:'#eeeeee',fontSize:"22px",
-       borderTopRightRadius:"20px",borderTopLeftRadius: "30px",borderBottomRightRadius:"30px",borderBottomLeftRadius:"10px",
-       backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)",mx:25, my:3,py:0.5,px:0}}> مشاهده ی دیدگاه کاربران </Button>
-       <Box  ref={boxnotcomments} sx={{display:"none"}}> <Typography variant='h6' sx={{color:"#585858",textAlign:"center",mx:5}}> دیدگاهی برای این محصول ثبت نشده است</Typography> 
+       <button ref={buttoncommentref} onClick={addcomments}  className='bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 
+                                   rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl mx-6  sm:mx-16 px-2 py-1 mt-10 mb-5 text-white text-md font-sans
+                                    hover:bg-gradient-to-r hover:from-gray-500
+                                   hover:via-yellow-800 hover:to-gray-500'
+                                    >  مشاهده ی دیدگاه کاربران </button>
+
+       <Box  ref={boxnotcomments} sx={{display:"none"}}>
+         <p className='text-sm md:text-xl text-gray-700 mx-auto'> دیدگاهی برای این محصول ثبت نشده است</p> 
        </Box>
-     <Box ref={boxcommentref} sx={{ display:"none"}}>
+     <div ref={boxcommentref} className='hidden'>
       <Typography variant='h5' sx={{direction:"rtl",color:"#282828",my:0,py:0}}>دید گاه ها...
       <Box className='linetin'></Box>
       </Typography>
@@ -770,9 +777,8 @@ direction:"rtl"
      </Typography>
        )}
        
-   </Box>
-<Button ref={displycomments} onClick={displycomment}sx={{display:"none"}} ><Typography variant='body1' sx={{color:"#E0AA3E"}}>  ادامه ی نظرات...</Typography></Button>
-    </Box>
+   </div>
+</Box>
    
     <Box   sx={{width:"100%",display:"flex",justifyContent:"start",flexDirection:"column",mt:{xs:3,lg:1},pb:3,
     bgcolor:'white',direction:'rtl'}}
@@ -780,17 +786,18 @@ direction:"rtl"
     >   
     {cartItems.map(i=>
     <Box container sx={{mx:3,py:3,display:'flex',flexDirection:"column",bgcolor:'white',direction:'rtl'}}>
-      <Typography  sx={{pl:0.6,py:0,color:"#3d3d3d",fontSize:"18px"}}> اولین نفری باشید که دیدگاهی را ارسال می کنید برای : 
-       </Typography>
-       <Typography variant='body2' sx={{pt:0.4,color:"#674e06"}}>  {i.title1} </Typography>
+      <p className='text-[16px] font-bold text-gray-700 py-1'> اولین نفری باشید که دیدگاهی را ارسال می کنید برای : 
+       </p>
+      <p className='text-[14px] text-[#2b31d5] font-bold pt-1' > {i.title1} </p>
        <Box className='linetinck'></Box>
     </Box>
     )}
          <form  noValidate onSubmit={handlesubmit}>
           <Box sx={{mt:1,mx:3}}>
-            <FormLabel sx={{mb:1,color:"#615d5d",fontSize:"18px"}}>نام <AcUnitIcon  sx={{fontSize:"8px",color:"#615d5d"}}/></FormLabel>
-              <Input
-              sx={{fontSize:"24px"}}
+            <div className='flex flex-row justify-start'>
+              <div className='flex flex-col justify-start w-[30%]'>
+           <Input
+              sx={{fontSize:"16px"}}
             color="warning"
             placeholder='نام'
                 autoComplete="fname"
@@ -808,9 +815,10 @@ direction:"rtl"
                
                 {error.name}
               </Typography>
-            <FormLabel sx={{mb:1,color:"#615d5d",fontSize:"18px"}}> آدرس ایمیل <AcUnitIcon  sx={{fontSize:"8px",color:"#615d5d"}}/></FormLabel>
-              <Input
-              sx={{fontSize:"24px"}}
+              </div>
+              <div className='flex flex-col justify-start  w-[70%]'>
+            <Input
+              sx={{fontSize:"16px",mr:2}}
                 color="warning"
               placeholder='آدرس ایمیل'
                 variant="outlined"
@@ -825,38 +833,9 @@ direction:"rtl"
                
                {error.email}
              </Typography>
-            <FormLabel sx={{mb:1,color:"#615d5d",fontSize:"18px"}}><HiveIcon sx={{fontSize:"12px",color:"green"}}/>نقاط قوت   </FormLabel>
-              <Input
-              sx={{fontSize:"24px"}}
-                color="warning"
-            type='text'
-                variant="outlined"
-                required
-               
-                defaultValue={null}
-                value={advantage}
-                onChange={(e)=> setAdvantage(e.target.value)}
-              />
-              <Typography variant='body1' sx={{color:"#f54141",mt:1}}>
-               
-               {error.advantage}
-             </Typography>
-            <FormLabel sx={{mb:1,color:"#615d5d",fontSize:"18px"}}><HiveIcon sx={{fontSize:"12px",color:"red"}}/> نقاط ضعف  </FormLabel>
-              <Input
-               sx={{fontSize:"24px"}}
-               color="warning"
-            type='text'
-                variant="outlined"
-                required
-                defaultValue={null}
-                value={disadvantages}
-                onChange={(e)=> setDisadvantages(e.target.value)}
-              />
-               <Typography variant='body1' sx={{color:"#f54141",mt:1}}>
-               {error.disadvantages}
-            
-             </Typography>
-                <FormLabel sx={{mb:1,color:"#615d5d",fontSize:"18px"}}> امتیاز شما</FormLabel>
+             </div>
+             </div>
+                <FormLabel sx={{mb:1,color:"#615d5d",fontSize:"16px",mt:3}}> امتیاز شما</FormLabel>
                 <Rating
         name="simple-controlled"
         value={score}
@@ -870,7 +849,7 @@ direction:"rtl"
                {error.score}
               
              </Typography>
-            <FormLabel sx={{mb:1,color:"#615d5d",fontSize:"18px"}}> دیدگاه شما <AcUnitIcon  sx={{fontSize:"8px",color:"#615d5d"}}/>  </FormLabel>
+            <FormLabel sx={{mb:1,color:"#615d5d",fontSize:"16px",mt:3}}> دیدگاه شما <AcUnitIcon  sx={{fontSize:"8px",color:"#615d5d"}}/>  </FormLabel>
             <Textarea
           
              color="warning"
@@ -881,7 +860,7 @@ direction:"rtl"
                  value={comment}
                  onChange={(e)=> setComment(e.target.value)}
              rows="50" cols="30"
-             sx={{width:"100%",height:"200px",fontSize:"24px"}}
+             sx={{width:"100%",height:"180px",fontSize:"16px"}}
              ></Textarea>
 
                <Typography variant='body1' sx={{color:"#f54141",mt:1}}>
@@ -891,23 +870,24 @@ direction:"rtl"
            
             
 
-          <Button
-           sx={{':hover':{backgroundImage:"linear-gradient(to right ,#eeeeee,#282828)",color:'white'}, color:'#eeeeee',fontSize:"22px",
-           borderTopRightRadius:"20px",borderTopLeftRadius: "30px",borderBottomRightRadius:"30px",borderBottomLeftRadius:"10px",
-           backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)",mt:2,py:0.3,px:6}}
+          <button
+          className='bg-gradient-to-r from-gray-200 via-gray-500 to-gray-200 
+                                   rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl mx-auto   px-8 py-1 mt-10 mb-5 text-white text-md font-sans
+                                    hover:bg-gradient-to-r hover:from-gray-500
+                                   hover:via-yellow-800 hover:to-gray-500 hover:text-white'
             type="submit"
             
           >
-           ثبت
-          </Button>
+             ثبت دیدگاه
+          </button>
           </Box>
         </form>
         </Box> 
 
 
-</Box>
+</div>
    <SlideSimilarDish/>     
-</Box>
+</div>
     <Footer/>
     </>
   );
