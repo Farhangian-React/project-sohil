@@ -66,12 +66,11 @@ function ProductP() {
 
     <div className='flex flex-col bg-white' >   
    
-        <div ref={bagbox1}
-className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
-   >  
+           <div ref={bagbox1}
+className='flex flex-col md:flex-row-reverse w-[100vw] py-5 px-1 my-12 mx-auto '
+   > 
        <div  data-aos="fade-up"
      data-aos-anchor-placement="top-center" ref={tinybox1} className='flex justify-center flex-col my-5 w-[100vw] md:w-[50vw] mx-auto px-0'>
-      
        <div ref={refbox1} className='h-[290px] mx-auto px-5 overflow-hidden' >
           <p className='text-black py-3 text-start font-bold text-2xl' >
           یخچال و فریزر، ضروری در هر آشپزخانه
@@ -140,7 +139,7 @@ className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
 
 
         <div data-aos="flip-left"
-          className='imagestylej relative flex w-[85vw] md:w-[40vw] h-[400px]  bg-cover bg-center bg-no-repeat mx-auto border-[0.5rem] border-white'
+          className='imagestylej flex w-[85vw] md:w-[40vw] h-[400px] my-8  bg-cover bg-center bg-no-repeat mx-auto border-[0.5rem] border-white'
           style={{
             borderRadius:"20px",
             backgroundImage:'url("https://images.webfronts.com/cache/meyeeahbfvwe.jpg?imgeng=/w_800/h_800/m_letterbox_ffffff_100")'
@@ -254,7 +253,7 @@ className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
   
 
           <div data-aos="flip-left"
-          className='imagestylej relative flex w-[85vw] md:w-[40vw] h-[400px]  bg-cover bg-center bg-no-repeat mx-auto border-[0.5rem] border-white'
+          className='imagestylej my-8 flex w-[85vw] md:w-[40vw] h-[400px]  bg-cover bg-center bg-no-repeat mx-auto border-[0.5rem] border-white'
           style={{
             borderRadius:"20px",
             backgroundImage:'url("https://milancoshop.com/site/uploader/post/Gas-Hob-in-Kitchen-1774.jpg")'
