@@ -228,7 +228,7 @@ onClick={handleDrawerOpen}
               <Menu
           sx={
             { mt: "1px", "& .MuiMenu-paper": 
-              { backgroundColor: '#fff',width:'300px' } ,direction:'rtl'
+              { backgroundColor: '#fff',width:'280px' } ,direction:'rtl'
             }
           }
         id="demo-customized-menu"
