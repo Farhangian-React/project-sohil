@@ -174,7 +174,7 @@ return(persianNumber);
 :
 currentItems && 
   currentItems.map((item) => (
-    <NavLink to={'/cartbuywashingmachine'}  className={"linkss"}>    
+    <NavLink to={'/CartBuyJashnvareh'}  className={"linkss"}>    
 <Card className='cards' sx={{width:{xs:"250px",md:"300px"},height:"460px",mx:1,my:"1em",px:1 ,pt:3 }} key={item.id}>
 
 <CardMedia
@@ -230,7 +230,7 @@ value={sumscore(item)}
 }
 </CardContent>
 <CardContent sx={{display:'flex',justifyContent:'center',height: "30px"}}>
-<NavLink style={{ textDecoration: "none" }} to={"/cartbuygas" }>
+<NavLink style={{ textDecoration: "none" }} to={"/CartBuyJashnvareh" }>
              <button    onClick={()=>{
        setCartItems([item]);
       }} className='bg-gradient-to-r from-yellow-500 via-yellow-900 to-yellow-500 

@@ -78,7 +78,7 @@ top: "80px",
 :
   currentItems &&
     currentItems.map((item) => (
-      <NavLink to={'/cartsearch'}  className={"linkss"}> 
+      <NavLink to={'/CartBuyJashnvareh'}  className={"linkss"}> 
 <Card className='cards' sx={{width:{xs:"270px",sm:'270px',md:"250px",lg:'250px'},height:{xs:"370px",sm:'370px',md:"420px",lg:'420px'},marginTop:'10px',marginBottom: '10px',mx:0.8,mt:3, px:1.5,pb:1,pt:2 }} key={item.id}>
 <CardMedia
     component="img"
@@ -107,7 +107,7 @@ sx={{width:{xs:"150px",sm:"150px",md:"200px",lg:"200px"},m:"auto"}}
      <Typography  variant="h6" color="#ea9e08" sx={{textAlign:'center'}}>{item.price}</Typography>
   </Box>
   <CardActions sx={{display:'flex',justifyContent:'center'}}>
-  <NavLink to={'/cartsearch'}>  <Button size="large"
+  <NavLink to={'/CartBuyJashnvareh'}>  <Button size="large"
       fullWidth
       variant="contained"
       sx={{':hover':{backgroundImage:"linear-gradient(to right ,#eeeeee,#282828)",color:'white'}, color:'#eeeeee',fontSize:{xs:"16px",lg:"18px"},
