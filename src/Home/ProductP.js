@@ -67,7 +67,7 @@ function ProductP() {
     <div className='flex flex-col bg-white' >   
    
            <div ref={bagbox1}
-className='flex flex-col md:flex-row-reverse w-[100vw] py-5 px-1 my-12 mx-auto '
+className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-12 mx-auto '
    > 
        <div  data-aos="fade-up"
      data-aos-anchor-placement="top-center" ref={tinybox1} className='flex justify-center flex-col my-5 w-[100vw] md:w-[50vw] mx-auto px-0'>
