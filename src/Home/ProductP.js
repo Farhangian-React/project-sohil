@@ -68,13 +68,14 @@ function ProductP() {
     <div ref={bagbox1}
 className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
    > 
-   <div   data-aos="fade-up"
-     data-aos-anchor-placement="top-center" ref={tinybox1} >
+   <div    ref={tinybox1} >
      
-<div className='container md:pr-5'>
-  <div className='card'>
-    <div ref={refbox1} className='w-[90%] md:w-[50vw] h-[400px] p-1 border-[0.5rem] rounded-lg border-[#353839] overflow-hidden '>
-       <div  className='h-full mx-auto px-5 overflow-hidden' >
+<div className='container md:pr-5 my-5 '>
+  <div data-aos="fade-up"
+     data-aos-anchor-placement="top-center" className='card w-[85%] md:w-[50vw] mx-auto h-[360px] rounded-lg '>
+    <div ref={refbox1} className='flex items-center justify-center  w-[100%] md:w-[100%] h-[360px]
+     p-1 border-[0.5rem] rounded-lg border-[#b9b6b6] overflow-hidden '>
+       <div  className='h-full mx-0 px-5 overflow-hidden rounded-lg  bg-white' >
           <p className='text-black py-3 text-start font-bold text-2xl' >
           یخچال و فریزر، ضروری در هر آشپزخانه
          </p>
@@ -128,7 +129,7 @@ className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
 
         </div>
     </div>
-    <div ref={refbutton1} onClick={addstyle1} className='tag'> <p className='text-lg text-yellow-500 font-bold text-center pb-2'>  ادامه ی مطالب...</p></div>
+    <div ref={refbutton1} onClick={addstyle1} className='tag'> <p className='text-lg text-gray-900 font-bold text-center pb-2'>  ادامه ی مطالب...</p></div>
     <div className='cor1'></div>
      <div className='cor2'></div>
   </div>
@@ -210,9 +211,9 @@ className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
 */}
 
         <div data-aos="flip-left"
-          className='imagestylej relative flex w-[85vw] md:w-[40vw] h-[400px]  bg-cover bg-center bg-no-repeat mx-auto border-[0.5rem] border-[#585858]'
+          className='imagestylej relative flex w-[85vw] md:w-[40vw] h-[400px]  bg-cover bg-center bg-no-repeat mx-auto border-[0.5rem] border-white'
           style={{
-            borderRadius:"10px",
+            borderRadius:"20px",
             backgroundImage:'url("https://images.webfronts.com/cache/meyeeahbfvwe.jpg?imgeng=/w_800/h_800/m_letterbox_ffffff_100")'
           }} 
        
@@ -224,9 +225,11 @@ className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
         >
 <div  className='tag1 rounded-tl-lg '>
                     <NavLink style={{ textDecoration: "none" }} to={"/allrefriderators" }>
-       <p className=' text-yellow-500 text-md font-bold '
+         <button className='bg-gradient-to-r from-gray-500 via-yellow-500 to-gray-500 
+       rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl my-0.5 mx-0.5 px-5 py-2 text-white text-md font-sans
+      hover:bg-gradient-to-r hover:from-gray-500 hover:via-yellow-800 hover:to-gray-500'
         > 
-        مشاهده همه ی یخچال و فریزرها </p></NavLink>
+        مشاهده همه ی یخچال و فریزرها </button></NavLink>
         </div>
         </div>
         </div>
@@ -236,7 +239,7 @@ className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
 
 
         <div ref={bagbox2}
-className='flex flex-col-reverse md:flex-row-reverse w-[100vw] py-5 px-1 my-12 mx-auto '
+className='flex flex-col md:flex-row-reverse w-[100vw] py-5 px-1 my-12 mx-auto '
    > 
        <div  data-aos="fade-up"
      data-aos-anchor-placement="top-center" ref={tinybox2} className='flex justify-center flex-col my-5 w-[100vw] md:w-[50vw] mx-auto px-0'>
@@ -264,10 +267,10 @@ className='flex flex-col-reverse md:flex-row-reverse w-[100vw] py-5 px-1 my-12 m
           className='text-md text-yellow-500 bg-white self-start my-3 mx-12 hover:bg-white hover:text-yellow-900'
 >   ادامه ی مطلب... </button>
                   <div  sx={{display:"flex",justifyContent:"start"}}>
-                    <NavLink style={{ textDecoration: "none" }} to={"/allrefriderators" }>
-       <button className='bg-gradient-to-r from-yellow-500 via-yellow-900 to-yellow-500 
-       rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl my-5 mx-8 px-5 py-2 text-white text-md font-sans hover:bg-gradient-to-r hover:from-gray-500
-       hover:via-yellow-500 hover:to-gray-500'
+                    <NavLink style={{ textDecoration: "none" }} to={"/shop-washing-machine" }>
+       <button className='bg-gradient-to-r from-gray-500 via-yellow-500 to-gray-500 
+       rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl my-5 mx-8 px-5 py-2 text-white text-md font-sans
+     hover:bg-gradient-to-r hover:from-gray-500 hover:via-yellow-800 hover:to-gray-500'
         > 
         مشاهده همه ی ماشین لباسشویی‌ها </button></NavLink>
         </div>
@@ -288,14 +291,15 @@ className='flex flex-col-reverse md:flex-row-reverse w-[100vw] py-5 px-1 my-12 m
         <div ref={bagbox3}
 className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
    > 
-   <div   data-aos="fade-up"
-     data-aos-anchor-placement="top-center" ref={tinybox3} >
+   <div    ref={tinybox3} >
      
-<div className='container md:pr-5'>
-  <div className='card'>
-    <div ref={refbox1} className='w-[90%] md:w-[50vw] h-[400px] p-1 border-[0.5rem] rounded-lg border-[#353839] overflow-hidden '>
-       <div  className='h-full mx-auto px-5 overflow-hidden' >
-         <p className='text-black py-3 text-start font-bold text-2xl' >
+<div className='container md:pr-5 my-5 '>
+  <div data-aos="fade-up"
+     data-aos-anchor-placement="top-center" className='card w-[85%] md:w-[50vw] mx-auto h-[360px] rounded-lg '>
+    <div ref={refbox3} className='flex items-center justify-center  w-[100%] md:w-[100%] h-[360px]
+     p-1 border-[1rem] rounded-lg border-[#b9b6b6] overflow-hidden '>
+       <div  className='h-full mx-0 px-5 overflow-hidden rounded-lg  bg-white' >
+          <p className='text-black py-3 text-start font-bold text-2xl' >
          اجاق گاز
          </p>
           <p  className='text-justify text-md text-gray-500 font-sans' >
@@ -322,7 +326,7 @@ className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
 </p>
             </div>
     </div>
-    <div ref={refbutton3} onClick={addstyle3} className='tag'> <p className='text-lg text-yellow-500 font-bold text-center pb-2'>  ادامه ی مطالب...</p></div>
+    <div ref={refbutton3} onClick={addstyle3} className='tag'> <p className='text-lg text-gray-900 font-bold text-center pb-2'>  ادامه ی مطالب...</p></div>
     <div className='cor1'></div>
      <div className='cor2'></div>
   </div>
@@ -376,25 +380,28 @@ className='flex flex-col md:flex-row w-[100vw] py-5 px-1 my-2 mx-auto '
         </div>
         */}
 
-        <div data-aos="flip-left"
-          className='imagestylej relative flex w-[85vw] md:w-[40vw] h-[400px]  bg-cover bg-center bg-no-repeat mx-auto border-[0.5rem] border-[#585858]'
+          <div data-aos="flip-left"
+          className='imagestylej relative flex w-[85vw] md:w-[40vw] h-[400px]  bg-cover bg-center bg-no-repeat mx-auto border-[0.5rem] border-white'
           style={{
-            borderRadius:"10px",
+            borderRadius:"20px",
             backgroundImage:'url("https://milancoshop.com/site/uploader/post/Gas-Hob-in-Kitchen-1774.jpg")'
           }} 
        
                >
-<div  className='tag1 rounded-tl-lg '>
-                    <NavLink style={{ textDecoration: "none" }} to={"/allrefriderators" }>
-       <p className=' text-yellow-500 text-md font-bold '
+                <div  className='tag1 rounded-tl-lg '>
+                    <NavLink style={{ textDecoration: "none" }} to={"/allgas" }>
+         <button className='bg-gradient-to-r from-gray-500 via-yellow-500 to-gray-500 
+       rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl my-0.5 mx-0.5 px-5 py-2 text-white text-md font-sans
+      hover:bg-gradient-to-r hover:from-gray-500 hover:via-yellow-800 hover:to-gray-500'
         > 
-        مشاهده همه ی اجاق و گازها  </p></NavLink>
+
+        مشاهده همه ی اجاق و گازها  </button></NavLink>
         </div>
         </div>
         </div>
 
         <div ref={bagbox4}
-className='flex flex-col-reverse md:flex-row-reverse w-[100vw] py-5 px-1 my-12 mx-auto '
+className='flex flex-col md:flex-row-reverse w-[100vw] py-5 px-1 my-12 mx-auto '
    > 
        <div   data-aos="fade-up"
      data-aos-anchor-placement="top-center" ref={tinybox4}className='flex justify-center flex-col my-5 w-[100vw] md:w-[50vw] mx-auto px-0'>
@@ -428,10 +435,11 @@ className='flex flex-col-reverse md:flex-row-reverse w-[100vw] py-5 px-1 my-12 m
           className='text-md text-yellow-500 bg-white self-start my-3 mx-12 hover:bg-white hover:text-yellow-900'
 >   ادامه ی مطلب... </button>
                   <div  sx={{display:"flex",justifyContent:"start"}}>
-                    <NavLink style={{ textDecoration: "none" }} to={"/allrefriderators" }>
-       <button className='bg-gradient-to-r from-yellow-500 via-yellow-900 to-yellow-500 
-       rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl my-5 mx-8 px-5 py-2 text-white text-md font-sans hover:bg-gradient-to-r hover:from-gray-500
-       hover:via-yellow-500 hover:to-gray-500'
+                    <NavLink style={{ textDecoration: "none" }} to={"/shop-dishwasher" }>
+       <button className='bg-gradient-to-r from-gray-500 via-yellow-500 to-gray-500 
+       rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl my-5 mx-8 px-5 py-2 text-white text-md font-sans
+      hover:bg-gradient-to-r hover:from-gray-500
+     hover:via-yellow-800 hover:to-gray-500'
         > 
         مشاهده همه ی ماشین ظرفشویی ها </button></NavLink>
         </div>

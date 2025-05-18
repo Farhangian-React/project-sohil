@@ -92,7 +92,7 @@ console.log(dataoff);
         <Fade>
         {dataoff.map((item) => (
       
-      <NavLink to={'/cartbuygas'}  className={"linkss"}>
+      <NavLink to={'/CartBuyJashnvareh'}  className={"linkss"}>
 
 <div
     onClick={()=>{
@@ -139,7 +139,7 @@ console.log(dataoff);
 
 </div>
 <div className='flex justify-center h-auto mt-2  '>
-<NavLink style={{ textDecoration: "none" }} to={"/cartbuygas" }>
+<NavLink style={{ textDecoration: "none" }} to={"/CartBuyJashnvareh" }>
                     <button    onClick={()=>{
               setCartItems([item]);
              }} className='bg-gradient-to-r from-yellow-500 via-yellow-900 to-yellow-500 
@@ -169,7 +169,7 @@ console.log(dataoff);
         <Slide slidesToScroll={1} slidesToShow={3} indicators={false} >
         {dataoff.map((item) => (
       
-      <NavLink to={'/cartbuygas'}  className={"linkss"}>
+      <NavLink to={'/CartBuyJashnvareh'}  className={"linkss"}>
 
 <div
     onClick={()=>{
@@ -216,7 +216,7 @@ console.log(dataoff);
 
 </div>
 <div className='flex justify-center h-auto mt-2  '>
-<NavLink style={{ textDecoration: "none" }} to={"/cartbuygas" }>
+<NavLink style={{ textDecoration: "none" }} to={"/CartBuyJashnvareh" }>
                     <button    onClick={()=>{
               setCartItems([item]);
              }} className='bg-gradient-to-r from-yellow-500 via-yellow-900 to-yellow-500 
@@ -244,7 +244,7 @@ console.log(dataoff);
         <Slide slidesToScroll={1} slidesToShow={4} indicators={false} >
         {dataoff.map((item) => (
       
-      <NavLink to={'/cartbuygas'}  className={"linkss"}>
+      <NavLink to={'/CartBuyJashnvareh'}  className={"linkss"}>
 
 <div
     onClick={()=>{
@@ -291,7 +291,7 @@ console.log(dataoff);
 
 </div>
 <div className='flex justify-center h-auto mt-2  '>
-<NavLink style={{ textDecoration: "none" }} to={"/cartbuygas" }>
+<NavLink style={{ textDecoration: "none" }} to={"/CartBuyJashnvareh" }>
                     <button    onClick={()=>{
               setCartItems([item]);
              }} className='bg-gradient-to-r from-yellow-500 via-yellow-900 to-yellow-500 

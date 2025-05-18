@@ -63,35 +63,35 @@ export default  function RefrideratorSpecializedFreezer() {
  <MenuList dir="ltr" className="  rounded-xl block w-[210px] mx-auto h-auto p-3 -mt-5">
  <ul className=" flex flex-col items-end outline-none outline-0">
  <NavLink  to={'/shop-refrigeratorfrenchdoor' } >
- <MenuItem className="flex items-center pb-2 rounded-lg">
+ <MenuItem className="flex items-center pb-2 rounded-lg  bg-transparent">
  <p className="flex text-gray-700 items-center text-sm font-bold hover:text-yellow-500" >
  یخچال های دو در 
    </p>
  </MenuItem>
  </NavLink>
  <NavLink to={'/shop-refrigeratorsidbysid'} >
- <MenuItem className="flex items-center py-2 rounded-lg">
+ <MenuItem className="flex items-center py-2 rounded-lg  bg-transparent">
  <p className="flex text-gray-700 items-center text-sm font-bold hover:text-yellow-500" >
  یخچال های ساید بای ساید 
    </p>
  </MenuItem>
  </NavLink>
  <NavLink  to={'/shop-refrideratorbottomfreezer'}>
- <MenuItem className="flex items-center py-2 rounded-lg">
+ <MenuItem className="flex items-center py-2 rounded-lg  bg-transparent">
  <p className="flex text-gray-700 items-center text-sm font-bold hover:text-yellow-500" >
  یخچال و فریزر پایین 
    </p>
  </MenuItem>
  </NavLink>
  <NavLink  to={'/shop-refrideratortopfreezer'}>
- <MenuItem className="flex items-center py-2 rounded-lg">
+ <MenuItem className="flex items-center py-2 rounded-lg  bg-transparent">
  <p className="flex text-gray-700 items-center text-sm font-bold hover:text-yellow-500" >
  یخچال و فریزر بالا 
    </p>
  </MenuItem>
  </NavLink>
  <NavLink to={'/shop-refrideratorspecializedfreezer'} >
- <MenuItem className="flex items-center py-2 rounded-lg">
+ <MenuItem className="flex items-center py-2 rounded-lg  bg-transparent">
    <p className="flex text-gray-700 items-center text-sm font-bold hover:text-yellow-500" >
    یخچال و فریزر تخصصی 
    </p>

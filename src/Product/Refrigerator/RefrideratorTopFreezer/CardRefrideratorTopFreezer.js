@@ -171,7 +171,7 @@ sx={{width:{xs:"220px",lg:"200px"},m:"auto"}}
    
   </CardContent>
   <CardActions sx={{display:'flex',justifyContent:'center'}}>
-  <NavLink to={'/CartBuyDishwasher'}>  <Button size="large"
+  <NavLink to={'/cartbuyrefrigerator'}>  <Button size="large"
       fullWidth
       variant="contained"
       sx={{':hover':{backgroundImage:"linear-gradient(to right ,#eeeeee,#282828)",color:'white'}, color:'#eeeeee',fontSize:{xs:"16px",lg:"18px"},

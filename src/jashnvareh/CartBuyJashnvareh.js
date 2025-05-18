@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import Tooltip from '@mui/joy/Tooltip';
 import TopNav from '../dashbord/TopNav';
 import Footer from '../Footer/Footer';
+import { Helmet } from "react-helmet";
 import { PageTitle } from '../Title/PageTitle';
 import {Link} from 'react-router-dom';
 import InfoIcon from '@mui/icons-material/Info';
@@ -15,9 +16,7 @@ import NotificationsActiveOutlinedIcon from '@mui/icons-material/NotificationsAc
 import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import AutoAwesomeMotionOutlinedIcon from '@mui/icons-material/AutoAwesomeMotionOutlined';
 import TocOutlinedIcon from '@mui/icons-material/TocOutlined';
-import Modal from '@mui/joy/Modal';
-import ModalClose from '@mui/joy/ModalClose';
-import ModalDialog from '@mui/joy/ModalDialog';
+import { MdMessage } from "react-icons/md";
 import { styled, useTheme } from '@mui/material/styles';
 import Drawer from '@mui/material/Drawer';
 import CloseIcon from '@mui/icons-material/Close';
@@ -235,285 +234,330 @@ toast.success("ثبت دیدگاه با موفقیت صورت گرفت") ;
         } 
   return (
     <>
-    <PageTitle  title=' سبد خرید ' description=' سبد خرید '/>
-   <TopNav/>
-
-  
-
-
-
-   <Box sx={{display:"flex",flexDirection:"column",bgcolor:"#ececec"}}>
-   <Box container sx={{height:"auto",display:'flex',flexDirection:{xs:'column',lg:"row"},bgcolor:'white',mx:5,mt:{xs:12,lg:5},mb:5,borderRadius:'10px',direction:'rtl'}}>
-        <Box >
-         {cartItems.map(i=> 
-         <Box   sx={{mt:{xs:1,md:1},display:'flex', flexDirection:'column',justifyContent:'center',bgcolor:'white'}}> 
-         <Box sx={{px:5,mt:1,mb:{xs:12,lg:12},width:'15%',height:'20px'}}>
-         <img src={i.berand} width={'90%'} alt=''/>
-         </Box>
-          <Typography variant='h5' sx={{px:5,mb:3,mt:0,textAlign:'right',fontSize:"16px"}}  >
-       {i.title1}
-        </Typography>
-        <Typography  sx={{px:5,mb:1,color:'gray',textAlign:'right'}}  >
-      {i.title2}
-        </Typography>
-        <Rating
-        sx={{fontSize:"16px",px:5,mb:1}}
-       name="simple-controlled"
-       value={sumscore()}
-     />
-        <Typography variant="body2" sx={{px:5,color:'black',textAlign:'right'}}>
-    {i.title3}
-        </Typography>
-        <Box sx={{display:'flex',flexDirection:'row',justifyContent:'start'}}>
-         <Typography variant='h6' sx={{px:5,mt:2,textAlign:'right'}}>قیمت :</Typography>
-          <Typography ref={offref} variant="h5" sx={{color:'#674e06',px:5,mt:2,textAlign:'right'}}  >
-         {  i.price}
-          </Typography>
-          
-          </Box>
-          <Box ref={boxoff} sx={{display:'flex',flexDirection:'row',justifyContent:'start',mb:2,mt:0}}>
-         <Typography variant='h5' sx={{color:"red",px:5,mt:0.5,textAlign:'right'}}>قیمت با  {convertToPersian(i.offj)}%   تخفیف :</Typography>
-          <Typography variant="h5" sx={{color:'red',px:1,mt:0.5,textAlign:'right'}}  >
-       
-          {addCommas(convertToPersian((convertToEnglish(i.pricenum)-(convertToEnglish(i.pricenum)*i.offj / 100))+''))} تومان 
-         </Typography>
-          </Box>
-        <Button size='medium'  color='secondary'  onClick={()=>
-         addToCart(i)
-       }
-       sx={{':hover':{backgroundImage:"linear-gradient(to right ,#eeeeee,#282828)",color:'white'}, color:'#eeeeee',fontSize:"18px",
-       borderTopRightRadius:"20px",borderTopLeftRadius: "30px",borderBottomRightRadius:"30px",borderBottomLeftRadius:"10px",
-       backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)",mx:25, my:3,py:0.5,px:0}}
-       > 
-        افزودن به سبد خرید  </Button>
-        <Drawer
-       sx={{
-         position:"absolute",
-         width: drawerWidth,
-         height:"auto",
-         flexShrink: 0,
-         '& .MuiDrawer-paper': {
-           width: drawerWidth,
-           boxSizing: 'border-box', 
-         },
-       }}
-       variant="persistent"
-       anchor="right"
-       open={open}
-     >
-        <DrawerHeader sx={{display:"flex",justifyContent:"space-around",backgroundImage:"#f2f2f2"}}>
-        <Box sx={{display:"flex",flexDirection:"row",justifyContent:"start",width:"100%"}}>
-<Box sx={{width:"30px",alignSelf:'center',pr:2}}>
-<Badge badgeContent={cartItemsBuy.length}  color="warning" >
-<ShoppingCartIcon color="action"sx={{color:"black"}} />
-</Badge>
-</Box> 
-<Box sx={{width:"80px",alignSelf:'center',pr:0}}>
-<Typography
-
-noWrap
-component="a"
-href="/"
-sx={{
-mr:1 ,
-mt:0,
-display: 'flex',
-flexGrow: 0,
-fontSize:"22px",
-color: '#202020',
-textDecoration: 'none',
-direction:"rtl"
-}}
->
-سبدخرید
-</Typography>
-</Box>
-</Box>
-           <Box sx={{width:"100%",direction:"ltr"}}>
-
-            <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <CloseIcon /> : <CloseIcon />}
-          </IconButton>
-             </Box>
-        </DrawerHeader>
-        <Divider />
-        <CartModal/>
-        </Drawer>
-         <Box sx={{display:'flex',justifyContent:'center',pb:{xs:5,lg:1},mx:2}}>
-         <InfoIcon sx={{mt:0,pr:1.5,fontSize:'18px',color:'#4b4f4f'}}/>
-         <Typography variant='body2' sx={{direction:'rtl',pl:5,pr:1,color:'#333637'}}> درخواست مرجوع کردن کالا در گروه یخچال و فریزر با دلیل "انصراف از خرید" تنها در صورتی قابل تایید است که کالا در شرایط اولیه باشد 
-          (در صورت پلمپ بودن، کالا نباید باز شده باشد).</Typography>
-          </Box>
-          
-        <Box sx={{m:3, display:'flex',justifyContent:'center'}}>
-        <Tooltip color='warning'  title="اضافه به علاقمندی">
-      <IconButton sx={{pl:2,color:'black' }}>
-        <FavoriteBorderIcon />
-      </IconButton>
-    </Tooltip>
-    <Tooltip title=" به اشتراک گذاری کالا ">
-      <IconButton  sx={{pl:2,color:'black' }}>
-         <ShareIcon/>
-         </IconButton>
-    </Tooltip>
-    <Tooltip title=" اطلاع رسانی شگفت انگیز ">
-      <IconButton  sx={{pl:2,color:'black' }}>
-         <NotificationsActiveOutlinedIcon/>
-         </IconButton>
-    </Tooltip>
-    <Tooltip title=" نمودار قیمت">
-      <IconButton  sx={{pl:2,color:'black' }}>
-         <TimelineOutlinedIcon/>
-         </IconButton>
-    </Tooltip>
-        
-    <Tooltip title=" مقایسه کالا ">
-      <IconButton  sx={{pl:2,color:'black' }}>
-        <AutoAwesomeMotionOutlinedIcon/>
-         </IconButton>
-    </Tooltip>
-    <Tooltip title=" افزودن به لیست ">
-      <IconButton  sx={{pl:2,color:'black' }}>
-   <TocOutlinedIcon/>
-         </IconButton>
-    </Tooltip>
-         
-          </Box>
-           </Box>
+     {cartItems.map(i=>
+          <Helmet>
+            <link  rel="icon"  href='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi8sUcl-xSeJ2aDKi3dB9ylFBIxBLCo-JXLg&s' />
+            <title>
+              سهیل /  سبد خرید / {i.title1}
+               </title>
+        </Helmet>
          )}
-     </Box>
-       
-             
-     <Box   sx={{mt:{xs:5,lg:1}, mx:{xs:1,lg:3},display:'flex',flexDirection:{xs:"column",lg:"row"},justifyContent:'start',alignSelf:{xs:"center",lg:"start"},direction:'rtl'}} >
-       <Box  sx={{mx:{xs:0,lg:2},mt:{xs:2,lg:4},pt:{lg:1},display:'flex',alignItems:'center',justifyContent:'center'}} >
-
-          <Box 
-           sx={{
-            display:"flex",
-            borderRadius:5,
-            backgroundImage:`url(${image})`,
-            backgroundPosition: 'center',
-            backgroundSize:'cover',
-            backgroundRepeat: 'no-repeat',
-            height:{xs:"600px",lg:"400px"},
-            width:{xs:"650px",lg:"350px"},
-           my:{xs:0},
-    
-            }}
-          >
-            </Box>  
-
-      
-        </Box>
-      {cartItems.map(i=>
-       < Box   sx={{pt:{lg:5},mx:0,display:'flex',flexDirection:{xs:"row",lg:"column"},justifyContent:'center'}} >
-       <Link onClick={()=>setImage(i.img)}>
-        <Box  
-       sx={{
-        display:"flex",
-        borderRadius:5,
-        backgroundImage:`url(${i.img})`,
-        backgroundPosition: 'center',
-        backgroundSize:'cover',
-        backgroundRepeat: 'no-repeat',
-        height:{xs:"110px",lg:"90px"},
-        width:{xs:"110px",lg:"90px"},
-       my:{xs:2,lg:1},p:0
-       ,alignItems:'center',justifyContent:'center',mx:1}}> 
-        </Box>
-        </Link>
-        <Link onClick={()=>setImage(i.imga1)}>
-        <Box  
-       sx={{
-        display:"flex",
-        borderRadius:5,
-        backgroundImage:`url(${i.imga1})`,
-        backgroundPosition: 'center',
-        backgroundSize:'cover',
-        backgroundRepeat: 'no-repeat',
-        height:{xs:"110px",lg:"90px"},
-        width:{xs:"110px",lg:"90px"},
-       my:{xs:2,lg:1},p:0
-       ,alignItems:'center',justifyContent:'center',mx:1}}> 
-        </Box>
-        </Link>
-        <Link onClick={()=>setImage(i.imga2)}>
-        <Box  
-       sx={{
-        display:"flex",
-        borderRadius:5,
-        backgroundImage:`url(${i.imga2})`,
-        backgroundPosition: 'center',
-        backgroundSize:'cover',
-        backgroundRepeat: 'no-repeat',
-        height:{xs:"110px",lg:"90px"},
-        width:{xs:"110px",lg:"90px"},
-       my:{xs:2,lg:1},p:0
-       ,alignItems:'center',justifyContent:'center',mx:1}}> 
-        </Box>
-        </Link>
-      <Box className="allproduct"
-      sx={{ height:{xs:"110px",lg:"90px"},
-      width:{xs:"110px",lg:"90px"}, display:"flex",
-      borderRadius:5, my:{xs:2,lg:1},p:0,mx:1    
-    }}
-      >
-         <Button  onClick={() => {
-            setLayout('center');
-          }} sx={{color:'black',m:"auto"}}><Typography variant='h4' sx={{textAlign:'center',fontWeight:'800'}}>...</Typography></Button>
-
-
-
-
-
-<Modal   open={!!layout} onClose={() => setLayout(undefined)}>
-        <ModalDialog layout={layout} sx={{display:"flex",flexWrap:"wrap",overflow:"auto"}}>
-          <ModalClose  sx={{color:"red"}} />
-          {cartItems.map(i=><Typography variant='body1' sx={{mt:4,direction:'rtl'}}>{i.title1} </Typography>
-          
-          )}
-        {cartItems.map(i=><Typography variant='h5' sx={{color:'black',mt:2,mb:4,direction:'rtl'}}>مدل: {i.title2} </Typography>)}
-          <Box  sx={{width:'100%',height:'100 vh',direction:{xs:'rtl',md:'ltr'}, display:'flex',flexDirection:{xs:"column",lg:"row"},justifyContent:'center',bgcolor:'#fff'}}>
-        <Grid sx={{mx:{xs:2,md:2},mt:{xs:2,lg:1},display:'flex',justifyContent:'center'}} >
-             {cartItems.map(i=> 
-        <img  src={image} width={'100%'} alt=''  /> 
+        <TopNav/>
+        <div>
+         <ToastContainer/>  
+        </div>
+        <div className='flex flex-col bg-zinc-100 '>
+        {cartItems.map(i=>
+        <div dir='rtl' className='flex flex-row bg-white rounded-t-3xl w-[95%] mx-auto my-4'>
+        <p className='text-[14px] md:text-[16px] text-gray-600 py-2 pr-2'> محصولات / 
+          </p>
+          <p className='text-[12px] md:text-[14px] text-[#2b31d5] font-bold py-2'>{i.title1} </p>
+        </div>
+        
         )}
-        </Grid>
-       < Grid
-        container
-        spacing={0}
-      >
-       <Grid  xs={4} md={4} sx={{alignItems:'center',display:'flex',justifyContent:'center',m:0}}>{cartItems.map(i=><Link onClick={()=>setImage(i.img)}><img  src={i.img} width={'100%'} height={'100 vh'} alt='' /></Link>)} </Grid>
-       <Grid xs={4} md={4} sx={{alignItems:'center',p:0,display:'flex',justifyContent:'center',m:0}}> {cartItems.map(i=><Link onClick={()=>setImage(i.imga1)}><img src={i.imga1} width={'100%'} height={'100 vh'}alt=''  /></Link>)} </Grid> 
-      <Grid xs={4} md={4} sx={{alignItems:'center',p:0,display:'flex',justifyContent:'center',m:0}}>{cartItems.map(i=><Link onClick={()=>setImage(i.imga2)}><img src={i.imga2}  width={'100%'} height={'100 vh'}alt=''  /></Link>)} </ Grid> 
-       <Grid xs={4} md={4}  sx={{alignItems:'center',p:0,display:'flex',justifyContent:'center',m:0}}>{cartItems.map(i=><Link onClick={()=>setImage(i.imga3)}><img src={i.imga3}  width={'100%'} alt=''   height={'100 vh'}/></Link>)}</Grid> 
-       <Grid  xs={4} md={4} sx={{alignItems:'center',p:0,display:'flex',justifyContent:'center',m:0}}>{cartItems.map(i=><Link onClick={()=>setImage(i.img)}><img  src={i.img} width={'100%'}alt=''    height={'100 vh'}/></Link>)} </Grid>
-       <Grid xs={4} md={4} sx={{alignItems:'center',p:0,display:'flex',justifyContent:'center',m:0}}> {cartItems.map(i=><Link onClick={()=>setImage(i.imga1)}><img src={i.imga1} width={'100%'}alt=''   height={'100 vh'}/></Link>)} </Grid> 
-      <Grid xs={4} md={4} sx={{alignItems:'center',p:0,display:'flex',justifyContent:'center',m:0}}>{cartItems.map(i=><Link onClick={()=>setImage(i.imga2)}><img src={i.imga2}  width={'100%'} alt=''   height={'100 vh'}/></Link>)} </ Grid> 
-      <Grid  xs={4} md={4} sx={{alignItems:'center',p:0,display:'flex',justifyContent:'center',m:0}}>{cartItems.map(i=><Link onClick={()=>setImage(i.img)}><img  src={i.img} width={'100%'}alt=''    height={'100 vh'}/></Link>)} </Grid>
-       <Grid xs={4} md={4} sx={{alignItems:'center',p:0,display:'flex',justifyContent:'center',m:0}}> {cartItems.map(i=><Link onClick={()=>setImage(i.imga1)}><img src={i.imga1} width={'100%'}alt=''   height={'100 vh'}/></Link>)} </Grid> 
-      <Grid xs={4} md={4} sx={{alignItems:'center',p:0,display:'flex',justifyContent:'center',m:0}}>{cartItems.map(i=><Link onClick={()=>setImage(i.imga2)}><img src={i.imga2}  width={'100%'}  alt=''  height={'100 vh'}/></Link>)} </ Grid> 
-       <Grid xs={4} md={4}  sx={{alignItems:'center',p:0,display:'flex',justifyContent:'center',m:0}}>{cartItems.map(i=><Link onClick={()=>setImage(i.imga3)}><img src={i.imga3}  width={'100%'} alt=''  height={'100 vh'}/></Link>)}</Grid> 
-       <Grid xs={4} md={4}  sx={{alignItems:'center',p:0,display:'flex',justifyContent:'center',m:0}}>{cartItems.map(i=><Link onClick={()=>setImage(i.imga3)}><img src={i.imga3}  width={'100%'} alt=''  height={'100 vh'}/></Link>)}</Grid> 
-       </Grid>
-        </Box>
-        </ModalDialog>
-      </Modal>
-      </Box>
-        </Box>
-      )}
-        </Box> 
-       </Box>
-
-<Box sx={{display:'flex',bgcolor:'white',mx:5,mb:5,flexDirection:{xs:"column",lg:"row"},mt:{xs:3,lg:1},borderRadius:'10px',direction:'rtl'}}>
+       
+        <div dir='rtl' className='flex flex-col md:flex-row bg-white rounded-t-3xl w-[95%] h-auto mx-auto '>
+     
+             {cartItems.map(i=> 
+             <div className='flex flex-col justify-center mt-6 w-full md:w-[50%]'> 
+               <img  className='hover:scale-125 w-[100px] h-[70px] mr-8'  alt='' src={i.berand}/>
+            
+              <p className='text-lg font-bold text-gray-800 py-2 text-right pr-8' >
+           {i.title1}
+            </p>
+            <p className='text-[14px] font-bold text-gray-500 mt-3 text-right pr-8'  >
+          {i.title2}
+            </p>
+            <Rating
+                 sx={{fontSize:"16px",pr:4,mb:3}}
+           name="simple-controlled"
+           value={sumscore()}
+         />
+              <p className='text-md text-right text-gray-500 pr-8 py-1 ' >
+        {i.title3}
+            </p>
+            <div className='flex flex-row justify-start'>
+              <p className='text-gray-800 text-right text-xl pr-8 mt-0.5'>قیمت :</p>
+              <p ref={offref} 
+             className='text-gray-800 text-right text-2xl pr-8 mt-0.5' >
+             {  i.price}
+              </p>
+              
+              </div>
+              <div ref={boxoff} className='flex flex-row justify-start my-1'>
+             <p className='text-red-600 font-bold text-right text-md sm:text-2xl  px-8 mt-0.5'>قیمت با  {convertToPersian(i.off)}%   تخفیف :</p>
+              <p className='text-red-600 font-bold text-right text-md sm:text-2xl  pr-1 mt-0.5' >
+           
+              {addCommas(convertToPersian((convertToEnglish(i.pricenum)-(convertToEnglish(i.pricenum)*i.off / 100))+''))} تومان 
+             </p>
+              </div>
+    
+                 
+                                       <button    onClick={()=> addToCart(i)} className='bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 
+                                       rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl mx-10  md:mx-16 px-10 md:px-2 py-1 mt-10 mb-5 text-white text-md font-sans
+                                        hover:bg-gradient-to-r hover:from-gray-500
+                                       hover:via-yellow-800 hover:to-gray-500'
+                                        >    
+            افزودن به سبد خرید  </button>
+            <Drawer
+           sx={{
+             position:"absolute",
+             width: drawerWidth,
+             height:"60vh",
+             flexShrink: 0,
+             '& .MuiDrawer-paper': {
+               width: drawerWidth,
+               height:"95vh",
+               boxSizing: 'border-box', 
+             },
+           }}
+           variant="persistent"
+           anchor="right"
+           open={open}
+         >
+            <DrawerHeader sx={{display:"flex",justifyContent:"space-around",backgroundImage:"#f2f2f2"}}>
+            <Box sx={{display:"flex",flexDirection:"row",justifyContent:"start",width:"100%"}}>
+    <Box sx={{width:"30px",alignSelf:'center',pr:2}}>
+    <Badge badgeContent={cartItemsBuy.length}  color="warning" >
+    <ShoppingCartIcon color="action"sx={{color:"black"}} />
+    </Badge>
+    </Box> 
+    <Box sx={{width:"80px",alignSelf:'center',pr:0}}>
+    <Typography
+    
+    noWrap
+    component="a"
+    href="/"
+    sx={{
+    mr:1 ,
+    mt:0,
+    display: 'flex',
+    flexGrow: 0,
+    fontSize:"22px",
+    color: '#202020',
+    textDecoration: 'none',
+    direction:"rtl"
+    }}
+    >
+    سبدخرید
+    </Typography>
+    </Box>
+    </Box>
+               <Box sx={{width:"100%",direction:"ltr"}}>
+    
+                <IconButton onClick={handleDrawerClose}>
+                {theme.direction === 'ltr' ? <CloseIcon /> : <CloseIcon />}
+              </IconButton>
+                 </Box>
+            </DrawerHeader>
+            <Divider />
+            <CartModal/>
+            </Drawer>
+             <div className='flex justify-center mx-auto pb-3'>
+             <InfoIcon sx={{mt:1,mr:1.5,fontSize:'18px',color:'#4b4f4f'}}/>
+             <p className='text-[12px] text-justify pr-1 pl-5 text-gray-700 '> درخواست مرجوع کردن کالا در گروه یخچال و فریزر با دلیل "انصراف از خرید" تنها در صورتی قابل تایید است که کالا در شرایط اولیه باشد 
+              (در صورت پلمپ بودن، کالا نباید باز شده باشد).</p>
+              </div>
+              <Box sx={{m:2, display:'flex',justifyContent:'center'}}>
+            <Tooltip color='warning'  title="اضافه به علاقمندی">
+          <IconButton sx={{pl:2,color:'black' }}>
+            <FavoriteBorderIcon sx={{fontSize:"22px"}} />
+          </IconButton>
+        </Tooltip>
+        <Tooltip title=" به اشتراک گذاری کالا ">
+          <IconButton  sx={{pl:2,color:'black' }}>
+             <ShareIcon  sx={{fontSize:"22px"}}/>
+             </IconButton>
+        </Tooltip>
+        <Tooltip title=" اطلاع رسانی شگفت انگیز ">
+          <IconButton  sx={{pl:2,color:'black' }}>
+             <NotificationsActiveOutlinedIcon  sx={{fontSize:"22px"}}/>
+             </IconButton>
+        </Tooltip>
+        <Tooltip title=" نمودار قیمت">
+          <IconButton  sx={{pl:2,color:'black' }}>
+             <TimelineOutlinedIcon  sx={{fontSize:"22px"}}/>
+             </IconButton>
+        </Tooltip>
+            
+        <Tooltip title=" مقایسه کالا ">
+          <IconButton  sx={{pl:2,color:'black' }}>
+            <AutoAwesomeMotionOutlinedIcon  sx={{fontSize:"22px"}}/>
+             </IconButton>
+        </Tooltip>
+        <Tooltip title=" افزودن به لیست ">
+          <IconButton  sx={{pl:2,color:'black' }}>
+       <TocOutlinedIcon  sx={{fontSize:"22px"}}/>
+             </IconButton>
+        </Tooltip>
+             
+              </Box>
+               </div>
+             )}
+    
+           
+                 
+         <div dir='rtl' className='flex flex-col md:flex-row justify-start self-center md:self-start mx-auto mt-6 w-full md:w-[50%]'  >
+             <div 
+              className=' flex justify-center self-center w-[85%]  h-[500px] my-8  bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
+              style={{
+                borderRadius:"20px",
+                backgroundImage:`url(${image})`}}>
+            </div>
+             {cartItems.map(i=>
+             <div  className="inline-block md:hidden overflow-x-auto [&::-webkit-scrollbar]:w-0 py-1 bg-white
+         w-[80%] mx-auto px-3  h-[120px] ">
+        <ul className=" flex uppercase font-bold mr-1">
+           <li>
+             <Link onClick={()=>setImage(i.img)}>
+             <div 
+              className=' flex w-[100px]  h-[100px] my-1  bg-cover bg-center bg-no-repeat rounded-sm mx-2'
+              style={{
+                borderRadius:"20px",
+                backgroundImage:`url(${i.img})`,
+              }} 
+           
+            >
+            </div>
+          
+            </Link>
+            </li>
+            <li>
+               <Link onClick={()=>setImage(i.imga1)}>
+             <div 
+              className=' flex w-[100px]  h-[100px] my-1   bg-cover bg-center bg-no-repeat rounded-sm mx-2'
+              style={{
+                borderRadius:"20px",
+                backgroundImage:`url(${i.imga1})`,
+              }} 
+           
+            >
+            </div>
+          
+            </Link>
+            </li>
+            <li>
+               <Link onClick={()=>setImage(i.imga2)}>
+             <div 
+              className=' flex w-[100px]  h-[100px] my-1  bg-cover bg-center bg-no-repeat rounded-sm mx-2'
+              style={{
+                borderRadius:"20px",
+                backgroundImage:`url(${i.imga2})`,
+              }} 
+           
+            >
+            </div>
+          
+            </Link>
+            </li>
+             <Link onClick={()=>setImage(i.imga3)}>
+             <div 
+              className=' flex w-[100px]  h-[100px] my-1   bg-cover bg-center bg-no-repeat rounded-sm mx-2'
+              style={{
+                borderRadius:"20px",
+                backgroundImage:`url(${i.imga3})`,
+              }} 
+           
+            >
+            </div>
+          
+            </Link>
+             <Link onClick={()=>setImage(i.imga4)}>
+             <div 
+              className=' flex w-[100px]  h-[100px] my-1   bg-cover bg-center bg-no-repeat rounded-sm mx-2'
+              style={{
+                borderRadius:"20px",
+                backgroundImage:`url(${i.imga4})`,
+              }} 
+           
+            >
+            </div>
+          
+            </Link>
+            </ul>
+            </div>
+             )}
+               
+     {cartItems.map(i=>
+             <div  className="hidden md:flex md:flex-col md:justify-center overflow-y-auto [&::-webkit-scrollbar]:h-0 py-1 bg-white
+         w-[100%] mx-auto px-3  h-[600px] my-8 ">
+        <ul className=" flex flex-col uppercase font-bold mr-1">
+           <li>
+             <Link onClick={()=>setImage(i.img)}>
+             <div 
+              className=' flex w-[100px]  h-[100px] my-1   bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
+              style={{
+                borderRadius:"20px",
+                backgroundImage:`url(${i.img})`,
+              }} 
+           
+            >
+            </div>
+          
+            </Link>
+            </li>
+            <li>
+               <Link onClick={()=>setImage(i.imga1)}>
+             <div 
+              className=' flex w-[100px]  h-[100px] my-1 bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
+              style={{
+                borderRadius:"20px",
+                backgroundImage:`url(${i.imga1})`,
+              }} 
+            >
+            </div>
+          
+            </Link>
+            </li>
+            <li>
+               <Link onClick={()=>setImage(i.imga2)}>
+             <div 
+              className=' flex w-[100px]  h-[100px] my-1  bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
+              style={{
+                borderRadius:"20px",
+                backgroundImage:`url(${i.imga2})`,
+              }} 
+            >
+            </div>
+            </Link>
+            </li>
+             <Link onClick={()=>setImage(i.imga3)}>
+             <div 
+              className=' flex w-[100px]  h-[100px] my-1   bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
+              style={{
+                borderRadius:"20px",
+                backgroundImage:`url(${i.imga3})`,
+              }} 
+           
+            >
+            </div>
+          
+            </Link>
+             <Link onClick={()=>setImage(i.imga4)}>
+             <div 
+              className=' flex w-[100px]  h-[100px] my-1   bg-cover bg-center bg-no-repeat rounded-sm mx-auto'
+              style={{
+                borderRadius:"20px",
+                backgroundImage:`url(${i.imga4})`,
+              }} 
+            >
+            </div>
+            </Link>
+            </ul>
+            </div>
+             )}
+            </div> 
+    </div>
+   <div dir='rtl' className='flex flex-col md:flex-row bg-white rounded-t-3xl w-[95%] mx-auto my-6'>
 <Box  sx={{width:"100%",display:"flex",justifyContent:"start",flexDirection:"column",mt:{xs:3,lg:1},pb:{lg:3}}}>
 {cartItems.map(i=>
-    <Box container sx={{whiteSpace:"wrap",width:"90%",display:'flex',flexDirection:"row",alignSelf:"center",bgcolor:'white',px:3,py:0,mx:{xs:1,md:5},mb:2,mt:{xs:2,md:2},borderRadius:'10px',direction:'rtl'}}>
-     <MessageOutlinedIcon sx={{pr:2,pt:3,color:"#E0AA3E",fontSize:"28px"}}/> 
-      <Typography  sx={{px:2,py:1,color:"#3d3d3d",fontSize:"18px"}}> نظرات کاربران<Typography variant='body2' sx={{py:0,color:"#6e6e6e"}}>{i.title1} </Typography>
-       </Typography>
+    <Box container sx={{whiteSpace:"wrap",width:"90%",display:'flex',flexDirection:"row",alignSelf:"center",bgcolor:'white',px:3,py:0,mx:{xs:1,md:5},my:1,borderRadius:'10px',direction:'rtl'}}>
+     <MdMessage className='w-10 h-10 text-[#E0AA3E] pt-3' /> 
+      <p className='text-[18px] font-bold text-gray-700 px-2 pt-2'> نظرات کاربران 
+      
+       </p>
     </Box>)}
-    <Box  sx={{whiteSpace:"wrap",display:'flex',flexDirection:"column",bgcolor:'white',p:3,mx:{xs:1,md:5},mb:2,mt:{xs:2,md:2},border:"1px dashed #d0d0d0",borderRadius:'10px',direction:'rtl'}}>
+    <Box  sx={{whiteSpace:"wrap",display:'flex',flexDirection:"column",bgcolor:'white',p:3,mx:{xs:1,md:5},my:1,border:"1px dashed #d0d0d0",borderRadius:'10px',direction:'rtl'}}>
       <Typography  sx={{my:1,fontSize:"18px",fontWeight: 'bold'}}>
       دیگران را با نوشتن نظرات خود، برای انتخاب این کالا راهنمایی کنید.
       </Typography>
@@ -531,12 +575,16 @@ direction:"rtl"
       </Typography>
   
     </Box>
-    <Button ref={buttoncommentref} onClick={addcomments}  sx={{':hover':{backgroundImage:"linear-gradient(to right ,#eeeeee,#282828)",color:'white'}, color:'#eeeeee',fontSize:"18px",
-       borderTopRightRadius:"20px",borderTopLeftRadius: "30px",borderBottomRightRadius:"30px",borderBottomLeftRadius:"10px",
-       backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)",mx:25, my:3,py:0.5,px:0}}> مشاهده ی دیدگاه کاربران </Button>
-       <Box  ref={boxnotcomments} sx={{display:"none"}}> <Typography variant='h6' sx={{color:"#585858",textAlign:"center",mx:5}}> دیدگاهی برای این محصول ثبت نشده است</Typography> 
+       <button ref={buttoncommentref} onClick={addcomments}  className='bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 
+                                   rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl mx-6  sm:mx-16 px-2 py-1 mt-10 mb-5 text-white text-md font-sans
+                                    hover:bg-gradient-to-r hover:from-gray-500
+                                   hover:via-yellow-800 hover:to-gray-500'
+                                    >  مشاهده ی دیدگاه کاربران </button>
+
+       <Box  ref={boxnotcomments} sx={{display:"none"}}>
+         <p className='text-sm md:text-xl text-gray-700 mx-auto'> دیدگاهی برای این محصول ثبت نشده است</p> 
        </Box>
-     <Box ref={boxcommentref} sx={{ display:"none"}}>
+     <div ref={boxcommentref} className='hidden'>
       <Typography variant='h5' sx={{direction:"rtl",color:"#282828",my:0,py:0}}>دید گاه ها...
       <Box className='linetin'></Box>
       </Typography>
@@ -554,9 +602,8 @@ direction:"rtl"
      </Typography>
        )}
        
-   </Box>
-<Button ref={displycomments} onClick={displycomment}sx={{display:"none"}} ><Typography variant='body1' sx={{color:"#E0AA3E"}}>  ادامه ی نظرات...</Typography></Button>
-    </Box>
+   </div>
+</Box>
    
     <Box   sx={{width:"100%",display:"flex",justifyContent:"start",flexDirection:"column",mt:{xs:3,lg:1},pb:3,
     bgcolor:'white',direction:'rtl'}}
@@ -564,16 +611,18 @@ direction:"rtl"
     >   
     {cartItems.map(i=>
     <Box container sx={{mx:3,py:3,display:'flex',flexDirection:"column",bgcolor:'white',direction:'rtl'}}>
-      <Typography  sx={{pl:0.6,py:0,color:"#6e6e6e",fontSize:"16px"}}> اولین نفری باشید که دیدگاهی را ارسال می کنید برای : 
-       </Typography>
-       <Typography variant='body2' sx={{pt:0.4,color:"#3d3d3d"}}> " {i.title1} "</Typography>
+      <p className='text-[16px] font-bold text-gray-700 py-1'> اولین نفری باشید که دیدگاهی را ارسال می کنید برای : 
+       </p>
+      <p className='text-[14px] text-[#2b31d5] font-bold pt-1' > {i.title1} </p>
        <Box className='linetinck'></Box>
     </Box>
     )}
          <form  noValidate onSubmit={handlesubmit}>
           <Box sx={{mt:1,mx:3}}>
-            <FormLabel sx={{mb:1,color:"#615d5d",fontSize:"12px"}}>نام <AcUnitIcon  sx={{fontSize:"7px",color:"#615d5d"}}/></FormLabel>
-              <Input
+            <div className='flex flex-row justify-start'>
+              <div className='flex flex-col justify-start w-[30%]'>
+           <Input
+              sx={{fontSize:"16px"}}
             color="warning"
             placeholder='نام'
                 autoComplete="fname"
@@ -587,12 +636,14 @@ direction:"rtl"
                value={name}
                onChange={(e)=> setName(e.target.value)}
               />
-              <Typography variant='body2' sx={{color:"#f54141",mt:1}}>
+              <Typography variant='body1' sx={{color:"#f54141",mt:1}}>
                
                 {error.name}
               </Typography>
-            <FormLabel sx={{mb:1,color:"#615d5d",fontSize:"12px"}}> آدرس ایمیل <AcUnitIcon  sx={{fontSize:"7px",color:"#615d5d"}}/></FormLabel>
-              <Input
+              </div>
+              <div className='flex flex-col justify-start  w-[70%]'>
+            <Input
+              sx={{fontSize:"16px",mr:2}}
                 color="warning"
               placeholder='آدرس ایمیل'
                 variant="outlined"
@@ -603,41 +654,13 @@ direction:"rtl"
                 onChange={(e)=> setEmail(e.target.value)}
               
               />
-              <Typography variant='body2' sx={{color:"#f54141",mt:1}}>
+              <Typography variant='body1' sx={{color:"#f54141",mt:1}}>
                
                {error.email}
              </Typography>
-            <FormLabel sx={{mb:1,color:"#615d5d",fontSize:"12px"}}><HiveIcon sx={{fontSize:"10px",color:"green"}}/>نقاط قوت   </FormLabel>
-              <Input
-                color="warning"
-            type='text'
-                variant="outlined"
-                required
-               
-                defaultValue={null}
-                value={advantage}
-                onChange={(e)=> setAdvantage(e.target.value)}
-              />
-              <Typography variant='body2' sx={{color:"#f54141",mt:1}}>
-               
-               {error.advantage}
-             </Typography>
-            <FormLabel sx={{mb:1,color:"#615d5d",fontSize:"12px"}}><HiveIcon sx={{fontSize:"10px",color:"red"}}/> نقاط ضعف  </FormLabel>
-              <Input
-               
-               color="warning"
-            type='text'
-                variant="outlined"
-                required
-                defaultValue={null}
-                value={disadvantages}
-                onChange={(e)=> setDisadvantages(e.target.value)}
-              />
-               <Typography variant='body2' sx={{color:"#f54141",mt:1}}>
-               {error.disadvantages}
-            
-             </Typography>
-                <FormLabel sx={{mb:1,color:"#615d5d",fontSize:"12px"}}> امتیاز شما</FormLabel>
+             </div>
+             </div>
+                <FormLabel sx={{mb:1,color:"#615d5d",fontSize:"16px",mt:3}}> امتیاز شما</FormLabel>
                 <Rating
         name="simple-controlled"
         value={score}
@@ -647,12 +670,13 @@ direction:"rtl"
           ;
         }}
       />
-       <Typography variant='body2' sx={{color:"#f54141",mt:1}}>
+       <Typography variant='body1' sx={{color:"#f54141",mt:1}}>
                {error.score}
               
              </Typography>
-            <FormLabel sx={{mb:1,color:"#615d5d",fontSize:"12px"}}> دیدگاه شما <AcUnitIcon  sx={{fontSize:"7px",color:"#615d5d"}}/>  </FormLabel>
+            <FormLabel sx={{mb:1,color:"#615d5d",fontSize:"16px",mt:3}}> دیدگاه شما <AcUnitIcon  sx={{fontSize:"8px",color:"#615d5d"}}/>  </FormLabel>
             <Textarea
+          
              color="warning"
                  variant="outlined"
                  required
@@ -661,35 +685,36 @@ direction:"rtl"
                  value={comment}
                  onChange={(e)=> setComment(e.target.value)}
              rows="50" cols="30"
-             sx={{width:"100%",height:"200px"}}
+             sx={{width:"100%",height:"180px",fontSize:"16px"}}
              ></Textarea>
 
-               <Typography variant='body2' sx={{color:"#f54141",mt:1}}>
+               <Typography variant='body1' sx={{color:"#f54141",mt:1}}>
                {error.comment}
               
              </Typography>
            
             
 
-          <Button
-           sx={{':hover':{backgroundImage:"linear-gradient(to right ,#eeeeee,#282828)",color:'white'}, color:'#eeeeee',fontSize:"18px",
-           borderTopRightRadius:"20px",borderTopLeftRadius: "30px",borderBottomRightRadius:"30px",borderBottomLeftRadius:"10px",
-           backgroundImage:"linear-gradient(to right ,#E0AA3E,#282828)",mt:2,py:0.3,px:6}}
+          <button
+          className='bg-gradient-to-r from-gray-200 via-gray-500 to-gray-200 
+                                   rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl mx-auto   px-8 py-1 mt-10 mb-5 text-white text-md font-sans
+                                    hover:bg-gradient-to-r hover:from-gray-500
+                                   hover:via-yellow-800 hover:to-gray-500 hover:text-white'
             type="submit"
             
           >
-           ثبت
-          </Button>
+             ثبت دیدگاه
+          </button>
           </Box>
         </form>
         </Box> 
-
-</Box>
-</Box>
+</div>   
+</div>
     <Footer/>
     </>
   );
 }
+
 
 
 

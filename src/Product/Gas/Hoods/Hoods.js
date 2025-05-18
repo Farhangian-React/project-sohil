@@ -62,28 +62,28 @@ export default  function Hoods() {
 <MenuList dir="ltr" className="  rounded-xl block w-[150px] mx-auto h-auto p-3 -mt-5">
 <ul className=" flex flex-col items-end outline-none outline-0">
 <NavLink to={'/shop-ranges' }>
-<MenuItem className="flex items-center pb-2 rounded-lg">
+<MenuItem className="flex items-center pb-2 rounded-lg  bg-transparent">
 <p className="flex text-gray-700 items-center text-sm font-bold hover:text-yellow-500" >
  اجاق گاز و فر 
   </p>
 </MenuItem>
 </NavLink>
 <NavLink to={'/shop-cooktop'} >
-<MenuItem className="flex items-center py-2 rounded-lg">
+<MenuItem className="flex items-center py-2 rounded-lg  bg-transparent">
 <p className="flex text-gray-700 items-center text-sm font-bold hover:text-yellow-500" >
    گاز صفحه ای 
   </p>
 </MenuItem>
 </NavLink>
 <NavLink to={'/shop-hood'}>
-<MenuItem className="flex items-center py-2 rounded-lg">
+<MenuItem className="flex items-center py-2 rounded-lg  bg-transparent">
 <p className="flex text-gray-700 items-center text-sm font-bold hover:text-yellow-500" >
  هود
   </p>
 </MenuItem>
 </NavLink>
 <NavLink to={'/shop-microwaves'} >
-<MenuItem className="flex items-center py-2 rounded-lg">
+<MenuItem className="flex items-center py-2 rounded-lg  bg-transparent">
   <p className="flex text-gray-700 items-center text-sm font-bold hover:text-yellow-500" >
 مایکروویو
   </p>

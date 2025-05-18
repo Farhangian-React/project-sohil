@@ -182,7 +182,7 @@ sx={{width:"250px",m:"auto",height:"200px"}}
  }
   </CardContent>
   <CardContent sx={{display:'flex',justifyContent:'center',height: "30px"}}>
- <NavLink style={{ textDecoration: "none" }} to={"/cartbuygas" }>
+ <NavLink style={{ textDecoration: "none" }} to={"/cartbuyrefrigerator" }>
                      <button    onClick={()=>{
                setCartItems([item]);
               }} className='bg-gradient-to-r from-yellow-500 via-yellow-900 to-yellow-500 

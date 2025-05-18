@@ -166,30 +166,30 @@ const Refrigerators  = React.forwardRef(({ focusNext, focusPrevious, ...props },
             
           >
             <ListItem  > 
-              <NavLink to={'/shop-washing-machine'} {...getTargetProps(0)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
+              <NavLink to={'/shop-refrigeratorfrenchdoor'} {...getTargetProps(0)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                     یخچال های دو درب</button>
                  </NavLink> 
             </ListItem>
             <ListItem >
-            <NavLink to={'/shop-washing-machine'} {...getTargetProps(1)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
+            <NavLink to={'/shop-refrigeratorsidbysid'} {...getTargetProps(1)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                     یخچال های ساید بای ساید</button>
                  </NavLink> 
             </ListItem>
             <ListItem >
-            <NavLink to={'/shop-washing-machine'} {...getTargetProps(2)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
+            <NavLink to={'/shop-refrideratorbottomfreezer'} {...getTargetProps(2)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                    یخچال و فریزر پایین</button>
                  </NavLink> 
             </ListItem>
             <ListItem >
          
              
-            <NavLink to={'/shop-washing-machine'} {...getTargetProps(3)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
+            <NavLink to={'/shop-refrideratortopfreezer'} {...getTargetProps(3)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                    یخچال و فریزر بالا </button>
                  </NavLink> 
             </ListItem>
             <ListItem  >
              
-            <NavLink to={'/shop-washing-machine'} {...getTargetProps(4)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
+            <NavLink to={'/shop-refrideratorspecializedfreezer'} {...getTargetProps(4)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                    یخچال و فریزر تخصصی</button>
                  </NavLink> 
             </ListItem>
@@ -301,26 +301,26 @@ const Cooking  = React.forwardRef(({ focusNext, focusPrevious, ...props }, ref) 
           >
             <ListItem >
                
-            <NavLink to={'/shop-washing-machine'} {...getTargetProps(0)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
+            <NavLink to={'/shop-ranges'} {...getTargetProps(0)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                    اجاق گاز و فر </button>
                  </NavLink> 
             </ListItem>
             <ListItem>
             
-            <NavLink to={'/shop-washing-machine'} {...getTargetProps(1)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
+            <NavLink to={'/shop-cooktop'} {...getTargetProps(1)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                    گاز صفحه ای</button>
                  </NavLink> 
             </ListItem>
             <ListItem  >
             
-            <NavLink to={'/shop-washing-machine'} {...getTargetProps(2)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
+            <NavLink to={'/shop-hood'} {...getTargetProps(2)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                    هود </button>
                  </NavLink> 
             </ListItem>
             <ListItem  >
          
            
-            <NavLink to={'/shop-washing-machine'} {...getTargetProps(3)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
+            <NavLink to={'/shop-microwaves'} {...getTargetProps(3)}><button className='bg-inherit text-gray-800 text-[16px] hover:text-yellow-500'>
                    مایکروویو </button>
                  </NavLink> 
             </ListItem>
