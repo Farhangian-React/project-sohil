@@ -266,9 +266,9 @@ return console.log(cartItems);
     
     )}
    
+         {cartItems.map(i=> 
     <div dir='rtl' className='flex flex-col md:flex-row bg-white rounded-t-3xl w-[95%] h-auto mx-auto '>
  
-         {cartItems.map(i=> 
          <div className='flex flex-col justify-center mt-6 w-full md:w-[50%]'> 
            <img  className='hover:scale-125 w-[100px] h-[70px] mr-8'  alt='' src={i.berand}/>
         
@@ -378,8 +378,7 @@ return console.log(cartItems);
          
           </Box>
            </div>
-         )}
-
+  
        
              
      <div dir='rtl' className='flex flex-col md:flex-row justify-start self-center md:self-start mx-auto mt-6 w-full md:w-[50%]'  >
@@ -389,7 +388,7 @@ return console.log(cartItems);
             borderRadius:"20px",
             backgroundImage:`url(${image})`}}>
         </div>
-         {cartItems.map(i=>
+        
          <div  className="inline-block md:hidden overflow-x-auto [&::-webkit-scrollbar]:w-0 py-1 bg-white
      w-[80%] mx-auto px-3  h-[120px] ">
     <ul className=" flex uppercase font-bold mr-1">
@@ -461,9 +460,9 @@ return console.log(cartItems);
         </Link>
         </ul>
         </div>
-         )}
+  
            
- {cartItems.map(i=>
+ 
          <div  className="hidden md:flex md:flex-col md:justify-center overflow-y-auto [&::-webkit-scrollbar]:h-0 py-1 bg-white
      w-[100%] mx-auto px-3  h-[600px] my-8 ">
     <ul className=" flex flex-col uppercase font-bold mr-1">
@@ -528,25 +527,15 @@ return console.log(cartItems);
             borderRadius:"20px",
             backgroundImage:`url(${i.imga4})`,
           }} 
-       
         >
         </div>
       
         </Link>
         </ul>
         </div>
-         )}
-           
-
-
-   
-      
-        </div> 
-       
-       
-     
+        </div>  
 </div>
-
+         )}
 <div dir='rtl' className='flex flex-col justify-center bg-white  rounded-t-3xl w-[95%] mx-auto my-6'>
        
       <Accordion sx={{mx:"auto",width:"95%",mt:5}}
