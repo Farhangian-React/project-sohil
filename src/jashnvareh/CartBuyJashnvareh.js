@@ -35,7 +35,7 @@ import FormLabel from '@mui/joy/FormLabel';
 import '../Product/CartBuy.css';
 import { Textarea } from '@mui/joy';
 import { useEffect } from 'react';
-const drawerWidth = 440;
+const drawerWidth = 300;
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
@@ -195,7 +195,7 @@ cartItems.map(i=>{
     setImage(i.img);}) 
   },[cartItems])
   useEffect(()=>{ 
-    offrefprice();
+
   },[])
   const handlesubmit=(e)=>{
     console.log(setCartItems(cartItems));
@@ -276,58 +276,70 @@ toast.success("ثبت دیدگاه با موفقیت صورت گرفت") ;
               <p className='text-md text-right text-gray-500 pr-8 py-1 ' >
         {i.title3}
             </p>
-            <div className='flex flex-row justify-start'>
-              <p className='text-gray-800 text-right text-xl pr-8 mt-0.5'>قیمت :</p>
-              <p ref={offref} 
-             className='text-gray-800 text-right text-2xl pr-8 mt-0.5' >
-             {  i.price}
-              </p>
-              
-              </div>
-              <div ref={boxoff} className='flex flex-row justify-start my-1'>
-             <p className='text-red-600 font-bold text-right text-md sm:text-2xl  px-8 mt-0.5'>قیمت با  {convertToPersian(i.off)}%   تخفیف :</p>
-              <p className='text-red-600 font-bold text-right text-md sm:text-2xl  pr-1 mt-0.5' >
+               { i.off !== "" ?
+          <div  className='flex flex-col justify-start my-1'>
+             <p className='text-lg text-gray-500 line-through decoration-yellow-800 pr-8 my-1'>{i.price}</p>
+            <div  className='flex flex-row justify-start'>
+         <p className='text-yellow-800 font-bold text-right text-md sm:text-2xl  px-8 mt-0.5'>قیمت با  {convertToPersian(i.off)}%   تخفیف :
+          
+         </p>
+          <p className='text-yellow-800 font-bold text-right text-md sm:text-2xl  pr-1 mt-0.5' >
+       
+          {addCommas(convertToPersian((convertToEnglish(i.pricenum)-(convertToEnglish(i.pricenum)*i.off / 100))+''))} تومان 
+         </p>
+         </div>
+          </div>
+          
+          :
+          <div  className='flex flex-row justify-start'>
+          <p className='text-yellow-800 font-bold text-right text-xl pr-8 mt-0.5'>قیمت :</p>
+          <p 
+         className='text-yellow-800 font-bold text-right text-xl pr-8 mt-0.5' >
+         {  i.price}
+          </p>
            
-              {addCommas(convertToPersian((convertToEnglish(i.pricenum)-(convertToEnglish(i.pricenum)*i.off / 100))+''))} تومان 
-             </p>
-              </div>
+          </div>
+}
     
-                 
-                                       <button    onClick={()=> addToCart(i)} className='bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 
-                                       rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl mx-10  md:mx-16 px-10 md:px-2 py-1 mt-10 mb-5 text-white text-md font-sans
-                                        hover:bg-gradient-to-r hover:from-gray-500
-                                       hover:via-yellow-800 hover:to-gray-500'
-                                        >    
-            افزودن به سبد خرید  </button>
-          <Drawer
-               sx={{
-                 position:"absolute",
-                 width: drawerWidth,
-                 height:"60vh",
-                 flexShrink: 0,
-                 '& .MuiDrawer-paper': {
-                   width: drawerWidth,
-                   height:"95vh",
-                   boxSizing: 'border-box', 
-                 },
-               }}
-               variant="persistent"
-               anchor="right"
-               open={open}
-             >
-                <DrawerHeader sx={{display:"flex",justifyContent:"space-between",backgroundColor:"white"}}>
-        <Badge badgeContent={cartItemsBuy.length} color="primary"  sx={{mr:3}} >
-        <RiShoppingCartLine className='w-6 h-6 text-gray-800 ' />
-        </Badge>
-        <p className='text-gray-600 font-bold text-lg'>سبد خرید </p>
-                    <IconButton onClick={handleDrawerClose}  sx={{':hover':{color:"red"}}}>
-                    {theme.direction === 'ltr' ?  <IoClose className="block h-5 w-5 text-black hover:text-red-600 "  /> :
-                    <IoClose className="block h-5 w-5 text-black hover:text-red-600"  />}
-                  </IconButton>
-                </DrawerHeader>
-                <Divider />
-                <CartModal/>
-                </Drawer>
+                 <div>              
+                                              <button    onClick={()=> addToCart(i)} className='bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 
+                                                    rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl mx-10  md:mx-16 px-10 md:px-2 py-1 mt-10 mb-5 text-white text-md font-sans
+                                                     hover:bg-gradient-to-r hover:from-gray-500
+                                                    hover:via-yellow-800 hover:to-gray-500'
+                                                     >    
+                         افزودن به سبد خرید  </button>
+                         <Drawer
+                        sx={{
+                          position:"absolute",
+                          width: drawerWidth,
+                          height:"60vh",
+                          flexShrink: 0,
+                          '& .MuiDrawer-paper': {
+                            width: drawerWidth,
+                            height:"85vh",
+                            boxSizing: 'border-box',
+                            borderTopRightRadius:"20px",
+                            borderBottomRightRadius:"20px" 
+                          },
+                        }}
+                        variant="persistent"
+                        anchor="left"
+                        open={open}
+                      >
+                         <DrawerHeader sx={{display:"flex",justifyContent:"space-between",backgroundColor:"white"}}>
+                 <Badge badgeContent={cartItemsBuy.length} color="primary"  sx={{mr:3}} >
+                 <RiShoppingCartLine className='w-6 h-6 text-gray-800 ' />
+                 </Badge>
+                 <p className='text-gray-600 font-bold text-lg'>سبد خرید </p>
+                             <IconButton onClick={handleDrawerClose}  sx={{':hover':{color:"red"}}}>
+                             {theme.direction === 'ltr' ?  <IoClose className="block h-5 w-5 text-black hover:text-red-600 "  /> :
+                             <IoClose className="block h-5 w-5 text-black hover:text-red-600"  />}
+                           </IconButton>
+                         </DrawerHeader>
+                         <Divider />
+                        <CartModal/>
+                         </Drawer>
+                 </div>
              <div className='flex justify-center mx-auto pb-3'>
              <InfoIcon sx={{mt:1,mr:1.5,fontSize:'18px',color:'#4b4f4f'}}/>
              <p className='text-[12px] text-justify pr-1 pl-5 text-gray-700 '> درخواست مرجوع کردن کالا در گروه یخچال و فریزر با دلیل "انصراف از خرید" تنها در صورتی قابل تایید است که کالا در شرایط اولیه باشد 
@@ -380,7 +392,7 @@ toast.success("ثبت دیدگاه با موفقیت صورت گرفت") ;
                 backgroundImage:`url(${image})`}}>
             </div>
              {cartItems.map(i=>
-             <div  className="inline-block md:hidden overflow-x-auto [&::-webkit-scrollbar]:w-0 py-1 bg-white
+             <div  className="inline-block md:hidden overflow-y-auto overflow-x-auto [&::-webkit-scrollbar]:h-0 [&::-webkit-scrollbar]:w-0 py-1 bg-white
          w-[80%] mx-auto px-3  h-[120px] ">
         <ul className=" flex uppercase font-bold mr-1">
            <li>
@@ -454,7 +466,7 @@ toast.success("ثبت دیدگاه با موفقیت صورت گرفت") ;
              )}
                
      {cartItems.map(i=>
-             <div  className="hidden md:flex md:flex-col md:justify-center overflow-y-auto [&::-webkit-scrollbar]:h-0 py-1 bg-white
+             <div  className="hidden md:flex md:flex-col md:justify-center overflow-y-auto overflow-x-auto [&::-webkit-scrollbar]:h-0 [&::-webkit-scrollbar]:w-0 py-1 bg-white
          w-[100%] mx-auto px-3  h-[600px] my-8 ">
         <ul className=" flex flex-col uppercase font-bold mr-1">
            <li>

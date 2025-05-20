@@ -197,9 +197,7 @@ useEffect(()=>{
   })  
   },[cartItems])
   
-  useEffect(()=>{ 
-    offrefprice();
-  },[])
+
   const handlesubmit=(e)=>{
     e.preventDefault();
     if(isvalidate()){
@@ -269,46 +267,49 @@ return console.log(cartItems);
          {cartItems.map(i=> 
     <div dir='rtl' className='flex flex-col md:flex-row bg-white rounded-t-3xl w-[95%] h-auto mx-auto '>
  
-         <div className='flex flex-col justify-center mt-6 w-full md:w-[50%]'> 
-          <div>
-           <img  className='hover:scale-125 w-[100px] h-[70px] mr-8'  alt='' src={i.berand}/>
-        </div>
-        <div>
-          <p className='text-lg font-bold text-gray-800 py-2 text-right pr-8' >
-       {i.title1}
-        </p>
-        </div>
-        <div>
-        <p className='text-[14px] font-bold text-gray-500 mt-3 text-right pr-8'  >
-      {i.title2}
-        </p>
-        </div>
-        <div>
-        <Rating
-             sx={{fontSize:"16px",pr:4,mb:3}}
-       name="simple-controlled"
-       value={sumscore()}
-     /></div>
-     <div>
-          <p className='text-md text-right text-gray-500 pr-8 py-1 ' >
-    {i.title3}
-        </p>
-        </div>
-        <div className='flex flex-row justify-start'>
-          <p className='text-gray-800 text-right text-xl pr-8 mt-0.5'>قیمت :</p>
-          <p ref={offref} 
-         className='text-gray-800 text-right text-2xl pr-8 mt-0.5' >
-         {  i.price}
-          </p>
-          
-          </div>
-          <div ref={boxoff} className='flex flex-row justify-start my-1'>
-         <p className='text-red-600 font-bold text-right text-md sm:text-2xl  px-8 mt-0.5'>قیمت با  {convertToPersian(i.off)}%   تخفیف :</p>
-          <p className='text-red-600 font-bold text-right text-md sm:text-2xl  pr-1 mt-0.5' >
-       
-          {addCommas(convertToPersian((convertToEnglish(i.pricenum)-(convertToEnglish(i.pricenum)*i.off / 100))+''))} تومان 
-         </p>
-          </div>
+              <div className='flex flex-col justify-center mt-6 w-full md:w-[50%]'> 
+                   <img  className='hover:scale-125 w-[100px] h-[70px] mr-8'  alt='' src={i.berand}/>
+                
+                  <p className='text-lg font-bold text-gray-800 py-2 text-right pr-8' >
+               {i.title1}
+                </p>
+                <p className='text-[14px] font-bold text-gray-500 mt-3 text-right pr-8'  >
+              {i.title2}
+                </p>
+                <Rating
+                     sx={{fontSize:"16px",pr:4,mb:3}}
+               name="simple-controlled"
+               value={sumscore()}
+             />
+                  <p className='text-[14px] text-justify text-gray-500 pr-8 py-2 ' >
+            {i.title3}
+                </p>
+                
+                
+                   { i.off !== "" ?
+                  <div  className='flex flex-col justify-start my-1'>
+                     <p className='text-lg text-gray-500 line-through decoration-yellow-800 pr-8 my-1'>{i.price}</p>
+                    <div  className='flex flex-row justify-start'>
+                 <p className='text-yellow-800 font-bold text-right text-md sm:text-2xl  px-8 mt-0.5'>قیمت با  {convertToPersian(i.off)}%   تخفیف :
+                  
+                 </p>
+                  <p className='text-yellow-800 font-bold text-right text-md sm:text-2xl  pr-1 mt-0.5' >
+               
+                  {addCommas(convertToPersian((convertToEnglish(i.pricenum)-(convertToEnglish(i.pricenum)*i.off / 100))+''))} تومان 
+                 </p>
+                 </div>
+                  </div>
+                  
+                  :
+                  <div  className='flex flex-row justify-start'>
+                  <p className='text-yellow-800 font-bold text-right text-xl pr-8 mt-0.5'>قیمت :</p>
+                  <p 
+                 className='text-yellow-800 font-bold text-right text-xl pr-8 mt-0.5' >
+                 {  i.price}
+                  </p>
+                   
+                  </div>
+        }
 
 <div>              
                              <button    onClick={()=> addToCart(i)} className='bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 
@@ -325,8 +326,10 @@ return console.log(cartItems);
          flexShrink: 0,
          '& .MuiDrawer-paper': {
            width: drawerWidth,
-           height:"95vh",
-           boxSizing: 'border-box', 
+           height:"85vh",
+           boxSizing: 'border-box',
+           borderTopRightRadius:"20px",
+           borderBottomRightRadius:"20px" 
          },
        }}
        variant="persistent"
