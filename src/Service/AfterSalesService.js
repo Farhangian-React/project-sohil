@@ -101,7 +101,7 @@ const scrollToElement8 = () => {
        }} >
     
     <div className="inline-block overflow-y-auto  [&::-webkit-scrollbar]:w-0 overflow-x-auto  [&::-webkit-scrollbar]:h-0 py-1 bg-zinc-100
-     w-[100%] mx-3 px-3  h-[120px] md:h-[160px] ">
+     w-[100%] mx-3 px-3  h-[120px] md:h-[160px] rounded-xl ">
     <ul className=" flex uppercase font-bold mr-1">
        <li>
         <button onClick={scrollToElement1} className='bg-inherit w-[100px] mx-5 flex flex-col justify-center items-center  '>

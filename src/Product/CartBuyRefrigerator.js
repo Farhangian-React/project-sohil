@@ -302,9 +302,9 @@ return console.log(cartItems);
          </p>
           </div>
 
-             
+              
                                    <button    onClick={()=> addToCart(i)} className='bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 
-                                   rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl mx-10  md:mx-16 px-10 md:px-2 py-1 mt-10 mb-5 text-white text-md font-sans
+                                   rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xlmx-6  sm:mx-16 px-2 py-1 mt-10 mb-5 text-white text-md font-sans
                                     hover:bg-gradient-to-r hover:from-gray-500
                                    hover:via-yellow-800 hover:to-gray-500'
                                     >    
@@ -336,8 +336,9 @@ return console.log(cartItems);
           </IconButton>
         </DrawerHeader>
         <Divider />
-       
+       <CartModal/>
         </Drawer>
+
          <div className='flex justify-center mx-auto pb-3'>
          <InfoIcon sx={{mt:1,mr:1.5,fontSize:'18px',color:'#4b4f4f'}}/>
          <p className='text-[12px] text-justify pr-1 pl-5 text-gray-700 '> درخواست مرجوع کردن کالا در گروه یخچال و فریزر با دلیل "انصراف از خرید" تنها در صورتی قابل تایید است که کالا در شرایط اولیه باشد 
@@ -664,38 +665,21 @@ return console.log(cartItems);
          <AccordionSummary   sx={{color:"#585858",fontSize:{xs:"18px",md:'20px'}}}   expandIcon={<AddIcon sx={{fontSize:{xs:"18px",md:"20px"}}} />}>ویژگی ها و امکانات</AccordionSummary>
         <AccordionDetails sx={{mx:"auto"}}> 
         {cartItems.map(i=>
-      <div className='flex flex-wrap justify-center mx-auto'  >  
+      <div className='flex flex-wrap md:flex-nowrap justify-center md:justify-center mx-auto'  >  
       {i.Prop.map(j=>
-        
-         <List
-            aria-label="Products"
-            variant="outlined"
-            orientation='vertical'
-            sx={{mt: 2,mb:0,border:'none',alignItems:'start',height:"500px",boxShadow:" 5px 5px 40px #dcdcdc "
-            }} 
-          >
-            <ListItem role="none" >
-            <Box
-             sx={{
-              display:'flex',
-              justifyContent:'center',
-             backgroundImage: `url(${j.Fimg})`,
-             backgroundPosition: 'center',
-             backgroundSize:'cover',
-             backgroundRepeat: 'no-repeat',
-             width:{xs:'150px',lg:"250px"},
-             height:{xs:"150px",lg:"250px"}
-             }}
-          >
-          </Box>
-            </ListItem>
-           <ListItem role="none">
-           <Typography sx={{mt:0,fontSize:{xs:'16px',md:'20px'},fontWeight:'600'}}>{j.Ftitle1} </Typography>
-           </ListItem>
-           <ListItem role="none">
-             <Typography sx={{fontSize:{xs:'12px',md:'16px'}}}> {j.Ftitle2}  </Typography>
-           </ListItem>
-         </List>
+        <ul>
+          <li className='flex justify-center md:justify-start self-center md:self-center items-center md:items-start m-2'>
+              <img  className='hover:scale-125 w-[200px] h-[200px] '  alt='' src={j.Fimg}/>
+       
+          </li>
+          <li className='m-2'>
+            <p className='text-center md:text-start text-sm text-gray-800 font-bold'>{j.Ftitle1}</p>
+          </li>
+          <li className='flex flex-wrap m-2'>
+            <p className=' md:text-start text-xs text-justify text-gray-500'>{j.Ftitle2}</p>
+          </li>
+        </ul>
+    
    
       )}
          </div>  )}
