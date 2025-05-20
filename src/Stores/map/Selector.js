@@ -115,7 +115,7 @@ setDatamapshow([t]);
 
 
     </div>
-    <div  className='flex flex-col justify-start h-[320px] p-2 mx-auto  overflow-y-auto [&::-webkit-scrollbar]:h-0 mt-3'>  
+    <div  className='flex flex-col justify-start h-[320px] p-2 mx-auto  overflow-y-auto  [&::-webkit-scrollbar]:w-0 overflow-x-auto  [&::-webkit-scrollbar]:h-0 mt-3'>  
        <p className='text-sm text-gray-800 my-1'>جهت مشاهده فهرست فروشگاه‌ها، ابتدا استان و شهر مورد نظر خود را انتخاب کنید</p>
     <img ref={refbox} className='mx-auto' width={300} height={400} alt=''
          src={storeimage}/>
