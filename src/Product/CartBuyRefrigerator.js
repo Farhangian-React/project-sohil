@@ -229,6 +229,7 @@ return console.log(cartItems);
   };
 
   const addToCart=(p)=>{ 
+      setOpen(true);
     setCartItems([p]);  
    if(cartItemsBuy.includes(p)){
     setCartItemsBuy((currState)=>{
@@ -238,7 +239,7 @@ return console.log(cartItems);
     setCartItemsBuy((currState)=>{
       return [...currState,p]});
    }
-   setOpen(true);
+ 
     } 
 
   return(
@@ -325,22 +326,17 @@ return console.log(cartItems);
        open={open}
      >
         <DrawerHeader sx={{display:"flex",justifyContent:"space-between",backgroundColor:"white"}}>
- 
-
 <Badge badgeContent={cartItemsBuy.length} color="primary"  sx={{mr:3}} >
 <RiShoppingCartLine className='w-6 h-6 text-gray-800 ' />
 </Badge>
 <p className='text-gray-600 font-bold text-lg'>سبد خرید </p>
-
-          
-
             <IconButton onClick={handleDrawerClose}  sx={{':hover':{color:"red"}}}>
             {theme.direction === 'ltr' ?  <IoClose className="block h-5 w-5 text-black hover:text-red-600 "  /> :
             <IoClose className="block h-5 w-5 text-black hover:text-red-600"  />}
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <CartModal/>
+       
         </Drawer>
          <div className='flex justify-center mx-auto pb-3'>
          <InfoIcon sx={{mt:1,mr:1.5,fontSize:'18px',color:'#4b4f4f'}}/>
@@ -668,9 +664,9 @@ return console.log(cartItems);
          <AccordionSummary   sx={{color:"#585858",fontSize:{xs:"18px",md:'20px'}}}   expandIcon={<AddIcon sx={{fontSize:{xs:"18px",md:"20px"}}} />}>ویژگی ها و امکانات</AccordionSummary>
         <AccordionDetails sx={{mx:"auto"}}> 
         {cartItems.map(i=>
-      <Box  sx={{ml:{xs:3},display:'flex',flexWrap:'wrap',justifyContent:'center'}}>  
+      <div className='flex flex-wrap justify-center mx-auto'  >  
       {i.Prop.map(j=>
-         <Grid xs={6} md={3} sx={{display:"flex",justifyContent:"center",alignSelf:"center",px:1}}>  
+        
          <List
             aria-label="Products"
             variant="outlined"
@@ -700,9 +696,9 @@ return console.log(cartItems);
              <Typography sx={{fontSize:{xs:'12px',md:'16px'}}}> {j.Ftitle2}  </Typography>
            </ListItem>
          </List>
-       </Grid>
+   
       )}
-         </Box>  )}
+         </div>  )}
 
         </AccordionDetails>
       </Accordion>

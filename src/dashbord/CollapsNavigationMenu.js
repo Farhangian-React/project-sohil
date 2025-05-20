@@ -154,9 +154,11 @@ onClick={handleDrawerOpen}
 
 
    <Drawer
- 
-        sx={{
-       
+
+        sx={
+   
+          {
+            
           flexShrink: 0,
    
           '& .MuiDrawer-paper': {
@@ -167,7 +169,7 @@ onClick={handleDrawerOpen}
             flexDirection:"column",
             justifyContent:"start",
             direction:"rtl",
-         
+      
      
     
            
