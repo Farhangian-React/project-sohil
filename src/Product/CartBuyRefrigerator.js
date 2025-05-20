@@ -40,7 +40,7 @@ import './CartBuy.css';
 import { Textarea } from '@mui/joy';
 import { useEffect } from 'react';
 import SlideSimilarRef from "./SlideSimilarRef";
-const drawerWidth =400;
+const drawerWidth =300;
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
