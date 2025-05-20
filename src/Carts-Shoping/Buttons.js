@@ -1,10 +1,10 @@
 import React,{useState,useContext} from "react";
 import { Button,ButtonGroup } from "@mui/material";
 import {CartBuyContext} from '../Shared/Cart-Context';
-import AddIcon from '@mui/icons-material/Add';
+import { IoMdAdd } from "react-icons/io";
 import {CartContext} from '../Shared/Cart-Context';
 import Box from '@mui/material/Box';
-import HorizontalRuleOutlinedIcon from '@mui/icons-material/HorizontalRuleOutlined';
+import { MdHorizontalRule } from "react-icons/md";
 export default  function Buttons({t}) {
  
   const [cartItemsBuy,setCartItemsBuy]=useContext(CartBuyContext);
@@ -68,18 +68,22 @@ return(persianNumber);
     }
   }
   return(
- <Box sx={{display:"flex",flexDirection:"row",justifyContent:"center"}}>
-  <ButtonGroup size="small" aria-label="Small button group"  >
-        <AddIcon  sx={{py:0.4,border:"1px solid #bbb",alignSelf:"center"}} onClick={() =>
+ <div className="flex flex-row justify-center w-[100px] h-[20px]" >
+ 
+      <div className="border-2 rounded-tr-md  rounded-br-md border-gray-300">
+         <IoMdAdd  className="w-6 h-full self-center px-1   hover:text-[#2b31d5] "  onClick={() =>
    handleIncrement(t)} fontSize="inherit"  />
-     
-        <Button sx={{':hover':{border:"none"},color:"black",border:"1px solid #bbb",alignSelf:"center",p:0,m:0,borderRadius:"none"}}  >
+      </div>
+       
+     <div className="border-t-2 border-b-2 border-gray-300">
+        <p className="text-sm text-gray-700 self-center items-center px-1.5 text-center -pt-1.5  hover:text-[#2b31d5]"  >
           {count}
-        </Button>
-        <HorizontalRuleOutlinedIcon onClick={() =>
-   handleDecrement(t) } fontSize="inherit" sx={{py:0.4,border:"1px solid #bbb",alignSelf:"center"}} />
-    
-    </ButtonGroup>
-     </Box>
+        </p></div>
+       <div className="border-2 rounded-tl-md  rounded-bl-md border-gray-300">
+        <MdHorizontalRule onClick={() =>
+   handleDecrement(t) } className="w-6 h-full self-center px-1   hover:text-[#2b31d5] " />
+    </div>
+  
+     </div>
   )
 }

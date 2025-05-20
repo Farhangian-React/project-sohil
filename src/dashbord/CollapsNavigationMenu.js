@@ -285,7 +285,7 @@ onClick={handleDrawerOpen}
         onClose={handleClose2}
         sx={
           { mt: "1px", "& .MuiMenu-paper": 
-            { backgroundColor: '#fff',width:'300px' } ,direction:'rtl'
+            { backgroundColor: '#fff',width:'280px' } ,direction:'rtl'
           }
         }
       >
@@ -321,7 +321,7 @@ onClick={handleDrawerOpen}
         onClose={handleClose3}
           sx={
             { mt: "1px", "& .MuiMenu-paper": 
-              { backgroundColor: '#fff',width:'300px' } ,direction:'rtl'
+              { backgroundColor: '#fff',width:'280px' } ,direction:'rtl'
             }
           }
       >

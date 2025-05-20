@@ -24,10 +24,10 @@ import TocOutlinedIcon from '@mui/icons-material/TocOutlined';
 import { MdMessage } from "react-icons/md";
 import { styled, useTheme } from '@mui/material/styles';
 import Drawer from '@mui/material/Drawer';
-import CloseIcon from '@mui/icons-material/Close';
+import { IoClose } from "react-icons/io5";
+import { RiShoppingCartLine } from "react-icons/ri";
 import Divider from '@mui/material/Divider';
 import CartModal from "../../Carts-Shoping/CartModal";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 import Rating from '@mui/material/Rating';
@@ -303,56 +303,31 @@ return console.log(cartItems);
                                     >    
         افزودن به سبد خرید  </button>
         <Drawer
-       sx={{
-         position:"absolute",
-         width: drawerWidth,
-         height:"60vh",
-         flexShrink: 0,
-         '& .MuiDrawer-paper': {
-           width: drawerWidth,
-           height:"95vh",
-           boxSizing: 'border-box', 
-         },
-       }}
-       variant="persistent"
-       anchor="right"
-       open={open}
-     >
-        <DrawerHeader sx={{display:"flex",justifyContent:"space-around",backgroundImage:"#f2f2f2"}}>
-        <Box sx={{display:"flex",flexDirection:"row",justifyContent:"start",width:"100%"}}>
-<Box sx={{width:"30px",alignSelf:'center',pr:2}}>
-<Badge badgeContent={cartItemsBuy.length}  color="warning" >
-<ShoppingCartIcon color="action"sx={{color:"black"}} />
-</Badge>
-</Box> 
-<Box sx={{width:"80px",alignSelf:'center',pr:0}}>
-<Typography
-
-noWrap
-component="a"
-href="/"
-sx={{
-mr:1 ,
-mt:0,
-display: 'flex',
-flexGrow: 0,
-fontSize:"22px",
-color: '#202020',
-textDecoration: 'none',
-direction:"rtl"
-}}
->
-سبدخرید
-</Typography>
-</Box>
-</Box>
-           <Box sx={{width:"100%",direction:"ltr"}}>
-
-            <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <CloseIcon /> : <CloseIcon />}
-          </IconButton>
-             </Box>
-        </DrawerHeader>
+             sx={{
+               position:"absolute",
+               width: drawerWidth,
+               height:"60vh",
+               flexShrink: 0,
+               '& .MuiDrawer-paper': {
+                 width: drawerWidth,
+                 height:"95vh",
+                 boxSizing: 'border-box', 
+               },
+             }}
+             variant="persistent"
+             anchor="right"
+             open={open}
+           >
+              <DrawerHeader sx={{display:"flex",justifyContent:"space-between",backgroundColor:"white"}}>
+      <Badge badgeContent={cartItemsBuy.length} color="primary"  sx={{mr:3}} >
+      <RiShoppingCartLine className='w-6 h-6 text-gray-800 ' />
+      </Badge>
+      <p className='text-gray-600 font-bold text-lg'>سبد خرید </p>
+                  <IconButton onClick={handleDrawerClose}  sx={{':hover':{color:"red"}}}>
+                  {theme.direction === 'ltr' ?  <IoClose className="block h-5 w-5 text-black hover:text-red-600 "  /> :
+                  <IoClose className="block h-5 w-5 text-black hover:text-red-600"  />}
+                </IconButton>
+              </DrawerHeader>
         <Divider />
         <CartModal/>
         </Drawer>

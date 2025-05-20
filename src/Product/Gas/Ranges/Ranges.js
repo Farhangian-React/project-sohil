@@ -37,9 +37,9 @@ export default  function Ranges() {
    <p className="font-medium">
      <ListItem
        className=" w-[120px] flex items-center py-2  font-medium rounded-none
-        text-gray-900
+        hover:text-gray-900
         transition delay-150 duration-300 ease-in-out
-        hover:border-none hover:text-yellow-500"
+        hover:border-none text-yellow-500"
        selected={isMenuOpen1 || isMobileMenuOpen1}
        onClick={() => setIsMobileMenuOpen1((cur) => !cur)}
      >

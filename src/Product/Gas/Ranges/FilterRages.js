@@ -10,7 +10,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormGroup from '@mui/material/FormGroup';
 import Checkbox from '@mui/material/Checkbox';
 import Accordion from '@mui/material/Accordion';
-import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionDetails from '@mui/material/AccordionDetails'; 
 import AddIcon from '@mui/icons-material/Add';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
@@ -732,14 +732,14 @@ const handleChangeE1=(e)=>{
         }
    return (
     <>
-   <div className='hidden md:flex flex-col justify-start w-[400px]  mt-4 '>
-      <div dir='rtl' className='flex justify-start md:rounded-sm border-b-2 border-gray-600 md:border-none mr-2 mt-0.3
-      h-[50px]
-      bg-gradient-to-r from-gray-500 via-yellow-500 to-gray-500 text-white'
-  >
-  <p dir='rtl' className='px-2.5 py-2 text-xl font-bold ' >  نوع نمایش 
-  </p>
-  </div> 
+  <div dir='rtl' className='hidden md:flex flex-col justify-start w-[400px]  mt-4 h-[400px]  overflow-y-auto '>
+    <div dir='rtl' className='flex justify-start md:rounded-sm border-b-2 border-gray-600 md:border-none mr-2 mt-0.3
+    h-[50px]
+    bg-gradient-to-r from-gray-500 via-yellow-500 to-gray-500 text-white'
+>
+<p dir='rtl' className='px-2.5 py-2 text-xl font-bold ' >  نوع نمایش 
+</p>
+</div> 
   <Accordion
           expanded={index === 0}
           onChange={(event, expanded) => {
@@ -987,17 +987,17 @@ const handleChangeE1=(e)=>{
             <div  >
         <IconButton sx={{pt:0}}>
   
-      <FilterAltOutlinedIcon sx={{color:"#eeeeee",fontSize:"32px"}}/>
+      <FilterAltOutlinedIcon sx={{color:"#eeeeee",fontSize:"20px",mt:0.5}}/>
     </IconButton>
     </div>
-        <div >
-      <p className='text-xl font-bold text-white' >
+ 
+      <p className='text-md font-bold text-white' >
    فیلتر بر اساس
 </p>
-</div>
+
         </div>
           </AccordionSummary>
-        <AccordionDetails className='-mt-9' >
+     <AccordionDetails className='mt-0 h-[300px]  overflow-y-auto mb-6' >
         <FormGroup>
 <Accordion
         expanded={index === 0}

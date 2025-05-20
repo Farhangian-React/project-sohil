@@ -124,6 +124,7 @@ export default  function CookTops() {
         ماشین لباسشویی
        </li>
      </NavLink>
+     
      <NavLink to={'/shop-dishwasher'} 
        style={({ isActive }) => ({
          color: isActive ? "rgb(107, 33, 168)" : "#000",

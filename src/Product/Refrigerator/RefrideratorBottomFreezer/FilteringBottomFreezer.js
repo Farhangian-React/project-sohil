@@ -1312,7 +1312,7 @@ const handleChangeE1=(e)=>{
         }
    return (
     <>
-   <div className='hidden md:flex flex-col justify-start w-[400px]  mt-4 '>
+   <div dir='rtl' className='hidden md:flex flex-col justify-start w-[400px]  mt-4 h-[400px]  overflow-y-auto '>
     <div dir='rtl' className='flex justify-start md:rounded-sm border-b-2 border-gray-600 md:border-none mr-2 mt-0.3
     h-[50px]
     bg-gradient-to-r from-gray-500 via-yellow-500 to-gray-500 text-white'
@@ -1495,14 +1495,16 @@ const handleChangeE1=(e)=>{
       </Accordion>
 </div>
 
-<div className='flex flex-col justify-start md:hidden w-[95%] self-center'>
+     
+<div className=' flex flex-col justify-start md:hidden w-[95%] self-center' >
 <Accordion
+
         expanded={index1 === 0}
         onChange={(event, expanded) => {
           setIndex1(expanded ? 0 : null);
         }}
-        className=' mr-2 mt-0 
-    bg-gradient-to-r from-gray-500 via-yellow-500 to-gray-500 text-white '
+        className='mr-2 mt-0 
+    bg-gradient-to-r from-gray-500 via-yellow-500 to-gray-500 text-white   '
         
       >
         <AccordionSummary  sx={{fontSize:'16px',direction:'rtl'}} 
@@ -1512,17 +1514,17 @@ const handleChangeE1=(e)=>{
             <div  >
         <IconButton sx={{pt:0}}>
   
-      <FilterAltOutlinedIcon sx={{color:"#eeeeee",fontSize:"32px"}}/>
+      <FilterAltOutlinedIcon sx={{color:"#eeeeee",fontSize:"20px",mt:0.5}}/>
     </IconButton>
     </div>
-        <div >
-      <p className='text-xl font-bold text-white' >
+ 
+      <p className='text-md font-bold text-white' >
    فیلتر بر اساس
 </p>
-</div>
+
         </div>
           </AccordionSummary>
-        <AccordionDetails className='-mt-9' >
+        <AccordionDetails className='mt-0 h-[300px]  overflow-y-auto mb-6' >
         <FormGroup>
 <Accordion
         expanded={index === 0}

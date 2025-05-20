@@ -19,10 +19,10 @@ import TocOutlinedIcon from '@mui/icons-material/TocOutlined';
 import { MdMessage } from "react-icons/md";
 import { styled, useTheme } from '@mui/material/styles';
 import Drawer from '@mui/material/Drawer';
-import CloseIcon from '@mui/icons-material/Close';
+import { IoClose } from "react-icons/io5";
+import { RiShoppingCartLine } from "react-icons/ri";
 import Divider from '@mui/material/Divider';
 import CartModal from "../Carts-Shoping/CartModal";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
 import MessageOutlinedIcon from '@mui/icons-material/MessageOutlined';
 import HiveIcon from '@mui/icons-material/Hive';
@@ -299,60 +299,35 @@ toast.success("ثبت دیدگاه با موفقیت صورت گرفت") ;
                                        hover:via-yellow-800 hover:to-gray-500'
                                         >    
             افزودن به سبد خرید  </button>
-            <Drawer
-           sx={{
-             position:"absolute",
-             width: drawerWidth,
-             height:"60vh",
-             flexShrink: 0,
-             '& .MuiDrawer-paper': {
-               width: drawerWidth,
-               height:"95vh",
-               boxSizing: 'border-box', 
-             },
-           }}
-           variant="persistent"
-           anchor="right"
-           open={open}
-         >
-            <DrawerHeader sx={{display:"flex",justifyContent:"space-around",backgroundImage:"#f2f2f2"}}>
-            <Box sx={{display:"flex",flexDirection:"row",justifyContent:"start",width:"100%"}}>
-    <Box sx={{width:"30px",alignSelf:'center',pr:2}}>
-    <Badge badgeContent={cartItemsBuy.length}  color="warning" >
-    <ShoppingCartIcon color="action"sx={{color:"black"}} />
-    </Badge>
-    </Box> 
-    <Box sx={{width:"80px",alignSelf:'center',pr:0}}>
-    <Typography
-    
-    noWrap
-    component="a"
-    href="/"
-    sx={{
-    mr:1 ,
-    mt:0,
-    display: 'flex',
-    flexGrow: 0,
-    fontSize:"22px",
-    color: '#202020',
-    textDecoration: 'none',
-    direction:"rtl"
-    }}
-    >
-    سبدخرید
-    </Typography>
-    </Box>
-    </Box>
-               <Box sx={{width:"100%",direction:"ltr"}}>
-    
-                <IconButton onClick={handleDrawerClose}>
-                {theme.direction === 'ltr' ? <CloseIcon /> : <CloseIcon />}
-              </IconButton>
-                 </Box>
-            </DrawerHeader>
-            <Divider />
-            <CartModal/>
-            </Drawer>
+          <Drawer
+               sx={{
+                 position:"absolute",
+                 width: drawerWidth,
+                 height:"60vh",
+                 flexShrink: 0,
+                 '& .MuiDrawer-paper': {
+                   width: drawerWidth,
+                   height:"95vh",
+                   boxSizing: 'border-box', 
+                 },
+               }}
+               variant="persistent"
+               anchor="right"
+               open={open}
+             >
+                <DrawerHeader sx={{display:"flex",justifyContent:"space-between",backgroundColor:"white"}}>
+        <Badge badgeContent={cartItemsBuy.length} color="primary"  sx={{mr:3}} >
+        <RiShoppingCartLine className='w-6 h-6 text-gray-800 ' />
+        </Badge>
+        <p className='text-gray-600 font-bold text-lg'>سبد خرید </p>
+                    <IconButton onClick={handleDrawerClose}  sx={{':hover':{color:"red"}}}>
+                    {theme.direction === 'ltr' ?  <IoClose className="block h-5 w-5 text-black hover:text-red-600 "  /> :
+                    <IoClose className="block h-5 w-5 text-black hover:text-red-600"  />}
+                  </IconButton>
+                </DrawerHeader>
+                <Divider />
+                <CartModal/>
+                </Drawer>
              <div className='flex justify-center mx-auto pb-3'>
              <InfoIcon sx={{mt:1,mr:1.5,fontSize:'18px',color:'#4b4f4f'}}/>
              <p className='text-[12px] text-justify pr-1 pl-5 text-gray-700 '> درخواست مرجوع کردن کالا در گروه یخچال و فریزر با دلیل "انصراف از خرید" تنها در صورتی قابل تایید است که کالا در شرایط اولیه باشد 

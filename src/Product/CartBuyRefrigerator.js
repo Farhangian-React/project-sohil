@@ -1,5 +1,6 @@
 import * as React from 'react';
 import  {useContext,useState,useRef} from 'react';
+import { yellow } from '@mui/material/colors';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -24,10 +25,10 @@ import TocOutlinedIcon from '@mui/icons-material/TocOutlined';
 import { MdMessage } from "react-icons/md";
 import { styled, useTheme } from '@mui/material/styles';
 import Drawer from '@mui/material/Drawer';
-import CloseIcon from '@mui/icons-material/Close';
+import { IoClose } from "react-icons/io5";
 import Divider from '@mui/material/Divider';
 import CartModal from "../Carts-Shoping/CartModal";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { RiShoppingCartLine } from "react-icons/ri";
 import Badge from '@mui/material/Badge';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 import Rating from '@mui/material/Rating';
@@ -39,7 +40,7 @@ import './CartBuy.css';
 import { Textarea } from '@mui/joy';
 import { useEffect } from 'react';
 import SlideSimilarRef from "./SlideSimilarRef";
-const drawerWidth = 450;
+const drawerWidth =400;
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
@@ -50,7 +51,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }));
 
 export default function CartBuyRefrigerator() { 
-  
+  const yy=yellow[500];
   const [layout, setLayout] = React.useState(undefined);
   const [cartItems,setCartItems]=useContext(CartContext);
   const [cartItemsBuy,setCartItemsBuy]=useContext(CartBuyContext); 
@@ -323,40 +324,20 @@ return console.log(cartItems);
        anchor="right"
        open={open}
      >
-        <DrawerHeader sx={{display:"flex",justifyContent:"space-around",backgroundImage:"#f2f2f2"}}>
-        <Box sx={{display:"flex",flexDirection:"row",justifyContent:"start",width:"100%"}}>
-<Box sx={{width:"30px",alignSelf:'center',pr:2}}>
-<Badge badgeContent={cartItemsBuy.length}  color="warning" >
-<ShoppingCartIcon color="action"sx={{color:"black"}} />
+        <DrawerHeader sx={{display:"flex",justifyContent:"space-between",backgroundColor:"white"}}>
+ 
+
+<Badge badgeContent={cartItemsBuy.length} color="primary"  sx={{mr:3}} >
+<RiShoppingCartLine className='w-6 h-6 text-gray-800 ' />
 </Badge>
-</Box> 
-<Box sx={{width:"80px",alignSelf:'center',pr:0}}>
-<Typography
+<p className='text-gray-600 font-bold text-lg'>سبد خرید </p>
 
-noWrap
-component="a"
-href="/"
-sx={{
-mr:1 ,
-mt:0,
-display: 'flex',
-flexGrow: 0,
-fontSize:"22px",
-color: '#202020',
-textDecoration: 'none',
-direction:"rtl"
-}}
->
-سبدخرید
-</Typography>
-</Box>
-</Box>
-           <Box sx={{width:"100%",direction:"ltr"}}>
+          
 
-            <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <CloseIcon /> : <CloseIcon />}
+            <IconButton onClick={handleDrawerClose}  sx={{':hover':{color:"red"}}}>
+            {theme.direction === 'ltr' ?  <IoClose className="block h-5 w-5 text-black hover:text-red-600 "  /> :
+            <IoClose className="block h-5 w-5 text-black hover:text-red-600"  />}
           </IconButton>
-             </Box>
         </DrawerHeader>
         <Divider />
         <CartModal/>
