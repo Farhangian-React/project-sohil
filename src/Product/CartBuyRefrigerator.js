@@ -270,22 +270,30 @@ return console.log(cartItems);
     <div dir='rtl' className='flex flex-col md:flex-row bg-white rounded-t-3xl w-[95%] h-auto mx-auto '>
  
          <div className='flex flex-col justify-center mt-6 w-full md:w-[50%]'> 
+          <div>
            <img  className='hover:scale-125 w-[100px] h-[70px] mr-8'  alt='' src={i.berand}/>
-        
+        </div>
+        <div>
           <p className='text-lg font-bold text-gray-800 py-2 text-right pr-8' >
        {i.title1}
         </p>
+        </div>
+        <div>
         <p className='text-[14px] font-bold text-gray-500 mt-3 text-right pr-8'  >
       {i.title2}
         </p>
+        </div>
+        <div>
         <Rating
              sx={{fontSize:"16px",pr:4,mb:3}}
        name="simple-controlled"
        value={sumscore()}
-     />
+     /></div>
+     <div>
           <p className='text-md text-right text-gray-500 pr-8 py-1 ' >
     {i.title3}
         </p>
+        </div>
         <div className='flex flex-row justify-start'>
           <p className='text-gray-800 text-right text-xl pr-8 mt-0.5'>قیمت :</p>
           <p ref={offref} 
@@ -302,8 +310,8 @@ return console.log(cartItems);
          </p>
           </div>
 
-              
-                             <button    onClick={addToCart(i)} className='bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 
+<div>              
+                             <button    onClick={()=> addToCart(i)} className='bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 
                                    rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl mx-10  md:mx-16 px-10 md:px-2 py-1 mt-10 mb-5 text-white text-md font-sans
                                     hover:bg-gradient-to-r hover:from-gray-500
                                    hover:via-yellow-800 hover:to-gray-500'
@@ -338,7 +346,7 @@ return console.log(cartItems);
         <Divider />
        <CartModal/>
         </Drawer>
-
+</div>
          <div className='flex justify-center mx-auto pb-3'>
          <InfoIcon sx={{mt:1,mr:1.5,fontSize:'18px',color:'#4b4f4f'}}/>
          <p className='text-[12px] text-justify pr-1 pl-5 text-gray-700 '> درخواست مرجوع کردن کالا در گروه یخچال و فریزر با دلیل "انصراف از خرید" تنها در صورتی قابل تایید است که کالا در شرایط اولیه باشد 
@@ -390,7 +398,7 @@ return console.log(cartItems);
             backgroundImage:`url(${image})`}}>
         </div>
         
-         <div  className="inline-block md:hidden overflow-x-auto [&::-webkit-scrollbar]:w-0 py-1 bg-white
+         <div  className="inline-block md:hidden overflow-y-auto overflow-x-auto [&::-webkit-scrollbar]:h-0 [&::-webkit-scrollbar]:w-0 py-1 bg-white
      w-[80%] mx-auto px-3  h-[120px] ">
     <ul className=" flex uppercase font-bold mr-1">
        <li>
@@ -464,7 +472,7 @@ return console.log(cartItems);
   
            
  
-         <div  className="hidden md:flex md:flex-col md:justify-center overflow-y-auto [&::-webkit-scrollbar]:h-0 py-1 bg-white
+         <div  className="hidden md:flex md:flex-col md:justify-center overflow-y-auto overflow-x-auto [&::-webkit-scrollbar]:h-0 [&::-webkit-scrollbar]:w-0 py-1 bg-white
      w-[100%] mx-auto px-3  h-[600px] my-8 ">
     <ul className=" flex flex-col uppercase font-bold mr-1">
        <li>
