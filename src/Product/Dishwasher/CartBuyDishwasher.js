@@ -644,45 +644,28 @@ return console.log(cartItems);
         }}
       >
          <AccordionSummary   sx={{color:"#585858",fontSize:{xs:"18px",md:'20px'}}}   expandIcon={<AddIcon sx={{fontSize:{xs:"18px",md:"20px"}}} />}>ویژگی ها و امکانات</AccordionSummary>
-        <AccordionDetails sx={{mx:"auto"}}> 
-        {cartItems.map(i=>
-        <Box  sx={{ml:{xs:3},display:'flex',flexWrap:'wrap',justifyContent:'center'}}>  
-       {i.Prop.map(j=>
-          <Grid xs={6} md={3} sx={{display:"flex",justifyContent:"center",alignSelf:"center",px:1}}>  
-       <List
-            aria-label="Products"
-            variant="outlined"
-            orientation='vertical'
-            sx={{mt: 2,mb:0,border:'none',alignItems:'start',height:"500px",boxShadow:" 5px 5px 40px #dcdcdc "
-            }} 
-          >
-            <ListItem role="none" >
-            <Box
-             sx={{
-              display:'flex',
-              justifyContent:'center',
-             backgroundImage: `url(${j.Fimg})`,
-             backgroundPosition: 'center',
-             backgroundSize:'cover',
-             backgroundRepeat: 'no-repeat',
-             width:{xs:'150px',lg:"250px"},
-             height:{xs:"150px",lg:"250px"}
-             }}
-          >
-          </Box>
-            </ListItem>
-            <ListItem role="none">
-            <Typography sx={{mt:0,fontSize:{xs:'16px',md:'20px'},fontWeight:'600'}}>{j. Ftitle1} </Typography>
-            </ListItem>
-            <ListItem role="none">
-              <Typography sx={{fontSize:{xs:'12px',md:'16px'}}}> {j. Ftitle2}  </Typography>
-            </ListItem>
-          </List>
-        </Grid>
-       )}
-          </Box>  )}
-
-        </AccordionDetails>
+          <AccordionDetails sx={{mx:"auto"}}> 
+              {cartItems.map(i=>
+            <div className='flex flex-wrap md:flex-nowrap justify-center md:justify-center mx-auto'  >  
+            {i.Prop.map(j=>
+              <ul>
+                <li className='flex justify-center md:justify-start self-center md:self-center items-center md:items-start m-2'>
+                    <img  className='hover:scale-125 w-[200px] h-[200px] '  alt='' src={j.Fimg}/>
+             
+                </li>
+                <li className='m-2'>
+                  <p className='text-center md:text-start text-sm text-gray-800 font-bold'>{j.Ftitle1}</p>
+                </li>
+                <li className='flex flex-wrap m-2'>
+                  <p className=' md:text-start text-xs text-justify text-gray-500'>{j.Ftitle2}</p>
+                </li>
+              </ul>
+          
+         
+            )}
+               </div>  )}
+      
+              </AccordionDetails>
       </Accordion>
        <Accordion sx={{mx:"auto",width:"95%",mb:5}}
         expanded={index === 2}
