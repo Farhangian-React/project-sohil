@@ -303,12 +303,11 @@ return console.log(cartItems);
           </div>
 
               
-                                   <button    onClick={()=> addToCart(i)} className='bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 
-                                   rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xlmx-6  sm:mx-16 px-2 py-1 mt-10 mb-5 text-white text-md font-sans
+                                <button  onClick={addcomments}  className='bg-gradient-to-r from-yellow-500 via-gray-500 to-yellow-500 
+                                   rounded-tr-md rounded-bl-md rounded-tl-2xl rounded-br-2xl mx-6  sm:mx-16 px-2 py-1 mt-10 mb-5 text-white text-md font-sans
                                     hover:bg-gradient-to-r hover:from-gray-500
                                    hover:via-yellow-800 hover:to-gray-500'
-                                    >    
-        افزودن به سبد خرید  </button>
+                                    >  مشاهده ی دیدگاه کاربران </button>
         <Drawer
        sx={{
          position:"absolute",
