@@ -330,7 +330,7 @@ return console.log(cartItems);
          },
        }}
        variant="persistent"
-       anchor="right"
+       anchor="left"
        open={open}
      >
         <DrawerHeader sx={{display:"flex",justifyContent:"space-between",backgroundColor:"white"}}>
