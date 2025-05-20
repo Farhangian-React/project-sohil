@@ -291,13 +291,16 @@ dir='rtl' className='flex flex-row justify-around self-center md:hidden w-full h
                <p className='text-yellow-200 px-2 text-2xl '>/</p>
               </div>
               <div  className='mt-4' >
-            <NavLink className="signup"  to={'/signup'}>
+            <NavLink className="signup"  to={'/buybasket'}>
                          
-                         
+                   <Badge badgeContent={cartItemsBuy.length} color="warning"  sx={{mr:3}} >     
                    <RiShoppingCartLine className='w-6 h-6 text-yellow-600'   />
-                  
+                    </Badge>
              
                </NavLink>
+              
+        
+             
                
                </div>
            
