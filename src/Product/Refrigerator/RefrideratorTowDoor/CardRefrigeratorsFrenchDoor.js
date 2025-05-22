@@ -205,7 +205,7 @@ sx={{width:"250px",m:"auto",height:"200px"}}
     </>
   );
       }
-
+ const MemoizedComponent = React.memo(Tems);
 export default function CardRefrigeratorsFrenchDoor({ itemsPerPage }) {
  
   
@@ -244,7 +244,7 @@ export default function CardRefrigeratorsFrenchDoor({ itemsPerPage }) {
   };
   return (
     <>
-      <Tems currentItems={currentItems} load={isLoading} />
+      <MemoizedComponent currentItems={currentItems} load={isLoading} />
       <ReactPaginate
         breakLabel="..."
         nextLabel=" >>"

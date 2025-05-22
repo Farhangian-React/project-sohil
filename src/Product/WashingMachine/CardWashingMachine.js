@@ -194,7 +194,7 @@ value={sumscore(item)}
   </>
 );
     }
-
+ const MemoizedComponent = React.memo(Tems); 
 export default function CardWashingMachine({ itemsPerPage }) {
  
   
@@ -233,7 +233,7 @@ export default function CardWashingMachine({ itemsPerPage }) {
   };
   return (
     <>
-      <Tems currentItems={currentItems} load={isLoading}  />
+      <MemoizedComponent currentItems={currentItems} load={isLoading}  />
       <ReactPaginate
         breakLabel="..."
         nextLabel=" >>"

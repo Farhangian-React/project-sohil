@@ -253,7 +253,7 @@ value={sumscore(item)}
     }
 
 
-
+   const MemoizedComponent = React.memo(Tems);
 export default function CardLg({ itemsPerPage }) {
 
 const [data,setData]=useContext(CardData);
@@ -293,7 +293,7 @@ const handlePageClick = (event) => {
 };
 return (
   <>
-    <Tems currentItems={currentItems} load={isLoading} />
+    <MemoizedComponent currentItems={currentItems} load={isLoading} />
     <ReactPaginate
       breakLabel="..."
       nextLabel=" >>"

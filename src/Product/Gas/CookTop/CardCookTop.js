@@ -5,12 +5,8 @@ import {CartContext} from '../../../Shared/Cart-Context';
 import {CardData} from '../../../Shared/Cart-Context';
 import {CardDataShow} from '../../../Shared/Cart-Context';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 import { NavLink } from 'react-router-dom';
 import FilterCookTop from "./FilterCookTop";
 import Rating from '@mui/material/Rating';
@@ -215,7 +211,7 @@ value={sumscore(item)}
       </>
     );
   }
-  
+   const MemoizedComponent = React.memo(Tems);
   export default function CardCookTop({ itemsPerPage }) {
     const [data,setData]=useContext(CardData);
     const [datashow,setDatashow]=useContext(CardDataShow);
@@ -251,7 +247,7 @@ value={sumscore(item)}
       };
     return (
       <>
-        <Tems currentItems={currentItems} load={isLoading}  />
+        <MemoizedComponent currentItems={currentItems} load={isLoading}  />
         <ReactPaginate
           breakLabel="..."
           nextLabel=" >>"

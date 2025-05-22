@@ -1,17 +1,13 @@
 
 import 'react-slideshow-image/dist/styles.css';
-import React, {useContext,useState,useEffect, useRef} from 'react';
+import React, {useContext,useState,useEffect} from 'react';
 import {CartContext} from '../../Shared/Cart-Context';
 import {CardData} from '../../Shared/Cart-Context';
 import {CardDataShow} from '../../Shared/Cart-Context';
 import ReactPaginate from 'react-paginate';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 import FilterDishwasher from "../../Product/Dishwasher/FilterDishwasher";
 import { ToastContainer, toast } from "react-toastify";
 import './Dishwasher.css';
@@ -202,6 +198,7 @@ value={sumscore(item)}
   </>
 );
     }
+     const MemoizedComponent = React.memo(Tems); 
 
 export default function CardDishwasher({ itemsPerPage }) {
 const [data,setData]=useContext(CardData);
@@ -238,7 +235,7 @@ const handlePageClick = (event) => {
 };
 return (
   <>
-    <Tems currentItems={currentItems} load={isLoading}  />
+    <MemoizedComponent currentItems={currentItems} load={isLoading}  />
     <ReactPaginate
       breakLabel="..."
       nextLabel=" >>"

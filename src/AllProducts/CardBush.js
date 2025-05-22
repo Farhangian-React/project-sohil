@@ -254,7 +254,7 @@ value={sumscore(item)}
     }
 
 
-
+   const MemoizedComponent = React.memo(Tems);
 export default function CardBush({ itemsPerPage }) {
 const [data,setData]=useContext(CardData);
 const [datashow,setDatashow]=useContext(CardDataShow);
@@ -294,7 +294,7 @@ const handlePageClick = (event) => {
 };
 return (
   <>
-    <Tems currentItems={currentItems}   load={isLoading}/>
+    <MemoizedComponent currentItems={currentItems}   load={isLoading}/>
     <ReactPaginate
       breakLabel="..."
       nextLabel=" >>"

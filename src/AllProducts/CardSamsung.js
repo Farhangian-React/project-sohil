@@ -253,7 +253,7 @@ function Tems({ currentItems,load }) {
      }
  
  
-
+   const MemoizedComponent = React.memo(Tems);
 export default function CardSamsung({ itemsPerPage }) {
 const [data,setData]=useContext(CardData);
 const [datashow,setDatashow]=useContext(CardDataShow);
@@ -292,7 +292,7 @@ const handlePageClick = (event) => {
 };
 return (
   <>
-    <Tems currentItems={currentItems} load={isLoading} />
+    <MemoizedComponent currentItems={currentItems} load={isLoading} />
     <ReactPaginate
       breakLabel="..."
       nextLabel=" >>"

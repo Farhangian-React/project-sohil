@@ -130,7 +130,7 @@ sx={{width:{xs:"150px",sm:"150px",md:"200px",lg:"200px"},m:"auto"}}
   </>
 );
     }
-
+   const MemoizedComponent = React.memo(Tems);
 export default function CardAllProducts({ itemsPerPage }) {
 const [data,setData]=useContext(CardData);
 const [datashow,setDatashow]=useContext(CardDataShow);
@@ -168,7 +168,7 @@ const handlePageClick = (event) => {
 };
 return (
   <>
-    <Tems currentItems={currentItems}  load={isLoading} />
+    <MemoizedComponent currentItems={currentItems}  load={isLoading} />
     <ReactPaginate
       breakLabel="..."
       nextLabel=" >>"

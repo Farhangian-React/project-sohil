@@ -5,12 +5,8 @@ import {CardDataShow} from '../../../Shared/Cart-Context';
 import ReactPaginate from 'react-paginate';
 import { NavLink } from 'react-router-dom';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 import FilteringTopFreezer from './FilteringTopFreezer';
 import Rating from '@mui/material/Rating';
 import Backdrop from '@mui/material/Backdrop';
@@ -196,6 +192,7 @@ sx={{width:"250px",m:"auto",height:"200px"}}
     </>
   );
       }
+       const MemoizedComponent = React.memo(Tems);
 
 export default function CardRefrideratorTopFreezer({ itemsPerPage }) {
  
@@ -235,7 +232,7 @@ export default function CardRefrideratorTopFreezer({ itemsPerPage }) {
   };
   return (
     <>
-      <Tems currentItems={currentItems} load={isLoading} />
+      <MemoizedComponent currentItems={currentItems} load={isLoading} />
       <ReactPaginate
         breakLabel="..."
         nextLabel=" >>"
