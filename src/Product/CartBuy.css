@@ -23,13 +23,13 @@
 } 
 ::-webkit-scrollbar-thumb{
 
-   background-image: linear-gradient(#57534e, #eab308, #57534e);
+   background-image: linear-gradient(#62748e, #eab308, #62748e);
   border-radius: 100vw;
 
 }
 
 ::-webkit-scrollbar-thumb:hover{
-  background-image: linear-gradient(#57534e, #854d0e, #57534e);
+  background-image: linear-gradient(#62748e, #854d0e, #62748e);
   border-radius: 100vw;
  
 }
