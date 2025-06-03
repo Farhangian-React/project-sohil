@@ -217,7 +217,6 @@ toast.success("ثبت دیدگاه با موفقیت صورت گرفت") ;
 })
 return console.log(cartItems);
       })
-
           }
       setComment(" ");
       setName(" ");

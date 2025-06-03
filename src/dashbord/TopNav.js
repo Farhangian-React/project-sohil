@@ -14,7 +14,6 @@ import IconButton from '@mui/material/IconButton';
 import PropTypes from 'prop-types';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Slide from '@mui/material/Slide';
-import SearchButton from './SearchButton';
 import { styled } from '@mui/material/styles';
 import { RiRoadMapLine } from "react-icons/ri";
 import { RiShoppingCartLine } from "react-icons/ri";
@@ -106,7 +105,7 @@ const [data,setData]=useContext(CardData);
 const [searchItem, setSearchItem] = useState('');
 const [filteredUsers, setFilteredUsers] = useState([]);
 const getData=()=>{
-fetch('https://servers-nahall.onrender.com/Allproductsnahall')
+fetch('https://serverjson-project.onrender.com/Allproducts')
 .then(res => res.json())
 .then((result)=> {
 setData(result);
@@ -209,23 +208,14 @@ size="lg"
 <div  onClick={()=>{
   setCartItems([item]);
   setOpen(false);}}
- dir='rtl' className='hidden md:flex md:flex-wrap md:flex-row md:justify-around md:self-center w-[92%] h-[260px] bg-white my-2  border-2 border-gray-200 mx-auto  '>
+ dir='rtl' className='hidden md:flex md:flex-wrap md:flex-row md:justify-around md:self-center items-center w-[92%] h-[160px] bg-white my-2  border-2 border-gray-200 mx-auto  '>
 
- <div 
- className='shh relative w-[250px] h-[250px] rounded-sm 
- bg-cover bg-center bg-no-repeat
-   before:absolute before:w-full before:h-[60px] before:bottom-[-12px] before:rounded-3xl before:bg-transparent
- ' style={{
-  backgroundImage: `url(${item.img})`,borderRadius:"23% 77% 11% 89% / 66% 42% 58% 34% "
-}} >  
-  </div>
 
-<div className=' inline-flex justify-start self-center items-center py-1 w-[250px] '>
-<div className='w-full py-1'> <p className='text-xl text-center flex-nowrap '>{item.title1}</p></div>
+<img className='w-[150px] h-[120px] m-2 ' src={item.img}/>
+ <div className='w-1/3 flex flex-wrap'><p className='text-lg text-center '>{item.title1}</p></div>
 
-</div>
-<div className='w-[150px]   inline-flex justify-start self-center items-center'  > 
-<p className='text-[20px] text-gray-500  text-right font-bold'   >
+<div className='w-auto   inline-flex justify-start self-center items-center'  > 
+<p className='text-[20px] text-[#2b31d5]  text-right font-bold'   >
 {addCommas(convertToPersian((convertToEnglish(item.pricenum1)-(convertToEnglish(item.pricenum1)*item.off / 100))+''))} تومان 
 </p>
 </div>
@@ -233,23 +223,12 @@ size="lg"
 <div  onClick={()=>{
 setCartItems([item]);
 setOpen(false);}}
-dir='rtl' className='flex flex-row justify-around self-center md:hidden w-full h-[150px] bg-white my-2  border-2 border-gray-200 mx-auto  '>
+dir='rtl' className='flex flex-row justify-around self-center md:hidden w-full h-[120px] bg-white my-2  items-center  border-2 border-gray-200 mx-auto  '>
+<img className='w-[100px] h-[100px] m-2 ' src={item.img}/>
+ <div className='w-1/3 flex flex-wrap'><p className='text-sm text-center '>{item.title1}</p></div>
 
-<div 
- className='px-2 shh relative w-1/3 h-[120px] rounded-sm 
- bg-cover bg-center bg-no-repeat
-   before:absolute before:w-full before:h-[60px] before:bottom-[-12px] before:rounded-3xl before:bg-transparent
- ' style={{
-  backgroundImage: `url(${item.img})`,borderRadius:"23% 77% 11% 89% / 66% 42% 58% 34% "
-}} >  
-  </div>
-
-<div className=' inline-flex justify-start self-center items-center py-1  w-1/3 px-2 '>
-<div className='w-full py-1'> <p className='text-sm text-center flex-nowrap '>{item.title1}</p></div>
-
-</div>
-<div className=' w-1/3   inline-flex justify-start self-center items-center px-2'  > 
-<p className='text-[16px] text-gray-500  text-right font-bold'   >
+<div className='w-auto   inline-flex justify-start self-center items-center'  > 
+<p className='text-[16px] text-[#2b31d5]  text-right font-bold'   >
 {addCommas(convertToPersian((convertToEnglish(item.pricenum1)-(convertToEnglish(item.pricenum1)*item.off / 100))+''))} تومان 
 </p>
 </div>
